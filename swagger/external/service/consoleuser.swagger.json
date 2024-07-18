@@ -184,46 +184,6 @@
           "UserService"
         ]
       }
-    },
-    "/api/users/{userId}/password": {
-      "put": {
-        "summary": "UpdatePassword updates a password.",
-        "operationId": "UserService_UpdatePassword",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "properties": {}
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "userId",
-            "description": "User ID.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiUpdateUserPasswordRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
     }
   },
   "definitions": {
@@ -289,19 +249,6 @@
             "$ref": "#/definitions/apiUserListItem"
           },
           "description": "Result-set."
-        }
-      }
-    },
-    "apiUpdateUserPasswordRequest": {
-      "type": "object",
-      "properties": {
-        "userId": {
-          "type": "string",
-          "description": "User ID."
-        },
-        "password": {
-          "type": "string",
-          "description": "New pasword."
         }
       }
     },

@@ -48,13 +48,13 @@ service UserService {
 		};
 	}
 
-	// UpdatePassword updates a password.
-	rpc UpdatePassword(UpdateUserPasswordRequest) returns (google.protobuf.Empty) {
-		option(google.api.http) = {
-			put: "/api/users/{user_id}/password"
-			body: "*"
-		};
-	}
+	// // UpdatePassword updates a password.
+	// rpc UpdatePassword(UpdateUserPasswordRequest) returns (google.protobuf.Empty) {
+	// 	option(google.api.http) = {
+	// 		put: "/api/users/{user_id}/password"
+	// 		body: "*"
+	// 	};
+	// }
 
 }
 
@@ -184,10 +184,10 @@ message ListUserResponse {
 	repeated UserListItem result = 2;
 }
 
-message UpdateUserPasswordRequest {
-	// User ID.
-	string user_id = 1;
+// message UpdateUserPasswordRequest {
+// 	// User ID.
+// 	string user_id = 1;
 
-	// New pasword.
-	string password = 2;
-}
+// 	// New pasword.
+// 	string password = 2;
+// }
