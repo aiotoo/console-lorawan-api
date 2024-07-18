@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package api;
 
-option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/api";
+option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/service";
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
-import "external/api/user.proto";
+import "external/service/user.proto";
 
 
 // InternalService is the service providing API endpoints for internal usage.

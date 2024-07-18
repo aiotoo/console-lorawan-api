@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "external/api/internal.proto",
+    "title": "external/service/internal.proto",
     "version": "version not set"
   },
   "consumes": [

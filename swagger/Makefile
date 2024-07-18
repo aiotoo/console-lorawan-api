@@ -11,6 +11,6 @@ requirements:
 	@go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 
 external-api:
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/api --swagger_out=json_names_for_fields=true:. external/api/internal.proto
-	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/api --swagger_out=json_names_for_fields=true:. external/api/user.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --swagger_out=json_names_for_fields=true:. external/service/internal.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --swagger_out=json_names_for_fields=true:. external/service/user.proto
 	
