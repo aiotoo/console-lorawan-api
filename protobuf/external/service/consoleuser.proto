@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package api;
+package service;
 
 option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/service";
 
@@ -12,21 +12,21 @@ import "google/protobuf/empty.proto";
 // UserService is the service managing the user access.
 service UserService {
 	// Get user list.
-	rpc ListUser(ListUserRequest) returns (ListUserResponse) {
+	rpc List(ListUserRequest) returns (ListUserResponse) {
 		option(google.api.http) = {
 			get: "/api/users"
 		};
 	}
 
 	// Get data for a particular user.
-	rpc GetUser(GetUserRequest) returns (GetUserResponse) {
+	rpc Get(GetUserRequest) returns (GetUserResponse) {
 		option(google.api.http) = {
 			get: "/api/users/{id}"
 		};
 	}
 
 	// Create a new user.
-	rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {
+	rpc Create(CreateUserRequest) returns (CreateUserResponse) {
 		option(google.api.http) = {
 			post: "/api/users"
 			body: "*"
@@ -34,7 +34,7 @@ service UserService {
 	}
 
 	// Update an existing user.
-	rpc UpdateUser(UpdateUserRequest) returns (google.protobuf.Empty) {
+	rpc Update(UpdateUserRequest) returns (google.protobuf.Empty) {
 		option(google.api.http) = {
 			put: "/api/users/{user.id}"
 			body: "*"
@@ -42,14 +42,14 @@ service UserService {
 	}
 
 	// Delete a user.
-	rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty) {
+	rpc Delete(DeleteUserRequest) returns (google.protobuf.Empty) {
 		option(google.api.http) = {
 			delete: "/api/users/{id}"
 		};
 	}
 
 	// UpdatePassword updates a password.
-	rpc UpdateUserPassword(UpdateUserPasswordRequest) returns (google.protobuf.Empty) {
+	rpc UpdatePassword(UpdateUserPasswordRequest) returns (google.protobuf.Empty) {
 		option(google.api.http) = {
 			put: "/api/users/{user_id}/password"
 			body: "*"

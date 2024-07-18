@@ -14,12 +14,12 @@
     "/api/users": {
       "get": {
         "summary": "Get user list.",
-        "operationId": "UserService_ListUser",
+        "operationId": "UserService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiListUserResponse"
+              "$ref": "#/definitions/serviceListUserResponse"
             }
           },
           "default": {
@@ -53,12 +53,12 @@
       },
       "post": {
         "summary": "Create a new user.",
-        "operationId": "UserService_CreateUser",
+        "operationId": "UserService_Create",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiCreateUserResponse"
+              "$ref": "#/definitions/serviceCreateUserResponse"
             }
           },
           "default": {
@@ -74,7 +74,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiCreateUserRequest"
+              "$ref": "#/definitions/serviceCreateUserRequest"
             }
           }
         ],
@@ -86,12 +86,12 @@
     "/api/users/{id}": {
       "get": {
         "summary": "Get data for a particular user.",
-        "operationId": "UserService_GetUser",
+        "operationId": "UserService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiGetUserResponse"
+              "$ref": "#/definitions/serviceGetUserResponse"
             }
           },
           "default": {
@@ -116,7 +116,7 @@
       },
       "delete": {
         "summary": "Delete a user.",
-        "operationId": "UserService_DeleteUser",
+        "operationId": "UserService_Delete",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -148,7 +148,7 @@
     "/api/users/{user.id}": {
       "put": {
         "summary": "Update an existing user.",
-        "operationId": "UserService_UpdateUser",
+        "operationId": "UserService_Update",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -176,7 +176,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUpdateUserRequest"
+              "$ref": "#/definitions/serviceUpdateUserRequest"
             }
           }
         ],
@@ -188,7 +188,7 @@
     "/api/users/{userId}/password": {
       "put": {
         "summary": "UpdatePassword updates a password.",
-        "operationId": "UserService_UpdateUserPassword",
+        "operationId": "UserService_UpdatePassword",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -216,7 +216,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUpdateUserPasswordRequest"
+              "$ref": "#/definitions/serviceUpdateUserPasswordRequest"
             }
           }
         ],
@@ -227,11 +227,44 @@
     }
   },
   "definitions": {
-    "apiCreateUserRequest": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "serviceCreateUserRequest": {
       "type": "object",
       "properties": {
         "user": {
-          "$ref": "#/definitions/apiUser",
+          "$ref": "#/definitions/serviceUser",
           "description": "User object to create."
         },
         "password": {
@@ -241,13 +274,13 @@
         "organizations": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiUserOrganization"
+            "$ref": "#/definitions/serviceUserOrganization"
           },
           "description": "Add the user to the following organizations."
         }
       }
     },
-    "apiCreateUserResponse": {
+    "serviceCreateUserResponse": {
       "type": "object",
       "properties": {
         "id": {
@@ -256,11 +289,11 @@
         }
       }
     },
-    "apiGetUserResponse": {
+    "serviceGetUserResponse": {
       "type": "object",
       "properties": {
         "user": {
-          "$ref": "#/definitions/apiUser",
+          "$ref": "#/definitions/serviceUser",
           "description": "User object."
         },
         "createdAt": {
@@ -275,7 +308,7 @@
         }
       }
     },
-    "apiListUserResponse": {
+    "serviceListUserResponse": {
       "type": "object",
       "properties": {
         "totalCount": {
@@ -286,13 +319,13 @@
         "result": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/apiUserListItem"
+            "$ref": "#/definitions/serviceUserListItem"
           },
           "description": "Result-set."
         }
       }
     },
-    "apiUpdateUserPasswordRequest": {
+    "serviceUpdateUserPasswordRequest": {
       "type": "object",
       "properties": {
         "userId": {
@@ -305,16 +338,16 @@
         }
       }
     },
-    "apiUpdateUserRequest": {
+    "serviceUpdateUserRequest": {
       "type": "object",
       "properties": {
         "user": {
-          "$ref": "#/definitions/apiUser",
+          "$ref": "#/definitions/serviceUser",
           "description": "User object to update."
         }
       }
     },
-    "apiUser": {
+    "serviceUser": {
       "type": "object",
       "properties": {
         "id": {
@@ -348,7 +381,7 @@
         }
       }
     },
-    "apiUserListItem": {
+    "serviceUserListItem": {
       "type": "object",
       "properties": {
         "id": {
@@ -388,7 +421,7 @@
         }
       }
     },
-    "apiUserOrganization": {
+    "serviceUserOrganization": {
       "type": "object",
       "properties": {
         "organizationID": {
@@ -406,39 +439,6 @@
         "isViewer": {
           "type": "boolean",
           "description": "User is able to view."
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "typeUrl": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string",
-          "format": "byte"
-        }
-      }
-    },
-    "runtimeError": {
-      "type": "object",
-      "properties": {
-        "error": {
-          "type": "string"
-        },
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
         }
       }
     }
