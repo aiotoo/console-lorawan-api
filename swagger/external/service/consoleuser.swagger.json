@@ -14,7 +14,7 @@
     "/api/users": {
       "get": {
         "summary": "Get user list.",
-        "operationId": "UserService_List",
+        "operationId": "UserService_ListUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -53,7 +53,7 @@
       },
       "post": {
         "summary": "Create a new user.",
-        "operationId": "UserService_Create",
+        "operationId": "UserService_CreateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -86,7 +86,7 @@
     "/api/users/{id}": {
       "get": {
         "summary": "Get data for a particular user.",
-        "operationId": "UserService_Get",
+        "operationId": "UserService_GetUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -116,7 +116,7 @@
       },
       "delete": {
         "summary": "Delete a user.",
-        "operationId": "UserService_Delete",
+        "operationId": "UserService_DeleteUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -148,7 +148,7 @@
     "/api/users/{user.id}": {
       "put": {
         "summary": "Update an existing user.",
-        "operationId": "UserService_Update",
+        "operationId": "UserService_UpdateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -177,6 +177,46 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiUpdateUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/api/users/{userId}/password": {
+      "put": {
+        "summary": "UpdatePassword updates a password.",
+        "operationId": "UserService_UpdateUserPassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "userId",
+            "description": "User ID.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUpdateUserPasswordRequest"
             }
           }
         ],
@@ -249,6 +289,19 @@
             "$ref": "#/definitions/apiUserListItem"
           },
           "description": "Result-set."
+        }
+      }
+    },
+    "apiUpdateUserPasswordRequest": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "User ID."
+        },
+        "password": {
+          "type": "string",
+          "description": "New pasword."
         }
       }
     },
