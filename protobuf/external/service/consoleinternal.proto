@@ -7,7 +7,7 @@ option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/servic
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
-import "external/service/user.proto";
+import "external/service/consoleuser.proto";
 
 
 // InternalService is the service providing API endpoints for internal usage.
