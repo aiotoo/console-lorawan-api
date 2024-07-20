@@ -138,7 +138,7 @@ message ListApplicationsRequest {
   string search = 3;
 
   // Tenant ID to list the applications for.
-  string tenant_id = 4;
+  string organisation_id = 4;
 }
 
 message ListApplicationsResponse {

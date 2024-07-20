@@ -54,7 +54,7 @@
             "type": "string"
           },
           {
-            "name": "tenantId",
+            "name": "organisationId",
             "description": "Tenant ID to list the applications for.",
             "in": "query",
             "required": false,
