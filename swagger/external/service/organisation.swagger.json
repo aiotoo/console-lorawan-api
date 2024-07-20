@@ -1,0 +1,264 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "external/service/organisation.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/organisation/{id}": {
+      "get": {
+        "summary": "Get the Organisation for the given ID.",
+        "operationId": "OrganisationService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetOrganisationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Organisation ID.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OrganisationService"
+        ]
+      }
+    },
+    "/api/organisations": {
+      "get": {
+        "summary": "Get the list of Organisation.",
+        "operationId": "OrganisationService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceListOrganisationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "description": "Max number of tenants to return in the result-set.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Offset in the result-set (for pagination).",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "search",
+            "description": "If set, the given string will be used to search on name.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "description": "If set, filters the result set to the tenants of the user.\nOnly global API keys are able to filter by this field.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OrganisationService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "serviceGetOrganisationResponse": {
+      "type": "object",
+      "properties": {
+        "tenant": {
+          "$ref": "#/definitions/serviceOrganisation",
+          "description": "Organisation object."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        }
+      }
+    },
+    "serviceListOrganisationsResponse": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Total number of tenants."
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceOrganisationListItem"
+          },
+          "description": "Result-set."
+        }
+      }
+    },
+    "serviceOrganisation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Organisation ID (UUID).\nNote: this value will be automatically generated on create."
+        },
+        "name": {
+          "type": "string",
+          "title": "Organisation name,"
+        },
+        "description": {
+          "type": "string",
+          "description": "Organisation description."
+        },
+        "canHaveGateways": {
+          "type": "boolean",
+          "title": "Can the tenant create and \"own\" Gateways?"
+        },
+        "maxGatewayCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Max. gateway count for tenant.\nWhen set to 0, the tenant can have unlimited gateways."
+        },
+        "maxDeviceCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Max. device count for tenant.\nWhen set to 0, the tenant can have unlimited devices."
+        },
+        "privateGatewaysUp": {
+          "type": "boolean",
+          "description": "Private gateways (uplink).\nIf enabled, then uplink messages will not be shared with other tenants."
+        },
+        "privateGatewaysDown": {
+          "type": "boolean",
+          "description": "Private gateways (downlink).\nIf enabled, then other tenants will not be able to schedule downlink\nmessages through the gateways of this tenant. For example, in case you\ndo want to share uplinks with other tenants (private_gateways_up=false),\nbut you want to prevent other tenants from using gateway airtime."
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Tags (user defined).\nThese tags can be used to add additional information to the tenant. These\ntags are NOT exposed in the integration events."
+        }
+      }
+    },
+    "serviceOrganisationListItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Organisation ID (UUID)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        },
+        "name": {
+          "type": "string",
+          "description": "Organisation name."
+        },
+        "canHaveGateways": {
+          "type": "boolean",
+          "title": "Can the tenant create and \"own\" Gateways?"
+        },
+        "privateGatewaysUp": {
+          "type": "boolean",
+          "description": "Private gateways (uplink)."
+        },
+        "privateGatewaysDown": {
+          "type": "boolean",
+          "description": "Private gateways (downlink)."
+        },
+        "maxGatewayCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Max gateway count.\n0 = unlimited."
+        },
+        "maxDeviceCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Max device count.\n0 = unlimited."
+        }
+      }
+    }
+  }
+}
