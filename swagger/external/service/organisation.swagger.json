@@ -136,7 +136,7 @@
     "serviceGetOrganisationResponse": {
       "type": "object",
       "properties": {
-        "tenant": {
+        "organisation": {
           "$ref": "#/definitions/serviceOrganisation",
           "description": "Organisation object."
         },
