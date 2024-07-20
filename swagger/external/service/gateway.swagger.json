@@ -1,0 +1,1023 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "external/service/gateway.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/gateways": {
+      "get": {
+        "summary": "Get the list of gateways.",
+        "operationId": "GatewayService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceListGatewaysResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "description": "Max number of gateways to return in the result-set.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Offset in the result-set (for pagination).",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "search",
+            "description": "If set, the given string will be used to search on name (optional).",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "organisationId",
+            "description": "organisation ID (UUID) to filter gateways on.\nTo list all gateways as a global admin user, this field can be left blank.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "multicastGroupId",
+            "description": "Multicast-group ID (UUID) to filter gateways on.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      },
+      "post": {
+        "summary": "Create creates the given gateway.",
+        "operationId": "GatewayService_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceCreateGatewayRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/relay-gateways": {
+      "get": {
+        "summary": "List the detected Relay Gateways.",
+        "operationId": "GatewayService_ListRelayGateways",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceListRelayGatewaysResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "description": "Max number of relay-gateways to return in the result-set.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Offset in the result-set (for pagination).",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "organisationId",
+            "description": "organisation ID (UUID) to filter relay-gateways on.\nTo list all relay-gateways as a global admin user, this field can be left blank.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/relay-gateways/{organisationId}/{relayId}": {
+      "get": {
+        "summary": "Get the given Relay Gateway.",
+        "operationId": "GatewayService_GetRelayGateway",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetRelayGatewayResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organisationId",
+            "description": "organisation ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "relayId",
+            "description": "Relay ID (4 byte HEX).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the given Relay Gateway.",
+        "operationId": "GatewayService_DeleteRelayGateway",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organisationId",
+            "description": "organisation ID.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "relayId",
+            "description": "Relay ID (4 byte HEX).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/relay-gateways/{relayGateway.organisationId}/{relayGateway.relayId}": {
+      "put": {
+        "summary": "Update the given Relay Gateway.",
+        "operationId": "GatewayService_UpdateRelayGateway",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "relayGateway.organisationId",
+            "description": "organisation ID.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "relayGateway.relayId",
+            "description": "Relay ID (4 byte HEX).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceUpdateRelayGatewayRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/{gateway.gatewayId}": {
+      "put": {
+        "summary": "Update updates the given gateway.",
+        "operationId": "GatewayService_Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gateway.gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceUpdateGatewayRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/{gatewayId}": {
+      "get": {
+        "summary": "Get returns the gateway for the given Gateway ID.",
+        "operationId": "GatewayService_Get",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetGatewayResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      },
+      "delete": {
+        "summary": "Delete deletes the gateway matching the given Gateway ID.",
+        "operationId": "GatewayService_Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/{gatewayId}/duty-cycle-metrics": {
+      "get": {
+        "summary": "GetDutyCycleMetrics returns the duty-cycle metrics.\nNote that only the last 2 hours of data are stored. Currently only per minute aggregation is available.",
+        "operationId": "GatewayService_GetDutyCycleMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetGatewayDutyCycleMetricsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "description": "Interval start timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "end",
+            "description": "Interval end timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/{gatewayId}/generate-certificate": {
+      "post": {
+        "summary": "Generate client-certificate for the gateway.",
+        "operationId": "GatewayService_GenerateClientCertificate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGenerateGatewayClientCertificateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/{gatewayId}/metrics": {
+      "get": {
+        "summary": "GetMetrics returns the gateway metrics.",
+        "operationId": "GatewayService_GetMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetGatewayMetricsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "description": "Interval start timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "end",
+            "description": "Interval end timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "aggregation",
+            "description": "Aggregation.\n\n - HOUR: Hour.\n - DAY: Day.\n - MONTH: Month.\n - MINUTE: Minute.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "HOUR",
+              "DAY",
+              "MONTH",
+              "MINUTE"
+            ],
+            "default": "HOUR"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "serviceCreateGatewayRequest": {
+      "type": "object",
+      "properties": {
+        "gateway": {
+          "$ref": "#/definitions/serviceGateway",
+          "description": "Gateway object."
+        }
+      }
+    },
+    "serviceGateway": {
+      "type": "object",
+      "properties": {
+        "gatewayId": {
+          "type": "string",
+          "description": "Gateway ID (EUI64)."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description."
+        },
+        "location": {
+          "$ref": "#/definitions/utilLocation",
+          "description": "Gateway location."
+        },
+        "organisationId": {
+          "type": "string",
+          "description": "organisation ID (UUID)."
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Tags."
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Metadata (provided by the gateway)."
+        },
+        "statsInterval": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Stats interval (seconds).\nThis defines the expected interval in which the gateway sends its\nstatistics."
+        }
+      }
+    },
+    "serviceGatewayListItem": {
+      "type": "object",
+      "properties": {
+        "organisationId": {
+          "type": "string",
+          "description": "organisation ID."
+        },
+        "gatewayId": {
+          "type": "string",
+          "description": "Gateway ID (EUI64)."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description."
+        },
+        "location": {
+          "$ref": "#/definitions/utilLocation",
+          "description": "Location."
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Gateway properties."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        },
+        "lastSeenAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last seen at timestamp."
+        },
+        "state": {
+          "$ref": "#/definitions/serviceGatewayState",
+          "description": "Gateway state.\nPlease note that the state of the gateway is driven by the stats\npackages that are sent by the gateway."
+        }
+      }
+    },
+    "serviceGatewayState": {
+      "type": "string",
+      "enum": [
+        "NEVER_SEEN",
+        "ONLINE",
+        "OFFLINE"
+      ],
+      "default": "NEVER_SEEN",
+      "description": " - NEVER_SEEN: The gateway has never sent any stats.\n - ONLINE: Online.\n - OFFLINE: Offline."
+    },
+    "serviceGenerateGatewayClientCertificateResponse": {
+      "type": "object",
+      "properties": {
+        "tlsCert": {
+          "type": "string",
+          "description": "TLS certificate."
+        },
+        "tlsKey": {
+          "type": "string",
+          "description": "TLS key."
+        },
+        "caCert": {
+          "type": "string",
+          "description": "CA certificate."
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expires at defines the expiration date of the certificate."
+        }
+      }
+    },
+    "serviceGetGatewayDutyCycleMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "maxLoadPercentage": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "Percentage relative to max load."
+        },
+        "windowPercentage": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "Percentage relative to tracking window."
+        }
+      }
+    },
+    "serviceGetGatewayMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "rxPackets": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "RX packets."
+        },
+        "txPackets": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "TX packets."
+        },
+        "txPacketsPerFreq": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "TX packets / frequency."
+        },
+        "rxPacketsPerFreq": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "RX packets / frequency."
+        },
+        "txPacketsPerDr": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "TX packets / DR."
+        },
+        "rxPacketsPerDr": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "RX packets / DR."
+        },
+        "txPacketsPerStatus": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "TX packets per status."
+        }
+      }
+    },
+    "serviceGetGatewayResponse": {
+      "type": "object",
+      "properties": {
+        "gateway": {
+          "$ref": "#/definitions/serviceGateway",
+          "description": "Gateway object."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        },
+        "lastSeenAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last seen at timestamp."
+        }
+      }
+    },
+    "serviceGetRelayGatewayResponse": {
+      "type": "object",
+      "properties": {
+        "relayGateway": {
+          "$ref": "#/definitions/serviceRelayGateway",
+          "description": "Relay Gateway object."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        },
+        "lastSeenAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last seen at timestamp."
+        }
+      }
+    },
+    "serviceListGatewaysResponse": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Total number of gateways."
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceGatewayListItem"
+          },
+          "description": "Result-set."
+        }
+      }
+    },
+    "serviceListRelayGatewaysResponse": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Total number of relay-gateways."
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceRelayGatewayListItem"
+          },
+          "description": "Result-set."
+        }
+      }
+    },
+    "serviceRelayGateway": {
+      "type": "object",
+      "properties": {
+        "organisationId": {
+          "type": "string",
+          "description": "organisation ID."
+        },
+        "relayId": {
+          "type": "string",
+          "description": "Relay ID (4 byte HEX)."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description."
+        },
+        "statsInterval": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Stats interval (seconds).\nThis defines the expected interval in which the gateway sends its\nstatistics."
+        },
+        "regionConfigId": {
+          "type": "string",
+          "description": "Region configuration ID."
+        }
+      }
+    },
+    "serviceRelayGatewayListItem": {
+      "type": "object",
+      "properties": {
+        "organisationId": {
+          "type": "string",
+          "description": "organisation ID."
+        },
+        "relayId": {
+          "type": "string",
+          "description": "Relay ID (4 byte HEX)."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        },
+        "lastSeenAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last seen at timestamp."
+        },
+        "state": {
+          "$ref": "#/definitions/serviceGatewayState",
+          "description": "Gateway state.\nPlease note that the state of the relay is driven by the last\nreceived stats packet sent by the relay-gateway."
+        },
+        "regionConfigId": {
+          "type": "string",
+          "description": "Region configuration ID."
+        }
+      }
+    },
+    "serviceUpdateGatewayRequest": {
+      "type": "object",
+      "properties": {
+        "gateway": {
+          "$ref": "#/definitions/serviceGateway",
+          "description": "Gateway object."
+        }
+      }
+    },
+    "serviceUpdateRelayGatewayRequest": {
+      "type": "object",
+      "properties": {
+        "relayGateway": {
+          "$ref": "#/definitions/serviceRelayGateway",
+          "description": "Relay Gateway object."
+        }
+      }
+    },
+    "utilAggregation": {
+      "type": "string",
+      "enum": [
+        "HOUR",
+        "DAY",
+        "MONTH",
+        "MINUTE"
+      ],
+      "default": "HOUR",
+      "description": " - HOUR: Hour.\n - DAY: Day.\n - MONTH: Month.\n - MINUTE: Minute."
+    },
+    "utilLocation": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Latitude."
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Longitude."
+        },
+        "altitude": {
+          "type": "number",
+          "format": "double",
+          "description": "Altitude."
+        },
+        "source": {
+          "$ref": "#/definitions/utilLocationSource",
+          "description": "Location source."
+        },
+        "accuracy": {
+          "type": "number",
+          "format": "float",
+          "description": "Accuracy."
+        }
+      }
+    },
+    "utilLocationSource": {
+      "type": "string",
+      "enum": [
+        "UNKNOWN",
+        "GPS",
+        "CONFIG",
+        "GEO_RESOLVER_TDOA",
+        "GEO_RESOLVER_RSSI",
+        "GEO_RESOLVER_GNSS",
+        "GEO_RESOLVER_WIFI"
+      ],
+      "default": "UNKNOWN",
+      "description": " - UNKNOWN: Unknown.\n - GPS: GPS.\n - CONFIG: Manually configured.\n - GEO_RESOLVER_TDOA: Geo resolver (TDOA).\n - GEO_RESOLVER_RSSI: Geo resolver (RSSI).\n - GEO_RESOLVER_GNSS: Geo resolver (GNSS).\n - GEO_RESOLVER_WIFI: Geo resolver (WIFI)."
+    },
+    "utilMetric": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name."
+        },
+        "timestamps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": "Timestamps."
+        },
+        "datasets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/utilMetricDataset"
+          },
+          "description": "Datasets."
+        },
+        "kind": {
+          "$ref": "#/definitions/utilMetricKind",
+          "description": "Kind."
+        }
+      }
+    },
+    "utilMetricDataset": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Label."
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          },
+          "description": "Data.\nEach value index corresponds with the same timestamp index of the Metric."
+        }
+      }
+    },
+    "utilMetricKind": {
+      "type": "string",
+      "enum": [
+        "COUNTER",
+        "ABSOLUTE",
+        "GAUGE"
+      ],
+      "default": "COUNTER",
+      "description": " - COUNTER: Incrementing counters that never decrease (these are not reset on each\nreading).\n - ABSOLUTE: Counters that do get reset upon reading.\n - GAUGE: E.g. a temperature value."
+    }
+  }
+}
