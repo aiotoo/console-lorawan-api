@@ -637,6 +637,54 @@ func (DeviceClass) EnumDescriptor() ([]byte, []int) {
 	return file_util_util_proto_rawDescGZIP(), []int{9}
 }
 
+type JoinMode int32
+
+const (
+	// OTAA.
+	JoinMode_OTAA JoinMode = 0
+	// ABP.
+	JoinMode_ABP JoinMode = 1
+)
+
+// Enum value maps for JoinMode.
+var (
+	JoinMode_name = map[int32]string{
+		0: "OTAA",
+		1: "ABP",
+	}
+	JoinMode_value = map[string]int32{
+		"OTAA": 0,
+		"ABP":  1,
+	}
+)
+
+func (x JoinMode) Enum() *JoinMode {
+	p := new(JoinMode)
+	*p = x
+	return p
+}
+
+func (x JoinMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (JoinMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_util_util_proto_enumTypes[10].Descriptor()
+}
+
+func (JoinMode) Type() protoreflect.EnumType {
+	return &file_util_util_proto_enumTypes[10]
+}
+
+func (x JoinMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use JoinMode.Descriptor instead.
+func (JoinMode) EnumDescriptor() ([]byte, []int) {
+	return file_util_util_proto_rawDescGZIP(), []int{10}
+}
+
 type Location struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1075,11 +1123,13 @@ var file_util_util_proto_rawDesc = []byte{
 	0x30, 0x10, 0x01, 0x2a, 0x34, 0x0a, 0x0b, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x43, 0x6c, 0x61,
 	0x73, 0x73, 0x12, 0x0b, 0x0a, 0x07, 0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x41, 0x10, 0x00, 0x12,
 	0x0b, 0x0a, 0x07, 0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x42, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07,
-	0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x43, 0x10, 0x02, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x69, 0x6f, 0x74, 0x6f, 0x6f, 0x2f, 0x63,
-	0x6f, 0x6e, 0x73, 0x6f, 0x6c, 0x65, 0x2d, 0x6c, 0x6f, 0x72, 0x61, 0x77, 0x61, 0x6e, 0x2d, 0x61,
-	0x70, 0x69, 0x2f, 0x67, 0x6f, 0x2f, 0x76, 0x34, 0x2f, 0x75, 0x74, 0x69, 0x6c, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x43, 0x10, 0x02, 0x2a, 0x1d, 0x0a, 0x08, 0x4a, 0x6f, 0x69,
+	0x6e, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x4f, 0x54, 0x41, 0x41, 0x10, 0x00, 0x12,
+	0x07, 0x0a, 0x03, 0x41, 0x42, 0x50, 0x10, 0x01, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68,
+	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x69, 0x6f, 0x74, 0x6f, 0x6f, 0x2f, 0x63, 0x6f,
+	0x6e, 0x73, 0x6f, 0x6c, 0x65, 0x2d, 0x6c, 0x6f, 0x72, 0x61, 0x77, 0x61, 0x6e, 0x2d, 0x61, 0x70,
+	0x69, 0x2f, 0x67, 0x6f, 0x2f, 0x76, 0x34, 0x2f, 0x75, 0x74, 0x69, 0x6c, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1094,7 +1144,7 @@ func file_util_util_proto_rawDescGZIP() []byte {
 	return file_util_util_proto_rawDescData
 }
 
-var file_util_util_proto_enumTypes = make([]protoimpl.EnumInfo, 10)
+var file_util_util_proto_enumTypes = make([]protoimpl.EnumInfo, 11)
 var file_util_util_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_util_util_proto_goTypes = []any{
 	(Modulation)(0),               // 0: util.Modulation
@@ -1107,19 +1157,20 @@ var file_util_util_proto_goTypes = []any{
 	(MetricKind)(0),               // 7: util.MetricKind
 	(Regulation)(0),               // 8: util.Regulation
 	(DeviceClass)(0),              // 9: util.DeviceClass
-	(*Location)(nil),              // 10: util.Location
-	(*KeyEnvelope)(nil),           // 11: util.KeyEnvelope
-	(*Metric)(nil),                // 12: util.Metric
-	(*MetricDataset)(nil),         // 13: util.MetricDataset
-	(*JoinServerContext)(nil),     // 14: util.JoinServerContext
-	(*timestamppb.Timestamp)(nil), // 15: google.protobuf.Timestamp
+	(JoinMode)(0),                 // 10: util.JoinMode
+	(*Location)(nil),              // 11: util.Location
+	(*KeyEnvelope)(nil),           // 12: util.KeyEnvelope
+	(*Metric)(nil),                // 13: util.Metric
+	(*MetricDataset)(nil),         // 14: util.MetricDataset
+	(*JoinServerContext)(nil),     // 15: util.JoinServerContext
+	(*timestamppb.Timestamp)(nil), // 16: google.protobuf.Timestamp
 }
 var file_util_util_proto_depIdxs = []int32{
 	5,  // 0: util.Location.source:type_name -> util.LocationSource
-	15, // 1: util.Metric.timestamps:type_name -> google.protobuf.Timestamp
-	13, // 2: util.Metric.datasets:type_name -> util.MetricDataset
+	16, // 1: util.Metric.timestamps:type_name -> google.protobuf.Timestamp
+	14, // 2: util.Metric.datasets:type_name -> util.MetricDataset
 	7,  // 3: util.Metric.kind:type_name -> util.MetricKind
-	11, // 4: util.JoinServerContext.app_s_key:type_name -> util.KeyEnvelope
+	12, // 4: util.JoinServerContext.app_s_key:type_name -> util.KeyEnvelope
 	5,  // [5:5] is the sub-list for method output_type
 	5,  // [5:5] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -1199,7 +1250,7 @@ func file_util_util_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_util_util_proto_rawDesc,
-			NumEnums:      10,
+			NumEnums:      11,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
