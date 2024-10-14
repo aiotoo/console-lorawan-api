@@ -226,68 +226,76 @@ message Device {
   // Region.
   util.Region region = 14;
 
+  // Region configuration ID.
+  // If set, devices will only use the associated region. If let blank, then
+  // devices will use all regions matching the selected common-name. Note
+  // that multiple region configurations can exist for the same common-name,
+  // e.g. to provide an 8 channel and 16 channel configuration for the US915
+  // band.
+  string region_config_id = 15;
+
   // LoRaWAN mac-version.
-  util.MacVersion mac_version = 15;
+  util.MacVersion mac_version = 16;
 
   // Regional parameters revision.
-  util.RegParamsRevision reg_params_revision = 16;
+  util.RegParamsRevision reg_params_revision = 17;
 
   // ADR algorithm ID.
-  string adr_algorithm_id = 17;
+  string adr_algorithm_id = 18;
 
   // Payload codec runtime.
-  CodecRuntime payload_codec_runtime = 18;
+  CodecRuntime payload_codec_runtime = 19;
 
   // Payload codec script.
-  string payload_codec_script = 19;
+  string payload_codec_script = 20;
 
   // Class-B timeout (seconds).
   // This is the maximum time ChirpStack will wait to receive an acknowledgement
   // from the device (if requested).
-  uint32 class_b_timeout = 20;
+  uint32 class_b_timeout = 21;
 
   // Class-B ping-slots per beacon period.
   // Valid options are: 0 - 7.
   //
   // The actual number of ping-slots per beacon period equals to 2^k.
-  uint32 class_b_ping_slot_nb_k = 21;
+  uint32 class_b_ping_slot_nb_k = 22;
 
   // Class-B ping-slot DR.
-  uint32 class_b_ping_slot_dr = 22;
+  uint32 class_b_ping_slot_dr = 23;
 
   // Class-B ping-slot freq (Hz).
-  uint32 class_b_ping_slot_freq = 23;
+  uint32 class_b_ping_slot_freq = 24;
 
   // Class-C timeout (seconds).
   // This is the maximum time ChirpStack will wait to receive an acknowledgement
   // from the device (if requested).
-  uint32 class_c_timeout = 24;
+  uint32 class_c_timeout = 25;
 
   // RX1 delay (for ABP).
-  uint32 abp_rx1_delay = 25;
+  uint32 abp_rx1_delay = 26;
 
   // RX1 DR offset (for ABP).
-  uint32 abp_rx1_dr_offset = 26;
+  uint32 abp_rx1_dr_offset = 27;
 
   // RX2 DR (for ABP).
-  uint32 abp_rx2_dr = 27;
+  uint32 abp_rx2_dr = 28;
 
   // RX2 frequency (for ABP, Hz).
-  uint32 abp_rx2_freq = 28;
+  uint32 abp_rx2_freq = 29;
 
   // Flush queue on device activation.
-  bool flush_queue_on_activate = 29;
+  bool flush_queue_on_activate = 30;
 
   // Uplink interval (seconds).
   // This defines the expected uplink interval which the device uses for
   // communication. If the uplink interval has expired and no uplink has
   // been received, the device is considered inactive.
-  uint32 uplink_interval = 30;
+  uint32 uplink_interval = 31;
 
   // Device-status request interval (times / day).
   // This defines the times per day that ChirpStack will request the
   // device-status from the device.
-  uint32 device_status_req_interval = 31;
+  uint32 device_status_req_interval = 32;
 
 }
 

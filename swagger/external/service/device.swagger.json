@@ -508,6 +508,10 @@
           "$ref": "#/definitions/utilRegion",
           "description": "Region."
         },
+        "regionConfigId": {
+          "type": "string",
+          "description": "Region configuration ID.\nIf set, devices will only use the associated region. If let blank, then\ndevices will use all regions matching the selected common-name. Note\nthat multiple region configurations can exist for the same common-name,\ne.g. to provide an 8 channel and 16 channel configuration for the US915\nband."
+        },
         "macVersion": {
           "$ref": "#/definitions/utilMacVersion",
           "description": "LoRaWAN mac-version."
