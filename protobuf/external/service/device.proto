@@ -215,7 +215,7 @@ message Device {
   util.DeviceClass device_class= 10;
 
   // Supports OTAA.
-  bool supports_otaa = 11;
+  util.JoinMode device_join_mode = 11;
 
   //Device Keys for OTAA
   DeviceKeys keys = 12;

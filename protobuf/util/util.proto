@@ -230,3 +230,11 @@ message JoinServerContext {
   // AppSKey envelope.
   KeyEnvelope app_s_key = 2;
 }
+
+enum JoinMode {
+  // OTAA.
+  OTAA = 0;
+
+  // ABP.
+  ABP = 1;
+}

@@ -492,8 +492,8 @@
           "$ref": "#/definitions/utilDeviceClass",
           "description": "Enabled device class."
         },
-        "supportsOtaa": {
-          "type": "boolean",
+        "deviceJoinMode": {
+          "$ref": "#/definitions/utilJoinMode",
           "description": "Supports OTAA."
         },
         "keys": {
@@ -759,6 +759,15 @@
       ],
       "default": "CLASS_A",
       "description": " - CLASS_A: Class-A.\n - CLASS_B: Class-B.\n - CLASS_C: Class-C."
+    },
+    "utilJoinMode": {
+      "type": "string",
+      "enum": [
+        "OTAA",
+        "ABP"
+      ],
+      "default": "OTAA",
+      "description": " - OTAA: OTAA.\n - ABP: ABP."
     },
     "utilMacVersion": {
       "type": "string",
