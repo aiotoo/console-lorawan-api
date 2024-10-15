@@ -1,4 +1,4 @@
-.PHONY: requirements external-api
+.PHONY: requirements util external-api
 
 GRPC_GW_PATH := $(shell go list -f '{{ .Dir }}' github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway)
 GOOGLEAPIS_PATH := "$(GRPC_GW_PATH)/../third_party/googleapis"
@@ -22,6 +22,8 @@ external-api:
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --go_out=plugins=grpc,paths=source_relative:. external/service/application.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --go_out=plugins=grpc,paths=source_relative:. external/service/gateway.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --go_out=plugins=grpc,paths=source_relative:. external/service/device.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --go_out=plugins=grpc,paths=source_relative:. external/service/metrics.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --go_out=plugins=grpc,paths=source_relative:. external/service/stream.proto
 
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --grpc-gateway_out=paths=source_relative,logtostderr=true:. external/service/internal.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --grpc-gateway_out=paths=source_relative,logtostderr=true:. external/service/user.proto
@@ -29,3 +31,5 @@ external-api:
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --grpc-gateway_out=paths=source_relative,logtostderr=true:. external/service/application.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --grpc-gateway_out=paths=source_relative,logtostderr=true:. external/service/gateway.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --grpc-gateway_out=paths=source_relative,logtostderr=true:. external/service/device.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --grpc-gateway_out=paths=source_relative,logtostderr=true:. external/service/metrics.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --grpc-gateway_out=paths=source_relative,logtostderr=true:. external/service/stream.proto

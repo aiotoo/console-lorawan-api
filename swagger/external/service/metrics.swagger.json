@@ -1,0 +1,567 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "external/service/metrics.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/metrics/device_summary": {
+      "get": {
+        "summary": "GetDevicesSummary returns an aggregated summary of the devices.",
+        "operationId": "MetricsService_GetDevicesSummary",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetDevicesSummaryResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organizationId",
+            "description": "Tenant ID (UUID).",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MetricsService"
+        ]
+      }
+    },
+    "/api/metrics/devices/{devEui}/link-metrics": {
+      "get": {
+        "summary": "GetLinkMetrics returns the device link metrics.\nThis includes uplinks, downlinks, RSSI, SNR, etc...",
+        "operationId": "MetricsService_GetDeviceLinkMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetDeviceLinkMetricsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "devEui",
+            "description": "DevEUI (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "description": "Interval start timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "end",
+            "description": "Interval end timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "aggregation",
+            "description": "Aggregation.\n\n - HOUR: Hour.\n - DAY: Day.\n - MONTH: Month.\n - MINUTE: Minute.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "HOUR",
+              "DAY",
+              "MONTH",
+              "MINUTE"
+            ],
+            "default": "HOUR"
+          }
+        ],
+        "tags": [
+          "MetricsService"
+        ]
+      }
+    },
+    "/api/metrics/devices/{devEui}/metrics": {
+      "get": {
+        "summary": "GetMetrics returns the device metrics.\nNote that this requires a device-profile with codec and measurements\nconfigured.",
+        "operationId": "MetricsService_GetDeviceMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetDeviceMetricsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "devEui",
+            "description": "DevEUI (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "description": "Interval start timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "end",
+            "description": "Interval end timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "aggregation",
+            "description": "Aggregation.\n\n - HOUR: Hour.\n - DAY: Day.\n - MONTH: Month.\n - MINUTE: Minute.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "HOUR",
+              "DAY",
+              "MONTH",
+              "MINUTE"
+            ],
+            "default": "HOUR"
+          }
+        ],
+        "tags": [
+          "MetricsService"
+        ]
+      }
+    },
+    "/api/metrics/gateway_summary": {
+      "get": {
+        "summary": "GetGatewaysSummary returns an aggregated summary of the gateways.",
+        "operationId": "MetricsService_GetGatewaysSummary",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetGatewaysSummaryResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organizationId",
+            "description": "Tenant ID (UUID).",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MetricsService"
+        ]
+      }
+    },
+    "/api/metrics/gateways/{gatewayId}/duty-cycle-metrics": {
+      "get": {
+        "summary": "GetDutyCycleMetrics returns the duty-cycle metrics.\nNote that only the last 2 hours of data are stored. Currently only per minute aggregation is available.",
+        "operationId": "MetricsService_GetGatewayDutyCycleMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetGatewayDutyCycleMetricsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "description": "Interval start timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "end",
+            "description": "Interval end timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "tags": [
+          "MetricsService"
+        ]
+      }
+    },
+    "/api/metrics/gateways/{gatewayId}/metrics": {
+      "get": {
+        "summary": "GetMetrics returns the gateway metrics.",
+        "operationId": "MetricsService_GetGatewayMetrics",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetGatewayMetricsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "start",
+            "description": "Interval start timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "end",
+            "description": "Interval end timestamp.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "aggregation",
+            "description": "Aggregation.\n\n - HOUR: Hour.\n - DAY: Day.\n - MONTH: Month.\n - MINUTE: Minute.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "HOUR",
+              "DAY",
+              "MONTH",
+              "MINUTE"
+            ],
+            "default": "HOUR"
+          }
+        ],
+        "tags": [
+          "MetricsService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "serviceDeviceState": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name."
+        },
+        "value": {
+          "type": "string",
+          "description": "Value."
+        }
+      }
+    },
+    "serviceGetDeviceLinkMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "rxPackets": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "Packets received from the device."
+        },
+        "gwRssi": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "RSSI (as reported by the gateway(s))."
+        },
+        "gwSnr": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "SNR (as reported by the gateway(s))."
+        },
+        "rxPacketsPerFreq": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "Packets received by frequency."
+        },
+        "rxPacketsPerDr": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "Packets received by DR."
+        },
+        "errors": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "Errors."
+        }
+      }
+    },
+    "serviceGetDeviceMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/utilMetric"
+          }
+        },
+        "states": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/serviceDeviceState"
+          }
+        }
+      }
+    },
+    "serviceGetDevicesSummaryResponse": {
+      "type": "object",
+      "properties": {
+        "activeCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Active count."
+        },
+        "inactiveCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Inactive count."
+        },
+        "drCount": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "per data-rate count.\nDevices that have never been seen are excluded."
+        },
+        "neverSeenCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Never seen count."
+        }
+      }
+    },
+    "serviceGetGatewayDutyCycleMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "maxLoadPercentage": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "Percentage relative to max load."
+        },
+        "windowPercentage": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "Percentage relative to tracking window."
+        }
+      }
+    },
+    "serviceGetGatewayMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "rxPackets": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "RX packets."
+        },
+        "txPackets": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "TX packets."
+        },
+        "txPacketsPerFreq": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "TX packets / frequency."
+        },
+        "rxPacketsPerFreq": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "RX packets / frequency."
+        },
+        "txPacketsPerDr": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "TX packets / DR."
+        },
+        "rxPacketsPerDr": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "RX packets / DR."
+        },
+        "txPacketsPerStatus": {
+          "$ref": "#/definitions/utilMetric",
+          "description": "TX packets per status."
+        }
+      }
+    },
+    "serviceGetGatewaysSummaryResponse": {
+      "type": "object",
+      "properties": {
+        "onlineCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Online count."
+        },
+        "offlineCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Offline count."
+        },
+        "neverSeenCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Never seen count."
+        }
+      }
+    },
+    "utilAggregation": {
+      "type": "string",
+      "enum": [
+        "HOUR",
+        "DAY",
+        "MONTH",
+        "MINUTE"
+      ],
+      "default": "HOUR",
+      "description": " - HOUR: Hour.\n - DAY: Day.\n - MONTH: Month.\n - MINUTE: Minute."
+    },
+    "utilMetric": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name."
+        },
+        "timestamps": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": "Timestamps."
+        },
+        "datasets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/utilMetricDataset"
+          },
+          "description": "Datasets."
+        },
+        "kind": {
+          "$ref": "#/definitions/utilMetricKind",
+          "description": "Kind."
+        }
+      }
+    },
+    "utilMetricDataset": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Label."
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          },
+          "description": "Data.\nEach value index corresponds with the same timestamp index of the Metric."
+        }
+      }
+    },
+    "utilMetricKind": {
+      "type": "string",
+      "enum": [
+        "COUNTER",
+        "ABSOLUTE",
+        "GAUGE"
+      ],
+      "default": "COUNTER",
+      "description": " - COUNTER: Incrementing counters that never decrease (these are not reset on each\nreading).\n - ABSOLUTE: Counters that do get reset upon reading.\n - GAUGE: E.g. a temperature value."
+    }
+  }
+}

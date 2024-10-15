@@ -1,0 +1,215 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/service";
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+import "util/util.proto";
+
+
+service MetricsService {
+  // GetMetrics returns the device metrics.
+  // Note that this requires a device-profile with codec and measurements
+  // configured.
+  rpc GetDeviceMetrics(GetDeviceMetricsRequest) returns (GetDeviceMetricsResponse) {
+    option (google.api.http) = {
+      get : "/api/metrics/devices/{dev_eui}/metrics"
+    };
+  }
+
+  // GetLinkMetrics returns the device link metrics.
+  // This includes uplinks, downlinks, RSSI, SNR, etc...
+  rpc GetDeviceLinkMetrics(GetDeviceLinkMetricsRequest)
+      returns (GetDeviceLinkMetricsResponse) {
+    option (google.api.http) = {
+      get : "/api/metrics/devices/{dev_eui}/link-metrics"
+    };
+  }
+
+  // GetMetrics returns the gateway metrics.
+    rpc GetGatewayMetrics(GetGatewayMetricsRequest) returns (GetGatewayMetricsResponse) {
+        option(google.api.http) = {
+            get: "/api/metrics/gateways/{gateway_id}/metrics"
+        };
+    }
+
+    // GetDutyCycleMetrics returns the duty-cycle metrics.
+    // Note that only the last 2 hours of data are stored. Currently only per minute aggregation is available.
+    rpc GetGatewayDutyCycleMetrics(GetGatewayDutyCycleMetricsRequest) returns (GetGatewayDutyCycleMetricsResponse) {
+        option(google.api.http) = {
+            get: "/api/metrics/gateways/{gateway_id}/duty-cycle-metrics"
+        };
+    }
+
+// GetDevicesSummary returns an aggregated summary of the devices.
+  rpc GetDevicesSummary(GetDevicesSummaryRequest)
+      returns (GetDevicesSummaryResponse) {
+        option(google.api.http) = {
+            get: "/api/metrics/device_summary"
+        };
+      }
+
+  // GetGatewaysSummary returns an aggregated summary of the gateways.
+  rpc GetGatewaysSummary(GetGatewaysSummaryRequest)
+      returns (GetGatewaysSummaryResponse) {
+        option(google.api.http) = {
+            get: "/api/metrics/gateway_summary"
+        };
+      }
+}
+
+message GetDeviceMetricsRequest {
+  // DevEUI (EUI64).
+  string dev_eui = 1;
+
+  // Interval start timestamp.
+  google.protobuf.Timestamp start = 2;
+
+  // Interval end timestamp.
+  google.protobuf.Timestamp end = 3;
+
+  // Aggregation.
+  util.Aggregation aggregation = 4;
+}
+
+message GetDeviceMetricsResponse {
+  map<string, util.Metric> metrics = 1;
+
+  map<string, DeviceState> states = 2;
+}
+
+message DeviceState {
+  // Name.
+  string name = 2;
+
+  // Value.
+  string value = 3;
+}
+
+message GetDeviceLinkMetricsRequest {
+  // DevEUI (EUI64).
+  string dev_eui = 1;
+
+  // Interval start timestamp.
+  google.protobuf.Timestamp start = 2;
+
+  // Interval end timestamp.
+  google.protobuf.Timestamp end = 3;
+
+  // Aggregation.
+  util.Aggregation aggregation = 4;
+}
+
+message GetDeviceLinkMetricsResponse {
+  // Packets received from the device.
+  util.Metric rx_packets = 1;
+
+  // RSSI (as reported by the gateway(s)).
+  util.Metric gw_rssi = 2;
+
+  // SNR (as reported by the gateway(s)).
+  util.Metric gw_snr = 3;
+
+  // Packets received by frequency.
+  util.Metric rx_packets_per_freq = 4;
+
+  // Packets received by DR.
+  util.Metric rx_packets_per_dr = 5;
+
+  // Errors.
+  util.Metric errors = 6;
+}
+
+message GetGatewayMetricsRequest {
+    // Gateway ID (EUI64).
+    string gateway_id = 1;
+
+    // Interval start timestamp.
+    google.protobuf.Timestamp start = 2;
+
+    // Interval end timestamp.
+    google.protobuf.Timestamp end = 3;
+
+    // Aggregation.
+    util.Aggregation aggregation = 4;
+}
+
+message GetGatewayMetricsResponse {
+    // RX packets.
+    util.Metric rx_packets = 1;
+
+    // TX packets.
+    util.Metric tx_packets = 2;
+
+    // TX packets / frequency.
+    util.Metric tx_packets_per_freq = 3;
+
+    // RX packets / frequency.
+    util.Metric rx_packets_per_freq = 4;
+
+    // TX packets / DR.
+    util.Metric tx_packets_per_dr = 5;
+
+    // RX packets / DR.
+    util.Metric rx_packets_per_dr = 6;
+
+    // TX packets per status.
+    util.Metric tx_packets_per_status = 7;
+}
+
+message GetGatewayDutyCycleMetricsRequest {
+    // Gateway ID (EUI64).
+    string gateway_id = 1;
+
+    // Interval start timestamp.
+    google.protobuf.Timestamp start = 2;
+
+    // Interval end timestamp.
+    google.protobuf.Timestamp end = 3;
+}
+
+message GetGatewayDutyCycleMetricsResponse {
+    // Percentage relative to max load.
+    util.Metric max_load_percentage = 1;
+
+    // Percentage relative to tracking window.
+    util.Metric window_percentage = 2;
+}
+
+message GetDevicesSummaryRequest {
+  // Tenant ID (UUID).
+  string organization_id = 1;
+}
+
+message GetDevicesSummaryResponse {
+  // Active count.
+  uint32 active_count = 1;
+
+  // Inactive count.
+  uint32 inactive_count = 2;
+
+  // per data-rate count.
+  // Devices that have never been seen are excluded.
+  map<uint32, uint32> dr_count = 3;
+
+  // Never seen count.
+  uint32 never_seen_count = 4;
+}
+
+message GetGatewaysSummaryRequest {
+  // Tenant ID (UUID).
+  string organization_id = 1;
+}
+
+message GetGatewaysSummaryResponse {
+  // Online count.
+  uint32 online_count = 1;
+
+  // Offline count.
+  uint32 offline_count = 2;
+
+  // Never seen count.
+  uint32 never_seen_count = 3;
+}

@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/service";
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+
+
+service StreamService {
+ 
+      // Stream frame for the given Gateway ID.
+  rpc StreamGatewayFrames(StreamGatewayFramesRequest) returns (stream LogItem) {
+     option (google.api.http) = {
+      get : "/api/stream/gateway/{gateway_id}/frames"
+    };
+  }
+
+  // Stream frames for the given Device EUI.
+  rpc StreamDeviceFrames(StreamDeviceFramesRequest) returns (stream LogItem) {
+     option (google.api.http) = {
+      get : "/api/stream/device/{dev_eui}/frames"
+    };
+  }
+
+  // Stream events for the given Device EUI.
+  rpc StreamDeviceEvents(StreamDeviceEventsRequest) returns (stream LogItem) {
+     option (google.api.http) = {
+      get : "/api/stream/devices/{dev_eui}/events"
+    };
+  }
+
+
+
+}
+
+message LogItem {
+  // ID.
+  string id = 1;
+
+  // Timestamp.
+  google.protobuf.Timestamp time = 2;
+
+  // Message.
+  string description = 3;
+
+  // Body.
+  string body = 4;
+
+  // Properties.
+  map<string, string> properties = 5;
+}
+
+message StreamGatewayFramesRequest {
+  // Gateway ID (EUI64).
+  string gateway_id = 1;
+}
+
+message StreamDeviceFramesRequest {
+  // Device EUI.
+  string dev_eui = 1;
+}
+
+message StreamDeviceEventsRequest {
+  // Device EUI.
+  string dev_eui = 1;
+}

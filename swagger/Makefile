@@ -17,4 +17,6 @@ external-api:
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --swagger_out=json_names_for_fields=true:. external/service/application.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --swagger_out=json_names_for_fields=true:. external/service/gateway.proto
 	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --swagger_out=json_names_for_fields=true:. external/service/device.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --swagger_out=json_names_for_fields=true:. external/service/metrics.proto
+	protoc -I=$(GOOGLEAPIS_PATH) -I=../protobuf -I=../protobuf/external/service --swagger_out=json_names_for_fields=true:. external/service/stream.proto
 	
