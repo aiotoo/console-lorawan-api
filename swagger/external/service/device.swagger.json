@@ -322,6 +322,75 @@
         ]
       }
     },
+    "/api/devices/{devEui}/queue": {
+      "get": {
+        "summary": "GetQueue returns the downlink device-queue.",
+        "operationId": "DeviceService_GetQueue",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetDeviceQueueItemsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "devEui",
+            "description": "Device EUI (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "countOnly",
+            "description": "Return only the count, not the result-set.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      },
+      "delete": {
+        "summary": "FlushQueue flushes the downlink device-queue.",
+        "operationId": "DeviceService_FlushQueue",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "devEui",
+            "description": "Device EUI (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/{device.devEui}": {
       "put": {
         "summary": "Update the given device.",
@@ -479,6 +548,46 @@
           "DeviceService"
         ]
       }
+    },
+    "/api/devices/{queueItem.devEui}/queue": {
+      "post": {
+        "summary": "Enqueue adds the given item to the downlink queue.",
+        "operationId": "DeviceService_Enqueue",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceEnqueueDeviceQueueItemResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "queueItem.devEui",
+            "description": "Device EUI (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceEnqueueDeviceQueueItemRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -493,6 +602,14 @@
           "format": "byte"
         }
       }
+    },
+    "protobufNullValue": {
+      "type": "string",
+      "enum": [
+        "NULL_VALUE"
+      ],
+      "default": "NULL_VALUE",
+      "description": "`NullValue` is a singleton enumeration to represent the null value for the\n`Value` type union.\n\nThe JSON representation for `NullValue` is JSON `null`.\n\n - NULL_VALUE: Null value."
     },
     "runtimeError": {
       "type": "object",
@@ -795,6 +912,72 @@
         }
       }
     },
+    "serviceDeviceQueueItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID (UUID).\nThis is automatically generated on enqueue."
+        },
+        "devEui": {
+          "type": "string",
+          "description": "Device EUI (EUI64)."
+        },
+        "confirmed": {
+          "type": "boolean",
+          "description": "Confirmed."
+        },
+        "fPort": {
+          "type": "integer",
+          "format": "int64",
+          "description": "FPort (must be \u003e 0)."
+        },
+        "data": {
+          "type": "string",
+          "format": "byte",
+          "description": "Data.\nOr use the json_object field when a codec has been configured."
+        },
+        "object": {
+          "type": "object",
+          "description": "Only use this when a codec has been configured that can encode this\nobject to bytes."
+        },
+        "isPending": {
+          "type": "boolean",
+          "description": "Is pending.\nThis is set by ChirpStack to true when the downlink is pending (e.g. it\nhas been sent, but a confirmation is still pending)."
+        },
+        "fCntDown": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Downlink frame-counter.\nDo not set this for plain-text data payloads. It will be automatically set\nby ChirpStack when the payload has been sent as downlink."
+        },
+        "isEncrypted": {
+          "type": "boolean",
+          "description": "Is encrypted.\nThis must be set to true if the end-application has already encrypted\nthe data payload. In this case, the f_cnt_down field must be set to\nthe corresponding frame-counter which has been used during the encryption."
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expires at (optional).\nExpired queue-items will be automatically removed from the queue."
+        }
+      }
+    },
+    "serviceEnqueueDeviceQueueItemRequest": {
+      "type": "object",
+      "properties": {
+        "queueItem": {
+          "$ref": "#/definitions/serviceDeviceQueueItem"
+        }
+      }
+    },
+    "serviceEnqueueDeviceQueueItemResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID (UUID)."
+        }
+      }
+    },
     "serviceGetDeviceActivationResponse": {
       "type": "object",
       "properties": {
@@ -820,6 +1003,23 @@
           "type": "string",
           "format": "date-time",
           "description": "Last update timestamp."
+        }
+      }
+    },
+    "serviceGetDeviceQueueItemsResponse": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Total number of queue items."
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceDeviceQueueItem"
+          },
+          "description": "Result-set."
         }
       }
     },

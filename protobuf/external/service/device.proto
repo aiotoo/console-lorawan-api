@@ -7,6 +7,7 @@ option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/servic
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
 import "util/util.proto";
 
 service DeviceService {
@@ -114,6 +115,29 @@ service DeviceService {
     };
   }
 
+  // Enqueue adds the given item to the downlink queue.
+  rpc Enqueue(EnqueueDeviceQueueItemRequest)
+      returns (EnqueueDeviceQueueItemResponse) {
+    option (google.api.http) = {
+      post : "/api/devices/{queue_item.dev_eui}/queue"
+      body : "*"
+    };
+  }
+
+  // FlushQueue flushes the downlink device-queue.
+  rpc FlushQueue(FlushDeviceQueueRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/api/devices/{dev_eui}/queue"
+    };
+  }
+
+  // GetQueue returns the downlink device-queue.
+  rpc GetQueue(GetDeviceQueueItemsRequest)
+      returns (GetDeviceQueueItemsResponse) {
+    option (google.api.http) = {
+      get : "/api/devices/{dev_eui}/queue"
+    };
+  }
 
 }
 
@@ -446,4 +470,75 @@ message GetDeviceKeysResponse {
 message DeleteDeviceKeysRequest {
   // DevEUI (EUI64).
   string dev_eui = 1;
+}
+
+message DeviceQueueItem {
+  // ID (UUID).
+  // This is automatically generated on enqueue.
+  string id = 1;
+
+  // Device EUI (EUI64).
+  string dev_eui = 2;
+
+  // Confirmed.
+  bool confirmed = 3;
+
+  // FPort (must be > 0).
+  uint32 f_port = 4;
+
+  // Data.
+  // Or use the json_object field when a codec has been configured.
+  bytes data = 5;
+
+  // Only use this when a codec has been configured that can encode this
+  // object to bytes.
+  google.protobuf.Struct object = 6;
+
+  // Is pending.
+  // This is set by ChirpStack to true when the downlink is pending (e.g. it
+  // has been sent, but a confirmation is still pending).
+  bool is_pending = 7;
+
+  // Downlink frame-counter.
+  // Do not set this for plain-text data payloads. It will be automatically set
+  // by ChirpStack when the payload has been sent as downlink.
+  uint32 f_cnt_down = 8;
+
+  // Is encrypted.
+  // This must be set to true if the end-application has already encrypted
+  // the data payload. In this case, the f_cnt_down field must be set to
+  // the corresponding frame-counter which has been used during the encryption.
+  bool is_encrypted = 9;
+
+  // Expires at (optional).
+  // Expired queue-items will be automatically removed from the queue.
+  google.protobuf.Timestamp expires_at = 10;
+}
+
+message EnqueueDeviceQueueItemRequest { DeviceQueueItem queue_item = 1; }
+
+message EnqueueDeviceQueueItemResponse {
+  // ID (UUID).
+  string id = 1;
+}
+
+message FlushDeviceQueueRequest {
+  // Device EUI (EUI64).
+  string dev_eui = 1;
+}
+
+message GetDeviceQueueItemsRequest {
+  // Device EUI (EUI64).
+  string dev_eui = 1;
+
+  // Return only the count, not the result-set.
+  bool count_only = 2;
+}
+
+message GetDeviceQueueItemsResponse {
+  // Total number of queue items.
+  uint32 total_count = 1;
+
+  // Result-set.
+  repeated DeviceQueueItem result = 2;
 }
