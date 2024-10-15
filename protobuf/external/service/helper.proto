@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/service";
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "util/util.proto";
+
+
+service HelperService {
+ // ListRegions lists the available (configured) regions.
+  rpc ListRegions(google.protobuf.Empty) returns (ListRegionsResponse) {
+    option (google.api.http) = {
+      get : "/api/helper/regions"
+    };
+  }
+
+  // GetRegion returns the region details for the given region.
+  rpc GetRegion(GetRegionRequest) returns (GetRegionResponse) {
+    option (google.api.http) = {
+      get : "/api/helper/regions/{id}"
+    };
+  }
+}
+
+
+message ListRegionsResponse {
+  // Configured regions.
+  repeated RegionListItem regions = 1;
+}
+
+message RegionListItem {
+  // ID.
+  string id = 1;
+
+  // Region.
+  util.Region region = 2;
+
+  // Description.
+  string description = 3;
+}
+
+message GetRegionRequest {
+  // Region ID.
+  string id = 1;
+}
+
+message GetRegionResponse {
+  // ID.
+  string id = 1;
+
+  // Region.
+  util.Region region = 2;
+
+  // User information.
+  string user_info = 3;
+
+  // Uplink channels.
+  repeated RegionChannel uplink_channels = 4;
+
+  // RX1 delay.
+  uint32 rx1_delay = 5;
+
+  // RX1 data-rate offset.
+  uint32 rx1_dr_offset = 6;
+
+  // RX2 DR.
+  uint32 rx2_dr = 7;
+
+  // RX2 frequency.
+  uint32 rx2_frequency = 8;
+
+  // Class-B ping-slot DR.
+  uint32 class_b_ping_slot_dr = 9;
+
+  // Class-B ping-slot frequency.
+  uint32 class_b_ping_slot_frequency = 10;
+
+  // Region description.
+  string description = 11;
+}
+
+message RegionChannel {
+  // Frequency (Hz).
+  uint32 frequency = 1;
+
+  // Min DR.
+  uint32 dr_min = 2;
+
+  // Max DR.
+  uint32 dr_max = 3;
+}
