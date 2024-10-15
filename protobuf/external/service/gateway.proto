@@ -55,20 +55,20 @@ service GatewayService {
         };
     }
 
-    // GetMetrics returns the gateway metrics.
-    rpc GetMetrics(GetGatewayMetricsRequest) returns (GetGatewayMetricsResponse) {
-        option(google.api.http) = {
-            get: "/api/gateways/{gateway_id}/metrics"
-        };
-    }
+    // // GetMetrics returns the gateway metrics.
+    // rpc GetMetrics(GetGatewayMetricsRequest) returns (GetGatewayMetricsResponse) {
+    //     option(google.api.http) = {
+    //         get: "/api/gateways/{gateway_id}/metrics"
+    //     };
+    // }
 
-    // GetDutyCycleMetrics returns the duty-cycle metrics.
-    // Note that only the last 2 hours of data are stored. Currently only per minute aggregation is available.
-    rpc GetDutyCycleMetrics(GetGatewayDutyCycleMetricsRequest) returns (GetGatewayDutyCycleMetricsResponse) {
-        option(google.api.http) = {
-            get: "/api/gateways/{gateway_id}/duty-cycle-metrics"
-        };
-    }
+    // // GetDutyCycleMetrics returns the duty-cycle metrics.
+    // // Note that only the last 2 hours of data are stored. Currently only per minute aggregation is available.
+    // rpc GetDutyCycleMetrics(GetGatewayDutyCycleMetricsRequest) returns (GetGatewayDutyCycleMetricsResponse) {
+    //     option(google.api.http) = {
+    //         get: "/api/gateways/{gateway_id}/duty-cycle-metrics"
+    //     };
+    // }
 
     // Get the given Relay Gateway.
     rpc GetRelayGateway(GetRelayGatewayRequest) returns (GetRelayGatewayResponse) {
@@ -252,61 +252,61 @@ message GenerateGatewayClientCertificateResponse {
     google.protobuf.Timestamp expires_at = 4;
 }
 
-message GetGatewayMetricsRequest {
-    // Gateway ID (EUI64).
-    string gateway_id = 1;
+// message GetGatewayMetricsRequest {
+//     // Gateway ID (EUI64).
+//     string gateway_id = 1;
 
-    // Interval start timestamp.
-    google.protobuf.Timestamp start = 2;
+//     // Interval start timestamp.
+//     google.protobuf.Timestamp start = 2;
 
-    // Interval end timestamp.
-    google.protobuf.Timestamp end = 3;
+//     // Interval end timestamp.
+//     google.protobuf.Timestamp end = 3;
 
-    // Aggregation.
-    util.Aggregation aggregation = 4;
-}
+//     // Aggregation.
+//     util.Aggregation aggregation = 4;
+// }
 
-message GetGatewayMetricsResponse {
-    // RX packets.
-    util.Metric rx_packets = 1;
+// message GetGatewayMetricsResponse {
+//     // RX packets.
+//     util.Metric rx_packets = 1;
 
-    // TX packets.
-    util.Metric tx_packets = 2;
+//     // TX packets.
+//     util.Metric tx_packets = 2;
 
-    // TX packets / frequency.
-    util.Metric tx_packets_per_freq = 3;
+//     // TX packets / frequency.
+//     util.Metric tx_packets_per_freq = 3;
 
-    // RX packets / frequency.
-    util.Metric rx_packets_per_freq = 4;
+//     // RX packets / frequency.
+//     util.Metric rx_packets_per_freq = 4;
 
-    // TX packets / DR.
-    util.Metric tx_packets_per_dr = 5;
+//     // TX packets / DR.
+//     util.Metric tx_packets_per_dr = 5;
 
-    // RX packets / DR.
-    util.Metric rx_packets_per_dr = 6;
+//     // RX packets / DR.
+//     util.Metric rx_packets_per_dr = 6;
 
-    // TX packets per status.
-    util.Metric tx_packets_per_status = 7;
-}
+//     // TX packets per status.
+//     util.Metric tx_packets_per_status = 7;
+// }
 
-message GetGatewayDutyCycleMetricsRequest {
-    // Gateway ID (EUI64).
-    string gateway_id = 1;
+// message GetGatewayDutyCycleMetricsRequest {
+//     // Gateway ID (EUI64).
+//     string gateway_id = 1;
 
-    // Interval start timestamp.
-    google.protobuf.Timestamp start = 2;
+//     // Interval start timestamp.
+//     google.protobuf.Timestamp start = 2;
 
-    // Interval end timestamp.
-    google.protobuf.Timestamp end = 3;
-}
+//     // Interval end timestamp.
+//     google.protobuf.Timestamp end = 3;
+// }
 
-message GetGatewayDutyCycleMetricsResponse {
-    // Percentage relative to max load.
-    util.Metric max_load_percentage = 1;
+// message GetGatewayDutyCycleMetricsResponse {
+//     // Percentage relative to max load.
+//     util.Metric max_load_percentage = 1;
 
-    // Percentage relative to tracking window.
-    util.Metric window_percentage = 2;
-}
+//     // Percentage relative to tracking window.
+//     util.Metric window_percentage = 2;
+// }
 
 message GetRelayGatewayRequest {
     // organisation ID (UUID).

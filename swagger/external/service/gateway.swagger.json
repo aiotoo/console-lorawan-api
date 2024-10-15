@@ -377,54 +377,6 @@
         ]
       }
     },
-    "/api/gateways/{gatewayId}/duty-cycle-metrics": {
-      "get": {
-        "summary": "GetDutyCycleMetrics returns the duty-cycle metrics.\nNote that only the last 2 hours of data are stored. Currently only per minute aggregation is available.",
-        "operationId": "GatewayService_GetDutyCycleMetrics",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceGetGatewayDutyCycleMetricsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "gatewayId",
-            "description": "Gateway ID (EUI64).",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "start",
-            "description": "Interval start timestamp.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "date-time"
-          },
-          {
-            "name": "end",
-            "description": "Interval end timestamp.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "date-time"
-          }
-        ],
-        "tags": [
-          "GatewayService"
-        ]
-      }
-    },
     "/api/gateways/{gatewayId}/generate-certificate": {
       "post": {
         "summary": "Generate client-certificate for the gateway.",
@@ -450,68 +402,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
-        ],
-        "tags": [
-          "GatewayService"
-        ]
-      }
-    },
-    "/api/gateways/{gatewayId}/metrics": {
-      "get": {
-        "summary": "GetMetrics returns the gateway metrics.",
-        "operationId": "GatewayService_GetMetrics",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceGetGatewayMetricsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "gatewayId",
-            "description": "Gateway ID (EUI64).",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "start",
-            "description": "Interval start timestamp.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "date-time"
-          },
-          {
-            "name": "end",
-            "description": "Interval end timestamp.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "format": "date-time"
-          },
-          {
-            "name": "aggregation",
-            "description": "Aggregation.\n\n - HOUR: Hour.\n - DAY: Day.\n - MONTH: Month.\n - MINUTE: Minute.",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "enum": [
-              "HOUR",
-              "DAY",
-              "MONTH",
-              "MINUTE"
-            ],
-            "default": "HOUR"
           }
         ],
         "tags": [
@@ -690,52 +580,6 @@
         }
       }
     },
-    "serviceGetGatewayDutyCycleMetricsResponse": {
-      "type": "object",
-      "properties": {
-        "maxLoadPercentage": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "Percentage relative to max load."
-        },
-        "windowPercentage": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "Percentage relative to tracking window."
-        }
-      }
-    },
-    "serviceGetGatewayMetricsResponse": {
-      "type": "object",
-      "properties": {
-        "rxPackets": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "RX packets."
-        },
-        "txPackets": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "TX packets."
-        },
-        "txPacketsPerFreq": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "TX packets / frequency."
-        },
-        "rxPacketsPerFreq": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "RX packets / frequency."
-        },
-        "txPacketsPerDr": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "TX packets / DR."
-        },
-        "rxPacketsPerDr": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "RX packets / DR."
-        },
-        "txPacketsPerStatus": {
-          "$ref": "#/definitions/utilMetric",
-          "description": "TX packets per status."
-        }
-      }
-    },
     "serviceGetGatewayResponse": {
       "type": "object",
       "properties": {
@@ -910,17 +754,6 @@
         }
       }
     },
-    "utilAggregation": {
-      "type": "string",
-      "enum": [
-        "HOUR",
-        "DAY",
-        "MONTH",
-        "MINUTE"
-      ],
-      "default": "HOUR",
-      "description": " - HOUR: Hour.\n - DAY: Day.\n - MONTH: Month.\n - MINUTE: Minute."
-    },
     "utilLocation": {
       "type": "object",
       "properties": {
@@ -963,61 +796,6 @@
       ],
       "default": "UNKNOWN",
       "description": " - UNKNOWN: Unknown.\n - GPS: GPS.\n - CONFIG: Manually configured.\n - GEO_RESOLVER_TDOA: Geo resolver (TDOA).\n - GEO_RESOLVER_RSSI: Geo resolver (RSSI).\n - GEO_RESOLVER_GNSS: Geo resolver (GNSS).\n - GEO_RESOLVER_WIFI: Geo resolver (WIFI)."
-    },
-    "utilMetric": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "description": "Name."
-        },
-        "timestamps": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "description": "Timestamps."
-        },
-        "datasets": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/utilMetricDataset"
-          },
-          "description": "Datasets."
-        },
-        "kind": {
-          "$ref": "#/definitions/utilMetricKind",
-          "description": "Kind."
-        }
-      }
-    },
-    "utilMetricDataset": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": "string",
-          "description": "Label."
-        },
-        "data": {
-          "type": "array",
-          "items": {
-            "type": "number",
-            "format": "float"
-          },
-          "description": "Data.\nEach value index corresponds with the same timestamp index of the Metric."
-        }
-      }
-    },
-    "utilMetricKind": {
-      "type": "string",
-      "enum": [
-        "COUNTER",
-        "ABSOLUTE",
-        "GAUGE"
-      ],
-      "default": "COUNTER",
-      "description": " - COUNTER: Incrementing counters that never decrease (these are not reset on each\nreading).\n - ABSOLUTE: Counters that do get reset upon reading.\n - GAUGE: E.g. a temperature value."
     }
   }
 }
