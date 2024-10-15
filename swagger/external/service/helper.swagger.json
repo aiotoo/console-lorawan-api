@@ -1,0 +1,233 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "external/service/helper.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/helper/regions": {
+      "get": {
+        "summary": "ListRegions lists the available (configured) regions.",
+        "operationId": "HelperService_ListRegions",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceListRegionsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "HelperService"
+        ]
+      }
+    },
+    "/api/helper/regions/{id}": {
+      "get": {
+        "summary": "GetRegion returns the region details for the given region.",
+        "operationId": "HelperService_GetRegion",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetRegionResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "Region ID.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "HelperService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "typeUrl": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "serviceGetRegionResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID."
+        },
+        "region": {
+          "$ref": "#/definitions/utilRegion",
+          "description": "Region."
+        },
+        "userInfo": {
+          "type": "string",
+          "description": "User information."
+        },
+        "uplinkChannels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceRegionChannel"
+          },
+          "description": "Uplink channels."
+        },
+        "rx1Delay": {
+          "type": "integer",
+          "format": "int64",
+          "description": "RX1 delay."
+        },
+        "rx1DrOffset": {
+          "type": "integer",
+          "format": "int64",
+          "description": "RX1 data-rate offset."
+        },
+        "rx2Dr": {
+          "type": "integer",
+          "format": "int64",
+          "description": "RX2 DR."
+        },
+        "rx2Frequency": {
+          "type": "integer",
+          "format": "int64",
+          "description": "RX2 frequency."
+        },
+        "classBPingSlotDr": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Class-B ping-slot DR."
+        },
+        "classBPingSlotFrequency": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Class-B ping-slot frequency."
+        },
+        "description": {
+          "type": "string",
+          "description": "Region description."
+        }
+      }
+    },
+    "serviceListRegionsResponse": {
+      "type": "object",
+      "properties": {
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceRegionListItem"
+          },
+          "description": "Configured regions."
+        }
+      }
+    },
+    "serviceRegionChannel": {
+      "type": "object",
+      "properties": {
+        "frequency": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Frequency (Hz)."
+        },
+        "drMin": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Min DR."
+        },
+        "drMax": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Max DR."
+        }
+      }
+    },
+    "serviceRegionListItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "ID."
+        },
+        "region": {
+          "$ref": "#/definitions/utilRegion",
+          "description": "Region."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description."
+        }
+      }
+    },
+    "utilRegion": {
+      "type": "string",
+      "enum": [
+        "EU868",
+        "US915",
+        "CN779",
+        "EU433",
+        "AU915",
+        "CN470",
+        "AS923",
+        "AS923_2",
+        "AS923_3",
+        "AS923_4",
+        "KR920",
+        "IN865",
+        "RU864",
+        "ISM2400"
+      ],
+      "default": "EU868",
+      "title": "- EU868: EU868\n - US915: US915\n - CN779: CN779\n - EU433: EU433\n - AU915: AU915\n - CN470: CN470\n - AS923: AS923\n - AS923_2: AS923 with -1.80 MHz frequency offset\n - AS923_3: AS923 with -6.60 MHz frequency offset\n - AS923_4: (AS923 with -5.90 MHz frequency offset).\n - KR920: KR920\n - IN865: IN865\n - RU864: RU864\n - ISM2400: ISM2400 (LoRaWAN 2.4 GHz)"
+    }
+  }
+}
