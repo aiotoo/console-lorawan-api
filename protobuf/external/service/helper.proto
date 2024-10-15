@@ -23,8 +23,20 @@ service HelperService {
       get : "/api/helper/regions/{id}"
     };
   }
+
+  // ListMacVerison lists the available (configured) LoRaWAN MacVersion.
+  rpc ListMacVerison(google.protobuf.Empty) returns (ListMacVerionResponse) {
+    option (google.api.http) = {
+      get : "/api/helper/macversion"
+    };
+  }
 }
 
+message ListMacVerionResponse {
+   // MacVersion.
+  repeated util.MacVersion mac_version = 1;
+
+}
 
 message ListRegionsResponse {
   // Configured regions.
