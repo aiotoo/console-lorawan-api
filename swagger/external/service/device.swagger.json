@@ -260,6 +260,38 @@
         ]
       }
     },
+    "/api/devices/{devEui}/keys": {
+      "get": {
+        "summary": "Get the device-keys for the given DevEUI.",
+        "operationId": "DeviceService_GetKeys",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetDeviceKeysResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "devEui",
+            "description": "DevEUI (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/{device.devEui}": {
       "put": {
         "summary": "Update the given device.",
@@ -341,6 +373,44 @@
       }
     },
     "/api/devices/{deviceKeys.devEui}/keys": {
+      "post": {
+        "summary": "Create the given device-keys.",
+        "operationId": "DeviceService_CreateKeys",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "deviceKeys.devEui",
+            "description": "DevEUI (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceCreateDeviceKeysRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      },
       "put": {
         "summary": "Update the given device-keys.",
         "operationId": "DeviceService_UpdateKeys",
@@ -433,6 +503,15 @@
       ],
       "default": "NONE",
       "description": " - NONE: None.\n - CAYENNE_LPP: Cayenne LPP.\n - JS: JavaScript."
+    },
+    "serviceCreateDeviceKeysRequest": {
+      "type": "object",
+      "properties": {
+        "deviceKeys": {
+          "$ref": "#/definitions/serviceDeviceKeys",
+          "description": "Device-keys object."
+        }
+      }
     },
     "serviceCreateDeviceRequest": {
       "type": "object",
@@ -692,6 +771,25 @@
         "deviceActivation": {
           "$ref": "#/definitions/serviceDeviceActivation",
           "description": "Device activation object."
+        }
+      }
+    },
+    "serviceGetDeviceKeysResponse": {
+      "type": "object",
+      "properties": {
+        "deviceKeys": {
+          "$ref": "#/definitions/serviceDeviceKeys",
+          "description": "Device-keys object."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
         }
       }
     },

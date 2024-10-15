@@ -47,20 +47,20 @@ service DeviceService {
     };
   }
 
-  // // Create the given device-keys.
-  // rpc CreateKeys(CreateDeviceKeysRequest) returns (google.protobuf.Empty) {
-  //   option (google.api.http) = {
-  //     post : "/api/devices/{device_keys.dev_eui}/keys"
-  //     body : "*"
-  //   };
-  // }
+  // Create the given device-keys.
+  rpc CreateKeys(CreateDeviceKeysRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/api/devices/{device_keys.dev_eui}/keys"
+      body : "*"
+    };
+  }
 
-  // // Get the device-keys for the given DevEUI.
-  // rpc GetKeys(GetDeviceKeysRequest) returns (GetDeviceKeysResponse) {
-  //   option (google.api.http) = {
-  //     get : "/api/devices/{dev_eui}/keys"
-  //   };
-  // }
+  // Get the device-keys for the given DevEUI.
+  rpc GetKeys(GetDeviceKeysRequest) returns (GetDeviceKeysResponse) {
+    option (google.api.http) = {
+      get : "/api/devices/{dev_eui}/keys"
+    };
+  }
 
   // Update the given device-keys.
   rpc UpdateKeys(UpdateDeviceKeysRequest) returns (google.protobuf.Empty) {
@@ -156,7 +156,7 @@ message DeviceActivation {
   uint32 n_f_cnt_down = 6;
 
   // Downlink application frame-counter.
-  uint32 a_f_cnt_down = 10;
+  uint32 a_f_cnt_down = 7;
 }
 
 enum CodecRuntime {
@@ -411,4 +411,31 @@ message GetDeviceActivationResponse {
   // // the AppSKey and that the encryption / decryption of the payloads is
   // // the responsibility of the end-application.
   // common.JoinServerContext join_server_context = 2;
+}
+
+message CreateDeviceKeysRequest {
+  // Device-keys object.
+  DeviceKeys device_keys = 1;
+}
+
+message GetDeviceKeysRequest {
+  // DevEUI (EUI64).
+  string dev_eui = 1;
+}
+
+message GetDeviceKeysResponse {
+  // Device-keys object.
+  DeviceKeys device_keys = 1;
+
+  // Created at timestamp.
+  google.protobuf.Timestamp created_at = 2;
+
+  // Last update timestamp.
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+
+message DeleteDeviceKeysRequest {
+  // DevEUI (EUI64).
+  string dev_eui = 1;
 }
