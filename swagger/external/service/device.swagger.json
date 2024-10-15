@@ -290,6 +290,36 @@
         "tags": [
           "DeviceService"
         ]
+      },
+      "delete": {
+        "summary": "Delete the device-keys for the given DevEUI.",
+        "operationId": "DeviceService_DeleteKeys",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "devEui",
+            "description": "DevEUI (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
       }
     },
     "/api/devices/{device.devEui}": {

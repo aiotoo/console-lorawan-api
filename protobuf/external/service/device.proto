@@ -70,6 +70,14 @@ service DeviceService {
     };
   }
 
+
+  // Delete the device-keys for the given DevEUI.
+  rpc DeleteKeys(DeleteDeviceKeysRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/api/devices/{dev_eui}/keys"
+    };
+  }
+
   // FlushDevNonces flushes the OTAA device nonces.
   rpc FlushDevNonces(FlushDevNoncesRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
