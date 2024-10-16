@@ -191,17 +191,6 @@ message DeviceActivation {
   uint32 a_f_cnt_down = 7;
 }
 
-enum CodecRuntime {
-  // None.
-  NONE = 0;
-
-  // Cayenne LPP.
-  CAYENNE_LPP = 1;
-
-  // JavaScript.
-  JS = 2;
-}
-
 message Device {
   // DevEUI (EUI64).
   string dev_eui = 1;
@@ -276,7 +265,7 @@ message Device {
   string adr_algorithm_id = 18;
 
   // Payload codec runtime.
-  CodecRuntime payload_codec_runtime = 19;
+  util.CodecRuntime payload_codec_runtime = 19;
 
   // Payload codec script.
   string payload_codec_script = 20;

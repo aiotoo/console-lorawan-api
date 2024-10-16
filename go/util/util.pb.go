@@ -685,6 +685,242 @@ func (JoinMode) EnumDescriptor() ([]byte, []int) {
 	return file_util_util_proto_rawDescGZIP(), []int{10}
 }
 
+type CodecRuntime int32
+
+const (
+	// None.
+	CodecRuntime_NONE CodecRuntime = 0
+	// Cayenne LPP.
+	CodecRuntime_CAYENNE_LPP CodecRuntime = 1
+	// JavaScript.
+	CodecRuntime_JS CodecRuntime = 2
+)
+
+// Enum value maps for CodecRuntime.
+var (
+	CodecRuntime_name = map[int32]string{
+		0: "NONE",
+		1: "CAYENNE_LPP",
+		2: "JS",
+	}
+	CodecRuntime_value = map[string]int32{
+		"NONE":        0,
+		"CAYENNE_LPP": 1,
+		"JS":          2,
+	}
+)
+
+func (x CodecRuntime) Enum() *CodecRuntime {
+	p := new(CodecRuntime)
+	*p = x
+	return p
+}
+
+func (x CodecRuntime) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CodecRuntime) Descriptor() protoreflect.EnumDescriptor {
+	return file_util_util_proto_enumTypes[11].Descriptor()
+}
+
+func (CodecRuntime) Type() protoreflect.EnumType {
+	return &file_util_util_proto_enumTypes[11]
+}
+
+func (x CodecRuntime) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use CodecRuntime.Descriptor instead.
+func (CodecRuntime) EnumDescriptor() ([]byte, []int) {
+	return file_util_util_proto_rawDescGZIP(), []int{11}
+}
+
+type CadPeriodicity int32
+
+const (
+	// 1 second.
+	CadPeriodicity_SEC_1 CadPeriodicity = 0
+	// 500 milliseconds
+	CadPeriodicity_MS_500 CadPeriodicity = 1
+	// 250 milliseconds
+	CadPeriodicity_MS_250 CadPeriodicity = 2
+	// 100 milliseconds
+	CadPeriodicity_MS_100 CadPeriodicity = 3
+	// 50 milliseconds
+	CadPeriodicity_MS_50 CadPeriodicity = 4
+	// 20 milliseconds
+	CadPeriodicity_MS_20 CadPeriodicity = 5
+)
+
+// Enum value maps for CadPeriodicity.
+var (
+	CadPeriodicity_name = map[int32]string{
+		0: "SEC_1",
+		1: "MS_500",
+		2: "MS_250",
+		3: "MS_100",
+		4: "MS_50",
+		5: "MS_20",
+	}
+	CadPeriodicity_value = map[string]int32{
+		"SEC_1":  0,
+		"MS_500": 1,
+		"MS_250": 2,
+		"MS_100": 3,
+		"MS_50":  4,
+		"MS_20":  5,
+	}
+)
+
+func (x CadPeriodicity) Enum() *CadPeriodicity {
+	p := new(CadPeriodicity)
+	*p = x
+	return p
+}
+
+func (x CadPeriodicity) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (CadPeriodicity) Descriptor() protoreflect.EnumDescriptor {
+	return file_util_util_proto_enumTypes[12].Descriptor()
+}
+
+func (CadPeriodicity) Type() protoreflect.EnumType {
+	return &file_util_util_proto_enumTypes[12]
+}
+
+func (x CadPeriodicity) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use CadPeriodicity.Descriptor instead.
+func (CadPeriodicity) EnumDescriptor() ([]byte, []int) {
+	return file_util_util_proto_rawDescGZIP(), []int{12}
+}
+
+type SecondChAckOffset int32
+
+const (
+	// 0 kHz.
+	SecondChAckOffset_KHZ_0 SecondChAckOffset = 0
+	// 200 kHz.
+	SecondChAckOffset_KHZ_200 SecondChAckOffset = 1
+	// 400 kHz.
+	SecondChAckOffset_KHZ_400 SecondChAckOffset = 2
+	// 800 kHz.
+	SecondChAckOffset_KHZ_800 SecondChAckOffset = 3
+	// 1600 kHz.
+	SecondChAckOffset_KHZ_1600 SecondChAckOffset = 4
+	// 3200 kHz.
+	SecondChAckOffset_KHZ_3200 SecondChAckOffset = 5
+)
+
+// Enum value maps for SecondChAckOffset.
+var (
+	SecondChAckOffset_name = map[int32]string{
+		0: "KHZ_0",
+		1: "KHZ_200",
+		2: "KHZ_400",
+		3: "KHZ_800",
+		4: "KHZ_1600",
+		5: "KHZ_3200",
+	}
+	SecondChAckOffset_value = map[string]int32{
+		"KHZ_0":    0,
+		"KHZ_200":  1,
+		"KHZ_400":  2,
+		"KHZ_800":  3,
+		"KHZ_1600": 4,
+		"KHZ_3200": 5,
+	}
+)
+
+func (x SecondChAckOffset) Enum() *SecondChAckOffset {
+	p := new(SecondChAckOffset)
+	*p = x
+	return p
+}
+
+func (x SecondChAckOffset) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SecondChAckOffset) Descriptor() protoreflect.EnumDescriptor {
+	return file_util_util_proto_enumTypes[13].Descriptor()
+}
+
+func (SecondChAckOffset) Type() protoreflect.EnumType {
+	return &file_util_util_proto_enumTypes[13]
+}
+
+func (x SecondChAckOffset) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SecondChAckOffset.Descriptor instead.
+func (SecondChAckOffset) EnumDescriptor() ([]byte, []int) {
+	return file_util_util_proto_rawDescGZIP(), []int{13}
+}
+
+type RelayModeActivation int32
+
+const (
+	// Disable the relay mode.
+	RelayModeActivation_DISABLE_RELAY_MODE RelayModeActivation = 0
+	// Enable the relay model.
+	RelayModeActivation_ENABLE_RELAY_MODE RelayModeActivation = 1
+	// Dynamic.
+	RelayModeActivation_DYNAMIC RelayModeActivation = 2
+	// End-device controlled.
+	RelayModeActivation_END_DEVICE_CONTROLLED RelayModeActivation = 3
+)
+
+// Enum value maps for RelayModeActivation.
+var (
+	RelayModeActivation_name = map[int32]string{
+		0: "DISABLE_RELAY_MODE",
+		1: "ENABLE_RELAY_MODE",
+		2: "DYNAMIC",
+		3: "END_DEVICE_CONTROLLED",
+	}
+	RelayModeActivation_value = map[string]int32{
+		"DISABLE_RELAY_MODE":    0,
+		"ENABLE_RELAY_MODE":     1,
+		"DYNAMIC":               2,
+		"END_DEVICE_CONTROLLED": 3,
+	}
+)
+
+func (x RelayModeActivation) Enum() *RelayModeActivation {
+	p := new(RelayModeActivation)
+	*p = x
+	return p
+}
+
+func (x RelayModeActivation) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (RelayModeActivation) Descriptor() protoreflect.EnumDescriptor {
+	return file_util_util_proto_enumTypes[14].Descriptor()
+}
+
+func (RelayModeActivation) Type() protoreflect.EnumType {
+	return &file_util_util_proto_enumTypes[14]
+}
+
+func (x RelayModeActivation) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use RelayModeActivation.Descriptor instead.
+func (RelayModeActivation) EnumDescriptor() ([]byte, []int) {
+	return file_util_util_proto_rawDescGZIP(), []int{14}
+}
+
 type Location struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1125,11 +1361,32 @@ var file_util_util_proto_rawDesc = []byte{
 	0x0b, 0x0a, 0x07, 0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x42, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07,
 	0x43, 0x4c, 0x41, 0x53, 0x53, 0x5f, 0x43, 0x10, 0x02, 0x2a, 0x1d, 0x0a, 0x08, 0x4a, 0x6f, 0x69,
 	0x6e, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x4f, 0x54, 0x41, 0x41, 0x10, 0x00, 0x12,
-	0x07, 0x0a, 0x03, 0x41, 0x42, 0x50, 0x10, 0x01, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68,
-	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x69, 0x6f, 0x74, 0x6f, 0x6f, 0x2f, 0x63, 0x6f,
-	0x6e, 0x73, 0x6f, 0x6c, 0x65, 0x2d, 0x6c, 0x6f, 0x72, 0x61, 0x77, 0x61, 0x6e, 0x2d, 0x61, 0x70,
-	0x69, 0x2f, 0x67, 0x6f, 0x2f, 0x76, 0x34, 0x2f, 0x75, 0x74, 0x69, 0x6c, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x07, 0x0a, 0x03, 0x41, 0x42, 0x50, 0x10, 0x01, 0x2a, 0x31, 0x0a, 0x0c, 0x43, 0x6f, 0x64, 0x65,
+	0x63, 0x52, 0x75, 0x6e, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45,
+	0x10, 0x00, 0x12, 0x0f, 0x0a, 0x0b, 0x43, 0x41, 0x59, 0x45, 0x4e, 0x4e, 0x45, 0x5f, 0x4c, 0x50,
+	0x50, 0x10, 0x01, 0x12, 0x06, 0x0a, 0x02, 0x4a, 0x53, 0x10, 0x02, 0x2a, 0x55, 0x0a, 0x0e, 0x43,
+	0x61, 0x64, 0x50, 0x65, 0x72, 0x69, 0x6f, 0x64, 0x69, 0x63, 0x69, 0x74, 0x79, 0x12, 0x09, 0x0a,
+	0x05, 0x53, 0x45, 0x43, 0x5f, 0x31, 0x10, 0x00, 0x12, 0x0a, 0x0a, 0x06, 0x4d, 0x53, 0x5f, 0x35,
+	0x30, 0x30, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x4d, 0x53, 0x5f, 0x32, 0x35, 0x30, 0x10, 0x02,
+	0x12, 0x0a, 0x0a, 0x06, 0x4d, 0x53, 0x5f, 0x31, 0x30, 0x30, 0x10, 0x03, 0x12, 0x09, 0x0a, 0x05,
+	0x4d, 0x53, 0x5f, 0x35, 0x30, 0x10, 0x04, 0x12, 0x09, 0x0a, 0x05, 0x4d, 0x53, 0x5f, 0x32, 0x30,
+	0x10, 0x05, 0x2a, 0x61, 0x0a, 0x11, 0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64, 0x43, 0x68, 0x41, 0x63,
+	0x6b, 0x4f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x09, 0x0a, 0x05, 0x4b, 0x48, 0x5a, 0x5f, 0x30,
+	0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x4b, 0x48, 0x5a, 0x5f, 0x32, 0x30, 0x30, 0x10, 0x01, 0x12,
+	0x0b, 0x0a, 0x07, 0x4b, 0x48, 0x5a, 0x5f, 0x34, 0x30, 0x30, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07,
+	0x4b, 0x48, 0x5a, 0x5f, 0x38, 0x30, 0x30, 0x10, 0x03, 0x12, 0x0c, 0x0a, 0x08, 0x4b, 0x48, 0x5a,
+	0x5f, 0x31, 0x36, 0x30, 0x30, 0x10, 0x04, 0x12, 0x0c, 0x0a, 0x08, 0x4b, 0x48, 0x5a, 0x5f, 0x33,
+	0x32, 0x30, 0x30, 0x10, 0x05, 0x2a, 0x6c, 0x0a, 0x13, 0x52, 0x65, 0x6c, 0x61, 0x79, 0x4d, 0x6f,
+	0x64, 0x65, 0x41, 0x63, 0x74, 0x69, 0x76, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x16, 0x0a, 0x12,
+	0x44, 0x49, 0x53, 0x41, 0x42, 0x4c, 0x45, 0x5f, 0x52, 0x45, 0x4c, 0x41, 0x59, 0x5f, 0x4d, 0x4f,
+	0x44, 0x45, 0x10, 0x00, 0x12, 0x15, 0x0a, 0x11, 0x45, 0x4e, 0x41, 0x42, 0x4c, 0x45, 0x5f, 0x52,
+	0x45, 0x4c, 0x41, 0x59, 0x5f, 0x4d, 0x4f, 0x44, 0x45, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x44,
+	0x59, 0x4e, 0x41, 0x4d, 0x49, 0x43, 0x10, 0x02, 0x12, 0x19, 0x0a, 0x15, 0x45, 0x4e, 0x44, 0x5f,
+	0x44, 0x45, 0x56, 0x49, 0x43, 0x45, 0x5f, 0x43, 0x4f, 0x4e, 0x54, 0x52, 0x4f, 0x4c, 0x4c, 0x45,
+	0x44, 0x10, 0x03, 0x42, 0x32, 0x5a, 0x30, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x61, 0x69, 0x6f, 0x74, 0x6f, 0x6f, 0x2f, 0x63, 0x6f, 0x6e, 0x73, 0x6f, 0x6c, 0x65,
+	0x2d, 0x6c, 0x6f, 0x72, 0x61, 0x77, 0x61, 0x6e, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x67, 0x6f, 0x2f,
+	0x76, 0x34, 0x2f, 0x75, 0x74, 0x69, 0x6c, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1144,7 +1401,7 @@ func file_util_util_proto_rawDescGZIP() []byte {
 	return file_util_util_proto_rawDescData
 }
 
-var file_util_util_proto_enumTypes = make([]protoimpl.EnumInfo, 11)
+var file_util_util_proto_enumTypes = make([]protoimpl.EnumInfo, 15)
 var file_util_util_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_util_util_proto_goTypes = []any{
 	(Modulation)(0),               // 0: util.Modulation
@@ -1158,19 +1415,23 @@ var file_util_util_proto_goTypes = []any{
 	(Regulation)(0),               // 8: util.Regulation
 	(DeviceClass)(0),              // 9: util.DeviceClass
 	(JoinMode)(0),                 // 10: util.JoinMode
-	(*Location)(nil),              // 11: util.Location
-	(*KeyEnvelope)(nil),           // 12: util.KeyEnvelope
-	(*Metric)(nil),                // 13: util.Metric
-	(*MetricDataset)(nil),         // 14: util.MetricDataset
-	(*JoinServerContext)(nil),     // 15: util.JoinServerContext
-	(*timestamppb.Timestamp)(nil), // 16: google.protobuf.Timestamp
+	(CodecRuntime)(0),             // 11: util.CodecRuntime
+	(CadPeriodicity)(0),           // 12: util.CadPeriodicity
+	(SecondChAckOffset)(0),        // 13: util.SecondChAckOffset
+	(RelayModeActivation)(0),      // 14: util.RelayModeActivation
+	(*Location)(nil),              // 15: util.Location
+	(*KeyEnvelope)(nil),           // 16: util.KeyEnvelope
+	(*Metric)(nil),                // 17: util.Metric
+	(*MetricDataset)(nil),         // 18: util.MetricDataset
+	(*JoinServerContext)(nil),     // 19: util.JoinServerContext
+	(*timestamppb.Timestamp)(nil), // 20: google.protobuf.Timestamp
 }
 var file_util_util_proto_depIdxs = []int32{
 	5,  // 0: util.Location.source:type_name -> util.LocationSource
-	16, // 1: util.Metric.timestamps:type_name -> google.protobuf.Timestamp
-	14, // 2: util.Metric.datasets:type_name -> util.MetricDataset
+	20, // 1: util.Metric.timestamps:type_name -> google.protobuf.Timestamp
+	18, // 2: util.Metric.datasets:type_name -> util.MetricDataset
 	7,  // 3: util.Metric.kind:type_name -> util.MetricKind
-	12, // 4: util.JoinServerContext.app_s_key:type_name -> util.KeyEnvelope
+	16, // 4: util.JoinServerContext.app_s_key:type_name -> util.KeyEnvelope
 	5,  // [5:5] is the sub-list for method output_type
 	5,  // [5:5] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
@@ -1250,7 +1511,7 @@ func file_util_util_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_util_util_proto_rawDesc,
-			NumEnums:      11,
+			NumEnums:      15,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,

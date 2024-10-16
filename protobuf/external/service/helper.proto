@@ -27,7 +27,14 @@ service HelperService {
   // ListMacVerison lists the available (configured) LoRaWAN MacVersion.
   rpc ListMacVerison(google.protobuf.Empty) returns (ListMacVerionResponse) {
     option (google.api.http) = {
-      get : "/api/helper/macversion"
+      get : "/api/helper/mac_version"
+    };
+  }
+
+  //  ListEnumResponse lists the available enum.
+  rpc ListEnum(google.protobuf.Empty) returns (ListEnumResponse) {
+    option (google.api.http) = {
+      get : "/api/helper"
     };
   }
 }
@@ -35,6 +42,25 @@ service HelperService {
 message ListMacVerionResponse {
    // MacVersion.
   repeated util.MacVersion mac_version = 1;
+
+}
+
+
+message ListEnumResponse {
+   //MacVersion.
+  repeated util.MacVersion mac_version = 1;
+
+  //DeviceClass
+  repeated util.DeviceClass device_class = 2;
+
+   //JoinMode
+  repeated util.JoinMode device_join_mode = 3;
+
+  //Payload Codec
+  repeated util.CodecRuntime payload_codec_runtime = 4;
+
+  //AdrAlgorithm
+  repeated AdrAlgorithmListItem result = 5;
 
 }
 
@@ -103,4 +129,13 @@ message RegionChannel {
 
   // Max DR.
   uint32 dr_max = 3;
+}
+
+
+message AdrAlgorithmListItem {
+  // Algorithm ID.
+  string id = 1;
+
+  // Algorithm name.
+  string name = 2;
 }

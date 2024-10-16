@@ -641,16 +641,6 @@
         }
       }
     },
-    "serviceCodecRuntime": {
-      "type": "string",
-      "enum": [
-        "NONE",
-        "CAYENNE_LPP",
-        "JS"
-      ],
-      "default": "NONE",
-      "description": " - NONE: None.\n - CAYENNE_LPP: Cayenne LPP.\n - JS: JavaScript."
-    },
     "serviceCreateDeviceKeysRequest": {
       "type": "object",
       "properties": {
@@ -751,7 +741,7 @@
           "description": "ADR algorithm ID."
         },
         "payloadCodecRuntime": {
-          "$ref": "#/definitions/serviceCodecRuntime",
+          "$ref": "#/definitions/utilCodecRuntime",
           "description": "Payload codec runtime."
         },
         "payloadCodecScript": {
@@ -1081,6 +1071,16 @@
           "description": "Device object."
         }
       }
+    },
+    "utilCodecRuntime": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "CAYENNE_LPP",
+        "JS"
+      ],
+      "default": "NONE",
+      "description": " - NONE: None.\n - CAYENNE_LPP: Cayenne LPP.\n - JS: JavaScript."
     },
     "utilDeviceClass": {
       "type": "string",

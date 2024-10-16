@@ -238,3 +238,87 @@ enum JoinMode {
   // ABP.
   ABP = 1;
 }
+
+
+enum CodecRuntime {
+  // None.
+  NONE = 0;
+
+  // Cayenne LPP.
+  CAYENNE_LPP = 1;
+
+  // JavaScript.
+  JS = 2;
+}
+
+// enum MeasurementKind {
+//   // Unknown (in which case it is not tracked).
+//   UNKNOWN = 0;
+
+//   // Incrementing counters that never decrease (these are not reset on each
+//   // reading).
+//   COUNTER = 1;
+
+//   // Counters that do get reset upon reading.
+//   ABSOLUTE = 2;
+
+//   // E.g. a temperature value.
+//   GAUGE = 3;
+
+//   // E.g. a firmware version, true / false value.
+//   STRING = 4;
+// }
+
+enum CadPeriodicity {
+  // 1 second.
+  SEC_1 = 0;
+
+  // 500 milliseconds
+  MS_500 = 1;
+
+  // 250 milliseconds
+  MS_250 = 2;
+
+  // 100 milliseconds
+  MS_100 = 3;
+
+  // 50 milliseconds
+  MS_50 = 4;
+
+  // 20 milliseconds
+  MS_20 = 5;
+}
+
+enum SecondChAckOffset {
+  // 0 kHz.
+  KHZ_0 = 0;
+
+  // 200 kHz.
+  KHZ_200 = 1;
+
+  // 400 kHz.
+  KHZ_400 = 2;
+
+  // 800 kHz.
+  KHZ_800 = 3;
+
+  // 1600 kHz.
+  KHZ_1600 = 4;
+
+  // 3200 kHz.
+  KHZ_3200 = 5;
+}
+
+enum RelayModeActivation {
+  // Disable the relay mode.
+  DISABLE_RELAY_MODE = 0;
+
+  // Enable the relay model.
+  ENABLE_RELAY_MODE = 1;
+
+  // Dynamic.
+  DYNAMIC = 2;
+
+  // End-device controlled.
+  END_DEVICE_CONTROLLED = 3;
+}

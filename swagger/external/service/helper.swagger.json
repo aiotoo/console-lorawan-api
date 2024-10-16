@@ -11,7 +11,30 @@
     "application/json"
   ],
   "paths": {
-    "/api/helper/macversion": {
+    "/api/helper": {
+      "get": {
+        "summary": "ListEnumResponse lists the available enum.",
+        "operationId": "HelperService_ListEnum",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceListEnumResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "HelperService"
+        ]
+      }
+    },
+    "/api/helper/mac_version": {
       "get": {
         "summary": "ListMacVerison lists the available (configured) LoRaWAN MacVersion.",
         "operationId": "HelperService_ListMacVerison",
@@ -124,6 +147,19 @@
         }
       }
     },
+    "serviceAdrAlgorithmListItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Algorithm ID."
+        },
+        "name": {
+          "type": "string",
+          "description": "Algorithm name."
+        }
+      }
+    },
     "serviceGetRegionResponse": {
       "type": "object",
       "properties": {
@@ -179,6 +215,46 @@
         "description": {
           "type": "string",
           "description": "Region description."
+        }
+      }
+    },
+    "serviceListEnumResponse": {
+      "type": "object",
+      "properties": {
+        "macVersion": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/utilMacVersion"
+          },
+          "description": "MacVersion."
+        },
+        "deviceClass": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/utilDeviceClass"
+          },
+          "title": "DeviceClass"
+        },
+        "deviceJoinMode": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/utilJoinMode"
+          },
+          "title": "JoinMode"
+        },
+        "payloadCodecRuntime": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/utilCodecRuntime"
+          },
+          "title": "Payload Codec"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceAdrAlgorithmListItem"
+          },
+          "title": "AdrAlgorithm"
         }
       }
     },
@@ -242,6 +318,35 @@
           "description": "Description."
         }
       }
+    },
+    "utilCodecRuntime": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "CAYENNE_LPP",
+        "JS"
+      ],
+      "default": "NONE",
+      "description": " - NONE: None.\n - CAYENNE_LPP: Cayenne LPP.\n - JS: JavaScript."
+    },
+    "utilDeviceClass": {
+      "type": "string",
+      "enum": [
+        "CLASS_A",
+        "CLASS_B",
+        "CLASS_C"
+      ],
+      "default": "CLASS_A",
+      "description": " - CLASS_A: Class-A.\n - CLASS_B: Class-B.\n - CLASS_C: Class-C."
+    },
+    "utilJoinMode": {
+      "type": "string",
+      "enum": [
+        "OTAA",
+        "ABP"
+      ],
+      "default": "OTAA",
+      "description": " - OTAA: OTAA.\n - ABP: ABP."
     },
     "utilMacVersion": {
       "type": "string",
