@@ -62,6 +62,8 @@ message ListEnumResponse {
   //AdrAlgorithm
   repeated AdrAlgorithmListItem result = 5;
 
+  repeated util.RegParamsRevision reg_params_revision = 6;
+
 }
 
 message ListRegionsResponse {

@@ -255,6 +255,12 @@
             "$ref": "#/definitions/serviceAdrAlgorithmListItem"
           },
           "title": "AdrAlgorithm"
+        },
+        "regParamsRevision": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/utilRegParamsRevision"
+          }
         }
       }
     },
@@ -359,6 +365,19 @@
         "LORAWAN_1_1_0"
       ],
       "default": "LORAWAN_1_0_0"
+    },
+    "utilRegParamsRevision": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "RP002_1_0_0",
+        "RP002_1_0_1",
+        "RP002_1_0_2",
+        "RP002_1_0_3",
+        "RP002_1_0_4"
+      ],
+      "default": "A"
     },
     "utilRegion": {
       "type": "string",
