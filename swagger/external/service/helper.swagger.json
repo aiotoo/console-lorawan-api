@@ -262,17 +262,8 @@
             "$ref": "#/definitions/utilRegParamsRevision"
           }
         },
-        "regions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/serviceRegionListItem"
-          }
-        },
-        "regionConfigs": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/serviceGetRegionResponse"
-          }
+        "region": {
+          "$ref": "#/definitions/serviceRegionsData"
         }
       }
     },
@@ -300,6 +291,17 @@
         }
       }
     },
+    "serviceRegion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
     "serviceRegionChannel": {
       "type": "object",
       "properties": {
@@ -320,6 +322,17 @@
         }
       }
     },
+    "serviceRegionList": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceRegion"
+          }
+        }
+      }
+    },
     "serviceRegionListItem": {
       "type": "object",
       "properties": {
@@ -334,6 +347,17 @@
         "description": {
           "type": "string",
           "description": "Description."
+        }
+      }
+    },
+    "serviceRegionsData": {
+      "type": "object",
+      "properties": {
+        "regions": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/serviceRegionList"
+          }
         }
       }
     },

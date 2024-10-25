@@ -64,9 +64,7 @@ message ListEnumResponse {
 
   repeated util.RegParamsRevision reg_params_revision = 6;
 
-  repeated RegionListItem regions = 7;
-
-  repeated GetRegionResponse region_configs =8 ;
+  RegionsData region = 7;
 
 }
 
@@ -144,4 +142,17 @@ message AdrAlgorithmListItem {
 
   // Algorithm name.
   string name = 2;
+}
+
+message Region {
+  string id = 1;
+  string description = 2;
+}
+
+message RegionsData {
+  map<string, RegionList> regions = 1;
+}
+
+message RegionList {
+  repeated Region items = 1;
 }
