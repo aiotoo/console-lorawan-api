@@ -261,6 +261,18 @@
           "items": {
             "$ref": "#/definitions/utilRegParamsRevision"
           }
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceRegionListItem"
+          }
+        },
+        "regionConfigs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceGetRegionResponse"
+          }
         }
       }
     },

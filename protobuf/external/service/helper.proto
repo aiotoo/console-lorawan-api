@@ -64,6 +64,10 @@ message ListEnumResponse {
 
   repeated util.RegParamsRevision reg_params_revision = 6;
 
+  repeated RegionListItem regions = 7;
+
+  repeated GetRegionResponse region_configs =8 ;
+
 }
 
 message ListRegionsResponse {
