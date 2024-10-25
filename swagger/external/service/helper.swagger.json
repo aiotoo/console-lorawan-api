@@ -249,7 +249,7 @@
           },
           "title": "Payload Codec"
         },
-        "result": {
+        "adrAlgorithms": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/serviceAdrAlgorithmListItem"

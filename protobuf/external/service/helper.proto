@@ -60,7 +60,7 @@ message ListEnumResponse {
   repeated util.CodecRuntime payload_codec_runtime = 4;
 
   //AdrAlgorithm
-  repeated AdrAlgorithmListItem result = 5;
+  repeated AdrAlgorithmListItem adr_algorithms = 5;
 
   repeated util.RegParamsRevision reg_params_revision = 6;
 
