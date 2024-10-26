@@ -27,6 +27,229 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type Encoding int32
+
+const (
+	Encoding_JSON     Encoding = 0
+	Encoding_PROTOBUF Encoding = 1
+)
+
+// Enum value maps for Encoding.
+var (
+	Encoding_name = map[int32]string{
+		0: "JSON",
+		1: "PROTOBUF",
+	}
+	Encoding_value = map[string]int32{
+		"JSON":     0,
+		"PROTOBUF": 1,
+	}
+)
+
+func (x Encoding) Enum() *Encoding {
+	p := new(Encoding)
+	*p = x
+	return p
+}
+
+func (x Encoding) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Encoding) Descriptor() protoreflect.EnumDescriptor {
+	return file_external_service_application_proto_enumTypes[0].Descriptor()
+}
+
+func (Encoding) Type() protoreflect.EnumType {
+	return &file_external_service_application_proto_enumTypes[0]
+}
+
+func (x Encoding) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Encoding.Descriptor instead.
+func (Encoding) EnumDescriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{0}
+}
+
+type IntegrationKind int32
+
+const (
+	IntegrationKind_HTTP              IntegrationKind = 0
+	IntegrationKind_INFLUX_DB         IntegrationKind = 1
+	IntegrationKind_THINGS_BOARD      IntegrationKind = 2
+	IntegrationKind_MY_DEVICES        IntegrationKind = 3
+	IntegrationKind_LORA_CLOUD        IntegrationKind = 4
+	IntegrationKind_GCP_PUB_SUB       IntegrationKind = 5
+	IntegrationKind_AWS_SNS           IntegrationKind = 6
+	IntegrationKind_AZURE_SERVICE_BUS IntegrationKind = 7
+	IntegrationKind_PILOT_THINGS      IntegrationKind = 8
+	IntegrationKind_MQTT_GLOBAL       IntegrationKind = 9
+	IntegrationKind_IFTTT             IntegrationKind = 10
+)
+
+// Enum value maps for IntegrationKind.
+var (
+	IntegrationKind_name = map[int32]string{
+		0:  "HTTP",
+		1:  "INFLUX_DB",
+		2:  "THINGS_BOARD",
+		3:  "MY_DEVICES",
+		4:  "LORA_CLOUD",
+		5:  "GCP_PUB_SUB",
+		6:  "AWS_SNS",
+		7:  "AZURE_SERVICE_BUS",
+		8:  "PILOT_THINGS",
+		9:  "MQTT_GLOBAL",
+		10: "IFTTT",
+	}
+	IntegrationKind_value = map[string]int32{
+		"HTTP":              0,
+		"INFLUX_DB":         1,
+		"THINGS_BOARD":      2,
+		"MY_DEVICES":        3,
+		"LORA_CLOUD":        4,
+		"GCP_PUB_SUB":       5,
+		"AWS_SNS":           6,
+		"AZURE_SERVICE_BUS": 7,
+		"PILOT_THINGS":      8,
+		"MQTT_GLOBAL":       9,
+		"IFTTT":             10,
+	}
+)
+
+func (x IntegrationKind) Enum() *IntegrationKind {
+	p := new(IntegrationKind)
+	*p = x
+	return p
+}
+
+func (x IntegrationKind) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (IntegrationKind) Descriptor() protoreflect.EnumDescriptor {
+	return file_external_service_application_proto_enumTypes[1].Descriptor()
+}
+
+func (IntegrationKind) Type() protoreflect.EnumType {
+	return &file_external_service_application_proto_enumTypes[1]
+}
+
+func (x IntegrationKind) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use IntegrationKind.Descriptor instead.
+func (IntegrationKind) EnumDescriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{1}
+}
+
+type InfluxDbPrecision int32
+
+const (
+	InfluxDbPrecision_NS InfluxDbPrecision = 0
+	InfluxDbPrecision_U  InfluxDbPrecision = 1
+	InfluxDbPrecision_MS InfluxDbPrecision = 2
+	InfluxDbPrecision_S  InfluxDbPrecision = 3
+	InfluxDbPrecision_M  InfluxDbPrecision = 4
+	InfluxDbPrecision_H  InfluxDbPrecision = 5
+)
+
+// Enum value maps for InfluxDbPrecision.
+var (
+	InfluxDbPrecision_name = map[int32]string{
+		0: "NS",
+		1: "U",
+		2: "MS",
+		3: "S",
+		4: "M",
+		5: "H",
+	}
+	InfluxDbPrecision_value = map[string]int32{
+		"NS": 0,
+		"U":  1,
+		"MS": 2,
+		"S":  3,
+		"M":  4,
+		"H":  5,
+	}
+)
+
+func (x InfluxDbPrecision) Enum() *InfluxDbPrecision {
+	p := new(InfluxDbPrecision)
+	*p = x
+	return p
+}
+
+func (x InfluxDbPrecision) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (InfluxDbPrecision) Descriptor() protoreflect.EnumDescriptor {
+	return file_external_service_application_proto_enumTypes[2].Descriptor()
+}
+
+func (InfluxDbPrecision) Type() protoreflect.EnumType {
+	return &file_external_service_application_proto_enumTypes[2]
+}
+
+func (x InfluxDbPrecision) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use InfluxDbPrecision.Descriptor instead.
+func (InfluxDbPrecision) EnumDescriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{2}
+}
+
+type InfluxDbVersion int32
+
+const (
+	InfluxDbVersion_INFLUXDB_1 InfluxDbVersion = 0
+	InfluxDbVersion_INFLUXDB_2 InfluxDbVersion = 1
+)
+
+// Enum value maps for InfluxDbVersion.
+var (
+	InfluxDbVersion_name = map[int32]string{
+		0: "INFLUXDB_1",
+		1: "INFLUXDB_2",
+	}
+	InfluxDbVersion_value = map[string]int32{
+		"INFLUXDB_1": 0,
+		"INFLUXDB_2": 1,
+	}
+)
+
+func (x InfluxDbVersion) Enum() *InfluxDbVersion {
+	p := new(InfluxDbVersion)
+	*p = x
+	return p
+}
+
+func (x InfluxDbVersion) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (InfluxDbVersion) Descriptor() protoreflect.EnumDescriptor {
+	return file_external_service_application_proto_enumTypes[3].Descriptor()
+}
+
+func (InfluxDbVersion) Type() protoreflect.EnumType {
+	return &file_external_service_application_proto_enumTypes[3]
+}
+
+func (x InfluxDbVersion) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use InfluxDbVersion.Descriptor instead.
+func (InfluxDbVersion) EnumDescriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{3}
+}
+
 type Application struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -648,6 +871,3694 @@ func (x *ListApplicationsResponse) GetResult() []*ApplicationListItem {
 	return nil
 }
 
+type ListIntegrationsRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *ListIntegrationsRequest) Reset() {
+	*x = ListIntegrationsRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListIntegrationsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntegrationsRequest) ProtoMessage() {}
+
+func (x *ListIntegrationsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntegrationsRequest.ProtoReflect.Descriptor instead.
+func (*ListIntegrationsRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ListIntegrationsRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type IntegrationListItem struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration kind.
+	Kind IntegrationKind `protobuf:"varint,1,opt,name=kind,proto3,enum=service.IntegrationKind" json:"kind,omitempty"`
+}
+
+func (x *IntegrationListItem) Reset() {
+	*x = IntegrationListItem{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IntegrationListItem) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IntegrationListItem) ProtoMessage() {}
+
+func (x *IntegrationListItem) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IntegrationListItem.ProtoReflect.Descriptor instead.
+func (*IntegrationListItem) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *IntegrationListItem) GetKind() IntegrationKind {
+	if x != nil {
+		return x.Kind
+	}
+	return IntegrationKind_HTTP
+}
+
+type ListIntegrationsResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Total number of integrations available within the result-set.
+	TotalCount uint32 `protobuf:"varint,1,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
+	// Integrations within result-set.
+	Result []*IntegrationListItem `protobuf:"bytes,2,rep,name=result,proto3" json:"result,omitempty"`
+}
+
+func (x *ListIntegrationsResponse) Reset() {
+	*x = ListIntegrationsResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ListIntegrationsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListIntegrationsResponse) ProtoMessage() {}
+
+func (x *ListIntegrationsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListIntegrationsResponse.ProtoReflect.Descriptor instead.
+func (*ListIntegrationsResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *ListIntegrationsResponse) GetTotalCount() uint32 {
+	if x != nil {
+		return x.TotalCount
+	}
+	return 0
+}
+
+func (x *ListIntegrationsResponse) GetResult() []*IntegrationListItem {
+	if x != nil {
+		return x.Result
+	}
+	return nil
+}
+
+type HttpIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// HTTP headers to set when making requests.
+	Headers map[string]string `protobuf:"bytes,2,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	// Payload encoding.
+	Encoding Encoding `protobuf:"varint,3,opt,name=encoding,proto3,enum=service.Encoding" json:"encoding,omitempty"`
+	// Event endpoint URL.
+	// The HTTP integration will POST all events to this enpoint. The request
+	// will contain a query parameters "event" containing the type of the
+	// event.
+	EventEndpointUrl string `protobuf:"bytes,4,opt,name=event_endpoint_url,json=eventEndpointUrl,proto3" json:"event_endpoint_url,omitempty"`
+}
+
+func (x *HttpIntegration) Reset() {
+	*x = HttpIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HttpIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HttpIntegration) ProtoMessage() {}
+
+func (x *HttpIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HttpIntegration.ProtoReflect.Descriptor instead.
+func (*HttpIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *HttpIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *HttpIntegration) GetHeaders() map[string]string {
+	if x != nil {
+		return x.Headers
+	}
+	return nil
+}
+
+func (x *HttpIntegration) GetEncoding() Encoding {
+	if x != nil {
+		return x.Encoding
+	}
+	return Encoding_JSON
+}
+
+func (x *HttpIntegration) GetEventEndpointUrl() string {
+	if x != nil {
+		return x.EventEndpointUrl
+	}
+	return ""
+}
+
+type CreateHttpIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *HttpIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateHttpIntegrationRequest) Reset() {
+	*x = CreateHttpIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateHttpIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateHttpIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateHttpIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateHttpIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateHttpIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *CreateHttpIntegrationRequest) GetIntegration() *HttpIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetHttpIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetHttpIntegrationRequest) Reset() {
+	*x = GetHttpIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetHttpIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetHttpIntegrationRequest) ProtoMessage() {}
+
+func (x *GetHttpIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetHttpIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetHttpIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *GetHttpIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetHttpIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *HttpIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetHttpIntegrationResponse) Reset() {
+	*x = GetHttpIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetHttpIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetHttpIntegrationResponse) ProtoMessage() {}
+
+func (x *GetHttpIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetHttpIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetHttpIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *GetHttpIntegrationResponse) GetIntegration() *HttpIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateHttpIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *HttpIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateHttpIntegrationRequest) Reset() {
+	*x = UpdateHttpIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateHttpIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateHttpIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateHttpIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateHttpIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateHttpIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *UpdateHttpIntegrationRequest) GetIntegration() *HttpIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteHttpIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteHttpIntegrationRequest) Reset() {
+	*x = DeleteHttpIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteHttpIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteHttpIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteHttpIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteHttpIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteHttpIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *DeleteHttpIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type InfluxDbIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// InfluxDb API write endpoint (e.g. http://localhost:8086/write).
+	Endpoint string `protobuf:"bytes,2,opt,name=endpoint,proto3" json:"endpoint,omitempty"`
+	// InfluxDb database name. (InfluxDb v1)
+	Db string `protobuf:"bytes,3,opt,name=db,proto3" json:"db,omitempty"`
+	// InfluxDb username. (InfluxDb v1)
+	Username string `protobuf:"bytes,4,opt,name=username,proto3" json:"username,omitempty"`
+	// InfluxDb password. (InfluxDb v1)
+	Password string `protobuf:"bytes,5,opt,name=password,proto3" json:"password,omitempty"`
+	// InfluxDb retention policy name. (InfluxDb v1)
+	RetentionPolicyName string `protobuf:"bytes,6,opt,name=retention_policy_name,json=retentionPolicyName,proto3" json:"retention_policy_name,omitempty"`
+	// InfluxDb timestamp precision (InfluxDb v1).
+	Precision InfluxDbPrecision `protobuf:"varint,7,opt,name=precision,proto3,enum=service.InfluxDbPrecision" json:"precision,omitempty"`
+	// InfluxDb version.
+	Version InfluxDbVersion `protobuf:"varint,8,opt,name=version,proto3,enum=service.InfluxDbVersion" json:"version,omitempty"`
+	// Token. (InfluxDb v2)
+	Token string `protobuf:"bytes,9,opt,name=token,proto3" json:"token,omitempty"`
+	// Organization. (InfluxDb v2)
+	Organization string `protobuf:"bytes,10,opt,name=organization,proto3" json:"organization,omitempty"`
+	// Bucket. (InfluxDb v2)
+	Bucket string `protobuf:"bytes,11,opt,name=bucket,proto3" json:"bucket,omitempty"`
+}
+
+func (x *InfluxDbIntegration) Reset() {
+	*x = InfluxDbIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *InfluxDbIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*InfluxDbIntegration) ProtoMessage() {}
+
+func (x *InfluxDbIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use InfluxDbIntegration.ProtoReflect.Descriptor instead.
+func (*InfluxDbIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *InfluxDbIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *InfluxDbIntegration) GetEndpoint() string {
+	if x != nil {
+		return x.Endpoint
+	}
+	return ""
+}
+
+func (x *InfluxDbIntegration) GetDb() string {
+	if x != nil {
+		return x.Db
+	}
+	return ""
+}
+
+func (x *InfluxDbIntegration) GetUsername() string {
+	if x != nil {
+		return x.Username
+	}
+	return ""
+}
+
+func (x *InfluxDbIntegration) GetPassword() string {
+	if x != nil {
+		return x.Password
+	}
+	return ""
+}
+
+func (x *InfluxDbIntegration) GetRetentionPolicyName() string {
+	if x != nil {
+		return x.RetentionPolicyName
+	}
+	return ""
+}
+
+func (x *InfluxDbIntegration) GetPrecision() InfluxDbPrecision {
+	if x != nil {
+		return x.Precision
+	}
+	return InfluxDbPrecision_NS
+}
+
+func (x *InfluxDbIntegration) GetVersion() InfluxDbVersion {
+	if x != nil {
+		return x.Version
+	}
+	return InfluxDbVersion_INFLUXDB_1
+}
+
+func (x *InfluxDbIntegration) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *InfluxDbIntegration) GetOrganization() string {
+	if x != nil {
+		return x.Organization
+	}
+	return ""
+}
+
+func (x *InfluxDbIntegration) GetBucket() string {
+	if x != nil {
+		return x.Bucket
+	}
+	return ""
+}
+
+type CreateInfluxDbIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *InfluxDbIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateInfluxDbIntegrationRequest) Reset() {
+	*x = CreateInfluxDbIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateInfluxDbIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateInfluxDbIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateInfluxDbIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateInfluxDbIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateInfluxDbIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *CreateInfluxDbIntegrationRequest) GetIntegration() *InfluxDbIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetInfluxDbIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetInfluxDbIntegrationRequest) Reset() {
+	*x = GetInfluxDbIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[21]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetInfluxDbIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetInfluxDbIntegrationRequest) ProtoMessage() {}
+
+func (x *GetInfluxDbIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[21]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetInfluxDbIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetInfluxDbIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{21}
+}
+
+func (x *GetInfluxDbIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetInfluxDbIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *InfluxDbIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetInfluxDbIntegrationResponse) Reset() {
+	*x = GetInfluxDbIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[22]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetInfluxDbIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetInfluxDbIntegrationResponse) ProtoMessage() {}
+
+func (x *GetInfluxDbIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[22]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetInfluxDbIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetInfluxDbIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{22}
+}
+
+func (x *GetInfluxDbIntegrationResponse) GetIntegration() *InfluxDbIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateInfluxDbIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *InfluxDbIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateInfluxDbIntegrationRequest) Reset() {
+	*x = UpdateInfluxDbIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[23]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateInfluxDbIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateInfluxDbIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateInfluxDbIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[23]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateInfluxDbIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateInfluxDbIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *UpdateInfluxDbIntegrationRequest) GetIntegration() *InfluxDbIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteInfluxDbIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteInfluxDbIntegrationRequest) Reset() {
+	*x = DeleteInfluxDbIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[24]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteInfluxDbIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteInfluxDbIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteInfluxDbIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[24]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteInfluxDbIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteInfluxDbIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *DeleteInfluxDbIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type ThingsBoardIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// ThingsBoard server endpoint, e.g. https://example.com
+	Server string `protobuf:"bytes,2,opt,name=server,proto3" json:"server,omitempty"`
+}
+
+func (x *ThingsBoardIntegration) Reset() {
+	*x = ThingsBoardIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[25]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ThingsBoardIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ThingsBoardIntegration) ProtoMessage() {}
+
+func (x *ThingsBoardIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[25]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ThingsBoardIntegration.ProtoReflect.Descriptor instead.
+func (*ThingsBoardIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ThingsBoardIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *ThingsBoardIntegration) GetServer() string {
+	if x != nil {
+		return x.Server
+	}
+	return ""
+}
+
+type CreateThingsBoardIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *ThingsBoardIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateThingsBoardIntegrationRequest) Reset() {
+	*x = CreateThingsBoardIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[26]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateThingsBoardIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateThingsBoardIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateThingsBoardIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[26]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateThingsBoardIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateThingsBoardIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *CreateThingsBoardIntegrationRequest) GetIntegration() *ThingsBoardIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetThingsBoardIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetThingsBoardIntegrationRequest) Reset() {
+	*x = GetThingsBoardIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[27]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetThingsBoardIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetThingsBoardIntegrationRequest) ProtoMessage() {}
+
+func (x *GetThingsBoardIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[27]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetThingsBoardIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetThingsBoardIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *GetThingsBoardIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetThingsBoardIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *ThingsBoardIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetThingsBoardIntegrationResponse) Reset() {
+	*x = GetThingsBoardIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[28]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetThingsBoardIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetThingsBoardIntegrationResponse) ProtoMessage() {}
+
+func (x *GetThingsBoardIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[28]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetThingsBoardIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetThingsBoardIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{28}
+}
+
+func (x *GetThingsBoardIntegrationResponse) GetIntegration() *ThingsBoardIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateThingsBoardIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *ThingsBoardIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateThingsBoardIntegrationRequest) Reset() {
+	*x = UpdateThingsBoardIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[29]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateThingsBoardIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateThingsBoardIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateThingsBoardIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[29]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateThingsBoardIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateThingsBoardIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{29}
+}
+
+func (x *UpdateThingsBoardIntegrationRequest) GetIntegration() *ThingsBoardIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteThingsBoardIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteThingsBoardIntegrationRequest) Reset() {
+	*x = DeleteThingsBoardIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[30]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteThingsBoardIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteThingsBoardIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteThingsBoardIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[30]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteThingsBoardIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteThingsBoardIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{30}
+}
+
+func (x *DeleteThingsBoardIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type MyDevicesIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// myDevices API endpoint.
+	Endpoint string `protobuf:"bytes,2,opt,name=endpoint,proto3" json:"endpoint,omitempty"`
+}
+
+func (x *MyDevicesIntegration) Reset() {
+	*x = MyDevicesIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[31]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MyDevicesIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MyDevicesIntegration) ProtoMessage() {}
+
+func (x *MyDevicesIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[31]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MyDevicesIntegration.ProtoReflect.Descriptor instead.
+func (*MyDevicesIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{31}
+}
+
+func (x *MyDevicesIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *MyDevicesIntegration) GetEndpoint() string {
+	if x != nil {
+		return x.Endpoint
+	}
+	return ""
+}
+
+type CreateMyDevicesIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *MyDevicesIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateMyDevicesIntegrationRequest) Reset() {
+	*x = CreateMyDevicesIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[32]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateMyDevicesIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateMyDevicesIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateMyDevicesIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[32]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateMyDevicesIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateMyDevicesIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{32}
+}
+
+func (x *CreateMyDevicesIntegrationRequest) GetIntegration() *MyDevicesIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetMyDevicesIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetMyDevicesIntegrationRequest) Reset() {
+	*x = GetMyDevicesIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[33]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetMyDevicesIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMyDevicesIntegrationRequest) ProtoMessage() {}
+
+func (x *GetMyDevicesIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[33]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMyDevicesIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetMyDevicesIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *GetMyDevicesIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetMyDevicesIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *MyDevicesIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetMyDevicesIntegrationResponse) Reset() {
+	*x = GetMyDevicesIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[34]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetMyDevicesIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetMyDevicesIntegrationResponse) ProtoMessage() {}
+
+func (x *GetMyDevicesIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[34]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetMyDevicesIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetMyDevicesIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *GetMyDevicesIntegrationResponse) GetIntegration() *MyDevicesIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateMyDevicesIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *MyDevicesIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateMyDevicesIntegrationRequest) Reset() {
+	*x = UpdateMyDevicesIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[35]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateMyDevicesIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateMyDevicesIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateMyDevicesIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[35]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateMyDevicesIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateMyDevicesIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *UpdateMyDevicesIntegrationRequest) GetIntegration() *MyDevicesIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteMyDevicesIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteMyDevicesIntegrationRequest) Reset() {
+	*x = DeleteMyDevicesIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[36]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteMyDevicesIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteMyDevicesIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteMyDevicesIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[36]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteMyDevicesIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteMyDevicesIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *DeleteMyDevicesIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type LoraCloudIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// Modem & Geolocation Services configuration.
+	ModemGeolocationServices *LoraCloudModemGeolocationServices `protobuf:"bytes,2,opt,name=modem_geolocation_services,json=modemGeolocationServices,proto3" json:"modem_geolocation_services,omitempty"`
+}
+
+func (x *LoraCloudIntegration) Reset() {
+	*x = LoraCloudIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[37]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LoraCloudIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoraCloudIntegration) ProtoMessage() {}
+
+func (x *LoraCloudIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[37]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoraCloudIntegration.ProtoReflect.Descriptor instead.
+func (*LoraCloudIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *LoraCloudIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *LoraCloudIntegration) GetModemGeolocationServices() *LoraCloudModemGeolocationServices {
+	if x != nil {
+		return x.ModemGeolocationServices
+	}
+	return nil
+}
+
+type LoraCloudModemGeolocationServices struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// API token.
+	Token string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	// Device implements Modem / Modem-E stack.
+	ModemEnabled bool `protobuf:"varint,2,opt,name=modem_enabled,json=modemEnabled,proto3" json:"modem_enabled,omitempty"`
+	// Forward FPorts.
+	// Forward uplink messages matching the given FPorts to the MGS.
+	ForwardFPorts []uint32 `protobuf:"varint,16,rep,packed,name=forward_f_ports,json=forwardFPorts,proto3" json:"forward_f_ports,omitempty"`
+	// Use rx time for GNSS resolving.
+	// In case this is set to true, the MGS resolver will use the RX time of the
+	// network instead of the timestamp included in the LR1110 payload.
+	GnssUseRxTime bool `protobuf:"varint,5,opt,name=gnss_use_rx_time,json=gnssUseRxTime,proto3" json:"gnss_use_rx_time,omitempty"`
+	// Use gateway location for GNSS resolving.
+	// In the case this is set to true, ChirpStack will provide the location of
+	// one of the gateways to the MGS resolver to aid the resolving process.
+	// Disable this in case the gateway location is not accurate / incorrectly
+	// configured as an incorrect location will cause the resolver to return an
+	// error.
+	GnssUseGatewayLocation bool `protobuf:"varint,17,opt,name=gnss_use_gateway_location,json=gnssUseGatewayLocation,proto3" json:"gnss_use_gateway_location,omitempty"`
+	// Parse TLV records.
+	// If enabled, stream records (expected in TLV format) are scanned for GNSS
+	// data (0x06 or 0x07). If found, ChirpStack will make an additional
+	// geolocation call to the MGS API for resolving the location of the detected
+	// payload.
+	ParseTlv bool `protobuf:"varint,6,opt,name=parse_tlv,json=parseTlv,proto3" json:"parse_tlv,omitempty"`
+	// Geolocation buffer TTL (in seconds).
+	// If > 0, uplink RX meta-data will be stored in a buffer so that
+	// the meta-data of multiple uplinks can be used for geolocation.
+	GeolocationBufferTtl uint32 `protobuf:"varint,7,opt,name=geolocation_buffer_ttl,json=geolocationBufferTtl,proto3" json:"geolocation_buffer_ttl,omitempty"`
+	// Geolocation minimum buffer size.
+	// If > 0, geolocation will only be performed when the buffer has
+	// at least the given size.
+	GeolocationMinBufferSize uint32 `protobuf:"varint,8,opt,name=geolocation_min_buffer_size,json=geolocationMinBufferSize,proto3" json:"geolocation_min_buffer_size,omitempty"`
+	// TDOA based geolocation is enabled.
+	GeolocationTdoa bool `protobuf:"varint,9,opt,name=geolocation_tdoa,json=geolocationTdoa,proto3" json:"geolocation_tdoa,omitempty"`
+	// RSSI based geolocation is enabled.
+	GeolocationRssi bool `protobuf:"varint,10,opt,name=geolocation_rssi,json=geolocationRssi,proto3" json:"geolocation_rssi,omitempty"`
+	// GNSS based geolocation is enabled (LR1110).
+	GeolocationGnss bool `protobuf:"varint,11,opt,name=geolocation_gnss,json=geolocationGnss,proto3" json:"geolocation_gnss,omitempty"`
+	// GNSS payload field.
+	// This holds the name of the field in the decoded payload object which
+	// contains the GNSS payload bytes (as HEX string).
+	GeolocationGnssPayloadField string `protobuf:"bytes,12,opt,name=geolocation_gnss_payload_field,json=geolocationGnssPayloadField,proto3" json:"geolocation_gnss_payload_field,omitempty"`
+	// GNSS use RX time.
+	// In case this is set to true, the resolver will use the RX time of the
+	// network instead of the timestamp included in the LR1110 payload.
+	GeolocationGnssUseRxTime bool `protobuf:"varint,13,opt,name=geolocation_gnss_use_rx_time,json=geolocationGnssUseRxTime,proto3" json:"geolocation_gnss_use_rx_time,omitempty"`
+	// Wifi based geolocation is enabled.
+	GeolocationWifi bool `protobuf:"varint,14,opt,name=geolocation_wifi,json=geolocationWifi,proto3" json:"geolocation_wifi,omitempty"`
+	// Wifi payload field.
+	// This holds the name of the field in the decoded payload object which
+	// contains an array of objects with the following fields:
+	// * macAddress - e.g. 01:23:45:67:89:ab
+	// * signalStrength - e.g. -51 (optional)
+	GeolocationWifiPayloadField string `protobuf:"bytes,15,opt,name=geolocation_wifi_payload_field,json=geolocationWifiPayloadField,proto3" json:"geolocation_wifi_payload_field,omitempty"`
+}
+
+func (x *LoraCloudModemGeolocationServices) Reset() {
+	*x = LoraCloudModemGeolocationServices{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[38]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *LoraCloudModemGeolocationServices) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoraCloudModemGeolocationServices) ProtoMessage() {}
+
+func (x *LoraCloudModemGeolocationServices) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[38]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoraCloudModemGeolocationServices.ProtoReflect.Descriptor instead.
+func (*LoraCloudModemGeolocationServices) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *LoraCloudModemGeolocationServices) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *LoraCloudModemGeolocationServices) GetModemEnabled() bool {
+	if x != nil {
+		return x.ModemEnabled
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetForwardFPorts() []uint32 {
+	if x != nil {
+		return x.ForwardFPorts
+	}
+	return nil
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGnssUseRxTime() bool {
+	if x != nil {
+		return x.GnssUseRxTime
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGnssUseGatewayLocation() bool {
+	if x != nil {
+		return x.GnssUseGatewayLocation
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetParseTlv() bool {
+	if x != nil {
+		return x.ParseTlv
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationBufferTtl() uint32 {
+	if x != nil {
+		return x.GeolocationBufferTtl
+	}
+	return 0
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationMinBufferSize() uint32 {
+	if x != nil {
+		return x.GeolocationMinBufferSize
+	}
+	return 0
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationTdoa() bool {
+	if x != nil {
+		return x.GeolocationTdoa
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationRssi() bool {
+	if x != nil {
+		return x.GeolocationRssi
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationGnss() bool {
+	if x != nil {
+		return x.GeolocationGnss
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationGnssPayloadField() string {
+	if x != nil {
+		return x.GeolocationGnssPayloadField
+	}
+	return ""
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationGnssUseRxTime() bool {
+	if x != nil {
+		return x.GeolocationGnssUseRxTime
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationWifi() bool {
+	if x != nil {
+		return x.GeolocationWifi
+	}
+	return false
+}
+
+func (x *LoraCloudModemGeolocationServices) GetGeolocationWifiPayloadField() string {
+	if x != nil {
+		return x.GeolocationWifiPayloadField
+	}
+	return ""
+}
+
+type CreateLoraCloudIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *LoraCloudIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateLoraCloudIntegrationRequest) Reset() {
+	*x = CreateLoraCloudIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[39]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateLoraCloudIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateLoraCloudIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateLoraCloudIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[39]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateLoraCloudIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateLoraCloudIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *CreateLoraCloudIntegrationRequest) GetIntegration() *LoraCloudIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetLoraCloudIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetLoraCloudIntegrationRequest) Reset() {
+	*x = GetLoraCloudIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[40]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetLoraCloudIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLoraCloudIntegrationRequest) ProtoMessage() {}
+
+func (x *GetLoraCloudIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[40]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLoraCloudIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetLoraCloudIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *GetLoraCloudIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetLoraCloudIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *LoraCloudIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetLoraCloudIntegrationResponse) Reset() {
+	*x = GetLoraCloudIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[41]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetLoraCloudIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetLoraCloudIntegrationResponse) ProtoMessage() {}
+
+func (x *GetLoraCloudIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[41]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetLoraCloudIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetLoraCloudIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *GetLoraCloudIntegrationResponse) GetIntegration() *LoraCloudIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateLoraCloudIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *LoraCloudIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateLoraCloudIntegrationRequest) Reset() {
+	*x = UpdateLoraCloudIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[42]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateLoraCloudIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateLoraCloudIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateLoraCloudIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[42]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateLoraCloudIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateLoraCloudIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *UpdateLoraCloudIntegrationRequest) GetIntegration() *LoraCloudIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteLoraCloudIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteLoraCloudIntegrationRequest) Reset() {
+	*x = DeleteLoraCloudIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[43]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteLoraCloudIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteLoraCloudIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteLoraCloudIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[43]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteLoraCloudIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteLoraCloudIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *DeleteLoraCloudIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GcpPubSubIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// Encoding.
+	Encoding Encoding `protobuf:"varint,2,opt,name=encoding,proto3,enum=service.Encoding" json:"encoding,omitempty"`
+	// Credentials file.
+	// This IAM service-account credentials file (JSON) must have the following
+	// Pub/Sub roles:
+	// * Pub/Sub Publisher
+	CredentialsFile string `protobuf:"bytes,3,opt,name=credentials_file,json=credentialsFile,proto3" json:"credentials_file,omitempty"`
+	// Project ID.
+	ProjectId string `protobuf:"bytes,4,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
+	// Topic name.
+	// This is the name of the Pub/Sub topic.
+	TopicName string `protobuf:"bytes,5,opt,name=topic_name,json=topicName,proto3" json:"topic_name,omitempty"`
+}
+
+func (x *GcpPubSubIntegration) Reset() {
+	*x = GcpPubSubIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[44]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GcpPubSubIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GcpPubSubIntegration) ProtoMessage() {}
+
+func (x *GcpPubSubIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[44]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GcpPubSubIntegration.ProtoReflect.Descriptor instead.
+func (*GcpPubSubIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *GcpPubSubIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *GcpPubSubIntegration) GetEncoding() Encoding {
+	if x != nil {
+		return x.Encoding
+	}
+	return Encoding_JSON
+}
+
+func (x *GcpPubSubIntegration) GetCredentialsFile() string {
+	if x != nil {
+		return x.CredentialsFile
+	}
+	return ""
+}
+
+func (x *GcpPubSubIntegration) GetProjectId() string {
+	if x != nil {
+		return x.ProjectId
+	}
+	return ""
+}
+
+func (x *GcpPubSubIntegration) GetTopicName() string {
+	if x != nil {
+		return x.TopicName
+	}
+	return ""
+}
+
+type CreateGcpPubSubIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *GcpPubSubIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateGcpPubSubIntegrationRequest) Reset() {
+	*x = CreateGcpPubSubIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[45]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateGcpPubSubIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateGcpPubSubIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateGcpPubSubIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[45]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateGcpPubSubIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateGcpPubSubIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *CreateGcpPubSubIntegrationRequest) GetIntegration() *GcpPubSubIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetGcpPubSubIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetGcpPubSubIntegrationRequest) Reset() {
+	*x = GetGcpPubSubIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[46]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetGcpPubSubIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetGcpPubSubIntegrationRequest) ProtoMessage() {}
+
+func (x *GetGcpPubSubIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[46]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetGcpPubSubIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetGcpPubSubIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *GetGcpPubSubIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetGcpPubSubIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *GcpPubSubIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetGcpPubSubIntegrationResponse) Reset() {
+	*x = GetGcpPubSubIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[47]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetGcpPubSubIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetGcpPubSubIntegrationResponse) ProtoMessage() {}
+
+func (x *GetGcpPubSubIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[47]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetGcpPubSubIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetGcpPubSubIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *GetGcpPubSubIntegrationResponse) GetIntegration() *GcpPubSubIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateGcpPubSubIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *GcpPubSubIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateGcpPubSubIntegrationRequest) Reset() {
+	*x = UpdateGcpPubSubIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[48]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateGcpPubSubIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateGcpPubSubIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateGcpPubSubIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[48]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateGcpPubSubIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateGcpPubSubIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *UpdateGcpPubSubIntegrationRequest) GetIntegration() *GcpPubSubIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteGcpPubSubIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteGcpPubSubIntegrationRequest) Reset() {
+	*x = DeleteGcpPubSubIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[49]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteGcpPubSubIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteGcpPubSubIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteGcpPubSubIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[49]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteGcpPubSubIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteGcpPubSubIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *DeleteGcpPubSubIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type AwsSnsIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// Encoding.
+	Encoding Encoding `protobuf:"varint,2,opt,name=encoding,proto3,enum=service.Encoding" json:"encoding,omitempty"`
+	// AWS region.
+	Region string `protobuf:"bytes,3,opt,name=region,proto3" json:"region,omitempty"`
+	// AWS Access Key ID.
+	AccessKeyId string `protobuf:"bytes,4,opt,name=access_key_id,json=accessKeyId,proto3" json:"access_key_id,omitempty"`
+	// AWS Secret Access Key.
+	SecretAccessKey string `protobuf:"bytes,5,opt,name=secret_access_key,json=secretAccessKey,proto3" json:"secret_access_key,omitempty"`
+	// Topic ARN.
+	TopicArn string `protobuf:"bytes,6,opt,name=topic_arn,json=topicArn,proto3" json:"topic_arn,omitempty"`
+}
+
+func (x *AwsSnsIntegration) Reset() {
+	*x = AwsSnsIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[50]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AwsSnsIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AwsSnsIntegration) ProtoMessage() {}
+
+func (x *AwsSnsIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[50]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AwsSnsIntegration.ProtoReflect.Descriptor instead.
+func (*AwsSnsIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *AwsSnsIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *AwsSnsIntegration) GetEncoding() Encoding {
+	if x != nil {
+		return x.Encoding
+	}
+	return Encoding_JSON
+}
+
+func (x *AwsSnsIntegration) GetRegion() string {
+	if x != nil {
+		return x.Region
+	}
+	return ""
+}
+
+func (x *AwsSnsIntegration) GetAccessKeyId() string {
+	if x != nil {
+		return x.AccessKeyId
+	}
+	return ""
+}
+
+func (x *AwsSnsIntegration) GetSecretAccessKey() string {
+	if x != nil {
+		return x.SecretAccessKey
+	}
+	return ""
+}
+
+func (x *AwsSnsIntegration) GetTopicArn() string {
+	if x != nil {
+		return x.TopicArn
+	}
+	return ""
+}
+
+type CreateAwsSnsIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *AwsSnsIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateAwsSnsIntegrationRequest) Reset() {
+	*x = CreateAwsSnsIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[51]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateAwsSnsIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAwsSnsIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateAwsSnsIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[51]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAwsSnsIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateAwsSnsIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *CreateAwsSnsIntegrationRequest) GetIntegration() *AwsSnsIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetAwsSnsIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetAwsSnsIntegrationRequest) Reset() {
+	*x = GetAwsSnsIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[52]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAwsSnsIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAwsSnsIntegrationRequest) ProtoMessage() {}
+
+func (x *GetAwsSnsIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[52]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAwsSnsIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetAwsSnsIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *GetAwsSnsIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetAwsSnsIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *AwsSnsIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetAwsSnsIntegrationResponse) Reset() {
+	*x = GetAwsSnsIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[53]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAwsSnsIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAwsSnsIntegrationResponse) ProtoMessage() {}
+
+func (x *GetAwsSnsIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[53]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAwsSnsIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetAwsSnsIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *GetAwsSnsIntegrationResponse) GetIntegration() *AwsSnsIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateAwsSnsIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *AwsSnsIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateAwsSnsIntegrationRequest) Reset() {
+	*x = UpdateAwsSnsIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[54]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAwsSnsIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAwsSnsIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateAwsSnsIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[54]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAwsSnsIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateAwsSnsIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *UpdateAwsSnsIntegrationRequest) GetIntegration() *AwsSnsIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteAwsSnsIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteAwsSnsIntegrationRequest) Reset() {
+	*x = DeleteAwsSnsIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[55]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteAwsSnsIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAwsSnsIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteAwsSnsIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[55]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAwsSnsIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteAwsSnsIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *DeleteAwsSnsIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type AzureServiceBusIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// Encoding.
+	Encoding Encoding `protobuf:"varint,2,opt,name=encoding,proto3,enum=service.Encoding" json:"encoding,omitempty"`
+	// Connection string.
+	ConnectionString string `protobuf:"bytes,3,opt,name=connection_string,json=connectionString,proto3" json:"connection_string,omitempty"`
+	// Publish name.
+	// This is the name of the topic or queue.
+	PublishName string `protobuf:"bytes,4,opt,name=publish_name,json=publishName,proto3" json:"publish_name,omitempty"`
+}
+
+func (x *AzureServiceBusIntegration) Reset() {
+	*x = AzureServiceBusIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[56]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *AzureServiceBusIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AzureServiceBusIntegration) ProtoMessage() {}
+
+func (x *AzureServiceBusIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[56]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AzureServiceBusIntegration.ProtoReflect.Descriptor instead.
+func (*AzureServiceBusIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *AzureServiceBusIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *AzureServiceBusIntegration) GetEncoding() Encoding {
+	if x != nil {
+		return x.Encoding
+	}
+	return Encoding_JSON
+}
+
+func (x *AzureServiceBusIntegration) GetConnectionString() string {
+	if x != nil {
+		return x.ConnectionString
+	}
+	return ""
+}
+
+func (x *AzureServiceBusIntegration) GetPublishName() string {
+	if x != nil {
+		return x.PublishName
+	}
+	return ""
+}
+
+type CreateAzureServiceBusIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *AzureServiceBusIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateAzureServiceBusIntegrationRequest) Reset() {
+	*x = CreateAzureServiceBusIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[57]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateAzureServiceBusIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateAzureServiceBusIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateAzureServiceBusIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[57]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateAzureServiceBusIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateAzureServiceBusIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *CreateAzureServiceBusIntegrationRequest) GetIntegration() *AzureServiceBusIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetAzureServiceBusIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetAzureServiceBusIntegrationRequest) Reset() {
+	*x = GetAzureServiceBusIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[58]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAzureServiceBusIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAzureServiceBusIntegrationRequest) ProtoMessage() {}
+
+func (x *GetAzureServiceBusIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[58]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAzureServiceBusIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetAzureServiceBusIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *GetAzureServiceBusIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetAzureServiceBusIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *AzureServiceBusIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetAzureServiceBusIntegrationResponse) Reset() {
+	*x = GetAzureServiceBusIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[59]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetAzureServiceBusIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetAzureServiceBusIntegrationResponse) ProtoMessage() {}
+
+func (x *GetAzureServiceBusIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[59]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetAzureServiceBusIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetAzureServiceBusIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *GetAzureServiceBusIntegrationResponse) GetIntegration() *AzureServiceBusIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateAzureServiceBusIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *AzureServiceBusIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateAzureServiceBusIntegrationRequest) Reset() {
+	*x = UpdateAzureServiceBusIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[60]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateAzureServiceBusIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateAzureServiceBusIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateAzureServiceBusIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[60]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateAzureServiceBusIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateAzureServiceBusIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *UpdateAzureServiceBusIntegrationRequest) GetIntegration() *AzureServiceBusIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteAzureServiceBusIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteAzureServiceBusIntegrationRequest) Reset() {
+	*x = DeleteAzureServiceBusIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[61]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteAzureServiceBusIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteAzureServiceBusIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteAzureServiceBusIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[61]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteAzureServiceBusIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteAzureServiceBusIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *DeleteAzureServiceBusIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type PilotThingsIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// Server URL.
+	Server string `protobuf:"bytes,2,opt,name=server,proto3" json:"server,omitempty"`
+	// Authentication token.
+	Token string `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
+}
+
+func (x *PilotThingsIntegration) Reset() {
+	*x = PilotThingsIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[62]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PilotThingsIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PilotThingsIntegration) ProtoMessage() {}
+
+func (x *PilotThingsIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[62]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PilotThingsIntegration.ProtoReflect.Descriptor instead.
+func (*PilotThingsIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{62}
+}
+
+func (x *PilotThingsIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *PilotThingsIntegration) GetServer() string {
+	if x != nil {
+		return x.Server
+	}
+	return ""
+}
+
+func (x *PilotThingsIntegration) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type CreatePilotThingsIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to create.
+	Integration *PilotThingsIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreatePilotThingsIntegrationRequest) Reset() {
+	*x = CreatePilotThingsIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[63]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreatePilotThingsIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreatePilotThingsIntegrationRequest) ProtoMessage() {}
+
+func (x *CreatePilotThingsIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[63]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreatePilotThingsIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreatePilotThingsIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{63}
+}
+
+func (x *CreatePilotThingsIntegrationRequest) GetIntegration() *PilotThingsIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetPilotThingsIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetPilotThingsIntegrationRequest) Reset() {
+	*x = GetPilotThingsIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[64]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetPilotThingsIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPilotThingsIntegrationRequest) ProtoMessage() {}
+
+func (x *GetPilotThingsIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[64]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPilotThingsIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetPilotThingsIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{64}
+}
+
+func (x *GetPilotThingsIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetPilotThingsIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *PilotThingsIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetPilotThingsIntegrationResponse) Reset() {
+	*x = GetPilotThingsIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[65]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetPilotThingsIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetPilotThingsIntegrationResponse) ProtoMessage() {}
+
+func (x *GetPilotThingsIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[65]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetPilotThingsIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetPilotThingsIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{65}
+}
+
+func (x *GetPilotThingsIntegrationResponse) GetIntegration() *PilotThingsIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdatePilotThingsIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *PilotThingsIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdatePilotThingsIntegrationRequest) Reset() {
+	*x = UpdatePilotThingsIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[66]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdatePilotThingsIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdatePilotThingsIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdatePilotThingsIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[66]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdatePilotThingsIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdatePilotThingsIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{66}
+}
+
+func (x *UpdatePilotThingsIntegrationRequest) GetIntegration() *PilotThingsIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeletePilotThingsIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeletePilotThingsIntegrationRequest) Reset() {
+	*x = DeletePilotThingsIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[67]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeletePilotThingsIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeletePilotThingsIntegrationRequest) ProtoMessage() {}
+
+func (x *DeletePilotThingsIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[67]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeletePilotThingsIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeletePilotThingsIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{67}
+}
+
+func (x *DeletePilotThingsIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type IftttIntegration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+	// Key.
+	// This key can be obtained from the IFTTT Webhooks documentation page.
+	Key string `protobuf:"bytes,2,opt,name=key,proto3" json:"key,omitempty"`
+	// Values.
+	// Up to 2 values can be forwarded to IFTTT. These values must map to the
+	// decoded payload keys. For example:
+	//
+	//	{
+	//	  "batteryLevel": 75.3,
+	//	  "buttons": [{"pressed": false}, {"pressed": true}]
+	//	}
+	//
+	// You would specify the following fields:
+	// uplink_values = ["batteryLevel", "buttons_0_pressed"]
+	//
+	// Notes: The first value is always used for the DevEUI.
+	// Ignored if arbitrary_json is set to true.
+	UplinkValues []string `protobuf:"bytes,3,rep,name=uplink_values,json=uplinkValues,proto3" json:"uplink_values,omitempty"`
+	// Arbitrary JSON.
+	// If set to true, ChirpStack events will be sent as-is as arbitrary JSON
+	// payload. If set to false (default), the 3 JSON values format will be used.
+	ArbitraryJson bool `protobuf:"varint,4,opt,name=arbitrary_json,json=arbitraryJson,proto3" json:"arbitrary_json,omitempty"`
+	// Event prefix.
+	// If set, the event name will be PREFIX_EVENT. For example if event_prefix
+	// is set to weatherstation, and uplink event will be sent as
+	// weatherstation_up to the IFTTT webhook.
+	// Note: Only characters in the A-Z, a-z and 0-9 range are allowed.
+	EventPrefix string `protobuf:"bytes,5,opt,name=event_prefix,json=eventPrefix,proto3" json:"event_prefix,omitempty"`
+}
+
+func (x *IftttIntegration) Reset() {
+	*x = IftttIntegration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[68]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *IftttIntegration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IftttIntegration) ProtoMessage() {}
+
+func (x *IftttIntegration) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[68]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IftttIntegration.ProtoReflect.Descriptor instead.
+func (*IftttIntegration) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{68}
+}
+
+func (x *IftttIntegration) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+func (x *IftttIntegration) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *IftttIntegration) GetUplinkValues() []string {
+	if x != nil {
+		return x.UplinkValues
+	}
+	return nil
+}
+
+func (x *IftttIntegration) GetArbitraryJson() bool {
+	if x != nil {
+		return x.ArbitraryJson
+	}
+	return false
+}
+
+func (x *IftttIntegration) GetEventPrefix() string {
+	if x != nil {
+		return x.EventPrefix
+	}
+	return ""
+}
+
+type CreateIftttIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *IftttIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *CreateIftttIntegrationRequest) Reset() {
+	*x = CreateIftttIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[69]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateIftttIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateIftttIntegrationRequest) ProtoMessage() {}
+
+func (x *CreateIftttIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[69]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateIftttIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*CreateIftttIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{69}
+}
+
+func (x *CreateIftttIntegrationRequest) GetIntegration() *IftttIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type GetIftttIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GetIftttIntegrationRequest) Reset() {
+	*x = GetIftttIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[70]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetIftttIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetIftttIntegrationRequest) ProtoMessage() {}
+
+func (x *GetIftttIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[70]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetIftttIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*GetIftttIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{70}
+}
+
+func (x *GetIftttIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GetIftttIntegrationResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object.
+	Integration *IftttIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *GetIftttIntegrationResponse) Reset() {
+	*x = GetIftttIntegrationResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[71]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GetIftttIntegrationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetIftttIntegrationResponse) ProtoMessage() {}
+
+func (x *GetIftttIntegrationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[71]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetIftttIntegrationResponse.ProtoReflect.Descriptor instead.
+func (*GetIftttIntegrationResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{71}
+}
+
+func (x *GetIftttIntegrationResponse) GetIntegration() *IftttIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type UpdateIftttIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Integration object to update.
+	Integration *IftttIntegration `protobuf:"bytes,1,opt,name=integration,proto3" json:"integration,omitempty"`
+}
+
+func (x *UpdateIftttIntegrationRequest) Reset() {
+	*x = UpdateIftttIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[72]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateIftttIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateIftttIntegrationRequest) ProtoMessage() {}
+
+func (x *UpdateIftttIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[72]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateIftttIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*UpdateIftttIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{72}
+}
+
+func (x *UpdateIftttIntegrationRequest) GetIntegration() *IftttIntegration {
+	if x != nil {
+		return x.Integration
+	}
+	return nil
+}
+
+type DeleteIftttIntegrationRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *DeleteIftttIntegrationRequest) Reset() {
+	*x = DeleteIftttIntegrationRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[73]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DeleteIftttIntegrationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteIftttIntegrationRequest) ProtoMessage() {}
+
+func (x *DeleteIftttIntegrationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[73]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteIftttIntegrationRequest.ProtoReflect.Descriptor instead.
+func (*DeleteIftttIntegrationRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{73}
+}
+
+func (x *DeleteIftttIntegrationRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GenerateMqttIntegrationClientCertificateRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Application ID (UUID).
+	ApplicationId string `protobuf:"bytes,1,opt,name=application_id,json=applicationId,proto3" json:"application_id,omitempty"`
+}
+
+func (x *GenerateMqttIntegrationClientCertificateRequest) Reset() {
+	*x = GenerateMqttIntegrationClientCertificateRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[74]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GenerateMqttIntegrationClientCertificateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateMqttIntegrationClientCertificateRequest) ProtoMessage() {}
+
+func (x *GenerateMqttIntegrationClientCertificateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[74]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateMqttIntegrationClientCertificateRequest.ProtoReflect.Descriptor instead.
+func (*GenerateMqttIntegrationClientCertificateRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{74}
+}
+
+func (x *GenerateMqttIntegrationClientCertificateRequest) GetApplicationId() string {
+	if x != nil {
+		return x.ApplicationId
+	}
+	return ""
+}
+
+type GenerateMqttIntegrationClientCertificateResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// TLS certificate.
+	TlsCert string `protobuf:"bytes,1,opt,name=tls_cert,json=tlsCert,proto3" json:"tls_cert,omitempty"`
+	// TLS key.
+	TlsKey string `protobuf:"bytes,2,opt,name=tls_key,json=tlsKey,proto3" json:"tls_key,omitempty"`
+	// CA certificate.
+	CaCert string `protobuf:"bytes,3,opt,name=ca_cert,json=caCert,proto3" json:"ca_cert,omitempty"`
+	// Expires at defines the expiration date of the certificate.
+	ExpiresAt *timestamppb.Timestamp `protobuf:"bytes,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+}
+
+func (x *GenerateMqttIntegrationClientCertificateResponse) Reset() {
+	*x = GenerateMqttIntegrationClientCertificateResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_application_proto_msgTypes[75]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *GenerateMqttIntegrationClientCertificateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GenerateMqttIntegrationClientCertificateResponse) ProtoMessage() {}
+
+func (x *GenerateMqttIntegrationClientCertificateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_application_proto_msgTypes[75]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GenerateMqttIntegrationClientCertificateResponse.ProtoReflect.Descriptor instead.
+func (*GenerateMqttIntegrationClientCertificateResponse) Descriptor() ([]byte, []int) {
+	return file_external_service_application_proto_rawDescGZIP(), []int{75}
+}
+
+func (x *GenerateMqttIntegrationClientCertificateResponse) GetTlsCert() string {
+	if x != nil {
+		return x.TlsCert
+	}
+	return ""
+}
+
+func (x *GenerateMqttIntegrationClientCertificateResponse) GetTlsKey() string {
+	if x != nil {
+		return x.TlsKey
+	}
+	return ""
+}
+
+func (x *GenerateMqttIntegrationClientCertificateResponse) GetCaCert() string {
+	if x != nil {
+		return x.CaCert
+	}
+	return ""
+}
+
+func (x *GenerateMqttIntegrationClientCertificateResponse) GetExpiresAt() *timestamppb.Timestamp {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return nil
+}
+
 var File_external_service_application_proto protoreflect.FileDescriptor
 
 var file_external_service_application_proto_rawDesc = []byte{
@@ -737,46 +4648,1018 @@ var file_external_service_application_proto_rawDesc = []byte{
 	0x34, 0x0a, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32,
 	0x1c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63,
 	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x06, 0x72,
-	0x65, 0x73, 0x75, 0x6c, 0x74, 0x32, 0xac, 0x04, 0x0a, 0x12, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x6d, 0x0a, 0x06,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x21, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
-	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x73, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1c, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x16, 0x3a, 0x01, 0x2a, 0x22, 0x11, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61,
-	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x66, 0x0a, 0x03, 0x47,
-	0x65, 0x74, 0x12, 0x1e, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74,
-	0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x1f, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74,
-	0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x12, 0x16, 0x2f, 0x61, 0x70,
-	0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b,
-	0x69, 0x64, 0x7d, 0x12, 0x72, 0x0a, 0x06, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x21, 0x2e,
-	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70,
+	0x65, 0x73, 0x75, 0x6c, 0x74, 0x22, 0x40, 0x0a, 0x17, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x43, 0x0a, 0x13, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x2c,
+	0x0a, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x18, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x4b, 0x69, 0x6e, 0x64, 0x52, 0x04, 0x6b, 0x69, 0x6e, 0x64, 0x22, 0x71, 0x0a, 0x18,
+	0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x0b, 0x74, 0x6f, 0x74, 0x61,
+	0x6c, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0a, 0x74,
+	0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x34, 0x0a, 0x06, 0x72, 0x65, 0x73,
+	0x75, 0x6c, 0x74, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4c,
+	0x69, 0x73, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x22,
+	0x92, 0x02, 0x0a, 0x0f, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x3f, 0x0a, 0x07, 0x68, 0x65,
+	0x61, 0x64, 0x65, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x73, 0x45, 0x6e, 0x74,
+	0x72, 0x79, 0x52, 0x07, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x73, 0x12, 0x2d, 0x0a, 0x08, 0x65,
+	0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x11, 0x2e,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x45, 0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67,
+	0x52, 0x08, 0x65, 0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x12, 0x2c, 0x0a, 0x12, 0x65, 0x76,
+	0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x5f, 0x75, 0x72, 0x6c,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x10, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x45, 0x6e, 0x64,
+	0x70, 0x6f, 0x69, 0x6e, 0x74, 0x55, 0x72, 0x6c, 0x1a, 0x3a, 0x0a, 0x0c, 0x48, 0x65, 0x61, 0x64,
+	0x65, 0x72, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61,
+	0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65,
+	0x3a, 0x02, 0x38, 0x01, 0x22, 0x5a, 0x0a, 0x1c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x48, 0x74,
+	0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x3a, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x22, 0x42, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a,
+	0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x49, 0x64, 0x22, 0x58, 0x0a, 0x1a, 0x47, 0x65, 0x74, 0x48, 0x74, 0x74, 0x70, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x3a, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x5a,
+	0x0a, 0x1c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3a,
+	0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x48, 0x74,
+	0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x45, 0x0a, 0x1c, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49,
+	0x64, 0x22, 0x94, 0x03, 0x0a, 0x13, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64,
+	0x12, 0x1a, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x08, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x12, 0x0e, 0x0a, 0x02,
+	0x64, 0x62, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x64, 0x62, 0x12, 0x1a, 0x0a, 0x08,
+	0x75, 0x73, 0x65, 0x72, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08,
+	0x75, 0x73, 0x65, 0x72, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x61, 0x73, 0x73,
+	0x77, 0x6f, 0x72, 0x64, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x61, 0x73, 0x73,
+	0x77, 0x6f, 0x72, 0x64, 0x12, 0x32, 0x0a, 0x15, 0x72, 0x65, 0x74, 0x65, 0x6e, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x70, 0x6f, 0x6c, 0x69, 0x63, 0x79, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x06, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x13, 0x72, 0x65, 0x74, 0x65, 0x6e, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x6f,
+	0x6c, 0x69, 0x63, 0x79, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x38, 0x0a, 0x09, 0x70, 0x72, 0x65, 0x63,
+	0x69, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x1a, 0x2e, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x50, 0x72,
+	0x65, 0x63, 0x69, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x09, 0x70, 0x72, 0x65, 0x63, 0x69, 0x73, 0x69,
+	0x6f, 0x6e, 0x12, 0x32, 0x0a, 0x07, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x18, 0x08, 0x20,
+	0x01, 0x28, 0x0e, 0x32, 0x18, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x6e,
+	0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x07, 0x76,
+	0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18,
+	0x09, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x22, 0x0a, 0x0c,
+	0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x0a, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0c, 0x6f, 0x72, 0x67, 0x61, 0x6e, 0x69, 0x7a, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x12, 0x16, 0x0a, 0x06, 0x62, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x06, 0x62, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x22, 0x62, 0x0a, 0x20, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3e, 0x0a, 0x0b,
+	0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x6e, 0x66, 0x6c,
+	0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x46, 0x0a, 0x1d,
+	0x47, 0x65, 0x74, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a,
+	0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x49, 0x64, 0x22, 0x60, 0x0a, 0x1e, 0x47, 0x65, 0x74, 0x49, 0x6e, 0x66, 0x6c, 0x75,
+	0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x62, 0x0a, 0x20, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3e, 0x0a, 0x0b, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x1c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78,
+	0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x49, 0x0a, 0x20, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25,
+	0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x57, 0x0a, 0x16, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42,
+	0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x22, 0x68,
+	0x0a, 0x23, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f,
+	0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x41, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x49, 0x0a, 0x20, 0x47, 0x65, 0x74, 0x54,
+	0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x49, 0x64, 0x22, 0x66, 0x0a, 0x21, 0x47, 0x65, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73,
+	0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x41, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f,
+	0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b,
+	0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x68, 0x0a, 0x23, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x41, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x4c, 0x0a, 0x23, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x54,
+	0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x49, 0x64, 0x22, 0x59, 0x0a, 0x14, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x25, 0x0a, 0x0e, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x49, 0x64, 0x12, 0x1a, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x22, 0x64,
+	0x0a, 0x21, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x2e, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x22, 0x47, 0x0a, 0x1e, 0x47, 0x65, 0x74, 0x4d, 0x79, 0x44, 0x65, 0x76,
+	0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x62, 0x0a,
+	0x1f, 0x47, 0x65, 0x74, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e,
+	0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x22, 0x64, 0x0a, 0x21, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x79, 0x44, 0x65, 0x76,
+	0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x4a, 0x0a, 0x21, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x49, 0x64, 0x22, 0xa7, 0x01, 0x0a, 0x14, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75,
+	0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x25, 0x0a, 0x0e,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x49, 0x64, 0x12, 0x68, 0x0a, 0x1a, 0x6d, 0x6f, 0x64, 0x65, 0x6d, 0x5f, 0x67, 0x65, 0x6f,
+	0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x73, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6d,
+	0x47, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x52, 0x18, 0x6d, 0x6f, 0x64, 0x65, 0x6d, 0x47, 0x65, 0x6f, 0x6c, 0x6f, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x22, 0xf2, 0x05,
+	0x0a, 0x21, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x6d,
+	0x47, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x23, 0x0a, 0x0d, 0x6d, 0x6f, 0x64,
+	0x65, 0x6d, 0x5f, 0x65, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x08,
+	0x52, 0x0c, 0x6d, 0x6f, 0x64, 0x65, 0x6d, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x12, 0x26,
+	0x0a, 0x0f, 0x66, 0x6f, 0x72, 0x77, 0x61, 0x72, 0x64, 0x5f, 0x66, 0x5f, 0x70, 0x6f, 0x72, 0x74,
+	0x73, 0x18, 0x10, 0x20, 0x03, 0x28, 0x0d, 0x52, 0x0d, 0x66, 0x6f, 0x72, 0x77, 0x61, 0x72, 0x64,
+	0x46, 0x50, 0x6f, 0x72, 0x74, 0x73, 0x12, 0x27, 0x0a, 0x10, 0x67, 0x6e, 0x73, 0x73, 0x5f, 0x75,
+	0x73, 0x65, 0x5f, 0x72, 0x78, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x08,
+	0x52, 0x0d, 0x67, 0x6e, 0x73, 0x73, 0x55, 0x73, 0x65, 0x52, 0x78, 0x54, 0x69, 0x6d, 0x65, 0x12,
+	0x39, 0x0a, 0x19, 0x67, 0x6e, 0x73, 0x73, 0x5f, 0x75, 0x73, 0x65, 0x5f, 0x67, 0x61, 0x74, 0x65,
+	0x77, 0x61, 0x79, 0x5f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x11, 0x20, 0x01,
+	0x28, 0x08, 0x52, 0x16, 0x67, 0x6e, 0x73, 0x73, 0x55, 0x73, 0x65, 0x47, 0x61, 0x74, 0x65, 0x77,
+	0x61, 0x79, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1b, 0x0a, 0x09, 0x70, 0x61,
+	0x72, 0x73, 0x65, 0x5f, 0x74, 0x6c, 0x76, 0x18, 0x06, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x70,
+	0x61, 0x72, 0x73, 0x65, 0x54, 0x6c, 0x76, 0x12, 0x34, 0x0a, 0x16, 0x67, 0x65, 0x6f, 0x6c, 0x6f,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x62, 0x75, 0x66, 0x66, 0x65, 0x72, 0x5f, 0x74, 0x74,
+	0x6c, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x14, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x42, 0x75, 0x66, 0x66, 0x65, 0x72, 0x54, 0x74, 0x6c, 0x12, 0x3d, 0x0a,
+	0x1b, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x6d, 0x69, 0x6e,
+	0x5f, 0x62, 0x75, 0x66, 0x66, 0x65, 0x72, 0x5f, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x08, 0x20, 0x01,
+	0x28, 0x0d, 0x52, 0x18, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4d,
+	0x69, 0x6e, 0x42, 0x75, 0x66, 0x66, 0x65, 0x72, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x29, 0x0a, 0x10,
+	0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x74, 0x64, 0x6f, 0x61,
+	0x18, 0x09, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0f, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x54, 0x64, 0x6f, 0x61, 0x12, 0x29, 0x0a, 0x10, 0x67, 0x65, 0x6f, 0x6c, 0x6f,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x73, 0x73, 0x69, 0x18, 0x0a, 0x20, 0x01, 0x28,
+	0x08, 0x52, 0x0f, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x73,
+	0x73, 0x69, 0x12, 0x29, 0x0a, 0x10, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x67, 0x6e, 0x73, 0x73, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0f, 0x67, 0x65,
+	0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x47, 0x6e, 0x73, 0x73, 0x12, 0x43, 0x0a,
+	0x1e, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x67, 0x6e, 0x73,
+	0x73, 0x5f, 0x70, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x5f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x18,
+	0x0c, 0x20, 0x01, 0x28, 0x09, 0x52, 0x1b, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x47, 0x6e, 0x73, 0x73, 0x50, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x46, 0x69, 0x65,
+	0x6c, 0x64, 0x12, 0x3e, 0x0a, 0x1c, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x67, 0x6e, 0x73, 0x73, 0x5f, 0x75, 0x73, 0x65, 0x5f, 0x72, 0x78, 0x5f, 0x74, 0x69,
+	0x6d, 0x65, 0x18, 0x0d, 0x20, 0x01, 0x28, 0x08, 0x52, 0x18, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x47, 0x6e, 0x73, 0x73, 0x55, 0x73, 0x65, 0x52, 0x78, 0x54, 0x69,
+	0x6d, 0x65, 0x12, 0x29, 0x0a, 0x10, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x77, 0x69, 0x66, 0x69, 0x18, 0x0e, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0f, 0x67, 0x65,
+	0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x57, 0x69, 0x66, 0x69, 0x12, 0x43, 0x0a,
+	0x1e, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x77, 0x69, 0x66,
+	0x69, 0x5f, 0x70, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x5f, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x18,
+	0x0f, 0x20, 0x01, 0x28, 0x09, 0x52, 0x1b, 0x67, 0x65, 0x6f, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x57, 0x69, 0x66, 0x69, 0x50, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x46, 0x69, 0x65,
+	0x6c, 0x64, 0x22, 0x64, 0x0a, 0x21, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4c, 0x6f, 0x72, 0x61,
+	0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x47, 0x0a, 0x1e, 0x47, 0x65, 0x74, 0x4c,
+	0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49,
+	0x64, 0x22, 0x62, 0x0a, 0x1f, 0x47, 0x65, 0x74, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75,
+	0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x64, 0x0a, 0x21, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4c,
+	0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x1d, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c,
+	0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b,
+	0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x4a, 0x0a, 0x21, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0xd5, 0x01, 0x0a, 0x14, 0x47, 0x63, 0x70, 0x50,
+	0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x2d, 0x0a, 0x08, 0x65, 0x6e, 0x63, 0x6f, 0x64,
+	0x69, 0x6e, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x11, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x45, 0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x52, 0x08, 0x65, 0x6e,
+	0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x12, 0x29, 0x0a, 0x10, 0x63, 0x72, 0x65, 0x64, 0x65, 0x6e,
+	0x74, 0x69, 0x61, 0x6c, 0x73, 0x5f, 0x66, 0x69, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0f, 0x63, 0x72, 0x65, 0x64, 0x65, 0x6e, 0x74, 0x69, 0x61, 0x6c, 0x73, 0x46, 0x69, 0x6c,
+	0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x5f, 0x69, 0x64, 0x18,
+	0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x6a, 0x65, 0x63, 0x74, 0x49, 0x64,
+	0x12, 0x1d, 0x0a, 0x0a, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x05,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x74, 0x6f, 0x70, 0x69, 0x63, 0x4e, 0x61, 0x6d, 0x65, 0x22,
+	0x64, 0x0a, 0x21, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53,
+	0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x47, 0x0a, 0x1e, 0x47, 0x65, 0x74, 0x47, 0x63, 0x70, 0x50,
+	0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x62,
+	0x0a, 0x1f, 0x47, 0x65, 0x74, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x22, 0x64, 0x0a, 0x21, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47, 0x63, 0x70, 0x50,
+	0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3f, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x4a, 0x0a, 0x21, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a,
+	0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x49, 0x64, 0x22, 0xee, 0x01, 0x0a, 0x11, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49,
+	0x64, 0x12, 0x2d, 0x0a, 0x08, 0x65, 0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0e, 0x32, 0x11, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x45, 0x6e,
+	0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x52, 0x08, 0x65, 0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67,
+	0x12, 0x16, 0x0a, 0x06, 0x72, 0x65, 0x67, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x06, 0x72, 0x65, 0x67, 0x69, 0x6f, 0x6e, 0x12, 0x22, 0x0a, 0x0d, 0x61, 0x63, 0x63, 0x65,
+	0x73, 0x73, 0x5f, 0x6b, 0x65, 0x79, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x0b, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x4b, 0x65, 0x79, 0x49, 0x64, 0x12, 0x2a, 0x0a, 0x11,
+	0x73, 0x65, 0x63, 0x72, 0x65, 0x74, 0x5f, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x6b, 0x65,
+	0x79, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x73, 0x65, 0x63, 0x72, 0x65, 0x74, 0x41,
+	0x63, 0x63, 0x65, 0x73, 0x73, 0x4b, 0x65, 0x79, 0x12, 0x1b, 0x0a, 0x09, 0x74, 0x6f, 0x70, 0x69,
+	0x63, 0x5f, 0x61, 0x72, 0x6e, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x74, 0x6f, 0x70,
+	0x69, 0x63, 0x41, 0x72, 0x6e, 0x22, 0x5e, 0x0a, 0x1e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
+	0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3c, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x44, 0x0a, 0x1b, 0x47, 0x65, 0x74, 0x41, 0x77, 0x73, 0x53,
+	0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x5c, 0x0a, 0x1c, 0x47,
+	0x65, 0x74, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x0b, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x41, 0x77, 0x73, 0x53, 0x6e,
+	0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x5e, 0x0a, 0x1e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3c, 0x0a, 0x0b, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x41, 0x77, 0x73, 0x53, 0x6e,
+	0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x47, 0x0a, 0x1e, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x49, 0x64, 0x22, 0xc2, 0x01, 0x0a, 0x1a, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x2d, 0x0a, 0x08, 0x65, 0x6e, 0x63, 0x6f,
+	0x64, 0x69, 0x6e, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x11, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x45, 0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x52, 0x08, 0x65,
+	0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67, 0x12, 0x2b, 0x0a, 0x11, 0x63, 0x6f, 0x6e, 0x6e, 0x65,
+	0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x73, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x10, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x53, 0x74,
+	0x72, 0x69, 0x6e, 0x67, 0x12, 0x21, 0x0a, 0x0c, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x73, 0x68, 0x5f,
+	0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70, 0x75, 0x62, 0x6c,
+	0x69, 0x73, 0x68, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x70, 0x0a, 0x27, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x45, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75,
+	0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x4d, 0x0a, 0x24, 0x47, 0x65, 0x74,
+	0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x6e, 0x0a, 0x25, 0x47, 0x65, 0x74, 0x41,
+	0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x45, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x70, 0x0a, 0x27, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75,
+	0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x45, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x23, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x2e, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42,
+	0x75, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x50, 0x0a, 0x27, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x6d, 0x0a, 0x16,
+	0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x16, 0x0a,
+	0x06, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73,
+	0x65, 0x72, 0x76, 0x65, 0x72, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x22, 0x68, 0x0a, 0x23, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x41, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x49, 0x0a, 0x20, 0x47, 0x65, 0x74, 0x50, 0x69, 0x6c, 0x6f,
+	0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64,
+	0x22, 0x66, 0x0a, 0x21, 0x47, 0x65, 0x74, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e,
+	0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x41, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x68, 0x0a, 0x23, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x41, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x50,
+	0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x22, 0x4c, 0x0a, 0x23, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x69, 0x6c, 0x6f,
+	0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64,
+	0x22, 0xba, 0x01, 0x0a, 0x10, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x10, 0x0a, 0x03,
+	0x6b, 0x65, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x23,
+	0x0a, 0x0d, 0x75, 0x70, 0x6c, 0x69, 0x6e, 0x6b, 0x5f, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x73, 0x18,
+	0x03, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0c, 0x75, 0x70, 0x6c, 0x69, 0x6e, 0x6b, 0x56, 0x61, 0x6c,
+	0x75, 0x65, 0x73, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x72, 0x62, 0x69, 0x74, 0x72, 0x61, 0x72, 0x79,
+	0x5f, 0x6a, 0x73, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0d, 0x61, 0x72, 0x62,
+	0x69, 0x74, 0x72, 0x61, 0x72, 0x79, 0x4a, 0x73, 0x6f, 0x6e, 0x12, 0x21, 0x0a, 0x0c, 0x65, 0x76,
+	0x65, 0x6e, 0x74, 0x5f, 0x70, 0x72, 0x65, 0x66, 0x69, 0x78, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0b, 0x65, 0x76, 0x65, 0x6e, 0x74, 0x50, 0x72, 0x65, 0x66, 0x69, 0x78, 0x22, 0x5c, 0x0a,
+	0x1d, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b,
+	0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x66,
+	0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b,
+	0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x43, 0x0a, 0x1a, 0x47,
+	0x65, 0x74, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64,
+	0x22, 0x5a, 0x0a, 0x1b, 0x47, 0x65, 0x74, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x3b, 0x0a, 0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49,
+	0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x5c, 0x0a, 0x1d,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x3b, 0x0a,
+	0x0b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x19, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x49, 0x66, 0x74,
+	0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0b, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x46, 0x0a, 0x1d, 0x44, 0x65,
+	0x6c, 0x65, 0x74, 0x65, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0d, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x49, 0x64, 0x22, 0x58, 0x0a, 0x2f, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x4d, 0x71,
+	0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6c, 0x69,
+	0x65, 0x6e, 0x74, 0x43, 0x65, 0x72, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x65, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x25, 0x0a, 0x0e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0d, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0xba, 0x01, 0x0a,
+	0x30, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x4d, 0x71, 0x74, 0x74, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x43, 0x65,
+	0x72, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x19, 0x0a, 0x08, 0x74, 0x6c, 0x73, 0x5f, 0x63, 0x65, 0x72, 0x74, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x07, 0x74, 0x6c, 0x73, 0x43, 0x65, 0x72, 0x74, 0x12, 0x17, 0x0a, 0x07,
+	0x74, 0x6c, 0x73, 0x5f, 0x6b, 0x65, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x74,
+	0x6c, 0x73, 0x4b, 0x65, 0x79, 0x12, 0x17, 0x0a, 0x07, 0x63, 0x61, 0x5f, 0x63, 0x65, 0x72, 0x74,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x63, 0x61, 0x43, 0x65, 0x72, 0x74, 0x12, 0x39,
+	0x0a, 0x0a, 0x65, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73, 0x5f, 0x61, 0x74, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1a, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x52, 0x09,
+	0x65, 0x78, 0x70, 0x69, 0x72, 0x65, 0x73, 0x41, 0x74, 0x2a, 0x22, 0x0a, 0x08, 0x45, 0x6e, 0x63,
+	0x6f, 0x64, 0x69, 0x6e, 0x67, 0x12, 0x08, 0x0a, 0x04, 0x4a, 0x53, 0x4f, 0x4e, 0x10, 0x00, 0x12,
+	0x0c, 0x0a, 0x08, 0x50, 0x52, 0x4f, 0x54, 0x4f, 0x42, 0x55, 0x46, 0x10, 0x01, 0x2a, 0xbf, 0x01,
+	0x0a, 0x0f, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x4b, 0x69, 0x6e,
+	0x64, 0x12, 0x08, 0x0a, 0x04, 0x48, 0x54, 0x54, 0x50, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x49,
+	0x4e, 0x46, 0x4c, 0x55, 0x58, 0x5f, 0x44, 0x42, 0x10, 0x01, 0x12, 0x10, 0x0a, 0x0c, 0x54, 0x48,
+	0x49, 0x4e, 0x47, 0x53, 0x5f, 0x42, 0x4f, 0x41, 0x52, 0x44, 0x10, 0x02, 0x12, 0x0e, 0x0a, 0x0a,
+	0x4d, 0x59, 0x5f, 0x44, 0x45, 0x56, 0x49, 0x43, 0x45, 0x53, 0x10, 0x03, 0x12, 0x0e, 0x0a, 0x0a,
+	0x4c, 0x4f, 0x52, 0x41, 0x5f, 0x43, 0x4c, 0x4f, 0x55, 0x44, 0x10, 0x04, 0x12, 0x0f, 0x0a, 0x0b,
+	0x47, 0x43, 0x50, 0x5f, 0x50, 0x55, 0x42, 0x5f, 0x53, 0x55, 0x42, 0x10, 0x05, 0x12, 0x0b, 0x0a,
+	0x07, 0x41, 0x57, 0x53, 0x5f, 0x53, 0x4e, 0x53, 0x10, 0x06, 0x12, 0x15, 0x0a, 0x11, 0x41, 0x5a,
+	0x55, 0x52, 0x45, 0x5f, 0x53, 0x45, 0x52, 0x56, 0x49, 0x43, 0x45, 0x5f, 0x42, 0x55, 0x53, 0x10,
+	0x07, 0x12, 0x10, 0x0a, 0x0c, 0x50, 0x49, 0x4c, 0x4f, 0x54, 0x5f, 0x54, 0x48, 0x49, 0x4e, 0x47,
+	0x53, 0x10, 0x08, 0x12, 0x0f, 0x0a, 0x0b, 0x4d, 0x51, 0x54, 0x54, 0x5f, 0x47, 0x4c, 0x4f, 0x42,
+	0x41, 0x4c, 0x10, 0x09, 0x12, 0x09, 0x0a, 0x05, 0x49, 0x46, 0x54, 0x54, 0x54, 0x10, 0x0a, 0x2a,
+	0x3f, 0x0a, 0x11, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x50, 0x72, 0x65, 0x63, 0x69,
+	0x73, 0x69, 0x6f, 0x6e, 0x12, 0x06, 0x0a, 0x02, 0x4e, 0x53, 0x10, 0x00, 0x12, 0x05, 0x0a, 0x01,
+	0x55, 0x10, 0x01, 0x12, 0x06, 0x0a, 0x02, 0x4d, 0x53, 0x10, 0x02, 0x12, 0x05, 0x0a, 0x01, 0x53,
+	0x10, 0x03, 0x12, 0x05, 0x0a, 0x01, 0x4d, 0x10, 0x04, 0x12, 0x05, 0x0a, 0x01, 0x48, 0x10, 0x05,
+	0x2a, 0x31, 0x0a, 0x0f, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x56, 0x65, 0x72, 0x73,
+	0x69, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x0a, 0x49, 0x4e, 0x46, 0x4c, 0x55, 0x58, 0x44, 0x42, 0x5f,
+	0x31, 0x10, 0x00, 0x12, 0x0e, 0x0a, 0x0a, 0x49, 0x4e, 0x46, 0x4c, 0x55, 0x58, 0x44, 0x42, 0x5f,
+	0x32, 0x10, 0x01, 0x32, 0xb0, 0x3e, 0x0a, 0x12, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x6d, 0x0a, 0x06, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x12, 0x21, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x1c, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x16, 0x3a, 0x01, 0x2a, 0x22, 0x11, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x66, 0x0a, 0x03, 0x47, 0x65, 0x74,
+	0x12, 0x1e, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70,
 	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
-	0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x27,
-	0x3a, 0x01, 0x2a, 0x1a, 0x22, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x2e, 0x69, 0x64, 0x7d, 0x12, 0x63, 0x0a, 0x06, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x12, 0x21, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x1e, 0x82, 0xd3,
-	0xe4, 0x93, 0x02, 0x18, 0x2a, 0x16, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69,
-	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x64, 0x7d, 0x12, 0x66, 0x0a, 0x04,
-	0x4c, 0x69, 0x73, 0x74, 0x12, 0x20, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4c,
+	0x1a, 0x1f, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x12, 0x16, 0x2f, 0x61, 0x70, 0x69, 0x2f,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x64,
+	0x7d, 0x12, 0x72, 0x0a, 0x06, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x12, 0x21, 0x2e, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x70, 0x70, 0x6c,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x27, 0x3a, 0x01,
+	0x2a, 0x1a, 0x22, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x2e, 0x69, 0x64, 0x7d, 0x12, 0x63, 0x0a, 0x06, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x12,
+	0x21, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x18, 0x2a, 0x16, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x64, 0x7d, 0x12, 0x66, 0x0a, 0x04, 0x4c, 0x69,
+	0x73, 0x74, 0x12, 0x20, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4c, 0x69, 0x73,
+	0x74, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x4c,
 	0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
-	0x2e, 0x4c, 0x69, 0x73, 0x74, 0x41, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x19, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x13, 0x12, 0x11, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x73, 0x42, 0x3e, 0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
-	0x6f, 0x6d, 0x2f, 0x61, 0x69, 0x6f, 0x74, 0x6f, 0x6f, 0x2f, 0x63, 0x6f, 0x6e, 0x73, 0x6f, 0x6c,
-	0x65, 0x2d, 0x6c, 0x6f, 0x72, 0x61, 0x77, 0x61, 0x6e, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x67, 0x6f,
-	0x2f, 0x76, 0x34, 0x2f, 0x65, 0x78, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x2f, 0x73, 0x65, 0x72,
-	0x76, 0x69, 0x63, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x19, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x13, 0x12,
+	0x11, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x12, 0x90, 0x01, 0x0a, 0x10, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x20, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x37, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x31, 0x12, 0x2f, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0xa3, 0x01, 0x0a, 0x15, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x25, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x4b,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x45, 0x3a, 0x01, 0x2a, 0x22, 0x40, 0x2f, 0x61, 0x70, 0x69, 0x2f,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x68, 0x74, 0x74, 0x70, 0x12, 0x9b, 0x01, 0x0a, 0x12,
+	0x47, 0x65, 0x74, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x12, 0x22, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74,
+	0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x47, 0x65, 0x74, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3c, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x36, 0x12, 0x34, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x68, 0x74, 0x74, 0x70, 0x12, 0xa3, 0x01, 0x0a, 0x15, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x25, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70,
+	0x74, 0x79, 0x22, 0x4b, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x45, 0x3a, 0x01, 0x2a, 0x1a, 0x40, 0x2f,
+	0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x68, 0x74, 0x74, 0x70, 0x12,
+	0x94, 0x01, 0x0a, 0x15, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x25, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x48, 0x74, 0x74, 0x70, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
+	0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x3c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x36,
+	0x2a, 0x34, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x68, 0x74, 0x74, 0x70, 0x12, 0xaf, 0x01, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61, 0x74,
+	0x65, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x29, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x4f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x49, 0x3a,
+	0x01, 0x2a, 0x22, 0x44, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x69, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x64, 0x62, 0x12, 0xab, 0x01, 0x0a, 0x16, 0x47, 0x65, 0x74,
+	0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x26, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65,
+	0x74, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x27, 0x2e, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44,
+	0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x40, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3a, 0x12, 0x38, 0x2f, 0x61,
+	0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d,
+	0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x69, 0x6e,
+	0x66, 0x6c, 0x75, 0x78, 0x64, 0x62, 0x12, 0xaf, 0x01, 0x0a, 0x19, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x29, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x4f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x49, 0x3a,
+	0x01, 0x2a, 0x1a, 0x44, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x69, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x64, 0x62, 0x12, 0xa0, 0x01, 0x0a, 0x19, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x29, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x49, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x44, 0x62, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x40, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x3a, 0x2a, 0x38, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x2f, 0x69, 0x6e, 0x66, 0x6c, 0x75, 0x78, 0x64, 0x62, 0x12, 0xb8, 0x01, 0x0a, 0x1c,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72,
+	0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2c, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x54, 0x68, 0x69,
+	0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70,
+	0x74, 0x79, 0x22, 0x52, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x4c, 0x3a, 0x01, 0x2a, 0x22, 0x47, 0x2f,
+	0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x6e, 0x67,
+	0x73, 0x62, 0x6f, 0x61, 0x72, 0x64, 0x12, 0xb7, 0x01, 0x0a, 0x19, 0x47, 0x65, 0x74, 0x54, 0x68,
+	0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x29, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47,
+	0x65, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x54, 0x68, 0x69,
+	0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x43, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x3d, 0x12, 0x3b, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x62, 0x6f, 0x61, 0x72, 0x64,
+	0x12, 0xb8, 0x01, 0x0a, 0x1c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x54, 0x68, 0x69, 0x6e, 0x67,
+	0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x2c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x52, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x4c, 0x3a,
+	0x01, 0x2a, 0x1a, 0x47, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x74, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x62, 0x6f, 0x61, 0x72, 0x64, 0x12, 0xa9, 0x01, 0x0a, 0x1c,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72,
+	0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2c, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x54, 0x68, 0x69,
+	0x6e, 0x67, 0x73, 0x42, 0x6f, 0x61, 0x72, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70,
+	0x74, 0x79, 0x22, 0x43, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3d, 0x2a, 0x3b, 0x2f, 0x61, 0x70, 0x69,
+	0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x74, 0x68, 0x69, 0x6e,
+	0x67, 0x73, 0x62, 0x6f, 0x61, 0x72, 0x64, 0x12, 0xb2, 0x01, 0x0a, 0x1a, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x50, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x4a, 0x3a, 0x01, 0x2a, 0x22, 0x45, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x2f, 0x6d, 0x79, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x12, 0xaf, 0x01, 0x0a,
+	0x17, 0x47, 0x65, 0x74, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x27, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x28, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x4d,
+	0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x41, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x3b, 0x12, 0x39, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x6d, 0x79, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x12, 0xb2,
+	0x01, 0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63,
+	0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x79,
+	0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
+	0x79, 0x22, 0x50, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x4a, 0x3a, 0x01, 0x2a, 0x1a, 0x45, 0x2f, 0x61,
+	0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x6d, 0x79, 0x64, 0x65, 0x76, 0x69,
+	0x63, 0x65, 0x73, 0x12, 0xa3, 0x01, 0x0a, 0x1a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x79,
+	0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x4d, 0x79, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x41, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3b, 0x2a, 0x39,
+	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x6d, 0x79, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x12, 0xb2, 0x01, 0x0a, 0x1a, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f,
+	0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x50, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x4a, 0x3a, 0x01, 0x2a, 0x22, 0x45, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x6c, 0x6f, 0x72, 0x61, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x12, 0xaf,
+	0x01, 0x0a, 0x17, 0x47, 0x65, 0x74, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x27, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75,
+	0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65,
+	0x74, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x41, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x3b, 0x12, 0x39, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x6c, 0x6f, 0x72, 0x61, 0x63, 0x6c, 0x6f, 0x75, 0x64,
+	0x12, 0xb2, 0x01, 0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4c, 0x6f, 0x72, 0x61, 0x43,
+	0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
+	0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
+	0x70, 0x74, 0x79, 0x22, 0x50, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x4a, 0x3a, 0x01, 0x2a, 0x1a, 0x45,
+	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x6c, 0x6f, 0x72, 0x61,
+	0x63, 0x6c, 0x6f, 0x75, 0x64, 0x12, 0xa3, 0x01, 0x0a, 0x1a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x4c, 0x6f, 0x72, 0x61, 0x43, 0x6c, 0x6f, 0x75, 0x64, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
+	0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x41, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3b,
+	0x2a, 0x39, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x6c, 0x6f, 0x72, 0x61, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x12, 0xb4, 0x01, 0x0a, 0x1a,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x47, 0x63, 0x70, 0x50, 0x75,
+	0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x52,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x4c, 0x3a, 0x01, 0x2a, 0x22, 0x47, 0x2f, 0x61, 0x70, 0x69, 0x2f,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x67, 0x63, 0x70, 0x2d, 0x70, 0x75, 0x62, 0x2d, 0x73,
+	0x75, 0x62, 0x12, 0xb1, 0x01, 0x0a, 0x17, 0x47, 0x65, 0x74, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62,
+	0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x27,
+	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x63, 0x70, 0x50,
+	0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x47, 0x65, 0x74, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x43, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3d, 0x12, 0x3b, 0x2f, 0x61, 0x70, 0x69, 0x2f,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x67, 0x63, 0x70, 0x2d, 0x70,
+	0x75, 0x62, 0x2d, 0x73, 0x75, 0x62, 0x12, 0xb4, 0x01, 0x0a, 0x1a, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x52, 0x82, 0xd3, 0xe4, 0x93, 0x02,
+	0x4c, 0x3a, 0x01, 0x2a, 0x1a, 0x47, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x67, 0x63, 0x70, 0x2d, 0x70, 0x75, 0x62, 0x2d, 0x73, 0x75, 0x62, 0x12, 0xa5, 0x01,
+	0x0a, 0x1a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x47, 0x63, 0x70, 0x50, 0x75, 0x62, 0x53, 0x75,
+	0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x2e, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x47, 0x63, 0x70,
+	0x50, 0x75, 0x62, 0x53, 0x75, 0x62, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79,
+	0x22, 0x43, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3d, 0x2a, 0x3b, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x67, 0x63, 0x70, 0x2d, 0x70, 0x75,
+	0x62, 0x2d, 0x73, 0x75, 0x62, 0x12, 0xaa, 0x01, 0x0a, 0x17, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
+	0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x27, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70,
+	0x74, 0x79, 0x22, 0x4e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x48, 0x3a, 0x01, 0x2a, 0x22, 0x43, 0x2f,
+	0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x61, 0x77, 0x73, 0x2d, 0x73,
+	0x6e, 0x73, 0x12, 0xa4, 0x01, 0x0a, 0x14, 0x47, 0x65, 0x74, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x24, 0x2e, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x25, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x41,
+	0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x39,
+	0x12, 0x37, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x61, 0x77, 0x73, 0x2d, 0x73, 0x6e, 0x73, 0x12, 0xaa, 0x01, 0x0a, 0x17, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x27, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x4e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x48, 0x3a, 0x01,
+	0x2a, 0x1a, 0x43, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64,
+	0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x61,
+	0x77, 0x73, 0x2d, 0x73, 0x6e, 0x73, 0x12, 0x9b, 0x01, 0x0a, 0x17, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x12, 0x27, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c,
+	0x65, 0x74, 0x65, 0x41, 0x77, 0x73, 0x53, 0x6e, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
+	0x70, 0x74, 0x79, 0x22, 0x3f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x39, 0x2a, 0x37, 0x2f, 0x61, 0x70,
+	0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f,
+	0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x61, 0x77, 0x73,
+	0x2d, 0x73, 0x6e, 0x73, 0x12, 0xc6, 0x01, 0x0a, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41,
+	0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
+	0x70, 0x74, 0x79, 0x22, 0x58, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x52, 0x3a, 0x01, 0x2a, 0x22, 0x4d,
+	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x61, 0x7a, 0x75, 0x72,
+	0x65, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2d, 0x62, 0x75, 0x73, 0x12, 0xc9, 0x01,
+	0x0a, 0x1d, 0x47, 0x65, 0x74, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x2d, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x7a, 0x75,
+	0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2e,
+	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x7a, 0x75, 0x72,
+	0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x49,
+	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x43, 0x12, 0x41, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70,
+	0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x61, 0x7a, 0x75, 0x72, 0x65, 0x2d, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2d, 0x62, 0x75, 0x73, 0x12, 0xc6, 0x01, 0x0a, 0x20, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x30,
+	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x41,
+	0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
+	0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x58, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x52,
+	0x3a, 0x01, 0x2a, 0x1a, 0x4d, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
+	0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x2f, 0x61, 0x7a, 0x75, 0x72, 0x65, 0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2d, 0x62,
+	0x75, 0x73, 0x12, 0xb7, 0x01, 0x0a, 0x20, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x7a, 0x75,
+	0x72, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x30, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x41, 0x7a, 0x75, 0x72, 0x65, 0x53, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x42, 0x75, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74,
+	0x79, 0x22, 0x49, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x43, 0x2a, 0x41, 0x2f, 0x61, 0x70, 0x69, 0x2f,
+	0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x61, 0x7a, 0x75, 0x72, 0x65,
+	0x2d, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2d, 0x62, 0x75, 0x73, 0x12, 0xb9, 0x01, 0x0a,
+	0x1c, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e,
+	0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2c, 0x2e,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x69,
+	0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d,
+	0x70, 0x74, 0x79, 0x22, 0x53, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x4d, 0x3a, 0x01, 0x2a, 0x22, 0x48,
+	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61,
+	0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x70, 0x69, 0x6c, 0x6f,
+	0x74, 0x2d, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x12, 0xb8, 0x01, 0x0a, 0x19, 0x47, 0x65, 0x74,
+	0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x29, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x2e, 0x47, 0x65, 0x74, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49,
+	0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x2a, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x50,
+	0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x44, 0x82,
+	0xd3, 0xe4, 0x93, 0x02, 0x3e, 0x12, 0x3c, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x70, 0x69, 0x6c, 0x6f, 0x74, 0x2d, 0x74, 0x68, 0x69,
+	0x6e, 0x67, 0x73, 0x12, 0xb9, 0x01, 0x0a, 0x1c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x69,
+	0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x53, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x4d, 0x3a, 0x01, 0x2a, 0x1a, 0x48, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c,
+	0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x73, 0x2f, 0x70, 0x69, 0x6c, 0x6f, 0x74, 0x2d, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x12,
+	0xaa, 0x01, 0x0a, 0x1c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54,
+	0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x12, 0x2c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
+	0x65, 0x50, 0x69, 0x6c, 0x6f, 0x74, 0x54, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
+	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x44, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x3e, 0x2a, 0x3c,
+	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x70, 0x69, 0x6c, 0x6f, 0x74, 0x2d, 0x74, 0x68, 0x69, 0x6e, 0x67, 0x73, 0x12, 0xa6, 0x01, 0x0a,
+	0x16, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65,
+	0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x26, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74,
+	0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x4c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x46, 0x3a,
+	0x01, 0x2a, 0x22, 0x41, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x2e, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69,
+	0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f,
+	0x69, 0x66, 0x74, 0x74, 0x74, 0x12, 0x9f, 0x01, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x49, 0x66, 0x74,
+	0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x23, 0x2e,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x49, 0x66, 0x74, 0x74, 0x74,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x24, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74,
+	0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x3d, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x37,
+	0x12, 0x35, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x73, 0x2f, 0x69, 0x66, 0x74, 0x74, 0x74, 0x12, 0xa6, 0x01, 0x0a, 0x16, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x12, 0x26, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70, 0x64,
+	0x61, 0x74, 0x65, 0x49, 0x66, 0x74, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70,
+	0x74, 0x79, 0x22, 0x4c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x46, 0x3a, 0x01, 0x2a, 0x1a, 0x41, 0x2f,
+	0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73,
+	0x2f, 0x7b, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x61, 0x70,
+	0x70, 0x6c, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x69, 0x66, 0x74, 0x74, 0x74,
+	0x12, 0x97, 0x01, 0x0a, 0x16, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x49, 0x66, 0x74, 0x74, 0x74,
+	0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x26, 0x2e, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x49, 0x66, 0x74, 0x74,
+	0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x3d, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x37, 0x2a, 0x35, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63,
+	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x69, 0x66, 0x74, 0x74, 0x74, 0x12, 0xe9, 0x01, 0x0a, 0x28, 0x47,
+	0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x4d, 0x71, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x43, 0x65, 0x72, 0x74,
+	0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x65, 0x12, 0x38, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74, 0x65, 0x4d, 0x71, 0x74, 0x74, 0x49, 0x6e,
+	0x74, 0x65, 0x67, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x43,
+	0x65, 0x72, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x39, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x6e, 0x65,
+	0x72, 0x61, 0x74, 0x65, 0x4d, 0x71, 0x74, 0x74, 0x49, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x43, 0x65, 0x72, 0x74, 0x69, 0x66, 0x69,
+	0x63, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x48, 0x82, 0xd3,
+	0xe4, 0x93, 0x02, 0x42, 0x22, 0x40, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x70, 0x70, 0x6c, 0x69,
+	0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x7b, 0x61, 0x70, 0x70, 0x6c, 0x69, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x7d, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x67, 0x72, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2f, 0x6d, 0x71, 0x74, 0x74, 0x2f, 0x63, 0x65, 0x72, 0x74, 0x69,
+	0x66, 0x69, 0x63, 0x61, 0x74, 0x65, 0x42, 0x3e, 0x5a, 0x3c, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x61, 0x69, 0x6f, 0x74, 0x6f, 0x6f, 0x2f, 0x63, 0x6f, 0x6e, 0x73,
+	0x6f, 0x6c, 0x65, 0x2d, 0x6c, 0x6f, 0x72, 0x61, 0x77, 0x61, 0x6e, 0x2d, 0x61, 0x70, 0x69, 0x2f,
+	0x67, 0x6f, 0x2f, 0x76, 0x34, 0x2f, 0x65, 0x78, 0x74, 0x65, 0x72, 0x6e, 0x61, 0x6c, 0x2f, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -791,47 +5674,244 @@ func file_external_service_application_proto_rawDescGZIP() []byte {
 	return file_external_service_application_proto_rawDescData
 }
 
-var file_external_service_application_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_external_service_application_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_external_service_application_proto_msgTypes = make([]protoimpl.MessageInfo, 78)
 var file_external_service_application_proto_goTypes = []any{
-	(*Application)(nil),               // 0: service.Application
-	(*ApplicationListItem)(nil),       // 1: service.ApplicationListItem
-	(*CreateApplicationRequest)(nil),  // 2: service.CreateApplicationRequest
-	(*CreateApplicationResponse)(nil), // 3: service.CreateApplicationResponse
-	(*GetApplicationRequest)(nil),     // 4: service.GetApplicationRequest
-	(*GetApplicationResponse)(nil),    // 5: service.GetApplicationResponse
-	(*UpdateApplicationRequest)(nil),  // 6: service.UpdateApplicationRequest
-	(*DeleteApplicationRequest)(nil),  // 7: service.DeleteApplicationRequest
-	(*ListApplicationsRequest)(nil),   // 8: service.ListApplicationsRequest
-	(*ListApplicationsResponse)(nil),  // 9: service.ListApplicationsResponse
-	nil,                               // 10: service.Application.TagsEntry
-	(*timestamppb.Timestamp)(nil),     // 11: google.protobuf.Timestamp
-	(*emptypb.Empty)(nil),             // 12: google.protobuf.Empty
+	(Encoding)(0),                                            // 0: service.Encoding
+	(IntegrationKind)(0),                                     // 1: service.IntegrationKind
+	(InfluxDbPrecision)(0),                                   // 2: service.InfluxDbPrecision
+	(InfluxDbVersion)(0),                                     // 3: service.InfluxDbVersion
+	(*Application)(nil),                                      // 4: service.Application
+	(*ApplicationListItem)(nil),                              // 5: service.ApplicationListItem
+	(*CreateApplicationRequest)(nil),                         // 6: service.CreateApplicationRequest
+	(*CreateApplicationResponse)(nil),                        // 7: service.CreateApplicationResponse
+	(*GetApplicationRequest)(nil),                            // 8: service.GetApplicationRequest
+	(*GetApplicationResponse)(nil),                           // 9: service.GetApplicationResponse
+	(*UpdateApplicationRequest)(nil),                         // 10: service.UpdateApplicationRequest
+	(*DeleteApplicationRequest)(nil),                         // 11: service.DeleteApplicationRequest
+	(*ListApplicationsRequest)(nil),                          // 12: service.ListApplicationsRequest
+	(*ListApplicationsResponse)(nil),                         // 13: service.ListApplicationsResponse
+	(*ListIntegrationsRequest)(nil),                          // 14: service.ListIntegrationsRequest
+	(*IntegrationListItem)(nil),                              // 15: service.IntegrationListItem
+	(*ListIntegrationsResponse)(nil),                         // 16: service.ListIntegrationsResponse
+	(*HttpIntegration)(nil),                                  // 17: service.HttpIntegration
+	(*CreateHttpIntegrationRequest)(nil),                     // 18: service.CreateHttpIntegrationRequest
+	(*GetHttpIntegrationRequest)(nil),                        // 19: service.GetHttpIntegrationRequest
+	(*GetHttpIntegrationResponse)(nil),                       // 20: service.GetHttpIntegrationResponse
+	(*UpdateHttpIntegrationRequest)(nil),                     // 21: service.UpdateHttpIntegrationRequest
+	(*DeleteHttpIntegrationRequest)(nil),                     // 22: service.DeleteHttpIntegrationRequest
+	(*InfluxDbIntegration)(nil),                              // 23: service.InfluxDbIntegration
+	(*CreateInfluxDbIntegrationRequest)(nil),                 // 24: service.CreateInfluxDbIntegrationRequest
+	(*GetInfluxDbIntegrationRequest)(nil),                    // 25: service.GetInfluxDbIntegrationRequest
+	(*GetInfluxDbIntegrationResponse)(nil),                   // 26: service.GetInfluxDbIntegrationResponse
+	(*UpdateInfluxDbIntegrationRequest)(nil),                 // 27: service.UpdateInfluxDbIntegrationRequest
+	(*DeleteInfluxDbIntegrationRequest)(nil),                 // 28: service.DeleteInfluxDbIntegrationRequest
+	(*ThingsBoardIntegration)(nil),                           // 29: service.ThingsBoardIntegration
+	(*CreateThingsBoardIntegrationRequest)(nil),              // 30: service.CreateThingsBoardIntegrationRequest
+	(*GetThingsBoardIntegrationRequest)(nil),                 // 31: service.GetThingsBoardIntegrationRequest
+	(*GetThingsBoardIntegrationResponse)(nil),                // 32: service.GetThingsBoardIntegrationResponse
+	(*UpdateThingsBoardIntegrationRequest)(nil),              // 33: service.UpdateThingsBoardIntegrationRequest
+	(*DeleteThingsBoardIntegrationRequest)(nil),              // 34: service.DeleteThingsBoardIntegrationRequest
+	(*MyDevicesIntegration)(nil),                             // 35: service.MyDevicesIntegration
+	(*CreateMyDevicesIntegrationRequest)(nil),                // 36: service.CreateMyDevicesIntegrationRequest
+	(*GetMyDevicesIntegrationRequest)(nil),                   // 37: service.GetMyDevicesIntegrationRequest
+	(*GetMyDevicesIntegrationResponse)(nil),                  // 38: service.GetMyDevicesIntegrationResponse
+	(*UpdateMyDevicesIntegrationRequest)(nil),                // 39: service.UpdateMyDevicesIntegrationRequest
+	(*DeleteMyDevicesIntegrationRequest)(nil),                // 40: service.DeleteMyDevicesIntegrationRequest
+	(*LoraCloudIntegration)(nil),                             // 41: service.LoraCloudIntegration
+	(*LoraCloudModemGeolocationServices)(nil),                // 42: service.LoraCloudModemGeolocationServices
+	(*CreateLoraCloudIntegrationRequest)(nil),                // 43: service.CreateLoraCloudIntegrationRequest
+	(*GetLoraCloudIntegrationRequest)(nil),                   // 44: service.GetLoraCloudIntegrationRequest
+	(*GetLoraCloudIntegrationResponse)(nil),                  // 45: service.GetLoraCloudIntegrationResponse
+	(*UpdateLoraCloudIntegrationRequest)(nil),                // 46: service.UpdateLoraCloudIntegrationRequest
+	(*DeleteLoraCloudIntegrationRequest)(nil),                // 47: service.DeleteLoraCloudIntegrationRequest
+	(*GcpPubSubIntegration)(nil),                             // 48: service.GcpPubSubIntegration
+	(*CreateGcpPubSubIntegrationRequest)(nil),                // 49: service.CreateGcpPubSubIntegrationRequest
+	(*GetGcpPubSubIntegrationRequest)(nil),                   // 50: service.GetGcpPubSubIntegrationRequest
+	(*GetGcpPubSubIntegrationResponse)(nil),                  // 51: service.GetGcpPubSubIntegrationResponse
+	(*UpdateGcpPubSubIntegrationRequest)(nil),                // 52: service.UpdateGcpPubSubIntegrationRequest
+	(*DeleteGcpPubSubIntegrationRequest)(nil),                // 53: service.DeleteGcpPubSubIntegrationRequest
+	(*AwsSnsIntegration)(nil),                                // 54: service.AwsSnsIntegration
+	(*CreateAwsSnsIntegrationRequest)(nil),                   // 55: service.CreateAwsSnsIntegrationRequest
+	(*GetAwsSnsIntegrationRequest)(nil),                      // 56: service.GetAwsSnsIntegrationRequest
+	(*GetAwsSnsIntegrationResponse)(nil),                     // 57: service.GetAwsSnsIntegrationResponse
+	(*UpdateAwsSnsIntegrationRequest)(nil),                   // 58: service.UpdateAwsSnsIntegrationRequest
+	(*DeleteAwsSnsIntegrationRequest)(nil),                   // 59: service.DeleteAwsSnsIntegrationRequest
+	(*AzureServiceBusIntegration)(nil),                       // 60: service.AzureServiceBusIntegration
+	(*CreateAzureServiceBusIntegrationRequest)(nil),          // 61: service.CreateAzureServiceBusIntegrationRequest
+	(*GetAzureServiceBusIntegrationRequest)(nil),             // 62: service.GetAzureServiceBusIntegrationRequest
+	(*GetAzureServiceBusIntegrationResponse)(nil),            // 63: service.GetAzureServiceBusIntegrationResponse
+	(*UpdateAzureServiceBusIntegrationRequest)(nil),          // 64: service.UpdateAzureServiceBusIntegrationRequest
+	(*DeleteAzureServiceBusIntegrationRequest)(nil),          // 65: service.DeleteAzureServiceBusIntegrationRequest
+	(*PilotThingsIntegration)(nil),                           // 66: service.PilotThingsIntegration
+	(*CreatePilotThingsIntegrationRequest)(nil),              // 67: service.CreatePilotThingsIntegrationRequest
+	(*GetPilotThingsIntegrationRequest)(nil),                 // 68: service.GetPilotThingsIntegrationRequest
+	(*GetPilotThingsIntegrationResponse)(nil),                // 69: service.GetPilotThingsIntegrationResponse
+	(*UpdatePilotThingsIntegrationRequest)(nil),              // 70: service.UpdatePilotThingsIntegrationRequest
+	(*DeletePilotThingsIntegrationRequest)(nil),              // 71: service.DeletePilotThingsIntegrationRequest
+	(*IftttIntegration)(nil),                                 // 72: service.IftttIntegration
+	(*CreateIftttIntegrationRequest)(nil),                    // 73: service.CreateIftttIntegrationRequest
+	(*GetIftttIntegrationRequest)(nil),                       // 74: service.GetIftttIntegrationRequest
+	(*GetIftttIntegrationResponse)(nil),                      // 75: service.GetIftttIntegrationResponse
+	(*UpdateIftttIntegrationRequest)(nil),                    // 76: service.UpdateIftttIntegrationRequest
+	(*DeleteIftttIntegrationRequest)(nil),                    // 77: service.DeleteIftttIntegrationRequest
+	(*GenerateMqttIntegrationClientCertificateRequest)(nil),  // 78: service.GenerateMqttIntegrationClientCertificateRequest
+	(*GenerateMqttIntegrationClientCertificateResponse)(nil), // 79: service.GenerateMqttIntegrationClientCertificateResponse
+	nil,                           // 80: service.Application.TagsEntry
+	nil,                           // 81: service.HttpIntegration.HeadersEntry
+	(*timestamppb.Timestamp)(nil), // 82: google.protobuf.Timestamp
+	(*emptypb.Empty)(nil),         // 83: google.protobuf.Empty
 }
 var file_external_service_application_proto_depIdxs = []int32{
-	10, // 0: service.Application.tags:type_name -> service.Application.TagsEntry
-	11, // 1: service.ApplicationListItem.created_at:type_name -> google.protobuf.Timestamp
-	11, // 2: service.ApplicationListItem.updated_at:type_name -> google.protobuf.Timestamp
-	0,  // 3: service.CreateApplicationRequest.application:type_name -> service.Application
-	0,  // 4: service.GetApplicationResponse.application:type_name -> service.Application
-	11, // 5: service.GetApplicationResponse.created_at:type_name -> google.protobuf.Timestamp
-	11, // 6: service.GetApplicationResponse.updated_at:type_name -> google.protobuf.Timestamp
-	0,  // 7: service.UpdateApplicationRequest.application:type_name -> service.Application
-	1,  // 8: service.ListApplicationsResponse.result:type_name -> service.ApplicationListItem
-	2,  // 9: service.ApplicationService.Create:input_type -> service.CreateApplicationRequest
-	4,  // 10: service.ApplicationService.Get:input_type -> service.GetApplicationRequest
-	6,  // 11: service.ApplicationService.Update:input_type -> service.UpdateApplicationRequest
-	7,  // 12: service.ApplicationService.Delete:input_type -> service.DeleteApplicationRequest
-	8,  // 13: service.ApplicationService.List:input_type -> service.ListApplicationsRequest
-	3,  // 14: service.ApplicationService.Create:output_type -> service.CreateApplicationResponse
-	5,  // 15: service.ApplicationService.Get:output_type -> service.GetApplicationResponse
-	12, // 16: service.ApplicationService.Update:output_type -> google.protobuf.Empty
-	12, // 17: service.ApplicationService.Delete:output_type -> google.protobuf.Empty
-	9,  // 18: service.ApplicationService.List:output_type -> service.ListApplicationsResponse
-	14, // [14:19] is the sub-list for method output_type
-	9,  // [9:14] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	80, // 0: service.Application.tags:type_name -> service.Application.TagsEntry
+	82, // 1: service.ApplicationListItem.created_at:type_name -> google.protobuf.Timestamp
+	82, // 2: service.ApplicationListItem.updated_at:type_name -> google.protobuf.Timestamp
+	4,  // 3: service.CreateApplicationRequest.application:type_name -> service.Application
+	4,  // 4: service.GetApplicationResponse.application:type_name -> service.Application
+	82, // 5: service.GetApplicationResponse.created_at:type_name -> google.protobuf.Timestamp
+	82, // 6: service.GetApplicationResponse.updated_at:type_name -> google.protobuf.Timestamp
+	4,  // 7: service.UpdateApplicationRequest.application:type_name -> service.Application
+	5,  // 8: service.ListApplicationsResponse.result:type_name -> service.ApplicationListItem
+	1,  // 9: service.IntegrationListItem.kind:type_name -> service.IntegrationKind
+	15, // 10: service.ListIntegrationsResponse.result:type_name -> service.IntegrationListItem
+	81, // 11: service.HttpIntegration.headers:type_name -> service.HttpIntegration.HeadersEntry
+	0,  // 12: service.HttpIntegration.encoding:type_name -> service.Encoding
+	17, // 13: service.CreateHttpIntegrationRequest.integration:type_name -> service.HttpIntegration
+	17, // 14: service.GetHttpIntegrationResponse.integration:type_name -> service.HttpIntegration
+	17, // 15: service.UpdateHttpIntegrationRequest.integration:type_name -> service.HttpIntegration
+	2,  // 16: service.InfluxDbIntegration.precision:type_name -> service.InfluxDbPrecision
+	3,  // 17: service.InfluxDbIntegration.version:type_name -> service.InfluxDbVersion
+	23, // 18: service.CreateInfluxDbIntegrationRequest.integration:type_name -> service.InfluxDbIntegration
+	23, // 19: service.GetInfluxDbIntegrationResponse.integration:type_name -> service.InfluxDbIntegration
+	23, // 20: service.UpdateInfluxDbIntegrationRequest.integration:type_name -> service.InfluxDbIntegration
+	29, // 21: service.CreateThingsBoardIntegrationRequest.integration:type_name -> service.ThingsBoardIntegration
+	29, // 22: service.GetThingsBoardIntegrationResponse.integration:type_name -> service.ThingsBoardIntegration
+	29, // 23: service.UpdateThingsBoardIntegrationRequest.integration:type_name -> service.ThingsBoardIntegration
+	35, // 24: service.CreateMyDevicesIntegrationRequest.integration:type_name -> service.MyDevicesIntegration
+	35, // 25: service.GetMyDevicesIntegrationResponse.integration:type_name -> service.MyDevicesIntegration
+	35, // 26: service.UpdateMyDevicesIntegrationRequest.integration:type_name -> service.MyDevicesIntegration
+	42, // 27: service.LoraCloudIntegration.modem_geolocation_services:type_name -> service.LoraCloudModemGeolocationServices
+	41, // 28: service.CreateLoraCloudIntegrationRequest.integration:type_name -> service.LoraCloudIntegration
+	41, // 29: service.GetLoraCloudIntegrationResponse.integration:type_name -> service.LoraCloudIntegration
+	41, // 30: service.UpdateLoraCloudIntegrationRequest.integration:type_name -> service.LoraCloudIntegration
+	0,  // 31: service.GcpPubSubIntegration.encoding:type_name -> service.Encoding
+	48, // 32: service.CreateGcpPubSubIntegrationRequest.integration:type_name -> service.GcpPubSubIntegration
+	48, // 33: service.GetGcpPubSubIntegrationResponse.integration:type_name -> service.GcpPubSubIntegration
+	48, // 34: service.UpdateGcpPubSubIntegrationRequest.integration:type_name -> service.GcpPubSubIntegration
+	0,  // 35: service.AwsSnsIntegration.encoding:type_name -> service.Encoding
+	54, // 36: service.CreateAwsSnsIntegrationRequest.integration:type_name -> service.AwsSnsIntegration
+	54, // 37: service.GetAwsSnsIntegrationResponse.integration:type_name -> service.AwsSnsIntegration
+	54, // 38: service.UpdateAwsSnsIntegrationRequest.integration:type_name -> service.AwsSnsIntegration
+	0,  // 39: service.AzureServiceBusIntegration.encoding:type_name -> service.Encoding
+	60, // 40: service.CreateAzureServiceBusIntegrationRequest.integration:type_name -> service.AzureServiceBusIntegration
+	60, // 41: service.GetAzureServiceBusIntegrationResponse.integration:type_name -> service.AzureServiceBusIntegration
+	60, // 42: service.UpdateAzureServiceBusIntegrationRequest.integration:type_name -> service.AzureServiceBusIntegration
+	66, // 43: service.CreatePilotThingsIntegrationRequest.integration:type_name -> service.PilotThingsIntegration
+	66, // 44: service.GetPilotThingsIntegrationResponse.integration:type_name -> service.PilotThingsIntegration
+	66, // 45: service.UpdatePilotThingsIntegrationRequest.integration:type_name -> service.PilotThingsIntegration
+	72, // 46: service.CreateIftttIntegrationRequest.integration:type_name -> service.IftttIntegration
+	72, // 47: service.GetIftttIntegrationResponse.integration:type_name -> service.IftttIntegration
+	72, // 48: service.UpdateIftttIntegrationRequest.integration:type_name -> service.IftttIntegration
+	82, // 49: service.GenerateMqttIntegrationClientCertificateResponse.expires_at:type_name -> google.protobuf.Timestamp
+	6,  // 50: service.ApplicationService.Create:input_type -> service.CreateApplicationRequest
+	8,  // 51: service.ApplicationService.Get:input_type -> service.GetApplicationRequest
+	10, // 52: service.ApplicationService.Update:input_type -> service.UpdateApplicationRequest
+	11, // 53: service.ApplicationService.Delete:input_type -> service.DeleteApplicationRequest
+	12, // 54: service.ApplicationService.List:input_type -> service.ListApplicationsRequest
+	14, // 55: service.ApplicationService.ListIntegrations:input_type -> service.ListIntegrationsRequest
+	18, // 56: service.ApplicationService.CreateHttpIntegration:input_type -> service.CreateHttpIntegrationRequest
+	19, // 57: service.ApplicationService.GetHttpIntegration:input_type -> service.GetHttpIntegrationRequest
+	21, // 58: service.ApplicationService.UpdateHttpIntegration:input_type -> service.UpdateHttpIntegrationRequest
+	22, // 59: service.ApplicationService.DeleteHttpIntegration:input_type -> service.DeleteHttpIntegrationRequest
+	24, // 60: service.ApplicationService.CreateInfluxDbIntegration:input_type -> service.CreateInfluxDbIntegrationRequest
+	25, // 61: service.ApplicationService.GetInfluxDbIntegration:input_type -> service.GetInfluxDbIntegrationRequest
+	27, // 62: service.ApplicationService.UpdateInfluxDbIntegration:input_type -> service.UpdateInfluxDbIntegrationRequest
+	28, // 63: service.ApplicationService.DeleteInfluxDbIntegration:input_type -> service.DeleteInfluxDbIntegrationRequest
+	30, // 64: service.ApplicationService.CreateThingsBoardIntegration:input_type -> service.CreateThingsBoardIntegrationRequest
+	31, // 65: service.ApplicationService.GetThingsBoardIntegration:input_type -> service.GetThingsBoardIntegrationRequest
+	33, // 66: service.ApplicationService.UpdateThingsBoardIntegration:input_type -> service.UpdateThingsBoardIntegrationRequest
+	34, // 67: service.ApplicationService.DeleteThingsBoardIntegration:input_type -> service.DeleteThingsBoardIntegrationRequest
+	36, // 68: service.ApplicationService.CreateMyDevicesIntegration:input_type -> service.CreateMyDevicesIntegrationRequest
+	37, // 69: service.ApplicationService.GetMyDevicesIntegration:input_type -> service.GetMyDevicesIntegrationRequest
+	39, // 70: service.ApplicationService.UpdateMyDevicesIntegration:input_type -> service.UpdateMyDevicesIntegrationRequest
+	40, // 71: service.ApplicationService.DeleteMyDevicesIntegration:input_type -> service.DeleteMyDevicesIntegrationRequest
+	43, // 72: service.ApplicationService.CreateLoraCloudIntegration:input_type -> service.CreateLoraCloudIntegrationRequest
+	44, // 73: service.ApplicationService.GetLoraCloudIntegration:input_type -> service.GetLoraCloudIntegrationRequest
+	46, // 74: service.ApplicationService.UpdateLoraCloudIntegration:input_type -> service.UpdateLoraCloudIntegrationRequest
+	47, // 75: service.ApplicationService.DeleteLoraCloudIntegration:input_type -> service.DeleteLoraCloudIntegrationRequest
+	49, // 76: service.ApplicationService.CreateGcpPubSubIntegration:input_type -> service.CreateGcpPubSubIntegrationRequest
+	50, // 77: service.ApplicationService.GetGcpPubSubIntegration:input_type -> service.GetGcpPubSubIntegrationRequest
+	52, // 78: service.ApplicationService.UpdateGcpPubSubIntegration:input_type -> service.UpdateGcpPubSubIntegrationRequest
+	53, // 79: service.ApplicationService.DeleteGcpPubSubIntegration:input_type -> service.DeleteGcpPubSubIntegrationRequest
+	55, // 80: service.ApplicationService.CreateAwsSnsIntegration:input_type -> service.CreateAwsSnsIntegrationRequest
+	56, // 81: service.ApplicationService.GetAwsSnsIntegration:input_type -> service.GetAwsSnsIntegrationRequest
+	58, // 82: service.ApplicationService.UpdateAwsSnsIntegration:input_type -> service.UpdateAwsSnsIntegrationRequest
+	59, // 83: service.ApplicationService.DeleteAwsSnsIntegration:input_type -> service.DeleteAwsSnsIntegrationRequest
+	61, // 84: service.ApplicationService.CreateAzureServiceBusIntegration:input_type -> service.CreateAzureServiceBusIntegrationRequest
+	62, // 85: service.ApplicationService.GetAzureServiceBusIntegration:input_type -> service.GetAzureServiceBusIntegrationRequest
+	64, // 86: service.ApplicationService.UpdateAzureServiceBusIntegration:input_type -> service.UpdateAzureServiceBusIntegrationRequest
+	65, // 87: service.ApplicationService.DeleteAzureServiceBusIntegration:input_type -> service.DeleteAzureServiceBusIntegrationRequest
+	67, // 88: service.ApplicationService.CreatePilotThingsIntegration:input_type -> service.CreatePilotThingsIntegrationRequest
+	68, // 89: service.ApplicationService.GetPilotThingsIntegration:input_type -> service.GetPilotThingsIntegrationRequest
+	70, // 90: service.ApplicationService.UpdatePilotThingsIntegration:input_type -> service.UpdatePilotThingsIntegrationRequest
+	71, // 91: service.ApplicationService.DeletePilotThingsIntegration:input_type -> service.DeletePilotThingsIntegrationRequest
+	73, // 92: service.ApplicationService.CreateIftttIntegration:input_type -> service.CreateIftttIntegrationRequest
+	74, // 93: service.ApplicationService.GetIftttIntegration:input_type -> service.GetIftttIntegrationRequest
+	76, // 94: service.ApplicationService.UpdateIftttIntegration:input_type -> service.UpdateIftttIntegrationRequest
+	77, // 95: service.ApplicationService.DeleteIftttIntegration:input_type -> service.DeleteIftttIntegrationRequest
+	78, // 96: service.ApplicationService.GenerateMqttIntegrationClientCertificate:input_type -> service.GenerateMqttIntegrationClientCertificateRequest
+	7,  // 97: service.ApplicationService.Create:output_type -> service.CreateApplicationResponse
+	9,  // 98: service.ApplicationService.Get:output_type -> service.GetApplicationResponse
+	83, // 99: service.ApplicationService.Update:output_type -> google.protobuf.Empty
+	83, // 100: service.ApplicationService.Delete:output_type -> google.protobuf.Empty
+	13, // 101: service.ApplicationService.List:output_type -> service.ListApplicationsResponse
+	16, // 102: service.ApplicationService.ListIntegrations:output_type -> service.ListIntegrationsResponse
+	83, // 103: service.ApplicationService.CreateHttpIntegration:output_type -> google.protobuf.Empty
+	20, // 104: service.ApplicationService.GetHttpIntegration:output_type -> service.GetHttpIntegrationResponse
+	83, // 105: service.ApplicationService.UpdateHttpIntegration:output_type -> google.protobuf.Empty
+	83, // 106: service.ApplicationService.DeleteHttpIntegration:output_type -> google.protobuf.Empty
+	83, // 107: service.ApplicationService.CreateInfluxDbIntegration:output_type -> google.protobuf.Empty
+	26, // 108: service.ApplicationService.GetInfluxDbIntegration:output_type -> service.GetInfluxDbIntegrationResponse
+	83, // 109: service.ApplicationService.UpdateInfluxDbIntegration:output_type -> google.protobuf.Empty
+	83, // 110: service.ApplicationService.DeleteInfluxDbIntegration:output_type -> google.protobuf.Empty
+	83, // 111: service.ApplicationService.CreateThingsBoardIntegration:output_type -> google.protobuf.Empty
+	32, // 112: service.ApplicationService.GetThingsBoardIntegration:output_type -> service.GetThingsBoardIntegrationResponse
+	83, // 113: service.ApplicationService.UpdateThingsBoardIntegration:output_type -> google.protobuf.Empty
+	83, // 114: service.ApplicationService.DeleteThingsBoardIntegration:output_type -> google.protobuf.Empty
+	83, // 115: service.ApplicationService.CreateMyDevicesIntegration:output_type -> google.protobuf.Empty
+	38, // 116: service.ApplicationService.GetMyDevicesIntegration:output_type -> service.GetMyDevicesIntegrationResponse
+	83, // 117: service.ApplicationService.UpdateMyDevicesIntegration:output_type -> google.protobuf.Empty
+	83, // 118: service.ApplicationService.DeleteMyDevicesIntegration:output_type -> google.protobuf.Empty
+	83, // 119: service.ApplicationService.CreateLoraCloudIntegration:output_type -> google.protobuf.Empty
+	45, // 120: service.ApplicationService.GetLoraCloudIntegration:output_type -> service.GetLoraCloudIntegrationResponse
+	83, // 121: service.ApplicationService.UpdateLoraCloudIntegration:output_type -> google.protobuf.Empty
+	83, // 122: service.ApplicationService.DeleteLoraCloudIntegration:output_type -> google.protobuf.Empty
+	83, // 123: service.ApplicationService.CreateGcpPubSubIntegration:output_type -> google.protobuf.Empty
+	51, // 124: service.ApplicationService.GetGcpPubSubIntegration:output_type -> service.GetGcpPubSubIntegrationResponse
+	83, // 125: service.ApplicationService.UpdateGcpPubSubIntegration:output_type -> google.protobuf.Empty
+	83, // 126: service.ApplicationService.DeleteGcpPubSubIntegration:output_type -> google.protobuf.Empty
+	83, // 127: service.ApplicationService.CreateAwsSnsIntegration:output_type -> google.protobuf.Empty
+	57, // 128: service.ApplicationService.GetAwsSnsIntegration:output_type -> service.GetAwsSnsIntegrationResponse
+	83, // 129: service.ApplicationService.UpdateAwsSnsIntegration:output_type -> google.protobuf.Empty
+	83, // 130: service.ApplicationService.DeleteAwsSnsIntegration:output_type -> google.protobuf.Empty
+	83, // 131: service.ApplicationService.CreateAzureServiceBusIntegration:output_type -> google.protobuf.Empty
+	63, // 132: service.ApplicationService.GetAzureServiceBusIntegration:output_type -> service.GetAzureServiceBusIntegrationResponse
+	83, // 133: service.ApplicationService.UpdateAzureServiceBusIntegration:output_type -> google.protobuf.Empty
+	83, // 134: service.ApplicationService.DeleteAzureServiceBusIntegration:output_type -> google.protobuf.Empty
+	83, // 135: service.ApplicationService.CreatePilotThingsIntegration:output_type -> google.protobuf.Empty
+	69, // 136: service.ApplicationService.GetPilotThingsIntegration:output_type -> service.GetPilotThingsIntegrationResponse
+	83, // 137: service.ApplicationService.UpdatePilotThingsIntegration:output_type -> google.protobuf.Empty
+	83, // 138: service.ApplicationService.DeletePilotThingsIntegration:output_type -> google.protobuf.Empty
+	83, // 139: service.ApplicationService.CreateIftttIntegration:output_type -> google.protobuf.Empty
+	75, // 140: service.ApplicationService.GetIftttIntegration:output_type -> service.GetIftttIntegrationResponse
+	83, // 141: service.ApplicationService.UpdateIftttIntegration:output_type -> google.protobuf.Empty
+	83, // 142: service.ApplicationService.DeleteIftttIntegration:output_type -> google.protobuf.Empty
+	79, // 143: service.ApplicationService.GenerateMqttIntegrationClientCertificate:output_type -> service.GenerateMqttIntegrationClientCertificateResponse
+	97, // [97:144] is the sub-list for method output_type
+	50, // [50:97] is the sub-list for method input_type
+	50, // [50:50] is the sub-list for extension type_name
+	50, // [50:50] is the sub-list for extension extendee
+	0,  // [0:50] is the sub-list for field type_name
 }
 
 func init() { file_external_service_application_proto_init() }
@@ -960,19 +6040,812 @@ func file_external_service_application_proto_init() {
 				return nil
 			}
 		}
+		file_external_service_application_proto_msgTypes[10].Exporter = func(v any, i int) any {
+			switch v := v.(*ListIntegrationsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[11].Exporter = func(v any, i int) any {
+			switch v := v.(*IntegrationListItem); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[12].Exporter = func(v any, i int) any {
+			switch v := v.(*ListIntegrationsResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[13].Exporter = func(v any, i int) any {
+			switch v := v.(*HttpIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[14].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateHttpIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[15].Exporter = func(v any, i int) any {
+			switch v := v.(*GetHttpIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[16].Exporter = func(v any, i int) any {
+			switch v := v.(*GetHttpIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[17].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateHttpIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[18].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteHttpIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[19].Exporter = func(v any, i int) any {
+			switch v := v.(*InfluxDbIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[20].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateInfluxDbIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[21].Exporter = func(v any, i int) any {
+			switch v := v.(*GetInfluxDbIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[22].Exporter = func(v any, i int) any {
+			switch v := v.(*GetInfluxDbIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[23].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateInfluxDbIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[24].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteInfluxDbIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[25].Exporter = func(v any, i int) any {
+			switch v := v.(*ThingsBoardIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[26].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateThingsBoardIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[27].Exporter = func(v any, i int) any {
+			switch v := v.(*GetThingsBoardIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[28].Exporter = func(v any, i int) any {
+			switch v := v.(*GetThingsBoardIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[29].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateThingsBoardIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[30].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteThingsBoardIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[31].Exporter = func(v any, i int) any {
+			switch v := v.(*MyDevicesIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[32].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateMyDevicesIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[33].Exporter = func(v any, i int) any {
+			switch v := v.(*GetMyDevicesIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[34].Exporter = func(v any, i int) any {
+			switch v := v.(*GetMyDevicesIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[35].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateMyDevicesIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[36].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteMyDevicesIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[37].Exporter = func(v any, i int) any {
+			switch v := v.(*LoraCloudIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[38].Exporter = func(v any, i int) any {
+			switch v := v.(*LoraCloudModemGeolocationServices); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[39].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateLoraCloudIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[40].Exporter = func(v any, i int) any {
+			switch v := v.(*GetLoraCloudIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[41].Exporter = func(v any, i int) any {
+			switch v := v.(*GetLoraCloudIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[42].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateLoraCloudIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[43].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteLoraCloudIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[44].Exporter = func(v any, i int) any {
+			switch v := v.(*GcpPubSubIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[45].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateGcpPubSubIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[46].Exporter = func(v any, i int) any {
+			switch v := v.(*GetGcpPubSubIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[47].Exporter = func(v any, i int) any {
+			switch v := v.(*GetGcpPubSubIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[48].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateGcpPubSubIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[49].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteGcpPubSubIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[50].Exporter = func(v any, i int) any {
+			switch v := v.(*AwsSnsIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[51].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateAwsSnsIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[52].Exporter = func(v any, i int) any {
+			switch v := v.(*GetAwsSnsIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[53].Exporter = func(v any, i int) any {
+			switch v := v.(*GetAwsSnsIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[54].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateAwsSnsIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[55].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteAwsSnsIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[56].Exporter = func(v any, i int) any {
+			switch v := v.(*AzureServiceBusIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[57].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateAzureServiceBusIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[58].Exporter = func(v any, i int) any {
+			switch v := v.(*GetAzureServiceBusIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[59].Exporter = func(v any, i int) any {
+			switch v := v.(*GetAzureServiceBusIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[60].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateAzureServiceBusIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[61].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteAzureServiceBusIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[62].Exporter = func(v any, i int) any {
+			switch v := v.(*PilotThingsIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[63].Exporter = func(v any, i int) any {
+			switch v := v.(*CreatePilotThingsIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[64].Exporter = func(v any, i int) any {
+			switch v := v.(*GetPilotThingsIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[65].Exporter = func(v any, i int) any {
+			switch v := v.(*GetPilotThingsIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[66].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdatePilotThingsIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[67].Exporter = func(v any, i int) any {
+			switch v := v.(*DeletePilotThingsIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[68].Exporter = func(v any, i int) any {
+			switch v := v.(*IftttIntegration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[69].Exporter = func(v any, i int) any {
+			switch v := v.(*CreateIftttIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[70].Exporter = func(v any, i int) any {
+			switch v := v.(*GetIftttIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[71].Exporter = func(v any, i int) any {
+			switch v := v.(*GetIftttIntegrationResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[72].Exporter = func(v any, i int) any {
+			switch v := v.(*UpdateIftttIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[73].Exporter = func(v any, i int) any {
+			switch v := v.(*DeleteIftttIntegrationRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[74].Exporter = func(v any, i int) any {
+			switch v := v.(*GenerateMqttIntegrationClientCertificateRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_application_proto_msgTypes[75].Exporter = func(v any, i int) any {
+			switch v := v.(*GenerateMqttIntegrationClientCertificateResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_external_service_application_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   11,
+			NumEnums:      4,
+			NumMessages:   78,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
 		GoTypes:           file_external_service_application_proto_goTypes,
 		DependencyIndexes: file_external_service_application_proto_depIdxs,
+		EnumInfos:         file_external_service_application_proto_enumTypes,
 		MessageInfos:      file_external_service_application_proto_msgTypes,
 	}.Build()
 	File_external_service_application_proto = out.File
@@ -1003,6 +6876,90 @@ type ApplicationServiceClient interface {
 	Delete(ctx context.Context, in *DeleteApplicationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Get the list of applications.
 	List(ctx context.Context, in *ListApplicationsRequest, opts ...grpc.CallOption) (*ListApplicationsResponse, error)
+	// List all configured integrations.
+	ListIntegrations(ctx context.Context, in *ListIntegrationsRequest, opts ...grpc.CallOption) (*ListIntegrationsResponse, error)
+	// Create HTTP integration.
+	CreateHttpIntegration(ctx context.Context, in *CreateHttpIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get the configured HTTP integration.
+	GetHttpIntegration(ctx context.Context, in *GetHttpIntegrationRequest, opts ...grpc.CallOption) (*GetHttpIntegrationResponse, error)
+	// Update the HTTP integration.
+	UpdateHttpIntegration(ctx context.Context, in *UpdateHttpIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete the HTTP integration.
+	DeleteHttpIntegration(ctx context.Context, in *DeleteHttpIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create InfluxDb integration.
+	CreateInfluxDbIntegration(ctx context.Context, in *CreateInfluxDbIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get InfluxDb integration.
+	GetInfluxDbIntegration(ctx context.Context, in *GetInfluxDbIntegrationRequest, opts ...grpc.CallOption) (*GetInfluxDbIntegrationResponse, error)
+	// Update InfluxDb integration.
+	UpdateInfluxDbIntegration(ctx context.Context, in *UpdateInfluxDbIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete InfluxDb integration.
+	DeleteInfluxDbIntegration(ctx context.Context, in *DeleteInfluxDbIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create ThingsBoard integration.
+	CreateThingsBoardIntegration(ctx context.Context, in *CreateThingsBoardIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get ThingsBoard integration.
+	GetThingsBoardIntegration(ctx context.Context, in *GetThingsBoardIntegrationRequest, opts ...grpc.CallOption) (*GetThingsBoardIntegrationResponse, error)
+	// Update ThingsBoard integration.
+	UpdateThingsBoardIntegration(ctx context.Context, in *UpdateThingsBoardIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete ThingsBoard integration.
+	DeleteThingsBoardIntegration(ctx context.Context, in *DeleteThingsBoardIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create myDevices integration.
+	CreateMyDevicesIntegration(ctx context.Context, in *CreateMyDevicesIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get myDevices integration.
+	GetMyDevicesIntegration(ctx context.Context, in *GetMyDevicesIntegrationRequest, opts ...grpc.CallOption) (*GetMyDevicesIntegrationResponse, error)
+	// Update myDevices integration.
+	UpdateMyDevicesIntegration(ctx context.Context, in *UpdateMyDevicesIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete myDevices integration.
+	DeleteMyDevicesIntegration(ctx context.Context, in *DeleteMyDevicesIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create LoRaCloud integration.
+	CreateLoraCloudIntegration(ctx context.Context, in *CreateLoraCloudIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get LoRaCloud integration.
+	GetLoraCloudIntegration(ctx context.Context, in *GetLoraCloudIntegrationRequest, opts ...grpc.CallOption) (*GetLoraCloudIntegrationResponse, error)
+	// Update LoRaCloud integration.
+	UpdateLoraCloudIntegration(ctx context.Context, in *UpdateLoraCloudIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete LoRaCloud integration.
+	DeleteLoraCloudIntegration(ctx context.Context, in *DeleteLoraCloudIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create GCP Pub/Sub integration.
+	CreateGcpPubSubIntegration(ctx context.Context, in *CreateGcpPubSubIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get GCP Pub/Sub integration.
+	GetGcpPubSubIntegration(ctx context.Context, in *GetGcpPubSubIntegrationRequest, opts ...grpc.CallOption) (*GetGcpPubSubIntegrationResponse, error)
+	// Update GCP Pub/Sub integration.
+	UpdateGcpPubSubIntegration(ctx context.Context, in *UpdateGcpPubSubIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete GCP Pub/Sub integration.
+	DeleteGcpPubSubIntegration(ctx context.Context, in *DeleteGcpPubSubIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create AWS SNS integration.
+	CreateAwsSnsIntegration(ctx context.Context, in *CreateAwsSnsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get AWS SNS integration.
+	GetAwsSnsIntegration(ctx context.Context, in *GetAwsSnsIntegrationRequest, opts ...grpc.CallOption) (*GetAwsSnsIntegrationResponse, error)
+	// Update AWS SNS integration.
+	UpdateAwsSnsIntegration(ctx context.Context, in *UpdateAwsSnsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete AWS SNS integration.
+	DeleteAwsSnsIntegration(ctx context.Context, in *DeleteAwsSnsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create Azure Service-Bus integration.
+	CreateAzureServiceBusIntegration(ctx context.Context, in *CreateAzureServiceBusIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get Azure Service-Bus integration.
+	GetAzureServiceBusIntegration(ctx context.Context, in *GetAzureServiceBusIntegrationRequest, opts ...grpc.CallOption) (*GetAzureServiceBusIntegrationResponse, error)
+	// Update Azure Service-Bus integration.
+	UpdateAzureServiceBusIntegration(ctx context.Context, in *UpdateAzureServiceBusIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete Azure Service-Bus integration.
+	DeleteAzureServiceBusIntegration(ctx context.Context, in *DeleteAzureServiceBusIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create Pilot Things integration.
+	CreatePilotThingsIntegration(ctx context.Context, in *CreatePilotThingsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get Pilot Things integration.
+	GetPilotThingsIntegration(ctx context.Context, in *GetPilotThingsIntegrationRequest, opts ...grpc.CallOption) (*GetPilotThingsIntegrationResponse, error)
+	// Update Pilot Things integration.
+	UpdatePilotThingsIntegration(ctx context.Context, in *UpdatePilotThingsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete Pilot Things integration.
+	DeletePilotThingsIntegration(ctx context.Context, in *DeletePilotThingsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Create IFTTT integration.
+	CreateIftttIntegration(ctx context.Context, in *CreateIftttIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Get IFTTT integration.
+	GetIftttIntegration(ctx context.Context, in *GetIftttIntegrationRequest, opts ...grpc.CallOption) (*GetIftttIntegrationResponse, error)
+	// Update IFTTT integration.
+	UpdateIftttIntegration(ctx context.Context, in *UpdateIftttIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Delete IFTTT integration.
+	DeleteIftttIntegration(ctx context.Context, in *DeleteIftttIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Generates application ID specific client-certificate.
+	GenerateMqttIntegrationClientCertificate(ctx context.Context, in *GenerateMqttIntegrationClientCertificateRequest, opts ...grpc.CallOption) (*GenerateMqttIntegrationClientCertificateResponse, error)
 }
 
 type applicationServiceClient struct {
@@ -1058,6 +7015,384 @@ func (c *applicationServiceClient) List(ctx context.Context, in *ListApplication
 	return out, nil
 }
 
+func (c *applicationServiceClient) ListIntegrations(ctx context.Context, in *ListIntegrationsRequest, opts ...grpc.CallOption) (*ListIntegrationsResponse, error) {
+	out := new(ListIntegrationsResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/ListIntegrations", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateHttpIntegration(ctx context.Context, in *CreateHttpIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateHttpIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetHttpIntegration(ctx context.Context, in *GetHttpIntegrationRequest, opts ...grpc.CallOption) (*GetHttpIntegrationResponse, error) {
+	out := new(GetHttpIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetHttpIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateHttpIntegration(ctx context.Context, in *UpdateHttpIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateHttpIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteHttpIntegration(ctx context.Context, in *DeleteHttpIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteHttpIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateInfluxDbIntegration(ctx context.Context, in *CreateInfluxDbIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateInfluxDbIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetInfluxDbIntegration(ctx context.Context, in *GetInfluxDbIntegrationRequest, opts ...grpc.CallOption) (*GetInfluxDbIntegrationResponse, error) {
+	out := new(GetInfluxDbIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetInfluxDbIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateInfluxDbIntegration(ctx context.Context, in *UpdateInfluxDbIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateInfluxDbIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteInfluxDbIntegration(ctx context.Context, in *DeleteInfluxDbIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteInfluxDbIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateThingsBoardIntegration(ctx context.Context, in *CreateThingsBoardIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateThingsBoardIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetThingsBoardIntegration(ctx context.Context, in *GetThingsBoardIntegrationRequest, opts ...grpc.CallOption) (*GetThingsBoardIntegrationResponse, error) {
+	out := new(GetThingsBoardIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetThingsBoardIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateThingsBoardIntegration(ctx context.Context, in *UpdateThingsBoardIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateThingsBoardIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteThingsBoardIntegration(ctx context.Context, in *DeleteThingsBoardIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteThingsBoardIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateMyDevicesIntegration(ctx context.Context, in *CreateMyDevicesIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateMyDevicesIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetMyDevicesIntegration(ctx context.Context, in *GetMyDevicesIntegrationRequest, opts ...grpc.CallOption) (*GetMyDevicesIntegrationResponse, error) {
+	out := new(GetMyDevicesIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetMyDevicesIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateMyDevicesIntegration(ctx context.Context, in *UpdateMyDevicesIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateMyDevicesIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteMyDevicesIntegration(ctx context.Context, in *DeleteMyDevicesIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteMyDevicesIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateLoraCloudIntegration(ctx context.Context, in *CreateLoraCloudIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateLoraCloudIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetLoraCloudIntegration(ctx context.Context, in *GetLoraCloudIntegrationRequest, opts ...grpc.CallOption) (*GetLoraCloudIntegrationResponse, error) {
+	out := new(GetLoraCloudIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetLoraCloudIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateLoraCloudIntegration(ctx context.Context, in *UpdateLoraCloudIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateLoraCloudIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteLoraCloudIntegration(ctx context.Context, in *DeleteLoraCloudIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteLoraCloudIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateGcpPubSubIntegration(ctx context.Context, in *CreateGcpPubSubIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateGcpPubSubIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetGcpPubSubIntegration(ctx context.Context, in *GetGcpPubSubIntegrationRequest, opts ...grpc.CallOption) (*GetGcpPubSubIntegrationResponse, error) {
+	out := new(GetGcpPubSubIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetGcpPubSubIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateGcpPubSubIntegration(ctx context.Context, in *UpdateGcpPubSubIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateGcpPubSubIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteGcpPubSubIntegration(ctx context.Context, in *DeleteGcpPubSubIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteGcpPubSubIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateAwsSnsIntegration(ctx context.Context, in *CreateAwsSnsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateAwsSnsIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetAwsSnsIntegration(ctx context.Context, in *GetAwsSnsIntegrationRequest, opts ...grpc.CallOption) (*GetAwsSnsIntegrationResponse, error) {
+	out := new(GetAwsSnsIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetAwsSnsIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateAwsSnsIntegration(ctx context.Context, in *UpdateAwsSnsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateAwsSnsIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteAwsSnsIntegration(ctx context.Context, in *DeleteAwsSnsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteAwsSnsIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateAzureServiceBusIntegration(ctx context.Context, in *CreateAzureServiceBusIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateAzureServiceBusIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetAzureServiceBusIntegration(ctx context.Context, in *GetAzureServiceBusIntegrationRequest, opts ...grpc.CallOption) (*GetAzureServiceBusIntegrationResponse, error) {
+	out := new(GetAzureServiceBusIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetAzureServiceBusIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateAzureServiceBusIntegration(ctx context.Context, in *UpdateAzureServiceBusIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateAzureServiceBusIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteAzureServiceBusIntegration(ctx context.Context, in *DeleteAzureServiceBusIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteAzureServiceBusIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreatePilotThingsIntegration(ctx context.Context, in *CreatePilotThingsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreatePilotThingsIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetPilotThingsIntegration(ctx context.Context, in *GetPilotThingsIntegrationRequest, opts ...grpc.CallOption) (*GetPilotThingsIntegrationResponse, error) {
+	out := new(GetPilotThingsIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetPilotThingsIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdatePilotThingsIntegration(ctx context.Context, in *UpdatePilotThingsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdatePilotThingsIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeletePilotThingsIntegration(ctx context.Context, in *DeletePilotThingsIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeletePilotThingsIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) CreateIftttIntegration(ctx context.Context, in *CreateIftttIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/CreateIftttIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GetIftttIntegration(ctx context.Context, in *GetIftttIntegrationRequest, opts ...grpc.CallOption) (*GetIftttIntegrationResponse, error) {
+	out := new(GetIftttIntegrationResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GetIftttIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) UpdateIftttIntegration(ctx context.Context, in *UpdateIftttIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/UpdateIftttIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) DeleteIftttIntegration(ctx context.Context, in *DeleteIftttIntegrationRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/DeleteIftttIntegration", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *applicationServiceClient) GenerateMqttIntegrationClientCertificate(ctx context.Context, in *GenerateMqttIntegrationClientCertificateRequest, opts ...grpc.CallOption) (*GenerateMqttIntegrationClientCertificateResponse, error) {
+	out := new(GenerateMqttIntegrationClientCertificateResponse)
+	err := c.cc.Invoke(ctx, "/service.ApplicationService/GenerateMqttIntegrationClientCertificate", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ApplicationServiceServer is the server API for ApplicationService service.
 type ApplicationServiceServer interface {
 	// Create creates the given application.
@@ -1070,6 +7405,90 @@ type ApplicationServiceServer interface {
 	Delete(context.Context, *DeleteApplicationRequest) (*emptypb.Empty, error)
 	// Get the list of applications.
 	List(context.Context, *ListApplicationsRequest) (*ListApplicationsResponse, error)
+	// List all configured integrations.
+	ListIntegrations(context.Context, *ListIntegrationsRequest) (*ListIntegrationsResponse, error)
+	// Create HTTP integration.
+	CreateHttpIntegration(context.Context, *CreateHttpIntegrationRequest) (*emptypb.Empty, error)
+	// Get the configured HTTP integration.
+	GetHttpIntegration(context.Context, *GetHttpIntegrationRequest) (*GetHttpIntegrationResponse, error)
+	// Update the HTTP integration.
+	UpdateHttpIntegration(context.Context, *UpdateHttpIntegrationRequest) (*emptypb.Empty, error)
+	// Delete the HTTP integration.
+	DeleteHttpIntegration(context.Context, *DeleteHttpIntegrationRequest) (*emptypb.Empty, error)
+	// Create InfluxDb integration.
+	CreateInfluxDbIntegration(context.Context, *CreateInfluxDbIntegrationRequest) (*emptypb.Empty, error)
+	// Get InfluxDb integration.
+	GetInfluxDbIntegration(context.Context, *GetInfluxDbIntegrationRequest) (*GetInfluxDbIntegrationResponse, error)
+	// Update InfluxDb integration.
+	UpdateInfluxDbIntegration(context.Context, *UpdateInfluxDbIntegrationRequest) (*emptypb.Empty, error)
+	// Delete InfluxDb integration.
+	DeleteInfluxDbIntegration(context.Context, *DeleteInfluxDbIntegrationRequest) (*emptypb.Empty, error)
+	// Create ThingsBoard integration.
+	CreateThingsBoardIntegration(context.Context, *CreateThingsBoardIntegrationRequest) (*emptypb.Empty, error)
+	// Get ThingsBoard integration.
+	GetThingsBoardIntegration(context.Context, *GetThingsBoardIntegrationRequest) (*GetThingsBoardIntegrationResponse, error)
+	// Update ThingsBoard integration.
+	UpdateThingsBoardIntegration(context.Context, *UpdateThingsBoardIntegrationRequest) (*emptypb.Empty, error)
+	// Delete ThingsBoard integration.
+	DeleteThingsBoardIntegration(context.Context, *DeleteThingsBoardIntegrationRequest) (*emptypb.Empty, error)
+	// Create myDevices integration.
+	CreateMyDevicesIntegration(context.Context, *CreateMyDevicesIntegrationRequest) (*emptypb.Empty, error)
+	// Get myDevices integration.
+	GetMyDevicesIntegration(context.Context, *GetMyDevicesIntegrationRequest) (*GetMyDevicesIntegrationResponse, error)
+	// Update myDevices integration.
+	UpdateMyDevicesIntegration(context.Context, *UpdateMyDevicesIntegrationRequest) (*emptypb.Empty, error)
+	// Delete myDevices integration.
+	DeleteMyDevicesIntegration(context.Context, *DeleteMyDevicesIntegrationRequest) (*emptypb.Empty, error)
+	// Create LoRaCloud integration.
+	CreateLoraCloudIntegration(context.Context, *CreateLoraCloudIntegrationRequest) (*emptypb.Empty, error)
+	// Get LoRaCloud integration.
+	GetLoraCloudIntegration(context.Context, *GetLoraCloudIntegrationRequest) (*GetLoraCloudIntegrationResponse, error)
+	// Update LoRaCloud integration.
+	UpdateLoraCloudIntegration(context.Context, *UpdateLoraCloudIntegrationRequest) (*emptypb.Empty, error)
+	// Delete LoRaCloud integration.
+	DeleteLoraCloudIntegration(context.Context, *DeleteLoraCloudIntegrationRequest) (*emptypb.Empty, error)
+	// Create GCP Pub/Sub integration.
+	CreateGcpPubSubIntegration(context.Context, *CreateGcpPubSubIntegrationRequest) (*emptypb.Empty, error)
+	// Get GCP Pub/Sub integration.
+	GetGcpPubSubIntegration(context.Context, *GetGcpPubSubIntegrationRequest) (*GetGcpPubSubIntegrationResponse, error)
+	// Update GCP Pub/Sub integration.
+	UpdateGcpPubSubIntegration(context.Context, *UpdateGcpPubSubIntegrationRequest) (*emptypb.Empty, error)
+	// Delete GCP Pub/Sub integration.
+	DeleteGcpPubSubIntegration(context.Context, *DeleteGcpPubSubIntegrationRequest) (*emptypb.Empty, error)
+	// Create AWS SNS integration.
+	CreateAwsSnsIntegration(context.Context, *CreateAwsSnsIntegrationRequest) (*emptypb.Empty, error)
+	// Get AWS SNS integration.
+	GetAwsSnsIntegration(context.Context, *GetAwsSnsIntegrationRequest) (*GetAwsSnsIntegrationResponse, error)
+	// Update AWS SNS integration.
+	UpdateAwsSnsIntegration(context.Context, *UpdateAwsSnsIntegrationRequest) (*emptypb.Empty, error)
+	// Delete AWS SNS integration.
+	DeleteAwsSnsIntegration(context.Context, *DeleteAwsSnsIntegrationRequest) (*emptypb.Empty, error)
+	// Create Azure Service-Bus integration.
+	CreateAzureServiceBusIntegration(context.Context, *CreateAzureServiceBusIntegrationRequest) (*emptypb.Empty, error)
+	// Get Azure Service-Bus integration.
+	GetAzureServiceBusIntegration(context.Context, *GetAzureServiceBusIntegrationRequest) (*GetAzureServiceBusIntegrationResponse, error)
+	// Update Azure Service-Bus integration.
+	UpdateAzureServiceBusIntegration(context.Context, *UpdateAzureServiceBusIntegrationRequest) (*emptypb.Empty, error)
+	// Delete Azure Service-Bus integration.
+	DeleteAzureServiceBusIntegration(context.Context, *DeleteAzureServiceBusIntegrationRequest) (*emptypb.Empty, error)
+	// Create Pilot Things integration.
+	CreatePilotThingsIntegration(context.Context, *CreatePilotThingsIntegrationRequest) (*emptypb.Empty, error)
+	// Get Pilot Things integration.
+	GetPilotThingsIntegration(context.Context, *GetPilotThingsIntegrationRequest) (*GetPilotThingsIntegrationResponse, error)
+	// Update Pilot Things integration.
+	UpdatePilotThingsIntegration(context.Context, *UpdatePilotThingsIntegrationRequest) (*emptypb.Empty, error)
+	// Delete Pilot Things integration.
+	DeletePilotThingsIntegration(context.Context, *DeletePilotThingsIntegrationRequest) (*emptypb.Empty, error)
+	// Create IFTTT integration.
+	CreateIftttIntegration(context.Context, *CreateIftttIntegrationRequest) (*emptypb.Empty, error)
+	// Get IFTTT integration.
+	GetIftttIntegration(context.Context, *GetIftttIntegrationRequest) (*GetIftttIntegrationResponse, error)
+	// Update IFTTT integration.
+	UpdateIftttIntegration(context.Context, *UpdateIftttIntegrationRequest) (*emptypb.Empty, error)
+	// Delete IFTTT integration.
+	DeleteIftttIntegration(context.Context, *DeleteIftttIntegrationRequest) (*emptypb.Empty, error)
+	// Generates application ID specific client-certificate.
+	GenerateMqttIntegrationClientCertificate(context.Context, *GenerateMqttIntegrationClientCertificateRequest) (*GenerateMqttIntegrationClientCertificateResponse, error)
 }
 
 // UnimplementedApplicationServiceServer can be embedded to have forward compatible implementations.
@@ -1090,6 +7509,132 @@ func (*UnimplementedApplicationServiceServer) Delete(context.Context, *DeleteApp
 }
 func (*UnimplementedApplicationServiceServer) List(context.Context, *ListApplicationsRequest) (*ListApplicationsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
+}
+func (*UnimplementedApplicationServiceServer) ListIntegrations(context.Context, *ListIntegrationsRequest) (*ListIntegrationsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListIntegrations not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateHttpIntegration(context.Context, *CreateHttpIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateHttpIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetHttpIntegration(context.Context, *GetHttpIntegrationRequest) (*GetHttpIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetHttpIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateHttpIntegration(context.Context, *UpdateHttpIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateHttpIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteHttpIntegration(context.Context, *DeleteHttpIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteHttpIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateInfluxDbIntegration(context.Context, *CreateInfluxDbIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateInfluxDbIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetInfluxDbIntegration(context.Context, *GetInfluxDbIntegrationRequest) (*GetInfluxDbIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetInfluxDbIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateInfluxDbIntegration(context.Context, *UpdateInfluxDbIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateInfluxDbIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteInfluxDbIntegration(context.Context, *DeleteInfluxDbIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteInfluxDbIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateThingsBoardIntegration(context.Context, *CreateThingsBoardIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateThingsBoardIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetThingsBoardIntegration(context.Context, *GetThingsBoardIntegrationRequest) (*GetThingsBoardIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetThingsBoardIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateThingsBoardIntegration(context.Context, *UpdateThingsBoardIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateThingsBoardIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteThingsBoardIntegration(context.Context, *DeleteThingsBoardIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteThingsBoardIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateMyDevicesIntegration(context.Context, *CreateMyDevicesIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateMyDevicesIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetMyDevicesIntegration(context.Context, *GetMyDevicesIntegrationRequest) (*GetMyDevicesIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMyDevicesIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateMyDevicesIntegration(context.Context, *UpdateMyDevicesIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateMyDevicesIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteMyDevicesIntegration(context.Context, *DeleteMyDevicesIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteMyDevicesIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateLoraCloudIntegration(context.Context, *CreateLoraCloudIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateLoraCloudIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetLoraCloudIntegration(context.Context, *GetLoraCloudIntegrationRequest) (*GetLoraCloudIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLoraCloudIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateLoraCloudIntegration(context.Context, *UpdateLoraCloudIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateLoraCloudIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteLoraCloudIntegration(context.Context, *DeleteLoraCloudIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteLoraCloudIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateGcpPubSubIntegration(context.Context, *CreateGcpPubSubIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateGcpPubSubIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetGcpPubSubIntegration(context.Context, *GetGcpPubSubIntegrationRequest) (*GetGcpPubSubIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGcpPubSubIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateGcpPubSubIntegration(context.Context, *UpdateGcpPubSubIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateGcpPubSubIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteGcpPubSubIntegration(context.Context, *DeleteGcpPubSubIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteGcpPubSubIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateAwsSnsIntegration(context.Context, *CreateAwsSnsIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAwsSnsIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetAwsSnsIntegration(context.Context, *GetAwsSnsIntegrationRequest) (*GetAwsSnsIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAwsSnsIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateAwsSnsIntegration(context.Context, *UpdateAwsSnsIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAwsSnsIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteAwsSnsIntegration(context.Context, *DeleteAwsSnsIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAwsSnsIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateAzureServiceBusIntegration(context.Context, *CreateAzureServiceBusIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateAzureServiceBusIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetAzureServiceBusIntegration(context.Context, *GetAzureServiceBusIntegrationRequest) (*GetAzureServiceBusIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAzureServiceBusIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateAzureServiceBusIntegration(context.Context, *UpdateAzureServiceBusIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateAzureServiceBusIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteAzureServiceBusIntegration(context.Context, *DeleteAzureServiceBusIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteAzureServiceBusIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreatePilotThingsIntegration(context.Context, *CreatePilotThingsIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreatePilotThingsIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetPilotThingsIntegration(context.Context, *GetPilotThingsIntegrationRequest) (*GetPilotThingsIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPilotThingsIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdatePilotThingsIntegration(context.Context, *UpdatePilotThingsIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePilotThingsIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeletePilotThingsIntegration(context.Context, *DeletePilotThingsIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeletePilotThingsIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) CreateIftttIntegration(context.Context, *CreateIftttIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateIftttIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GetIftttIntegration(context.Context, *GetIftttIntegrationRequest) (*GetIftttIntegrationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetIftttIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) UpdateIftttIntegration(context.Context, *UpdateIftttIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateIftttIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) DeleteIftttIntegration(context.Context, *DeleteIftttIntegrationRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteIftttIntegration not implemented")
+}
+func (*UnimplementedApplicationServiceServer) GenerateMqttIntegrationClientCertificate(context.Context, *GenerateMqttIntegrationClientCertificateRequest) (*GenerateMqttIntegrationClientCertificateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GenerateMqttIntegrationClientCertificate not implemented")
 }
 
 func RegisterApplicationServiceServer(s *grpc.Server, srv ApplicationServiceServer) {
@@ -1186,6 +7731,762 @@ func _ApplicationService_List_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ApplicationService_ListIntegrations_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListIntegrationsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).ListIntegrations(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/ListIntegrations",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).ListIntegrations(ctx, req.(*ListIntegrationsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateHttpIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateHttpIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateHttpIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateHttpIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateHttpIntegration(ctx, req.(*CreateHttpIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetHttpIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetHttpIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetHttpIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetHttpIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetHttpIntegration(ctx, req.(*GetHttpIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateHttpIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateHttpIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateHttpIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateHttpIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateHttpIntegration(ctx, req.(*UpdateHttpIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteHttpIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteHttpIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteHttpIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteHttpIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteHttpIntegration(ctx, req.(*DeleteHttpIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateInfluxDbIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateInfluxDbIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateInfluxDbIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateInfluxDbIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateInfluxDbIntegration(ctx, req.(*CreateInfluxDbIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetInfluxDbIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetInfluxDbIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetInfluxDbIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetInfluxDbIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetInfluxDbIntegration(ctx, req.(*GetInfluxDbIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateInfluxDbIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateInfluxDbIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateInfluxDbIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateInfluxDbIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateInfluxDbIntegration(ctx, req.(*UpdateInfluxDbIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteInfluxDbIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteInfluxDbIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteInfluxDbIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteInfluxDbIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteInfluxDbIntegration(ctx, req.(*DeleteInfluxDbIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateThingsBoardIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateThingsBoardIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateThingsBoardIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateThingsBoardIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateThingsBoardIntegration(ctx, req.(*CreateThingsBoardIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetThingsBoardIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetThingsBoardIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetThingsBoardIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetThingsBoardIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetThingsBoardIntegration(ctx, req.(*GetThingsBoardIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateThingsBoardIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateThingsBoardIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateThingsBoardIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateThingsBoardIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateThingsBoardIntegration(ctx, req.(*UpdateThingsBoardIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteThingsBoardIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteThingsBoardIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteThingsBoardIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteThingsBoardIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteThingsBoardIntegration(ctx, req.(*DeleteThingsBoardIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateMyDevicesIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateMyDevicesIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateMyDevicesIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateMyDevicesIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateMyDevicesIntegration(ctx, req.(*CreateMyDevicesIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetMyDevicesIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMyDevicesIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetMyDevicesIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetMyDevicesIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetMyDevicesIntegration(ctx, req.(*GetMyDevicesIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateMyDevicesIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateMyDevicesIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateMyDevicesIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateMyDevicesIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateMyDevicesIntegration(ctx, req.(*UpdateMyDevicesIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteMyDevicesIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteMyDevicesIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteMyDevicesIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteMyDevicesIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteMyDevicesIntegration(ctx, req.(*DeleteMyDevicesIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateLoraCloudIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateLoraCloudIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateLoraCloudIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateLoraCloudIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateLoraCloudIntegration(ctx, req.(*CreateLoraCloudIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetLoraCloudIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLoraCloudIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetLoraCloudIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetLoraCloudIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetLoraCloudIntegration(ctx, req.(*GetLoraCloudIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateLoraCloudIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateLoraCloudIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateLoraCloudIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateLoraCloudIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateLoraCloudIntegration(ctx, req.(*UpdateLoraCloudIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteLoraCloudIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteLoraCloudIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteLoraCloudIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteLoraCloudIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteLoraCloudIntegration(ctx, req.(*DeleteLoraCloudIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateGcpPubSubIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateGcpPubSubIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateGcpPubSubIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateGcpPubSubIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateGcpPubSubIntegration(ctx, req.(*CreateGcpPubSubIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetGcpPubSubIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetGcpPubSubIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetGcpPubSubIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetGcpPubSubIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetGcpPubSubIntegration(ctx, req.(*GetGcpPubSubIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateGcpPubSubIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateGcpPubSubIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateGcpPubSubIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateGcpPubSubIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateGcpPubSubIntegration(ctx, req.(*UpdateGcpPubSubIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteGcpPubSubIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteGcpPubSubIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteGcpPubSubIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteGcpPubSubIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteGcpPubSubIntegration(ctx, req.(*DeleteGcpPubSubIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateAwsSnsIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAwsSnsIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateAwsSnsIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateAwsSnsIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateAwsSnsIntegration(ctx, req.(*CreateAwsSnsIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetAwsSnsIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAwsSnsIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetAwsSnsIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetAwsSnsIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetAwsSnsIntegration(ctx, req.(*GetAwsSnsIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateAwsSnsIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAwsSnsIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateAwsSnsIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateAwsSnsIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateAwsSnsIntegration(ctx, req.(*UpdateAwsSnsIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteAwsSnsIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAwsSnsIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteAwsSnsIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteAwsSnsIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteAwsSnsIntegration(ctx, req.(*DeleteAwsSnsIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateAzureServiceBusIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateAzureServiceBusIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateAzureServiceBusIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateAzureServiceBusIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateAzureServiceBusIntegration(ctx, req.(*CreateAzureServiceBusIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetAzureServiceBusIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetAzureServiceBusIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetAzureServiceBusIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetAzureServiceBusIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetAzureServiceBusIntegration(ctx, req.(*GetAzureServiceBusIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateAzureServiceBusIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateAzureServiceBusIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateAzureServiceBusIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateAzureServiceBusIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateAzureServiceBusIntegration(ctx, req.(*UpdateAzureServiceBusIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteAzureServiceBusIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAzureServiceBusIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteAzureServiceBusIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteAzureServiceBusIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteAzureServiceBusIntegration(ctx, req.(*DeleteAzureServiceBusIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreatePilotThingsIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePilotThingsIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreatePilotThingsIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreatePilotThingsIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreatePilotThingsIntegration(ctx, req.(*CreatePilotThingsIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetPilotThingsIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPilotThingsIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetPilotThingsIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetPilotThingsIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetPilotThingsIntegration(ctx, req.(*GetPilotThingsIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdatePilotThingsIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePilotThingsIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdatePilotThingsIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdatePilotThingsIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdatePilotThingsIntegration(ctx, req.(*UpdatePilotThingsIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeletePilotThingsIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeletePilotThingsIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeletePilotThingsIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeletePilotThingsIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeletePilotThingsIntegration(ctx, req.(*DeletePilotThingsIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_CreateIftttIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateIftttIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).CreateIftttIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/CreateIftttIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).CreateIftttIntegration(ctx, req.(*CreateIftttIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GetIftttIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetIftttIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GetIftttIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GetIftttIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GetIftttIntegration(ctx, req.(*GetIftttIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_UpdateIftttIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateIftttIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).UpdateIftttIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/UpdateIftttIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).UpdateIftttIntegration(ctx, req.(*UpdateIftttIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_DeleteIftttIntegration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteIftttIntegrationRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).DeleteIftttIntegration(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/DeleteIftttIntegration",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).DeleteIftttIntegration(ctx, req.(*DeleteIftttIntegrationRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ApplicationService_GenerateMqttIntegrationClientCertificate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GenerateMqttIntegrationClientCertificateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ApplicationServiceServer).GenerateMqttIntegrationClientCertificate(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.ApplicationService/GenerateMqttIntegrationClientCertificate",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ApplicationServiceServer).GenerateMqttIntegrationClientCertificate(ctx, req.(*GenerateMqttIntegrationClientCertificateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _ApplicationService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "service.ApplicationService",
 	HandlerType: (*ApplicationServiceServer)(nil),
@@ -1209,6 +8510,174 @@ var _ApplicationService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "List",
 			Handler:    _ApplicationService_List_Handler,
+		},
+		{
+			MethodName: "ListIntegrations",
+			Handler:    _ApplicationService_ListIntegrations_Handler,
+		},
+		{
+			MethodName: "CreateHttpIntegration",
+			Handler:    _ApplicationService_CreateHttpIntegration_Handler,
+		},
+		{
+			MethodName: "GetHttpIntegration",
+			Handler:    _ApplicationService_GetHttpIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateHttpIntegration",
+			Handler:    _ApplicationService_UpdateHttpIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteHttpIntegration",
+			Handler:    _ApplicationService_DeleteHttpIntegration_Handler,
+		},
+		{
+			MethodName: "CreateInfluxDbIntegration",
+			Handler:    _ApplicationService_CreateInfluxDbIntegration_Handler,
+		},
+		{
+			MethodName: "GetInfluxDbIntegration",
+			Handler:    _ApplicationService_GetInfluxDbIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateInfluxDbIntegration",
+			Handler:    _ApplicationService_UpdateInfluxDbIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteInfluxDbIntegration",
+			Handler:    _ApplicationService_DeleteInfluxDbIntegration_Handler,
+		},
+		{
+			MethodName: "CreateThingsBoardIntegration",
+			Handler:    _ApplicationService_CreateThingsBoardIntegration_Handler,
+		},
+		{
+			MethodName: "GetThingsBoardIntegration",
+			Handler:    _ApplicationService_GetThingsBoardIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateThingsBoardIntegration",
+			Handler:    _ApplicationService_UpdateThingsBoardIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteThingsBoardIntegration",
+			Handler:    _ApplicationService_DeleteThingsBoardIntegration_Handler,
+		},
+		{
+			MethodName: "CreateMyDevicesIntegration",
+			Handler:    _ApplicationService_CreateMyDevicesIntegration_Handler,
+		},
+		{
+			MethodName: "GetMyDevicesIntegration",
+			Handler:    _ApplicationService_GetMyDevicesIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateMyDevicesIntegration",
+			Handler:    _ApplicationService_UpdateMyDevicesIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteMyDevicesIntegration",
+			Handler:    _ApplicationService_DeleteMyDevicesIntegration_Handler,
+		},
+		{
+			MethodName: "CreateLoraCloudIntegration",
+			Handler:    _ApplicationService_CreateLoraCloudIntegration_Handler,
+		},
+		{
+			MethodName: "GetLoraCloudIntegration",
+			Handler:    _ApplicationService_GetLoraCloudIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateLoraCloudIntegration",
+			Handler:    _ApplicationService_UpdateLoraCloudIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteLoraCloudIntegration",
+			Handler:    _ApplicationService_DeleteLoraCloudIntegration_Handler,
+		},
+		{
+			MethodName: "CreateGcpPubSubIntegration",
+			Handler:    _ApplicationService_CreateGcpPubSubIntegration_Handler,
+		},
+		{
+			MethodName: "GetGcpPubSubIntegration",
+			Handler:    _ApplicationService_GetGcpPubSubIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateGcpPubSubIntegration",
+			Handler:    _ApplicationService_UpdateGcpPubSubIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteGcpPubSubIntegration",
+			Handler:    _ApplicationService_DeleteGcpPubSubIntegration_Handler,
+		},
+		{
+			MethodName: "CreateAwsSnsIntegration",
+			Handler:    _ApplicationService_CreateAwsSnsIntegration_Handler,
+		},
+		{
+			MethodName: "GetAwsSnsIntegration",
+			Handler:    _ApplicationService_GetAwsSnsIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateAwsSnsIntegration",
+			Handler:    _ApplicationService_UpdateAwsSnsIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteAwsSnsIntegration",
+			Handler:    _ApplicationService_DeleteAwsSnsIntegration_Handler,
+		},
+		{
+			MethodName: "CreateAzureServiceBusIntegration",
+			Handler:    _ApplicationService_CreateAzureServiceBusIntegration_Handler,
+		},
+		{
+			MethodName: "GetAzureServiceBusIntegration",
+			Handler:    _ApplicationService_GetAzureServiceBusIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateAzureServiceBusIntegration",
+			Handler:    _ApplicationService_UpdateAzureServiceBusIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteAzureServiceBusIntegration",
+			Handler:    _ApplicationService_DeleteAzureServiceBusIntegration_Handler,
+		},
+		{
+			MethodName: "CreatePilotThingsIntegration",
+			Handler:    _ApplicationService_CreatePilotThingsIntegration_Handler,
+		},
+		{
+			MethodName: "GetPilotThingsIntegration",
+			Handler:    _ApplicationService_GetPilotThingsIntegration_Handler,
+		},
+		{
+			MethodName: "UpdatePilotThingsIntegration",
+			Handler:    _ApplicationService_UpdatePilotThingsIntegration_Handler,
+		},
+		{
+			MethodName: "DeletePilotThingsIntegration",
+			Handler:    _ApplicationService_DeletePilotThingsIntegration_Handler,
+		},
+		{
+			MethodName: "CreateIftttIntegration",
+			Handler:    _ApplicationService_CreateIftttIntegration_Handler,
+		},
+		{
+			MethodName: "GetIftttIntegration",
+			Handler:    _ApplicationService_GetIftttIntegration_Handler,
+		},
+		{
+			MethodName: "UpdateIftttIntegration",
+			Handler:    _ApplicationService_UpdateIftttIntegration_Handler,
+		},
+		{
+			MethodName: "DeleteIftttIntegration",
+			Handler:    _ApplicationService_DeleteIftttIntegration_Handler,
+		},
+		{
+			MethodName: "GenerateMqttIntegrationClientCertificate",
+			Handler:    _ApplicationService_GenerateMqttIntegrationClientCertificate_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
