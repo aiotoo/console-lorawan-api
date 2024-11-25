@@ -760,12 +760,12 @@ message LoraCloudModemGeolocationServices {
 
   // Forward FPorts.
   // Forward uplink messages matching the given FPorts to the MGS.
-  repeated uint32 forward_f_ports = 16;
+  repeated uint32 forward_f_ports = 3;
 
   // Use rx time for GNSS resolving.
   // In case this is set to true, the MGS resolver will use the RX time of the
   // network instead of the timestamp included in the LR1110 payload.
-  bool gnss_use_rx_time = 5;
+  bool gnss_use_rx_time = 4;
 
   // Use gateway location for GNSS resolving.
   // In the case this is set to true, ChirpStack will provide the location of
@@ -773,7 +773,7 @@ message LoraCloudModemGeolocationServices {
   // Disable this in case the gateway location is not accurate / incorrectly
   // configured as an incorrect location will cause the resolver to return an
   // error.
-  bool gnss_use_gateway_location = 17;
+  bool gnss_use_gateway_location = 5;
 
   // Parse TLV records.
   // If enabled, stream records (expected in TLV format) are scanned for GNSS
