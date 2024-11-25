@@ -16,7 +16,7 @@ service ApplicationService {
       body : "*"
     };
   }
-
+  
   // Get the application for the given ID.
   rpc Get(GetApplicationRequest) returns (GetApplicationResponse) {
     option (google.api.http) = {
