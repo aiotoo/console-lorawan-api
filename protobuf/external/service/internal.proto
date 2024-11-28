@@ -98,7 +98,7 @@ message ApiKey {
   
     // Tenant ID.
     // In case the API key is intended to manage resources under a single tenant.
-    string tenant_id = 4;
+    string organization_id = 4 [json_name = "organizationID"];
   }
   
   message CreateApiKeyRequest {
@@ -130,7 +130,7 @@ message ApiKey {
     bool is_admin = 3;
   
     // Filter on tenant ID.
-    string tenant_id = 4;
+    string organization_id = 4 [json_name = "organizationID"];
   }
   
   message ListApiKeysResponse {

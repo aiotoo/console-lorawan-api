@@ -54,7 +54,7 @@
             "type": "boolean"
           },
           {
-            "name": "tenantId",
+            "name": "organizationID",
             "description": "Filter on tenant ID.",
             "in": "query",
             "required": false,
@@ -297,7 +297,7 @@
           "type": "boolean",
           "description": "Is global admin key."
         },
-        "tenantId": {
+        "organizationID": {
           "type": "string",
           "description": "Tenant ID.\nIn case the API key is intended to manage resources under a single tenant."
         }
