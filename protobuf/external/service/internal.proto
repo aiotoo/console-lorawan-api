@@ -93,12 +93,9 @@ message ApiKey {
     // Name.
     string name = 2;
   
-    // Is global admin key.
-    bool is_admin = 3;
-  
     // Tenant ID.
     // In case the API key is intended to manage resources under a single tenant.
-    string organization_id = 4 [json_name = "organizationID"];
+    string organization_id = 3 [json_name = "organizationID"];
   }
   
   message CreateApiKeyRequest {
