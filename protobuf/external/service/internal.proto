@@ -133,7 +133,6 @@ message ApiKey {
   
     repeated ApiKey result = 2;
   }
-  
 
 // Defines an organization to which an user is associated.
 message OrganizationLink {
