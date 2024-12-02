@@ -13,13 +13,13 @@
   "paths": {
     "/api/users": {
       "get": {
-        "summary": "Get user list.",
+        "summary": "Get the list of users.",
         "operationId": "UserService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceListUserResponse"
+              "$ref": "#/definitions/serviceListUsersResponse"
             }
           },
           "default": {
@@ -32,10 +32,10 @@
         "parameters": [
           {
             "name": "limit",
-            "description": "Max number of user to return in the result-set.",
+            "description": "Max number of tenants to return in the result-set.",
             "in": "query",
             "required": false,
-            "type": "string",
+            "type": "integer",
             "format": "int64"
           },
           {
@@ -43,7 +43,7 @@
             "description": "Offset in the result-set (for pagination).",
             "in": "query",
             "required": false,
-            "type": "string",
+            "type": "integer",
             "format": "int64"
           }
         ],
@@ -85,7 +85,7 @@
     },
     "/api/users/{id}": {
       "get": {
-        "summary": "Get data for a particular user.",
+        "summary": "Get the user for the given ID.",
         "operationId": "UserService_Get",
         "responses": {
           "200": {
@@ -104,7 +104,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "User UUID.",
+            "description": "User ID.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -115,7 +115,7 @@
         ]
       },
       "delete": {
-        "summary": "Delete a user.",
+        "summary": "Delete the user with the given ID.",
         "operationId": "UserService_Delete",
         "responses": {
           "200": {
@@ -134,7 +134,7 @@
         "parameters": [
           {
             "name": "id",
-            "description": "User UUID.",
+            "description": "User ID.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -147,7 +147,7 @@
     },
     "/api/users/{user.id}": {
       "put": {
-        "summary": "Update an existing user.",
+        "summary": "Update the given user.",
         "operationId": "UserService_Update",
         "responses": {
           "200": {
@@ -166,7 +166,7 @@
         "parameters": [
           {
             "name": "user.id",
-            "description": "User UUID.\nWill be set automatically on create.",
+            "description": "User ID (UUID).\nWill be set automatically on create.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -186,8 +186,8 @@
       }
     },
     "/api/users/{userId}/password": {
-      "put": {
-        "summary": "UpdatePassword updates a password.",
+      "post": {
+        "summary": "Update the password for the given user.",
         "operationId": "UserService_UpdatePassword",
         "responses": {
           "200": {
@@ -269,14 +269,14 @@
         },
         "password": {
           "type": "string",
-          "description": "Password of the user."
+          "description": "Password to set for the user."
         },
         "organizations": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/serviceUserOrganization"
           },
-          "description": "Add the user to the following organizations."
+          "description": "Add the user to the following tenants."
         }
       }
     },
@@ -285,7 +285,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "User UUID."
+          "description": "User ID."
         }
       }
     },
@@ -308,11 +308,11 @@
         }
       }
     },
-    "serviceListUserResponse": {
+    "serviceListUsersResponse": {
       "type": "object",
       "properties": {
         "totalCount": {
-          "type": "string",
+          "type": "integer",
           "format": "int64",
           "description": "Total number of users."
         },
@@ -334,7 +334,7 @@
         },
         "password": {
           "type": "string",
-          "description": "New pasword."
+          "description": "Password to set."
         }
       }
     },
@@ -343,7 +343,7 @@
       "properties": {
         "user": {
           "$ref": "#/definitions/serviceUser",
-          "description": "User object to update."
+          "description": "User object."
         }
       }
     },
@@ -352,20 +352,11 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "User UUID.\nWill be set automatically on create."
-        },
-        "sessionTTL": {
-          "type": "integer",
-          "format": "int32",
-          "description": "The session timeout, in minutes."
-        },
-        "isSuperAdmin": {
-          "type": "boolean",
-          "description": "Set to true to make the user a super administrator."
+          "description": "User ID (UUID).\nWill be set automatically on create."
         },
         "isAdmin": {
           "type": "boolean",
-          "description": "Set to true to make the user a administrator."
+          "description": "Set to true to make the user a global administrator."
         },
         "isActive": {
           "type": "boolean",
@@ -386,28 +377,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "description": "User ID.\nWill be set automatically on create."
-        },
-        "email": {
-          "type": "string",
-          "description": "Email of the user."
-        },
-        "sessionTTL": {
-          "type": "integer",
-          "format": "int32",
-          "description": "The session timeout, in minutes."
-        },
-        "isSuperAdmin": {
-          "type": "boolean",
-          "description": "Set to true to make the user a super administrator."
-        },
-        "isAdmin": {
-          "type": "boolean",
-          "description": "Set to true to make the user a global administrator."
-        },
-        "isActive": {
-          "type": "boolean",
-          "description": "Set to false to disable the user."
+          "description": "User ID (UUID)."
         },
         "createdAt": {
           "type": "string",
@@ -418,6 +388,18 @@
           "type": "string",
           "format": "date-time",
           "description": "Last update timestamp."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email of the user."
+        },
+        "isAdmin": {
+          "type": "boolean",
+          "description": "Set to true to make the user a global administrator."
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Set to false to disable the user."
         }
       }
     },
@@ -426,19 +408,19 @@
       "properties": {
         "organizationID": {
           "type": "string",
-          "description": "Organization ID."
+          "description": "Tenant ID."
         },
         "isAdmin": {
           "type": "boolean",
-          "description": "User is admin within the context of the organization.\nThere is no need to set the is_editor and is_viewer flags."
+          "description": "User is admin within the context of the tenant.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
         },
-        "isEditor": {
+        "isDeviceAdmin": {
           "type": "boolean",
           "description": "User is able to modify device related resources (applications,\ndevice-profiles, devices, multicast-groups)."
         },
-        "isViewer": {
+        "isGatewayAdmin": {
           "type": "boolean",
-          "description": "User is able to view."
+          "description": "User is able to modify gateways."
         }
       }
     }

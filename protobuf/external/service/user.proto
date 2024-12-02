@@ -9,67 +9,60 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
 
-// UserService is the service managing the user access.
+// UserService is the service providing API methods for managing users.
 service UserService {
-	// Get user list.
-	rpc List(ListUserRequest) returns (ListUserResponse) {
-		option(google.api.http) = {
-			get: "/api/users"
-		};
-	}
+    // Create a new user.
+    rpc Create(CreateUserRequest) returns (CreateUserResponse) {
+        option(google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
 
-	// Get data for a particular user.
-	rpc Get(GetUserRequest) returns (GetUserResponse) {
-		option(google.api.http) = {
-			get: "/api/users/{id}"
-		};
-	}
+    // Get the user for the given ID.
+    rpc Get(GetUserRequest) returns (GetUserResponse) {
+        option(google.api.http) = {
+            get: "/api/users/{id}"
+        };
+    }
 
-	// Create a new user.
-	rpc Create(CreateUserRequest) returns (CreateUserResponse) {
-		option(google.api.http) = {
-			post: "/api/users"
-			body: "*"
-		};
-	}
+    // Update the given user.
+    rpc Update(UpdateUserRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            put: "/api/users/{user.id}"
+            body: "*"
+        };
+    }
 
-	// Update an existing user.
-	rpc Update(UpdateUserRequest) returns (google.protobuf.Empty) {
-		option(google.api.http) = {
-			put: "/api/users/{user.id}"
-			body: "*"
-		};
-	}
+    // Delete the user with the given ID.
+    rpc Delete(DeleteUserRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/users/{id}"
+        };
+    }
 
-	// Delete a user.
-	rpc Delete(DeleteUserRequest) returns (google.protobuf.Empty) {
-		option(google.api.http) = {
-			delete: "/api/users/{id}"
-		};
-	}
+    // Get the list of users.
+    rpc List(ListUsersRequest) returns (ListUsersResponse) {
+        option(google.api.http) = {
+            get: "/api/users"
+        };
+    }
 
-	// UpdatePassword updates a password.
-	rpc UpdatePassword(UpdateUserPasswordRequest) returns (google.protobuf.Empty) {
-		option(google.api.http) = {
-			put: "/api/users/{user_id}/password"
-			body: "*"
-		};
-	}
-
+    // Update the password for the given user.
+    rpc UpdatePassword(UpdateUserPasswordRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            post: "/api/users/{user_id}/password"
+            body: "*"
+        };
+    }
 }
 
 message User {
-	// User UUID.
+	// User ID (UUID).
 	// Will be set automatically on create.
 	string id = 1;
 
-	// The session timeout, in minutes.
-	int32 session_ttl = 2 [json_name = "sessionTTL"];
-
-	// Set to true to make the user a super administrator.
-	bool is_super_admin = 3;
-
-	// Set to true to make the user a administrator.
+	// Set to true to make the user a global administrator.
 	bool is_admin = 4;
 
 	// Set to false to disable the user.
@@ -83,73 +76,65 @@ message User {
 }
 
 message UserListItem {
-	// User ID.
-	// Will be set automatically on create.
-	string id = 1;
+    // User ID (UUID).
+    string id = 1;
+
+	// Created at timestamp.
+	google.protobuf.Timestamp created_at = 2;
+
+	// Last update timestamp.
+	google.protobuf.Timestamp updated_at = 3;
 
 	// Email of the user.
-	string email = 2;
-
-	// The session timeout, in minutes.
-	int32 session_ttl = 3 [json_name = "sessionTTL"];
-
-	// Set to true to make the user a super administrator.
-	bool is_super_admin = 4;
+	string email = 4;
 
 	// Set to true to make the user a global administrator.
 	bool is_admin = 5;
 
 	// Set to false to disable the user.
 	bool is_active = 6;
-
-	// Created at timestamp.
-	google.protobuf.Timestamp created_at = 7;
-
-	// Last update timestamp.
-	google.protobuf.Timestamp updated_at = 8;
 }
 
 message UserOrganization {
-	// Organization ID.
+    // Tenant ID.
 	string organization_id = 1 [json_name = "organizationID"];
 
-	// User is admin within the context of the organization.
-    // There is no need to set the is_editor and is_viewer flags.
+	// User is admin within the context of the tenant.
+    // There is no need to set the is_device_admin and is_gateway_admin flags.
 	bool is_admin = 2;
 
     // User is able to modify device related resources (applications,
     // device-profiles, devices, multicast-groups).
-    bool is_editor = 3;
+    bool is_device_admin = 3;
 
-    // User is able to view.
-    bool is_viewer = 4;
-
+    // User is able to modify gateways.
+    bool is_gateway_admin = 4;
 }
 
 message CreateUserRequest {
-	// User object to create.
-	User user = 1;
+    // User object to create.
+    User user = 1;
 
-	// Password of the user.
-	string password = 2;
+    // Password to set for the user.
+    string password = 2;
 
-	// Add the user to the following organizations.
+    // Add the user to the following tenants.
 	repeated UserOrganization organizations = 3;
 }
 
 message CreateUserResponse {
-	// User UUID.
-	string id = 1;
+    // User ID.
+    string id = 1;
 }
 
 message GetUserRequest {
-	// User UUID.
-	string id = 1;
+    // User ID.
+    string id = 1;
 }
 
 message GetUserResponse {
-	// User object.
-	User user = 1;
+    // User object.
+    User user = 1;
 
 	// Created at timestamp.
 	google.protobuf.Timestamp created_at = 2;
@@ -159,35 +144,35 @@ message GetUserResponse {
 }
 
 message UpdateUserRequest {
-	// User object to update.
-	User user = 1;
+    // User object.
+    User user = 1;
 }
 
 message DeleteUserRequest {
-	// User UUID.
-	string id = 1;
+    // User ID.
+    string id = 1;
 }
 
-message ListUserRequest {
-	// Max number of user to return in the result-set.
-	int64 limit = 1;
+message ListUsersRequest {
+    // Max number of tenants to return in the result-set.
+    uint32 limit = 1;
 
-	// Offset in the result-set (for pagination).
-	int64 offset = 2;
+    // Offset in the result-set (for pagination).
+    uint32 offset = 2;
 }
 
-message ListUserResponse {
-	// Total number of users.
-	int64 total_count = 1;
+message ListUsersResponse {
+    // Total number of users.
+    uint32 total_count = 1;
 
-	// Result-set.
-	repeated UserListItem result = 2;
+    // Result-set.
+    repeated UserListItem result = 2;
 }
 
 message UpdateUserPasswordRequest {
-	// User ID.
-	string user_id = 1;
+    // User ID.
+    string user_id = 1;
 
-	// New pasword.
-	string password = 2;
+    // Password to set.
+    string password = 2;
 }
