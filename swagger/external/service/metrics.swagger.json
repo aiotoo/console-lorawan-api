@@ -187,7 +187,7 @@
         },
         "parameters": [
           {
-            "name": "organizationId",
+            "name": "organizationID",
             "description": "Tenant ID (UUID).",
             "in": "query",
             "required": false,

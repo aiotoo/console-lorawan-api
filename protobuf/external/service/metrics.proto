@@ -200,7 +200,7 @@ message GetDevicesSummaryResponse {
 
 message GetGatewaysSummaryRequest {
   // Tenant ID (UUID).
-  string organization_id = 1;
+  string organization_id = 1 [json_name = "organizationID"];
 }
 
 message GetGatewaysSummaryResponse {
