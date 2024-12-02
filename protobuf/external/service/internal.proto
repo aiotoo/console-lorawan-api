@@ -178,7 +178,7 @@ message ProfileResponse {
     User user = 1;
 
     // Organizations to which the user is associated.
-    repeated OrganizationLink organizations = 3;
+    repeated OrganizationLink organizations = 2;
 }
 
 message GlobalSearchRequest {
@@ -230,10 +230,10 @@ message GlobalSearchResult {
 
 message SettingsResponse {
     // Branding settings.
-    Branding branding = 2;
+    Branding branding = 1;
 
     // OpenID Connect settings.
-    OpenIDConnect openid_connect = 3;
+    OpenIDConnect openid_connect = 2;
 }
 
 message Branding {

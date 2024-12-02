@@ -82,10 +82,10 @@ message GetDeviceMetricsResponse {
 
 message DeviceState {
   // Name.
-  string name = 2;
+  string name = 1;
 
   // Value.
-  string value = 3;
+  string value = 2;
 }
 
 message GetDeviceLinkMetricsRequest {

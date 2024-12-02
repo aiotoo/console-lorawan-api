@@ -168,10 +168,10 @@ message MulticastGroup {
     // Valid options are: 0 - 7;
     //
     // The actual number of ping-slots per beacon period equals to 2^k.
-    uint32 class_b_ping_slot_nb_k = 14;
+    uint32 class_b_ping_slot_nb_k = 13;
 
     // Scheduling type (only for Class-C).
-    MulticastGroupSchedulingType class_c_scheduling_type = 13;
+    MulticastGroupSchedulingType class_c_scheduling_type = 14;
 }
 
 message MulticastGroupListItem {
