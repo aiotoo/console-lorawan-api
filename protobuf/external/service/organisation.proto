@@ -6,6 +6,7 @@ option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/servic
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 
 service OrganisationService{
 
@@ -22,6 +23,29 @@ service OrganisationService{
       get : "/api/organisations"
     };
   }
+
+    // Create a new tenant.
+    rpc Create(CreateOrganisationsRequest) returns (CreateOrganisationsResponse) {
+      option (google.api.http) = {
+        post : "/api/tenants"
+        body : "*"
+      };
+    }
+
+    // Update the given tenant.
+    rpc Update(UpdateOrganisationsRequest) returns (google.protobuf.Empty) {
+      option (google.api.http) = {
+        put : "/api/Organisations/{Organisations.id}"
+        body : "*"
+      };
+    }
+  
+    // Delete the tenant with the given ID.
+    rpc Delete(DeleteOrganisationsRequest) returns (google.protobuf.Empty) {
+      option (google.api.http) = {
+        delete : "/api/Organisations/{id}"
+      };
+    }
 }
 
 
@@ -62,6 +86,26 @@ message Organisation {
   // These tags can be used to add additional information to the tenant. These
   // tags are NOT exposed in the integration events.
   map<string, string> tags = 9;
+}
+
+message UpdateOrganisationsRequest {
+  // Organisation object.
+  Organisation organisation = 1;
+}
+
+message DeleteOrganisationsRequest {
+  // Organisation ID.
+  string id = 1;
+}
+
+message CreateOrganisationsRequest {
+  // Organisation object.
+  Organisation organisation = 1;
+}
+
+message CreateOrganisationsResponse {
+  // Organisation ID.
+  string id = 1;
 }
 
 
