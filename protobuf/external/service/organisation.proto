@@ -14,7 +14,7 @@ service OrganisationService {
   // Create a new Organisation.
   rpc Create(CreateOrganisationRequest) returns (CreateOrganisationResponse) {
     option (google.api.http) = {
-      post : "/api/Organisations"
+      post : "/api/organisation"
       body : "*"
     };
   }
@@ -22,14 +22,14 @@ service OrganisationService {
   // Get the Organisation for the given ID.
   rpc Get(GetOrganisationRequest) returns (GetOrganisationResponse) {
     option (google.api.http) = {
-      get : "/api/Organisations/{id}"
+      get : "/api/organisation/{id}"
     };
   }
 
   // Update the given Organisation.
   rpc Update(UpdateOrganisationRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      put : "/api/Organisations/{Organisation.id}"
+      put : "/api/organisation/{organisation.id}"
       body : "*"
     };
   }
@@ -37,14 +37,14 @@ service OrganisationService {
   // Delete the Organisation with the given ID.
   rpc Delete(DeleteOrganisationRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete : "/api/Organisations/{id}"
+      delete : "/api/organisation/{id}"
     };
   }
 
   // Get the list of Organisations.
   rpc List(ListOrganisationsRequest) returns (ListOrganisationsResponse) {
     option (google.api.http) = {
-      get : "/api/Organisations"
+      get : "/api/organisations"
     };
   }
 }
@@ -121,7 +121,7 @@ message OrganisationListItem {
 
 message CreateOrganisationRequest {
   // Organisation object to create.
-  Organisation Organisation = 1;
+  Organisation organisation = 1;
 }
 
 message CreateOrganisationResponse {
@@ -136,7 +136,7 @@ message GetOrganisationRequest {
 
 message GetOrganisationResponse {
   // Organisation object.
-  Organisation Organisation = 1;
+  Organisation organisation = 1;
 
   // Created at timestamp.
   google.protobuf.Timestamp created_at = 2;
@@ -147,7 +147,7 @@ message GetOrganisationResponse {
 
 message UpdateOrganisationRequest {
   // Organisation object.
-  Organisation Organisation = 1;
+  Organisation organisation = 1;
 }
 
 message DeleteOrganisationRequest {

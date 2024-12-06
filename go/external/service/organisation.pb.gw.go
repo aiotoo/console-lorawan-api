@@ -140,15 +140,15 @@ func request_OrganisationService_Update_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["Organisation.id"]
+	val, ok = pathParams["organisation.id"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "Organisation.id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "organisation.id")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "Organisation.id", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "organisation.id", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "Organisation.id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "organisation.id", err)
 	}
 
 	msg, err := client.Update(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -175,15 +175,15 @@ func local_request_OrganisationService_Update_0(ctx context.Context, marshaler r
 		_   = err
 	)
 
-	val, ok = pathParams["Organisation.id"]
+	val, ok = pathParams["organisation.id"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "Organisation.id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "organisation.id")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "Organisation.id", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "organisation.id", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "Organisation.id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "organisation.id", err)
 	}
 
 	msg, err := server.Update(ctx, &protoReq)
@@ -547,15 +547,15 @@ func RegisterOrganisationServiceHandlerClient(ctx context.Context, mux *runtime.
 }
 
 var (
-	pattern_OrganisationService_Create_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "Organisations"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_OrganisationService_Create_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "organisation"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_OrganisationService_Get_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"api", "Organisations", "id"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_OrganisationService_Get_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"api", "organisation", "id"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_OrganisationService_Update_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"api", "Organisations", "Organisation.id"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_OrganisationService_Update_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"api", "organisation", "organisation.id"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_OrganisationService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"api", "Organisations", "id"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_OrganisationService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"api", "organisation", "id"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_OrganisationService_List_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "Organisations"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_OrganisationService_List_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "organisations"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (

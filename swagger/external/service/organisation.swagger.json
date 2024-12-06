@@ -11,60 +11,7 @@
     "application/json"
   ],
   "paths": {
-    "/api/Organisations": {
-      "get": {
-        "summary": "Get the list of Organisations.",
-        "operationId": "OrganisationService_List",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceListOrganisationsResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "limit",
-            "description": "Max number of Organisations to return in the result-set.",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "offset",
-            "description": "Offset in the result-set (for pagination).",
-            "in": "query",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "search",
-            "description": "If set, the given string will be used to search on name.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "userId",
-            "description": "If set, filters the result set to the Organisations of the user.\nOnly global API keys are able to filter by this field.",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "tags": [
-          "OrganisationService"
-        ]
-      },
+    "/api/organisation": {
       "post": {
         "summary": "Create a new Organisation.",
         "operationId": "OrganisationService_Create",
@@ -97,7 +44,7 @@
         ]
       }
     },
-    "/api/Organisations/{id}": {
+    "/api/organisation/{id}": {
       "get": {
         "summary": "Get the Organisation for the given ID.",
         "operationId": "OrganisationService_Get",
@@ -159,7 +106,7 @@
         ]
       }
     },
-    "/api/Organisations/{organisation.id}": {
+    "/api/organisation/{organisation.id}": {
       "put": {
         "summary": "Update the given Organisation.",
         "operationId": "OrganisationService_Update",
@@ -192,6 +139,61 @@
             "schema": {
               "$ref": "#/definitions/serviceUpdateOrganisationRequest"
             }
+          }
+        ],
+        "tags": [
+          "OrganisationService"
+        ]
+      }
+    },
+    "/api/organisations": {
+      "get": {
+        "summary": "Get the list of Organisations.",
+        "operationId": "OrganisationService_List",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceListOrganisationsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "description": "Max number of Organisations to return in the result-set.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Offset in the result-set (for pagination).",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "search",
+            "description": "If set, the given string will be used to search on name.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "description": "If set, filters the result set to the Organisations of the user.\nOnly global API keys are able to filter by this field.",
+            "in": "query",
+            "required": false,
+            "type": "string"
           }
         ],
         "tags": [
@@ -237,7 +239,7 @@
     "serviceCreateOrganisationRequest": {
       "type": "object",
       "properties": {
-        "Organisation": {
+        "organisation": {
           "$ref": "#/definitions/serviceOrganisation",
           "description": "Organisation object to create."
         }
@@ -255,7 +257,7 @@
     "serviceGetOrganisationResponse": {
       "type": "object",
       "properties": {
-        "Organisation": {
+        "organisation": {
           "$ref": "#/definitions/serviceOrganisation",
           "description": "Organisation object."
         },
@@ -382,7 +384,7 @@
     "serviceUpdateOrganisationRequest": {
       "type": "object",
       "properties": {
-        "Organisation": {
+        "organisation": {
           "$ref": "#/definitions/serviceOrganisation",
           "description": "Organisation object."
         }
