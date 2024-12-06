@@ -8,46 +8,46 @@ import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
-service OrganisationService{
+// OrganisationService is the service providing API methods for managing Organisations.
+service OrganisationService {
 
-// Get the Organisation for the given ID.
+  // Create a new Organisation.
+  rpc Create(CreateOrganisationRequest) returns (CreateOrganisationResponse) {
+    option (google.api.http) = {
+      post : "/api/Organisations"
+      body : "*"
+    };
+  }
+
+  // Get the Organisation for the given ID.
   rpc Get(GetOrganisationRequest) returns (GetOrganisationResponse) {
     option (google.api.http) = {
-      get : "/api/organisation/{id}"
+      get : "/api/Organisation/{id}"
     };
   }
 
-   // Get the list of Organisation.
+  // Update the given Organisation.
+  rpc Update(UpdateOrganisationRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      put : "/api/Organisations/{Organisation.id}"
+      body : "*"
+    };
+  }
+
+  // Delete the Organisation with the given ID.
+  rpc Delete(DeleteOrganisationRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/api/Organisations/{id}"
+    };
+  }
+
+  // Get the list of Organisations.
   rpc List(ListOrganisationsRequest) returns (ListOrganisationsResponse) {
     option (google.api.http) = {
-      get : "/api/organisations"
+      get : "/api/Organisations"
     };
   }
-
-    // Create a new tenant.
-    rpc Create(CreateOrganisationsRequest) returns (CreateOrganisationsResponse) {
-      option (google.api.http) = {
-        post : "/api/organisations"
-        body : "*"
-      };
-    }
-
-    // Update the given tenant.
-    rpc Update(UpdateOrganisationsRequest) returns (google.protobuf.Empty) {
-      option (google.api.http) = {
-        put : "/api/Organisations/{Organisations.id}"
-        body : "*"
-      };
-    }
-  
-    // Delete the tenant with the given ID.
-    rpc Delete(DeleteOrganisationsRequest) returns (google.protobuf.Empty) {
-      option (google.api.http) = {
-        delete : "/api/Organisations/{id}"
-      };
-    }
 }
-
 
 message Organisation {
   // Organisation ID (UUID).
@@ -88,22 +88,22 @@ message Organisation {
   map<string, string> tags = 9;
 }
 
-message UpdateOrganisationsRequest {
+message UpdateOrganisationRequest {
   // Organisation object.
   Organisation organisation = 1;
 }
 
-message DeleteOrganisationsRequest {
+message DeleteOrganisationRequest {
   // Organisation ID.
   string id = 1;
 }
 
-message CreateOrganisationsRequest {
+message CreateOrganisationRequest {
   // Organisation object.
   Organisation organisation = 1;
 }
 
-message CreateOrganisationsResponse {
+message CreateOrganisationResponse {
   // Organisation ID.
   string id = 1;
 }
