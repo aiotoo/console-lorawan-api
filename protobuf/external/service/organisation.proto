@@ -27,7 +27,7 @@ service OrganisationService{
     // Create a new tenant.
     rpc Create(CreateOrganisationsRequest) returns (CreateOrganisationsResponse) {
       option (google.api.http) = {
-        post : "/api/tenants"
+        post : "/api/organisations"
         body : "*"
       };
     }
