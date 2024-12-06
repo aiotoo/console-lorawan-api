@@ -8,9 +8,9 @@ import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
+
 // OrganisationService is the service providing API methods for managing Organisations.
 service OrganisationService {
-
   // Create a new Organisation.
   rpc Create(CreateOrganisationRequest) returns (CreateOrganisationResponse) {
     option (google.api.http) = {
@@ -22,7 +22,7 @@ service OrganisationService {
   // Get the Organisation for the given ID.
   rpc Get(GetOrganisationRequest) returns (GetOrganisationResponse) {
     option (google.api.http) = {
-      get : "/api/Organisation/{id}"
+      get : "/api/Organisations/{id}"
     };
   }
 
@@ -47,6 +47,44 @@ service OrganisationService {
       get : "/api/Organisations"
     };
   }
+
+  // Add an user to the Organisation.
+  // Note: the user must already exist.
+  rpc AddUser(AddOrganisationUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/api/Organisations/{Organisation_user.Organisation_id}/users"
+      body : "*"
+    };
+  }
+
+  // Get the the Organisation user for the given Organisation and user IDs.
+  rpc GetUser(GetOrganisationUserRequest) returns (GetOrganisationUserResponse) {
+    option (google.api.http) = {
+      get : "/api/Organisations/{Organisation_id}/users/{user_id}"
+    };
+  }
+
+  // Update the given Organisation user.
+  rpc UpdateUser(UpdateOrganisationUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      put : "/api/Organisations/{Organisation_user.Organisation_id}/users/{Organisation_user.user_id}"
+      body : "*"
+    };
+  }
+
+  // Delete the given Organisation user.
+  rpc DeleteUser(DeleteOrganisationUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/api/Organisations/{Organisation_id}/users/{user_id}"
+    };
+  }
+
+  // Get the list of Organisation users.
+  rpc ListUsers(ListOrganisationUsersRequest) returns (ListOrganisationUsersResponse) {
+    option (google.api.http) = {
+      get : "/api/Organisations/{Organisation_id}/users"
+    };
+  }
 }
 
 message Organisation {
@@ -60,84 +98,32 @@ message Organisation {
   // Organisation description.
   string description = 3;
 
-  // Can the tenant create and "own" Gateways?
+  // Can the Organisation create and "own" Gateways?
   bool can_have_gateways = 4;
 
-  // Max. gateway count for tenant.
-  // When set to 0, the tenant can have unlimited gateways.
+  // Max. gateway count for Organisation.
+  // When set to 0, the Organisation can have unlimited gateways.
   uint32 max_gateway_count = 5;
 
-  // Max. device count for tenant.
-  // When set to 0, the tenant can have unlimited devices.
+  // Max. device count for Organisation.
+  // When set to 0, the Organisation can have unlimited devices.
   uint32 max_device_count = 6;
 
   // Private gateways (uplink).
-  // If enabled, then uplink messages will not be shared with other tenants.
+  // If enabled, then uplink messages will not be shared with other Organisations.
   bool private_gateways_up = 7;
 
   // Private gateways (downlink).
-  // If enabled, then other tenants will not be able to schedule downlink
-  // messages through the gateways of this tenant. For example, in case you
-  // do want to share uplinks with other tenants (private_gateways_up=false),
-  // but you want to prevent other tenants from using gateway airtime.
+  // If enabled, then other Organisations will not be able to schedule downlink
+  // messages through the gateways of this Organisation. For example, in case you
+  // do want to share uplinks with other Organisations (private_gateways_up=false),
+  // but you want to prevent other Organisations from using gateway airtime.
   bool private_gateways_down = 8;
 
   // Tags (user defined).
-  // These tags can be used to add additional information to the tenant. These
+  // These tags can be used to add additional information to the Organisation. These
   // tags are NOT exposed in the integration events.
   map<string, string> tags = 9;
-}
-
-message UpdateOrganisationRequest {
-  // Organisation object.
-  Organisation organisation = 1;
-}
-
-message DeleteOrganisationRequest {
-  // Organisation ID.
-  string id = 1;
-}
-
-message CreateOrganisationRequest {
-  // Organisation object.
-  Organisation organisation = 1;
-}
-
-message CreateOrganisationResponse {
-  // Organisation ID.
-  string id = 1;
-}
-
-
-message GetOrganisationRequest {
-  // Organisation ID.
-  string id = 1;
-}
-
-message GetOrganisationResponse {
-  // Organisation object.
-  Organisation organisation = 1;
-
-  // Created at timestamp.
-  google.protobuf.Timestamp created_at = 2;
-
-  // Last update timestamp.
-  google.protobuf.Timestamp updated_at = 3;
-}
-
-message ListOrganisationsRequest {
-  // Max number of tenants to return in the result-set.
-  uint32 limit = 1;
-
-  // Offset in the result-set (for pagination).
-  uint32 offset = 2;
-
-  // If set, the given string will be used to search on name.
-  string search = 3;
-
-  // If set, filters the result set to the tenants of the user.
-  // Only global API keys are able to filter by this field.
-  string user_id = 4;
 }
 
 message OrganisationListItem {
@@ -153,7 +139,7 @@ message OrganisationListItem {
   // Organisation name.
   string name = 4;
 
-  // Can the tenant create and "own" Gateways?
+  // Can the Organisation create and "own" Gateways?
   bool can_have_gateways = 5;
 
   // Private gateways (uplink).
@@ -171,10 +157,167 @@ message OrganisationListItem {
   uint32 max_device_count = 8;
 }
 
+message CreateOrganisationRequest {
+  // Organisation object to create.
+  Organisation Organisation = 1;
+}
+
+message CreateOrganisationResponse {
+  // Organisation ID.
+  string id = 1;
+}
+
+message GetOrganisationRequest {
+  // Organisation ID.
+  string id = 1;
+}
+
+message GetOrganisationResponse {
+  // Organisation object.
+  Organisation Organisation = 1;
+
+  // Created at timestamp.
+  google.protobuf.Timestamp created_at = 2;
+
+  // Last update timestamp.
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message UpdateOrganisationRequest {
+  // Organisation object.
+  Organisation Organisation = 1;
+}
+
+message DeleteOrganisationRequest {
+  // Organisation ID.
+  string id = 1;
+}
+
+message ListOrganisationsRequest {
+  // Max number of Organisations to return in the result-set.
+  uint32 limit = 1;
+
+  // Offset in the result-set (for pagination).
+  uint32 offset = 2;
+
+  // If set, the given string will be used to search on name.
+  string search = 3;
+
+  // If set, filters the result set to the Organisations of the user.
+  // Only global API keys are able to filter by this field.
+  string user_id = 4;
+}
+
 message ListOrganisationsResponse {
-  // Total number of tenants.
+  // Total number of Organisations.
   uint32 total_count = 1;
 
   // Result-set.
   repeated OrganisationListItem result = 2;
+}
+
+message OrganisationUser {
+  // Organisation ID (UUID).
+  string Organisation_id = 1;
+
+  // User ID (UUID).
+  string user_id = 2;
+
+  // User is admin within the context of the Organisation.
+  // There is no need to set the is_device_admin and is_gateway_admin flags.
+  bool is_admin = 3;
+
+  // User is able to modify device related resources (applications,
+  // device-profiles, devices, multicast-groups).
+  bool is_device_admin = 4;
+
+  // User is able to modify gateways.
+  bool is_gateway_admin = 5;
+
+  // Email (only used on get and when adding a user to a Organisation).
+  string email = 6;
+}
+
+message OrganisationUserListItem {
+  // Organisation ID (UUID).
+  string Organisation_id = 1;
+
+  // User ID (UUID).
+  string user_id = 2;
+
+  // Created at timestamp.
+  google.protobuf.Timestamp created_at = 3;
+
+  // Last update timestamp.
+  google.protobuf.Timestamp updated_at = 4;
+
+  // Email.
+  string email = 5;
+
+  // User is admin within the context of the Organisation.
+  // There is no need to set the is_device_admin and is_gateway_admin flags.
+  bool is_admin = 6;
+
+  // User is able to modify device related resources (applications,
+  // device-profiles, devices, multicast-groups).
+  bool is_device_admin = 7;
+
+  // User is able to modify gateways.
+  bool is_gateway_admin = 8;
+}
+
+message AddOrganisationUserRequest {
+  // Organisation user object.
+  OrganisationUser Organisation_user = 1;
+}
+
+message GetOrganisationUserRequest {
+  // Organisation ID (UUID).
+  string Organisation_id = 1;
+
+  // User ID (UUID).
+  string user_id = 2;
+}
+
+message GetOrganisationUserResponse {
+  // Organisation user object.
+  OrganisationUser Organisation_user = 1;
+
+  // Created at timestamp.
+  google.protobuf.Timestamp created_at = 2;
+
+  // Last update timestamp.
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message UpdateOrganisationUserRequest {
+  // Organisation user object.
+  OrganisationUser Organisation_user = 1;
+}
+
+message DeleteOrganisationUserRequest {
+  // Organisation ID (UUID).
+  string Organisation_id = 1;
+
+  // User ID (UUID).
+  string user_id = 2;
+}
+
+message ListOrganisationUsersRequest {
+  // Organisation ID (UUID).
+  string Organisation_id = 1;
+
+  // Max number of Organisations to return in the result-set.
+  uint32 limit = 2;
+
+  // Offset in the result-set (for pagination).
+  uint32 offset = 3;
+}
+
+message ListOrganisationUsersResponse {
+  // Total number of Organisations.
+  uint32 total_count = 1;
+
+  // Result-set.
+  repeated OrganisationUserListItem result = 2;
 }
