@@ -47,6 +47,44 @@ service OrganisationService {
       get : "/api/organisations"
     };
   }
+
+    // Add an user to the Organisation.
+  // Note: the user must already exist.
+  rpc AddUser(AddOrganisationUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/api/organisations/{organisation_user.organisation_id}/users"
+      body : "*"
+    };
+  }
+
+  // Get the the Organisation user for the given Organisation and user IDs.
+  rpc GetUser(GetOrganisationUserRequest) returns (GetOrganisationUserResponse) {
+    option (google.api.http) = {
+      get : "/api/organisations/{organisation_id}/users/{user_id}"
+    };
+  }
+
+  // Update the given Organisation user.
+  rpc UpdateUser(UpdateOrganisationUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      put : "/api/organisations/{organisation_user.organisation_id}/users/{organisation_user.user_id}"
+      body : "*"
+    };
+  }
+
+  // Delete the given Organisation user.
+  rpc DeleteUser(DeleteOrganisationUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/api/organisations/{organisation_id}/users/{user_id}"
+    };
+  }
+
+  // Get the list of Organisation users.
+  rpc ListUsers(ListOrganisationUsersRequest) returns (ListOrganisationUsersResponse) {
+    option (google.api.http) = {
+      get : "/api/organisations/{organisation_id}/users"
+    };
+  }
 }
 
 message Organisation {
@@ -176,4 +214,111 @@ message ListOrganisationsResponse {
 
   // Result-set.
   repeated OrganisationListItem result = 2;
+}
+
+
+message OrganisationUser {
+  // Organisation ID (UUID).
+  string organisation_id = 1;
+
+  // User ID (UUID).
+  string user_id = 2;
+
+  // User is admin within the context of the organisation.
+  // There is no need to set the is_device_admin and is_gateway_admin flags.
+  bool is_admin = 3;
+
+  // User is able to modify device related resources (applications,
+  // device-profiles, devices, multicast-groups).
+  bool is_device_admin = 4;
+
+  // User is able to modify gateways.
+  bool is_gateway_admin = 5;
+
+  // Email (only used on get and when adding a user to a organisation).
+  string email = 6;
+}
+
+message OrganisationUserListItem {
+  // organisation ID (UUID).
+  string organisation_id = 1;
+
+  // User ID (UUID).
+  string user_id = 2;
+
+  // Created at timestamp.
+  google.protobuf.Timestamp created_at = 3;
+
+  // Last update timestamp.
+  google.protobuf.Timestamp updated_at = 4;
+
+  // Email.
+  string email = 5;
+
+  // User is admin within the context of the organisation.
+  // There is no need to set the is_device_admin and is_gateway_admin flags.
+  bool is_admin = 6;
+
+  // User is able to modify device related resources (applications,
+  // device-profiles, devices, multicast-groups).
+  bool is_device_admin = 7;
+
+  // User is able to modify gateways.
+  bool is_gateway_admin = 8;
+}
+
+message AddOrganisationUserRequest {
+  // organisation user object.
+  OrganisationUser organisation_user = 1;
+}
+
+message GetOrganisationUserRequest {
+  // organisation ID (UUID).
+  string organisation_id = 1;
+
+  // User ID (UUID).
+  string user_id = 2;
+}
+
+message GetOrganisationUserResponse {
+  // organisation user object.
+  OrganisationUser organisation_user = 1;
+
+  // Created at timestamp.
+  google.protobuf.Timestamp created_at = 2;
+
+  // Last update timestamp.
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+message UpdateOrganisationUserRequest {
+  // organisation user object.
+  OrganisationUser organisation_user = 1;
+}
+
+message DeleteOrganisationUserRequest {
+  // organisation ID (UUID).
+  string organisation_id = 1;
+
+  // User ID (UUID).
+  string user_id = 2;
+}
+
+message ListOrganisationUsersRequest {
+  // organisation ID (UUID).
+  string organisation_id = 1;
+
+  // Max number of organisations to return in the result-set.
+  uint32 limit = 2;
+
+  // Offset in the result-set (for pagination).
+  uint32 offset = 3;
+}
+
+message ListOrganisationUsersResponse {
+  // Total number of organisations.
+  uint32 total_count = 1;
+
+  // Result-set.
+  repeated OrganisationUserListItem result = 2;
 }

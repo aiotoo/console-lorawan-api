@@ -200,6 +200,217 @@
           "OrganisationService"
         ]
       }
+    },
+    "/api/organisations/{organisationId}/users": {
+      "get": {
+        "summary": "Get the list of Organisation users.",
+        "operationId": "OrganisationService_ListUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceListOrganisationUsersResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organisationId",
+            "description": "organisation ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "description": "Max number of organisations to return in the result-set.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "offset",
+            "description": "Offset in the result-set (for pagination).",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "OrganisationService"
+        ]
+      }
+    },
+    "/api/organisations/{organisationId}/users/{userId}": {
+      "get": {
+        "summary": "Get the the Organisation user for the given Organisation and user IDs.",
+        "operationId": "OrganisationService_GetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceGetOrganisationUserResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organisationId",
+            "description": "organisation ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "description": "User ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OrganisationService"
+        ]
+      },
+      "delete": {
+        "summary": "Delete the given Organisation user.",
+        "operationId": "OrganisationService_DeleteUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organisationId",
+            "description": "organisation ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "description": "User ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OrganisationService"
+        ]
+      }
+    },
+    "/api/organisations/{organisationUser.organisationId}/users": {
+      "post": {
+        "summary": "Add an user to the Organisation.\nNote: the user must already exist.",
+        "operationId": "OrganisationService_AddUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organisationUser.organisationId",
+            "description": "Organisation ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceAddOrganisationUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OrganisationService"
+        ]
+      }
+    },
+    "/api/organisations/{organisationUser.organisationId}/users/{organisationUser.userId}": {
+      "put": {
+        "summary": "Update the given Organisation user.",
+        "operationId": "OrganisationService_UpdateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organisationUser.organisationId",
+            "description": "Organisation ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "organisationUser.userId",
+            "description": "User ID (UUID).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceUpdateOrganisationUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "OrganisationService"
+        ]
+      }
     }
   },
   "definitions": {
@@ -233,6 +444,15 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "serviceAddOrganisationUserRequest": {
+      "type": "object",
+      "properties": {
+        "organisationUser": {
+          "$ref": "#/definitions/serviceOrganisationUser",
+          "description": "organisation user object."
         }
       }
     },
@@ -270,6 +490,42 @@
           "type": "string",
           "format": "date-time",
           "description": "Last update timestamp."
+        }
+      }
+    },
+    "serviceGetOrganisationUserResponse": {
+      "type": "object",
+      "properties": {
+        "organisationUser": {
+          "$ref": "#/definitions/serviceOrganisationUser",
+          "description": "organisation user object."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        }
+      }
+    },
+    "serviceListOrganisationUsersResponse": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Total number of organisations."
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceOrganisationUserListItem"
+          },
+          "description": "Result-set."
         }
       }
     },
@@ -381,12 +637,89 @@
         }
       }
     },
+    "serviceOrganisationUser": {
+      "type": "object",
+      "properties": {
+        "organisationId": {
+          "type": "string",
+          "description": "Organisation ID (UUID)."
+        },
+        "userId": {
+          "type": "string",
+          "description": "User ID (UUID)."
+        },
+        "isAdmin": {
+          "type": "boolean",
+          "description": "User is admin within the context of the organisation.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
+        },
+        "isDeviceAdmin": {
+          "type": "boolean",
+          "description": "User is able to modify device related resources (applications,\ndevice-profiles, devices, multicast-groups)."
+        },
+        "isGatewayAdmin": {
+          "type": "boolean",
+          "description": "User is able to modify gateways."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email (only used on get and when adding a user to a organisation)."
+        }
+      }
+    },
+    "serviceOrganisationUserListItem": {
+      "type": "object",
+      "properties": {
+        "organisationId": {
+          "type": "string",
+          "description": "organisation ID (UUID)."
+        },
+        "userId": {
+          "type": "string",
+          "description": "User ID (UUID)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Created at timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email."
+        },
+        "isAdmin": {
+          "type": "boolean",
+          "description": "User is admin within the context of the organisation.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
+        },
+        "isDeviceAdmin": {
+          "type": "boolean",
+          "description": "User is able to modify device related resources (applications,\ndevice-profiles, devices, multicast-groups)."
+        },
+        "isGatewayAdmin": {
+          "type": "boolean",
+          "description": "User is able to modify gateways."
+        }
+      }
+    },
     "serviceUpdateOrganisationRequest": {
       "type": "object",
       "properties": {
         "organisation": {
           "$ref": "#/definitions/serviceOrganisation",
           "description": "Organisation object."
+        }
+      }
+    },
+    "serviceUpdateOrganisationUserRequest": {
+      "type": "object",
+      "properties": {
+        "organisationUser": {
+          "$ref": "#/definitions/serviceOrganisationUser",
+          "description": "organisation user object."
         }
       }
     }
