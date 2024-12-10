@@ -126,8 +126,11 @@ message ApiKey {
     // Offset in the result-set (for pagination).
     uint32 offset = 2;
   
+    // Return only admin keys.
+    bool is_admin = 3;
+  
     // Filter on tenant ID.
-    string organization_id = 3 [json_name = "organizationID"];
+    string organization_id = 4 [json_name = "organizationID"];
   }
   
   message ListApiKeysResponse {

@@ -47,6 +47,13 @@
             "format": "int64"
           },
           {
+            "name": "isAdmin",
+            "description": "Return only admin keys.",
+            "in": "query",
+            "required": false,
+            "type": "boolean"
+          },
+          {
             "name": "organizationID",
             "description": "Filter on tenant ID.",
             "in": "query",
