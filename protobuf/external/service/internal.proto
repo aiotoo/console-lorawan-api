@@ -27,12 +27,12 @@ service InternalService {
 		};
 	}
 
-	// // Perform a global search.
-	// rpc GlobalSearch(GlobalSearchRequest) returns (GlobalSearchResponse) {
-	// 	option(google.api.http) = {
-	// 		get: "/api/internal/search"
-	// 	};
-	// }
+	// Perform a global search.
+	rpc GlobalSearch(GlobalSearchRequest) returns (GlobalSearchResponse) {
+		option(google.api.http) = {
+			get: "/api/internal/search"
+		};
+	}
 
     // CreateAPIKey creates the given API key.
     rpc CreateApiKey(CreateApiKeyRequest) returns (CreateApiKeyResponse) {
