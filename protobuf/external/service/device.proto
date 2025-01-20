@@ -176,19 +176,19 @@ message DeviceActivation {
   string nwk_s_enc_key = 4;
 
   // Serving network session integrity key (HEX encoded).
-  string s_nwk_s_int_key = 8;
+  string s_nwk_s_int_key = 5;
 
   // Forwarding network session integrity key (HEX encoded).
-  string f_nwk_s_int_key = 9;
+  string f_nwk_s_int_key = 6;
 
   // Uplink frame-counter.
-  uint32 f_cnt_up = 5;
+  uint32 f_cnt_up = 7;
 
   // Downlink network frame-counter.
-  uint32 n_f_cnt_down = 6;
+  uint32 n_f_cnt_down = 8;
 
   // Downlink application frame-counter.
-  uint32 a_f_cnt_down = 7;
+  uint32 a_f_cnt_down = 9;
 }
 
 message Device {
