@@ -104,6 +104,38 @@
         ]
       }
     },
+    "/api/gateways/bulkdelete/{gatewayId}": {
+      "delete": {
+        "summary": "Delete Bulk the gateway matching the given Gateway ID.",
+        "operationId": "GatewayService_DeleteBulkGateways",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "gatewayId",
+            "description": "Gateway ID (EUI64).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
     "/api/gateways/relay-gateways": {
       "get": {
         "summary": "List the detected Relay Gateways.",
