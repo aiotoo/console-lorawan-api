@@ -41,6 +41,13 @@ service GatewayService {
         };
     }
 
+    // Delete Bulk the gateway matching the given Gateway ID.
+    rpc DeleteBulkGateways(DeleteBulkGatewayRequest) returns (google.protobuf.Empty) {
+        option(google.api.http) = {
+            delete: "/api/gateways/bulkdelete/{gateway_id}"
+        };
+    }
+
     // Get the list of gateways.
     rpc List(ListGatewaysRequest) returns (ListGatewaysResponse) {
         option(google.api.http) = {
@@ -203,6 +210,11 @@ message UpdateGatewayRequest {
 }
 
 message DeleteGatewayRequest {
+    // Gateway ID (EUI64).
+    string gateway_id = 1;
+}
+
+message DeleteBulkGatewayRequest {
     // Gateway ID (EUI64).
     string gateway_id = 1;
 }
