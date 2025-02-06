@@ -245,26 +245,19 @@ func local_request_GatewayService_Delete_0(ctx context.Context, marshaler runtim
 
 }
 
+var (
+	filter_GatewayService_DeleteBulkGateways_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+)
+
 func request_GatewayService_DeleteBulkGateways_0(ctx context.Context, marshaler runtime.Marshaler, client GatewayServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq DeleteBulkGatewayRequest
 	var metadata runtime.ServerMetadata
 
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["gateway_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "gateway_id")
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-
-	protoReq.GatewayId, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "gateway_id", err)
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GatewayService_DeleteBulkGateways_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := client.DeleteBulkGateways(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -276,22 +269,11 @@ func local_request_GatewayService_DeleteBulkGateways_0(ctx context.Context, mars
 	var protoReq DeleteBulkGatewayRequest
 	var metadata runtime.ServerMetadata
 
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["gateway_id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "gateway_id")
+	if err := req.ParseForm(); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-
-	protoReq.GatewayId, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "gateway_id", err)
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_GatewayService_DeleteBulkGateways_0); err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
 	msg, err := server.DeleteBulkGateways(ctx, &protoReq)
@@ -1201,7 +1183,7 @@ var (
 
 	pattern_GatewayService_Delete_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"api", "gateways", "gateway_id"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_GatewayService_DeleteBulkGateways_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "gateways", "bulkdelete", "gateway_id"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_GatewayService_DeleteBulkGateways_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "gateways", "bulkdelete"}, "", runtime.AssumeColonVerbOpt(true)))
 
 	pattern_GatewayService_List_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"api", "gateways"}, "", runtime.AssumeColonVerbOpt(true)))
 

@@ -104,6 +104,38 @@
         ]
       }
     },
+    "/api/devices/bulkdelete": {
+      "delete": {
+        "summary": "Delete the device with the given DevEUI.",
+        "operationId": "DeviceService_DeleteBulkDevice",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "devEui",
+            "description": "DevEUI (EUI64).",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/{devEui}": {
       "get": {
         "summary": "Get returns the device for the given DevEUI.",

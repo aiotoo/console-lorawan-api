@@ -41,6 +41,13 @@ service DeviceService {
     };
   }
 
+  // Delete the device with the given DevEUI.
+  rpc DeleteBulkDevice(DeleteBulkDeviceRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/api/devices/bulkdelete"
+    };
+  }
+
   // Get the list of devices.
   rpc List(ListDevicesRequest) returns (ListDevicesResponse) {
     option (google.api.http) = {
@@ -346,6 +353,11 @@ message UpdateDeviceRequest {
 }
 
 message DeleteDeviceRequest {
+  // DevEUI (EUI64).
+  string dev_eui = 1;
+}
+
+message DeleteBulkDeviceRequest {
   // DevEUI (EUI64).
   string dev_eui = 1;
 }
