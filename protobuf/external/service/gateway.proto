@@ -215,8 +215,8 @@ message DeleteGatewayRequest {
 }
 
 message DeleteBulkGatewayRequest {
-    // Gateway ID (EUI64).
-    repeated string gateway_id = 1;
+        // Gateway ID's (EUI64).
+    repeated string gateway_ids = 1;
 }
 
 message ListGatewaysRequest {

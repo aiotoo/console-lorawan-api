@@ -124,8 +124,8 @@
         },
         "parameters": [
           {
-            "name": "gatewayId",
-            "description": "Gateway ID (EUI64).",
+            "name": "gatewayIds",
+            "description": "Gateway ID's (EUI64).",
             "in": "query",
             "required": false,
             "type": "array",
