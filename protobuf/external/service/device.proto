@@ -358,10 +358,9 @@ message DeleteDeviceRequest {
 }
 
 message DeleteBulkDeviceRequest {
-  // DevEUI (EUI64).
-  string dev_eui = 1;
+    // DevEUI (EUI64).
+  repeated string dev_euis = 1; 
 }
-
 
 message ListDevicesRequest {
   // Max number of devices to return in the result-set.
