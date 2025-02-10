@@ -6,6 +6,7 @@ option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/servic
 
 import "google/api/annotations.proto";
 import "google/protobuf/timestamp.proto";
+import "util/util.proto";
 
 
 
@@ -32,7 +33,8 @@ service StreamService {
     };
   }
 
-
+ // Upload a file as a stream.
+ rpc UploadFile(stream UploadRequest) returns (UploadResponse);
 
 }
 
@@ -66,4 +68,60 @@ message StreamDeviceFramesRequest {
 message StreamDeviceEventsRequest {
   // Device EUI.
   string dev_eui = 1;
+}
+
+message UploadRequest {
+  oneof data {
+    FileMetadata metadata = 1;
+    bytes chunk = 2;
+  }
+}
+
+message FileMetadata {
+   // Region.
+   util.Region region = 1;
+ 
+   // Region configuration ID.
+   string region_config_id = 2;
+
+   // Device class.
+   util.DeviceClass device_class = 3;
+
+   // LoRaWAN mac-version.
+   util.MacVersion mac_version = 4;
+
+   // Regional parameters revision.
+   util.RegParamsRevision reg_params_revision = 5;
+
+   // ADR algorithm ID.
+   string adr_algorithm = 6;
+
+   // Payload codec runtime.
+   util.CodecRuntime payload_codec_runtime = 7;
+
+   // Join Mode
+   util.JoinMode device_join_mode = 8;
+
+   // Additional parameters
+   bool flush_queue_on_activate = 9;
+   bool skip_fcnt_check = 10;
+   bool is_disabled = 11;
+   uint32 abp_rx1_delay = 12;
+   uint32 class_b_timeout = 13;
+   uint32 class_b_ping_slot_nb_k = 14;
+   uint32 class_b_ping_slot_dr = 15;
+   uint32 class_b_ping_slot_freq = 16;
+   uint32 class_c_timeout = 17;
+   uint32 abp_rx1_dr_offset = 18;
+   uint32 abp_rx2_dr = 19;
+   uint32 abp_rx2_freq = 20;
+   uint32 uplink_interval = 21;
+   uint32 device_status_req_interval = 22;
+   uint32 f_cnt_up = 23;
+   uint32 n_f_cnt_down = 24;
+   uint32 a_f_cnt_down = 25;
+}
+
+message UploadResponse {
+  string message = 1;
 }
