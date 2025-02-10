@@ -105,7 +105,7 @@
       }
     },
     "/api/gateways/bulkdelete": {
-      "delete": {
+      "post": {
         "summary": "Delete Bulk the gateway matching the given Gateway ID.",
         "operationId": "GatewayService_DeleteBulkGateways",
         "responses": {
@@ -122,19 +122,6 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "gatewayIds",
-            "description": "Gateway ID's (EUI64).",
-            "in": "query",
-            "required": false,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "collectionFormat": "multi"
-          }
-        ],
         "tags": [
           "GatewayService"
         ]

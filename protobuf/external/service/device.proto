@@ -44,7 +44,7 @@ service DeviceService {
   // Delete the device with the given DevEUI.
   rpc DeleteBulkDevice(DeleteBulkDeviceRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
-      delete : "/api/devices/bulkdelete"
+      post : "/api/devices/bulkdelete"
     };
   }
 

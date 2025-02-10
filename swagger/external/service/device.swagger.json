@@ -105,7 +105,7 @@
       }
     },
     "/api/devices/bulkdelete": {
-      "delete": {
+      "post": {
         "summary": "Delete the device with the given DevEUI.",
         "operationId": "DeviceService_DeleteBulkDevice",
         "responses": {
@@ -122,19 +122,6 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "devEuis",
-            "description": "DevEUI (EUI64).",
-            "in": "query",
-            "required": false,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "collectionFormat": "multi"
-          }
-        ],
         "tags": [
           "DeviceService"
         ]
