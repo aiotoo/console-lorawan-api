@@ -45,8 +45,9 @@ service GatewayService {
     rpc DeleteBulkGateways(DeleteBulkGatewayRequest) returns (google.protobuf.Empty) {
         option(google.api.http) = {
             post: "/api/gateways/bulkdelete"
+            body: "*"
         };
-    }
+    }    
 
     // Get the list of gateways.
     rpc List(ListGatewaysRequest) returns (ListGatewaysResponse) {

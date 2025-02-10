@@ -122,6 +122,16 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceDeleteBulkDeviceRequest"
+            }
+          }
+        ],
         "tags": [
           "DeviceService"
         ]
@@ -679,6 +689,18 @@
         "device": {
           "$ref": "#/definitions/serviceDevice",
           "description": "Device object."
+        }
+      }
+    },
+    "serviceDeleteBulkDeviceRequest": {
+      "type": "object",
+      "properties": {
+        "devEuis": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "DevEUI (EUI64)."
         }
       }
     },

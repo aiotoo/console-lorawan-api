@@ -122,6 +122,16 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceDeleteBulkGatewayRequest"
+            }
+          }
+        ],
         "tags": [
           "GatewayService"
         ]
@@ -473,6 +483,18 @@
         "gateway": {
           "$ref": "#/definitions/serviceGateway",
           "description": "Gateway object."
+        }
+      }
+    },
+    "serviceDeleteBulkGatewayRequest": {
+      "type": "object",
+      "properties": {
+        "gatewayIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Gateway ID's (EUI64)."
         }
       }
     },
