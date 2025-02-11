@@ -19,8 +19,13 @@ service DeviceService {
     };
   }
 
-  // Bulk Upload the given devices list.
-  rpc Upload(UploadDeviceRequest) returns (google.protobuf.Empty);
+  // Bulk upload the given device.
+  rpc UploadDevices(UploadDevicesRequest) returns (UploadDevicesResponse) {
+   option (google.api.http) = {
+     post : "/api/devices/bulkupload"
+     body: "*"
+   };
+ }
 
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
@@ -158,9 +163,13 @@ message CreateDeviceRequest {
   Device device = 1;
 }
 
-message UploadDeviceRequest {
-  // Device object.
-  Device device = 1;
+message UploadDevicesRequest {
+  repeated Device devices = 1;
+}
+
+message UploadDevicesResponse {
+  repeated string failed_dev_euis = 1;
+  string message = 2;
 }
 
 message DeviceKeys {
