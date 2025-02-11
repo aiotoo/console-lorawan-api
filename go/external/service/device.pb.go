@@ -77,6 +77,54 @@ func (x *CreateDeviceRequest) GetDevice() *Device {
 	return nil
 }
 
+type UploadDeviceRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Device object.
+	Device *Device `protobuf:"bytes,1,opt,name=device,proto3" json:"device,omitempty"`
+}
+
+func (x *UploadDeviceRequest) Reset() {
+	*x = UploadDeviceRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_external_service_device_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UploadDeviceRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadDeviceRequest) ProtoMessage() {}
+
+func (x *UploadDeviceRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_external_service_device_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadDeviceRequest.ProtoReflect.Descriptor instead.
+func (*UploadDeviceRequest) Descriptor() ([]byte, []int) {
+	return file_external_service_device_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *UploadDeviceRequest) GetDevice() *Device {
+	if x != nil {
+		return x.Device
+	}
+	return nil
+}
+
 type DeviceKeys struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -95,7 +143,7 @@ type DeviceKeys struct {
 func (x *DeviceKeys) Reset() {
 	*x = DeviceKeys{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[1]
+		mi := &file_external_service_device_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -108,7 +156,7 @@ func (x *DeviceKeys) String() string {
 func (*DeviceKeys) ProtoMessage() {}
 
 func (x *DeviceKeys) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[1]
+	mi := &file_external_service_device_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -121,7 +169,7 @@ func (x *DeviceKeys) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceKeys.ProtoReflect.Descriptor instead.
 func (*DeviceKeys) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{1}
+	return file_external_service_device_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DeviceKeys) GetDevEui() string {
@@ -175,7 +223,7 @@ type DeviceActivation struct {
 func (x *DeviceActivation) Reset() {
 	*x = DeviceActivation{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[2]
+		mi := &file_external_service_device_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -188,7 +236,7 @@ func (x *DeviceActivation) String() string {
 func (*DeviceActivation) ProtoMessage() {}
 
 func (x *DeviceActivation) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[2]
+	mi := &file_external_service_device_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -201,7 +249,7 @@ func (x *DeviceActivation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceActivation.ProtoReflect.Descriptor instead.
 func (*DeviceActivation) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{2}
+	return file_external_service_device_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DeviceActivation) GetDevEui() string {
@@ -368,7 +416,7 @@ type Device struct {
 func (x *Device) Reset() {
 	*x = Device{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[3]
+		mi := &file_external_service_device_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -381,7 +429,7 @@ func (x *Device) String() string {
 func (*Device) ProtoMessage() {}
 
 func (x *Device) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[3]
+	mi := &file_external_service_device_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -394,7 +442,7 @@ func (x *Device) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Device.ProtoReflect.Descriptor instead.
 func (*Device) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{3}
+	return file_external_service_device_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Device) GetDevEui() string {
@@ -633,7 +681,7 @@ type GetDeviceRequest struct {
 func (x *GetDeviceRequest) Reset() {
 	*x = GetDeviceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[4]
+		mi := &file_external_service_device_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -646,7 +694,7 @@ func (x *GetDeviceRequest) String() string {
 func (*GetDeviceRequest) ProtoMessage() {}
 
 func (x *GetDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[4]
+	mi := &file_external_service_device_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -659,7 +707,7 @@ func (x *GetDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceRequest.ProtoReflect.Descriptor instead.
 func (*GetDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{4}
+	return file_external_service_device_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetDeviceRequest) GetDevEui() string {
@@ -687,7 +735,7 @@ type GetDeviceResponse struct {
 func (x *GetDeviceResponse) Reset() {
 	*x = GetDeviceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[5]
+		mi := &file_external_service_device_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -700,7 +748,7 @@ func (x *GetDeviceResponse) String() string {
 func (*GetDeviceResponse) ProtoMessage() {}
 
 func (x *GetDeviceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[5]
+	mi := &file_external_service_device_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -713,7 +761,7 @@ func (x *GetDeviceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceResponse.ProtoReflect.Descriptor instead.
 func (*GetDeviceResponse) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{5}
+	return file_external_service_device_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetDeviceResponse) GetDevice() *Device {
@@ -756,7 +804,7 @@ type UpdateDeviceRequest struct {
 func (x *UpdateDeviceRequest) Reset() {
 	*x = UpdateDeviceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[6]
+		mi := &file_external_service_device_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -769,7 +817,7 @@ func (x *UpdateDeviceRequest) String() string {
 func (*UpdateDeviceRequest) ProtoMessage() {}
 
 func (x *UpdateDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[6]
+	mi := &file_external_service_device_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -782,7 +830,7 @@ func (x *UpdateDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDeviceRequest.ProtoReflect.Descriptor instead.
 func (*UpdateDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{6}
+	return file_external_service_device_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *UpdateDeviceRequest) GetDevice() *Device {
@@ -804,7 +852,7 @@ type DeleteDeviceRequest struct {
 func (x *DeleteDeviceRequest) Reset() {
 	*x = DeleteDeviceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[7]
+		mi := &file_external_service_device_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -817,7 +865,7 @@ func (x *DeleteDeviceRequest) String() string {
 func (*DeleteDeviceRequest) ProtoMessage() {}
 
 func (x *DeleteDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[7]
+	mi := &file_external_service_device_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -830,7 +878,7 @@ func (x *DeleteDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDeviceRequest.ProtoReflect.Descriptor instead.
 func (*DeleteDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{7}
+	return file_external_service_device_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteDeviceRequest) GetDevEui() string {
@@ -852,7 +900,7 @@ type DeleteBulkDeviceRequest struct {
 func (x *DeleteBulkDeviceRequest) Reset() {
 	*x = DeleteBulkDeviceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[8]
+		mi := &file_external_service_device_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -865,7 +913,7 @@ func (x *DeleteBulkDeviceRequest) String() string {
 func (*DeleteBulkDeviceRequest) ProtoMessage() {}
 
 func (x *DeleteBulkDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[8]
+	mi := &file_external_service_device_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -878,7 +926,7 @@ func (x *DeleteBulkDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteBulkDeviceRequest.ProtoReflect.Descriptor instead.
 func (*DeleteBulkDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{8}
+	return file_external_service_device_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *DeleteBulkDeviceRequest) GetDevEuis() []string {
@@ -908,7 +956,7 @@ type ListDevicesRequest struct {
 func (x *ListDevicesRequest) Reset() {
 	*x = ListDevicesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[9]
+		mi := &file_external_service_device_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -921,7 +969,7 @@ func (x *ListDevicesRequest) String() string {
 func (*ListDevicesRequest) ProtoMessage() {}
 
 func (x *ListDevicesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[9]
+	mi := &file_external_service_device_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -934,7 +982,7 @@ func (x *ListDevicesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDevicesRequest.ProtoReflect.Descriptor instead.
 func (*ListDevicesRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{9}
+	return file_external_service_device_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ListDevicesRequest) GetLimit() uint32 {
@@ -986,7 +1034,7 @@ type ListDevicesResponse struct {
 func (x *ListDevicesResponse) Reset() {
 	*x = ListDevicesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[10]
+		mi := &file_external_service_device_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -999,7 +1047,7 @@ func (x *ListDevicesResponse) String() string {
 func (*ListDevicesResponse) ProtoMessage() {}
 
 func (x *ListDevicesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[10]
+	mi := &file_external_service_device_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1012,7 +1060,7 @@ func (x *ListDevicesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDevicesResponse.ProtoReflect.Descriptor instead.
 func (*ListDevicesResponse) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{10}
+	return file_external_service_device_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListDevicesResponse) GetTotalCount() uint32 {
@@ -1051,7 +1099,7 @@ type DeviceListItem struct {
 func (x *DeviceListItem) Reset() {
 	*x = DeviceListItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[11]
+		mi := &file_external_service_device_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1064,7 +1112,7 @@ func (x *DeviceListItem) String() string {
 func (*DeviceListItem) ProtoMessage() {}
 
 func (x *DeviceListItem) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[11]
+	mi := &file_external_service_device_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1077,7 +1125,7 @@ func (x *DeviceListItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceListItem.ProtoReflect.Descriptor instead.
 func (*DeviceListItem) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{11}
+	return file_external_service_device_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DeviceListItem) GetDevEui() string {
@@ -1134,7 +1182,7 @@ type UpdateDeviceKeysRequest struct {
 func (x *UpdateDeviceKeysRequest) Reset() {
 	*x = UpdateDeviceKeysRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[12]
+		mi := &file_external_service_device_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1147,7 +1195,7 @@ func (x *UpdateDeviceKeysRequest) String() string {
 func (*UpdateDeviceKeysRequest) ProtoMessage() {}
 
 func (x *UpdateDeviceKeysRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[12]
+	mi := &file_external_service_device_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1160,7 +1208,7 @@ func (x *UpdateDeviceKeysRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDeviceKeysRequest.ProtoReflect.Descriptor instead.
 func (*UpdateDeviceKeysRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{12}
+	return file_external_service_device_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *UpdateDeviceKeysRequest) GetDeviceKeys() *DeviceKeys {
@@ -1182,7 +1230,7 @@ type FlushDevNoncesRequest struct {
 func (x *FlushDevNoncesRequest) Reset() {
 	*x = FlushDevNoncesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[13]
+		mi := &file_external_service_device_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1195,7 +1243,7 @@ func (x *FlushDevNoncesRequest) String() string {
 func (*FlushDevNoncesRequest) ProtoMessage() {}
 
 func (x *FlushDevNoncesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[13]
+	mi := &file_external_service_device_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1208,7 +1256,7 @@ func (x *FlushDevNoncesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FlushDevNoncesRequest.ProtoReflect.Descriptor instead.
 func (*FlushDevNoncesRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{13}
+	return file_external_service_device_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *FlushDevNoncesRequest) GetDevEui() string {
@@ -1230,7 +1278,7 @@ type ActivateDeviceRequest struct {
 func (x *ActivateDeviceRequest) Reset() {
 	*x = ActivateDeviceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[14]
+		mi := &file_external_service_device_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1243,7 +1291,7 @@ func (x *ActivateDeviceRequest) String() string {
 func (*ActivateDeviceRequest) ProtoMessage() {}
 
 func (x *ActivateDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[14]
+	mi := &file_external_service_device_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1256,7 +1304,7 @@ func (x *ActivateDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ActivateDeviceRequest.ProtoReflect.Descriptor instead.
 func (*ActivateDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{14}
+	return file_external_service_device_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ActivateDeviceRequest) GetDeviceActivation() *DeviceActivation {
@@ -1278,7 +1326,7 @@ type DeactivateDeviceRequest struct {
 func (x *DeactivateDeviceRequest) Reset() {
 	*x = DeactivateDeviceRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[15]
+		mi := &file_external_service_device_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1291,7 +1339,7 @@ func (x *DeactivateDeviceRequest) String() string {
 func (*DeactivateDeviceRequest) ProtoMessage() {}
 
 func (x *DeactivateDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[15]
+	mi := &file_external_service_device_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1304,7 +1352,7 @@ func (x *DeactivateDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeactivateDeviceRequest.ProtoReflect.Descriptor instead.
 func (*DeactivateDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{15}
+	return file_external_service_device_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DeactivateDeviceRequest) GetDevEui() string {
@@ -1326,7 +1374,7 @@ type GetDeviceActivationRequest struct {
 func (x *GetDeviceActivationRequest) Reset() {
 	*x = GetDeviceActivationRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[16]
+		mi := &file_external_service_device_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1339,7 +1387,7 @@ func (x *GetDeviceActivationRequest) String() string {
 func (*GetDeviceActivationRequest) ProtoMessage() {}
 
 func (x *GetDeviceActivationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[16]
+	mi := &file_external_service_device_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1352,7 +1400,7 @@ func (x *GetDeviceActivationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceActivationRequest.ProtoReflect.Descriptor instead.
 func (*GetDeviceActivationRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{16}
+	return file_external_service_device_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *GetDeviceActivationRequest) GetDevEui() string {
@@ -1374,7 +1422,7 @@ type GetDeviceActivationResponse struct {
 func (x *GetDeviceActivationResponse) Reset() {
 	*x = GetDeviceActivationResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[17]
+		mi := &file_external_service_device_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1387,7 +1435,7 @@ func (x *GetDeviceActivationResponse) String() string {
 func (*GetDeviceActivationResponse) ProtoMessage() {}
 
 func (x *GetDeviceActivationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[17]
+	mi := &file_external_service_device_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1400,7 +1448,7 @@ func (x *GetDeviceActivationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceActivationResponse.ProtoReflect.Descriptor instead.
 func (*GetDeviceActivationResponse) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{17}
+	return file_external_service_device_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GetDeviceActivationResponse) GetDeviceActivation() *DeviceActivation {
@@ -1422,7 +1470,7 @@ type CreateDeviceKeysRequest struct {
 func (x *CreateDeviceKeysRequest) Reset() {
 	*x = CreateDeviceKeysRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[18]
+		mi := &file_external_service_device_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1435,7 +1483,7 @@ func (x *CreateDeviceKeysRequest) String() string {
 func (*CreateDeviceKeysRequest) ProtoMessage() {}
 
 func (x *CreateDeviceKeysRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[18]
+	mi := &file_external_service_device_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1448,7 +1496,7 @@ func (x *CreateDeviceKeysRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateDeviceKeysRequest.ProtoReflect.Descriptor instead.
 func (*CreateDeviceKeysRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{18}
+	return file_external_service_device_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *CreateDeviceKeysRequest) GetDeviceKeys() *DeviceKeys {
@@ -1470,7 +1518,7 @@ type GetDeviceKeysRequest struct {
 func (x *GetDeviceKeysRequest) Reset() {
 	*x = GetDeviceKeysRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[19]
+		mi := &file_external_service_device_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1483,7 +1531,7 @@ func (x *GetDeviceKeysRequest) String() string {
 func (*GetDeviceKeysRequest) ProtoMessage() {}
 
 func (x *GetDeviceKeysRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[19]
+	mi := &file_external_service_device_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1496,7 +1544,7 @@ func (x *GetDeviceKeysRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceKeysRequest.ProtoReflect.Descriptor instead.
 func (*GetDeviceKeysRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{19}
+	return file_external_service_device_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GetDeviceKeysRequest) GetDevEui() string {
@@ -1522,7 +1570,7 @@ type GetDeviceKeysResponse struct {
 func (x *GetDeviceKeysResponse) Reset() {
 	*x = GetDeviceKeysResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[20]
+		mi := &file_external_service_device_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1535,7 +1583,7 @@ func (x *GetDeviceKeysResponse) String() string {
 func (*GetDeviceKeysResponse) ProtoMessage() {}
 
 func (x *GetDeviceKeysResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[20]
+	mi := &file_external_service_device_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1548,7 +1596,7 @@ func (x *GetDeviceKeysResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceKeysResponse.ProtoReflect.Descriptor instead.
 func (*GetDeviceKeysResponse) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{20}
+	return file_external_service_device_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *GetDeviceKeysResponse) GetDeviceKeys() *DeviceKeys {
@@ -1584,7 +1632,7 @@ type DeleteDeviceKeysRequest struct {
 func (x *DeleteDeviceKeysRequest) Reset() {
 	*x = DeleteDeviceKeysRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[21]
+		mi := &file_external_service_device_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1597,7 +1645,7 @@ func (x *DeleteDeviceKeysRequest) String() string {
 func (*DeleteDeviceKeysRequest) ProtoMessage() {}
 
 func (x *DeleteDeviceKeysRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[21]
+	mi := &file_external_service_device_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1610,7 +1658,7 @@ func (x *DeleteDeviceKeysRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteDeviceKeysRequest.ProtoReflect.Descriptor instead.
 func (*DeleteDeviceKeysRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{21}
+	return file_external_service_device_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *DeleteDeviceKeysRequest) GetDevEui() string {
@@ -1661,7 +1709,7 @@ type DeviceQueueItem struct {
 func (x *DeviceQueueItem) Reset() {
 	*x = DeviceQueueItem{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[22]
+		mi := &file_external_service_device_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1674,7 +1722,7 @@ func (x *DeviceQueueItem) String() string {
 func (*DeviceQueueItem) ProtoMessage() {}
 
 func (x *DeviceQueueItem) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[22]
+	mi := &file_external_service_device_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1687,7 +1735,7 @@ func (x *DeviceQueueItem) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceQueueItem.ProtoReflect.Descriptor instead.
 func (*DeviceQueueItem) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{22}
+	return file_external_service_device_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *DeviceQueueItem) GetId() string {
@@ -1771,7 +1819,7 @@ type EnqueueDeviceQueueItemRequest struct {
 func (x *EnqueueDeviceQueueItemRequest) Reset() {
 	*x = EnqueueDeviceQueueItemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[23]
+		mi := &file_external_service_device_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1784,7 +1832,7 @@ func (x *EnqueueDeviceQueueItemRequest) String() string {
 func (*EnqueueDeviceQueueItemRequest) ProtoMessage() {}
 
 func (x *EnqueueDeviceQueueItemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[23]
+	mi := &file_external_service_device_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1797,7 +1845,7 @@ func (x *EnqueueDeviceQueueItemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnqueueDeviceQueueItemRequest.ProtoReflect.Descriptor instead.
 func (*EnqueueDeviceQueueItemRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{23}
+	return file_external_service_device_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *EnqueueDeviceQueueItemRequest) GetQueueItem() *DeviceQueueItem {
@@ -1819,7 +1867,7 @@ type EnqueueDeviceQueueItemResponse struct {
 func (x *EnqueueDeviceQueueItemResponse) Reset() {
 	*x = EnqueueDeviceQueueItemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[24]
+		mi := &file_external_service_device_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1832,7 +1880,7 @@ func (x *EnqueueDeviceQueueItemResponse) String() string {
 func (*EnqueueDeviceQueueItemResponse) ProtoMessage() {}
 
 func (x *EnqueueDeviceQueueItemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[24]
+	mi := &file_external_service_device_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1845,7 +1893,7 @@ func (x *EnqueueDeviceQueueItemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnqueueDeviceQueueItemResponse.ProtoReflect.Descriptor instead.
 func (*EnqueueDeviceQueueItemResponse) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{24}
+	return file_external_service_device_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *EnqueueDeviceQueueItemResponse) GetId() string {
@@ -1867,7 +1915,7 @@ type FlushDeviceQueueRequest struct {
 func (x *FlushDeviceQueueRequest) Reset() {
 	*x = FlushDeviceQueueRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[25]
+		mi := &file_external_service_device_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1880,7 +1928,7 @@ func (x *FlushDeviceQueueRequest) String() string {
 func (*FlushDeviceQueueRequest) ProtoMessage() {}
 
 func (x *FlushDeviceQueueRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[25]
+	mi := &file_external_service_device_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1893,7 +1941,7 @@ func (x *FlushDeviceQueueRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FlushDeviceQueueRequest.ProtoReflect.Descriptor instead.
 func (*FlushDeviceQueueRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{25}
+	return file_external_service_device_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *FlushDeviceQueueRequest) GetDevEui() string {
@@ -1917,7 +1965,7 @@ type GetDeviceQueueItemsRequest struct {
 func (x *GetDeviceQueueItemsRequest) Reset() {
 	*x = GetDeviceQueueItemsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[26]
+		mi := &file_external_service_device_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1930,7 +1978,7 @@ func (x *GetDeviceQueueItemsRequest) String() string {
 func (*GetDeviceQueueItemsRequest) ProtoMessage() {}
 
 func (x *GetDeviceQueueItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[26]
+	mi := &file_external_service_device_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1943,7 +1991,7 @@ func (x *GetDeviceQueueItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceQueueItemsRequest.ProtoReflect.Descriptor instead.
 func (*GetDeviceQueueItemsRequest) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{26}
+	return file_external_service_device_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetDeviceQueueItemsRequest) GetDevEui() string {
@@ -1974,7 +2022,7 @@ type GetDeviceQueueItemsResponse struct {
 func (x *GetDeviceQueueItemsResponse) Reset() {
 	*x = GetDeviceQueueItemsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_external_service_device_proto_msgTypes[27]
+		mi := &file_external_service_device_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1987,7 +2035,7 @@ func (x *GetDeviceQueueItemsResponse) String() string {
 func (*GetDeviceQueueItemsResponse) ProtoMessage() {}
 
 func (x *GetDeviceQueueItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_external_service_device_proto_msgTypes[27]
+	mi := &file_external_service_device_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2000,7 +2048,7 @@ func (x *GetDeviceQueueItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceQueueItemsResponse.ProtoReflect.Descriptor instead.
 func (*GetDeviceQueueItemsResponse) Descriptor() ([]byte, []int) {
-	return file_external_service_device_proto_rawDescGZIP(), []int{27}
+	return file_external_service_device_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *GetDeviceQueueItemsResponse) GetTotalCount() uint32 {
@@ -2032,6 +2080,10 @@ var file_external_service_device_proto_rawDesc = []byte{
 	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x73, 0x74, 0x72, 0x75, 0x63, 0x74, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x1a, 0x0f, 0x75, 0x74, 0x69, 0x6c, 0x2f, 0x75, 0x74, 0x69, 0x6c, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x22, 0x3e, 0x0a, 0x13, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x76,
+	0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x64, 0x65,
+	0x76, 0x69, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x52, 0x06, 0x64, 0x65, 0x76,
+	0x69, 0x63, 0x65, 0x22, 0x3e, 0x0a, 0x13, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x44, 0x65, 0x76,
 	0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x27, 0x0a, 0x06, 0x64, 0x65,
 	0x76, 0x69, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x52, 0x06, 0x64, 0x65, 0x76,
@@ -2318,14 +2370,20 @@ var file_external_service_device_proto_rawDesc = []byte{
 	0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x30, 0x0a, 0x06, 0x72, 0x65,
 	0x73, 0x75, 0x6c, 0x74, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x2e, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x51, 0x75, 0x65, 0x75, 0x65,
-	0x49, 0x74, 0x65, 0x6d, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x32, 0x9e, 0x0f, 0x0a,
+	0x49, 0x74, 0x65, 0x6d, 0x52, 0x06, 0x72, 0x65, 0x73, 0x75, 0x6c, 0x74, 0x32, 0xfe, 0x0f, 0x0a,
 	0x0d, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x57,
 	0x0a, 0x06, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x12, 0x1c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x17,
 	0x82, 0xd3, 0xe4, 0x93, 0x02, 0x11, 0x3a, 0x01, 0x2a, 0x22, 0x0c, 0x2f, 0x61, 0x70, 0x69, 0x2f,
-	0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x12, 0x5c, 0x0a, 0x03, 0x47, 0x65, 0x74, 0x12, 0x19,
+	0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73, 0x12, 0x5e, 0x0a, 0x06, 0x55, 0x70, 0x6c, 0x6f, 0x61,
+	0x64, 0x12, 0x1c, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x55, 0x70, 0x6c, 0x6f,
+	0x61, 0x64, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x3a,
+	0x01, 0x2a, 0x22, 0x13, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x2f, 0x75, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x12, 0x5c, 0x0a, 0x03, 0x47, 0x65, 0x74, 0x12, 0x19,
 	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x44, 0x65, 0x76, 0x69,
 	0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x44, 0x65, 0x76, 0x69, 0x63, 0x65, 0x52, 0x65, 0x73,
@@ -2460,119 +2518,123 @@ func file_external_service_device_proto_rawDescGZIP() []byte {
 	return file_external_service_device_proto_rawDescData
 }
 
-var file_external_service_device_proto_msgTypes = make([]protoimpl.MessageInfo, 30)
+var file_external_service_device_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
 var file_external_service_device_proto_goTypes = []any{
 	(*CreateDeviceRequest)(nil),            // 0: service.CreateDeviceRequest
-	(*DeviceKeys)(nil),                     // 1: service.DeviceKeys
-	(*DeviceActivation)(nil),               // 2: service.DeviceActivation
-	(*Device)(nil),                         // 3: service.Device
-	(*GetDeviceRequest)(nil),               // 4: service.GetDeviceRequest
-	(*GetDeviceResponse)(nil),              // 5: service.GetDeviceResponse
-	(*UpdateDeviceRequest)(nil),            // 6: service.UpdateDeviceRequest
-	(*DeleteDeviceRequest)(nil),            // 7: service.DeleteDeviceRequest
-	(*DeleteBulkDeviceRequest)(nil),        // 8: service.DeleteBulkDeviceRequest
-	(*ListDevicesRequest)(nil),             // 9: service.ListDevicesRequest
-	(*ListDevicesResponse)(nil),            // 10: service.ListDevicesResponse
-	(*DeviceListItem)(nil),                 // 11: service.DeviceListItem
-	(*UpdateDeviceKeysRequest)(nil),        // 12: service.UpdateDeviceKeysRequest
-	(*FlushDevNoncesRequest)(nil),          // 13: service.FlushDevNoncesRequest
-	(*ActivateDeviceRequest)(nil),          // 14: service.ActivateDeviceRequest
-	(*DeactivateDeviceRequest)(nil),        // 15: service.DeactivateDeviceRequest
-	(*GetDeviceActivationRequest)(nil),     // 16: service.GetDeviceActivationRequest
-	(*GetDeviceActivationResponse)(nil),    // 17: service.GetDeviceActivationResponse
-	(*CreateDeviceKeysRequest)(nil),        // 18: service.CreateDeviceKeysRequest
-	(*GetDeviceKeysRequest)(nil),           // 19: service.GetDeviceKeysRequest
-	(*GetDeviceKeysResponse)(nil),          // 20: service.GetDeviceKeysResponse
-	(*DeleteDeviceKeysRequest)(nil),        // 21: service.DeleteDeviceKeysRequest
-	(*DeviceQueueItem)(nil),                // 22: service.DeviceQueueItem
-	(*EnqueueDeviceQueueItemRequest)(nil),  // 23: service.EnqueueDeviceQueueItemRequest
-	(*EnqueueDeviceQueueItemResponse)(nil), // 24: service.EnqueueDeviceQueueItemResponse
-	(*FlushDeviceQueueRequest)(nil),        // 25: service.FlushDeviceQueueRequest
-	(*GetDeviceQueueItemsRequest)(nil),     // 26: service.GetDeviceQueueItemsRequest
-	(*GetDeviceQueueItemsResponse)(nil),    // 27: service.GetDeviceQueueItemsResponse
-	nil,                                    // 28: service.Device.VariablesEntry
-	nil,                                    // 29: service.Device.TagsEntry
-	(util.DeviceClass)(0),                  // 30: util.DeviceClass
-	(util.JoinMode)(0),                     // 31: util.JoinMode
-	(util.Region)(0),                       // 32: util.Region
-	(util.MacVersion)(0),                   // 33: util.MacVersion
-	(util.RegParamsRevision)(0),            // 34: util.RegParamsRevision
-	(util.CodecRuntime)(0),                 // 35: util.CodecRuntime
-	(*timestamppb.Timestamp)(nil),          // 36: google.protobuf.Timestamp
-	(*structpb.Struct)(nil),                // 37: google.protobuf.Struct
-	(*emptypb.Empty)(nil),                  // 38: google.protobuf.Empty
+	(*UploadDeviceRequest)(nil),            // 1: service.UploadDeviceRequest
+	(*DeviceKeys)(nil),                     // 2: service.DeviceKeys
+	(*DeviceActivation)(nil),               // 3: service.DeviceActivation
+	(*Device)(nil),                         // 4: service.Device
+	(*GetDeviceRequest)(nil),               // 5: service.GetDeviceRequest
+	(*GetDeviceResponse)(nil),              // 6: service.GetDeviceResponse
+	(*UpdateDeviceRequest)(nil),            // 7: service.UpdateDeviceRequest
+	(*DeleteDeviceRequest)(nil),            // 8: service.DeleteDeviceRequest
+	(*DeleteBulkDeviceRequest)(nil),        // 9: service.DeleteBulkDeviceRequest
+	(*ListDevicesRequest)(nil),             // 10: service.ListDevicesRequest
+	(*ListDevicesResponse)(nil),            // 11: service.ListDevicesResponse
+	(*DeviceListItem)(nil),                 // 12: service.DeviceListItem
+	(*UpdateDeviceKeysRequest)(nil),        // 13: service.UpdateDeviceKeysRequest
+	(*FlushDevNoncesRequest)(nil),          // 14: service.FlushDevNoncesRequest
+	(*ActivateDeviceRequest)(nil),          // 15: service.ActivateDeviceRequest
+	(*DeactivateDeviceRequest)(nil),        // 16: service.DeactivateDeviceRequest
+	(*GetDeviceActivationRequest)(nil),     // 17: service.GetDeviceActivationRequest
+	(*GetDeviceActivationResponse)(nil),    // 18: service.GetDeviceActivationResponse
+	(*CreateDeviceKeysRequest)(nil),        // 19: service.CreateDeviceKeysRequest
+	(*GetDeviceKeysRequest)(nil),           // 20: service.GetDeviceKeysRequest
+	(*GetDeviceKeysResponse)(nil),          // 21: service.GetDeviceKeysResponse
+	(*DeleteDeviceKeysRequest)(nil),        // 22: service.DeleteDeviceKeysRequest
+	(*DeviceQueueItem)(nil),                // 23: service.DeviceQueueItem
+	(*EnqueueDeviceQueueItemRequest)(nil),  // 24: service.EnqueueDeviceQueueItemRequest
+	(*EnqueueDeviceQueueItemResponse)(nil), // 25: service.EnqueueDeviceQueueItemResponse
+	(*FlushDeviceQueueRequest)(nil),        // 26: service.FlushDeviceQueueRequest
+	(*GetDeviceQueueItemsRequest)(nil),     // 27: service.GetDeviceQueueItemsRequest
+	(*GetDeviceQueueItemsResponse)(nil),    // 28: service.GetDeviceQueueItemsResponse
+	nil,                                    // 29: service.Device.VariablesEntry
+	nil,                                    // 30: service.Device.TagsEntry
+	(util.DeviceClass)(0),                  // 31: util.DeviceClass
+	(util.JoinMode)(0),                     // 32: util.JoinMode
+	(util.Region)(0),                       // 33: util.Region
+	(util.MacVersion)(0),                   // 34: util.MacVersion
+	(util.RegParamsRevision)(0),            // 35: util.RegParamsRevision
+	(util.CodecRuntime)(0),                 // 36: util.CodecRuntime
+	(*timestamppb.Timestamp)(nil),          // 37: google.protobuf.Timestamp
+	(*structpb.Struct)(nil),                // 38: google.protobuf.Struct
+	(*emptypb.Empty)(nil),                  // 39: google.protobuf.Empty
 }
 var file_external_service_device_proto_depIdxs = []int32{
-	3,  // 0: service.CreateDeviceRequest.device:type_name -> service.Device
-	28, // 1: service.Device.variables:type_name -> service.Device.VariablesEntry
-	29, // 2: service.Device.tags:type_name -> service.Device.TagsEntry
-	30, // 3: service.Device.device_class:type_name -> util.DeviceClass
-	31, // 4: service.Device.device_join_mode:type_name -> util.JoinMode
-	1,  // 5: service.Device.keys:type_name -> service.DeviceKeys
-	2,  // 6: service.Device.device_activation:type_name -> service.DeviceActivation
-	32, // 7: service.Device.region:type_name -> util.Region
-	33, // 8: service.Device.mac_version:type_name -> util.MacVersion
-	34, // 9: service.Device.reg_params_revision:type_name -> util.RegParamsRevision
-	35, // 10: service.Device.payload_codec_runtime:type_name -> util.CodecRuntime
-	3,  // 11: service.GetDeviceResponse.device:type_name -> service.Device
-	36, // 12: service.GetDeviceResponse.created_at:type_name -> google.protobuf.Timestamp
-	36, // 13: service.GetDeviceResponse.updated_at:type_name -> google.protobuf.Timestamp
-	36, // 14: service.GetDeviceResponse.last_seen_at:type_name -> google.protobuf.Timestamp
-	3,  // 15: service.UpdateDeviceRequest.device:type_name -> service.Device
-	11, // 16: service.ListDevicesResponse.result:type_name -> service.DeviceListItem
-	36, // 17: service.DeviceListItem.created_at:type_name -> google.protobuf.Timestamp
-	36, // 18: service.DeviceListItem.updated_at:type_name -> google.protobuf.Timestamp
-	36, // 19: service.DeviceListItem.last_seen_at:type_name -> google.protobuf.Timestamp
-	1,  // 20: service.UpdateDeviceKeysRequest.device_keys:type_name -> service.DeviceKeys
-	2,  // 21: service.ActivateDeviceRequest.device_activation:type_name -> service.DeviceActivation
-	2,  // 22: service.GetDeviceActivationResponse.device_activation:type_name -> service.DeviceActivation
-	1,  // 23: service.CreateDeviceKeysRequest.device_keys:type_name -> service.DeviceKeys
-	1,  // 24: service.GetDeviceKeysResponse.device_keys:type_name -> service.DeviceKeys
-	36, // 25: service.GetDeviceKeysResponse.created_at:type_name -> google.protobuf.Timestamp
-	36, // 26: service.GetDeviceKeysResponse.updated_at:type_name -> google.protobuf.Timestamp
-	37, // 27: service.DeviceQueueItem.object:type_name -> google.protobuf.Struct
-	36, // 28: service.DeviceQueueItem.expires_at:type_name -> google.protobuf.Timestamp
-	22, // 29: service.EnqueueDeviceQueueItemRequest.queue_item:type_name -> service.DeviceQueueItem
-	22, // 30: service.GetDeviceQueueItemsResponse.result:type_name -> service.DeviceQueueItem
-	0,  // 31: service.DeviceService.Create:input_type -> service.CreateDeviceRequest
-	4,  // 32: service.DeviceService.Get:input_type -> service.GetDeviceRequest
-	6,  // 33: service.DeviceService.Update:input_type -> service.UpdateDeviceRequest
-	7,  // 34: service.DeviceService.Delete:input_type -> service.DeleteDeviceRequest
-	8,  // 35: service.DeviceService.DeleteBulkDevice:input_type -> service.DeleteBulkDeviceRequest
-	9,  // 36: service.DeviceService.List:input_type -> service.ListDevicesRequest
-	18, // 37: service.DeviceService.CreateKeys:input_type -> service.CreateDeviceKeysRequest
-	19, // 38: service.DeviceService.GetKeys:input_type -> service.GetDeviceKeysRequest
-	12, // 39: service.DeviceService.UpdateKeys:input_type -> service.UpdateDeviceKeysRequest
-	21, // 40: service.DeviceService.DeleteKeys:input_type -> service.DeleteDeviceKeysRequest
-	13, // 41: service.DeviceService.FlushDevNonces:input_type -> service.FlushDevNoncesRequest
-	14, // 42: service.DeviceService.Activate:input_type -> service.ActivateDeviceRequest
-	15, // 43: service.DeviceService.Deactivate:input_type -> service.DeactivateDeviceRequest
-	16, // 44: service.DeviceService.GetActivation:input_type -> service.GetDeviceActivationRequest
-	23, // 45: service.DeviceService.Enqueue:input_type -> service.EnqueueDeviceQueueItemRequest
-	25, // 46: service.DeviceService.FlushQueue:input_type -> service.FlushDeviceQueueRequest
-	26, // 47: service.DeviceService.GetQueue:input_type -> service.GetDeviceQueueItemsRequest
-	38, // 48: service.DeviceService.Create:output_type -> google.protobuf.Empty
-	5,  // 49: service.DeviceService.Get:output_type -> service.GetDeviceResponse
-	38, // 50: service.DeviceService.Update:output_type -> google.protobuf.Empty
-	38, // 51: service.DeviceService.Delete:output_type -> google.protobuf.Empty
-	38, // 52: service.DeviceService.DeleteBulkDevice:output_type -> google.protobuf.Empty
-	10, // 53: service.DeviceService.List:output_type -> service.ListDevicesResponse
-	38, // 54: service.DeviceService.CreateKeys:output_type -> google.protobuf.Empty
-	20, // 55: service.DeviceService.GetKeys:output_type -> service.GetDeviceKeysResponse
-	38, // 56: service.DeviceService.UpdateKeys:output_type -> google.protobuf.Empty
-	38, // 57: service.DeviceService.DeleteKeys:output_type -> google.protobuf.Empty
-	38, // 58: service.DeviceService.FlushDevNonces:output_type -> google.protobuf.Empty
-	38, // 59: service.DeviceService.Activate:output_type -> google.protobuf.Empty
-	38, // 60: service.DeviceService.Deactivate:output_type -> google.protobuf.Empty
-	17, // 61: service.DeviceService.GetActivation:output_type -> service.GetDeviceActivationResponse
-	24, // 62: service.DeviceService.Enqueue:output_type -> service.EnqueueDeviceQueueItemResponse
-	38, // 63: service.DeviceService.FlushQueue:output_type -> google.protobuf.Empty
-	27, // 64: service.DeviceService.GetQueue:output_type -> service.GetDeviceQueueItemsResponse
-	48, // [48:65] is the sub-list for method output_type
-	31, // [31:48] is the sub-list for method input_type
-	31, // [31:31] is the sub-list for extension type_name
-	31, // [31:31] is the sub-list for extension extendee
-	0,  // [0:31] is the sub-list for field type_name
+	4,  // 0: service.CreateDeviceRequest.device:type_name -> service.Device
+	4,  // 1: service.UploadDeviceRequest.device:type_name -> service.Device
+	29, // 2: service.Device.variables:type_name -> service.Device.VariablesEntry
+	30, // 3: service.Device.tags:type_name -> service.Device.TagsEntry
+	31, // 4: service.Device.device_class:type_name -> util.DeviceClass
+	32, // 5: service.Device.device_join_mode:type_name -> util.JoinMode
+	2,  // 6: service.Device.keys:type_name -> service.DeviceKeys
+	3,  // 7: service.Device.device_activation:type_name -> service.DeviceActivation
+	33, // 8: service.Device.region:type_name -> util.Region
+	34, // 9: service.Device.mac_version:type_name -> util.MacVersion
+	35, // 10: service.Device.reg_params_revision:type_name -> util.RegParamsRevision
+	36, // 11: service.Device.payload_codec_runtime:type_name -> util.CodecRuntime
+	4,  // 12: service.GetDeviceResponse.device:type_name -> service.Device
+	37, // 13: service.GetDeviceResponse.created_at:type_name -> google.protobuf.Timestamp
+	37, // 14: service.GetDeviceResponse.updated_at:type_name -> google.protobuf.Timestamp
+	37, // 15: service.GetDeviceResponse.last_seen_at:type_name -> google.protobuf.Timestamp
+	4,  // 16: service.UpdateDeviceRequest.device:type_name -> service.Device
+	12, // 17: service.ListDevicesResponse.result:type_name -> service.DeviceListItem
+	37, // 18: service.DeviceListItem.created_at:type_name -> google.protobuf.Timestamp
+	37, // 19: service.DeviceListItem.updated_at:type_name -> google.protobuf.Timestamp
+	37, // 20: service.DeviceListItem.last_seen_at:type_name -> google.protobuf.Timestamp
+	2,  // 21: service.UpdateDeviceKeysRequest.device_keys:type_name -> service.DeviceKeys
+	3,  // 22: service.ActivateDeviceRequest.device_activation:type_name -> service.DeviceActivation
+	3,  // 23: service.GetDeviceActivationResponse.device_activation:type_name -> service.DeviceActivation
+	2,  // 24: service.CreateDeviceKeysRequest.device_keys:type_name -> service.DeviceKeys
+	2,  // 25: service.GetDeviceKeysResponse.device_keys:type_name -> service.DeviceKeys
+	37, // 26: service.GetDeviceKeysResponse.created_at:type_name -> google.protobuf.Timestamp
+	37, // 27: service.GetDeviceKeysResponse.updated_at:type_name -> google.protobuf.Timestamp
+	38, // 28: service.DeviceQueueItem.object:type_name -> google.protobuf.Struct
+	37, // 29: service.DeviceQueueItem.expires_at:type_name -> google.protobuf.Timestamp
+	23, // 30: service.EnqueueDeviceQueueItemRequest.queue_item:type_name -> service.DeviceQueueItem
+	23, // 31: service.GetDeviceQueueItemsResponse.result:type_name -> service.DeviceQueueItem
+	0,  // 32: service.DeviceService.Create:input_type -> service.CreateDeviceRequest
+	1,  // 33: service.DeviceService.Upload:input_type -> service.UploadDeviceRequest
+	5,  // 34: service.DeviceService.Get:input_type -> service.GetDeviceRequest
+	7,  // 35: service.DeviceService.Update:input_type -> service.UpdateDeviceRequest
+	8,  // 36: service.DeviceService.Delete:input_type -> service.DeleteDeviceRequest
+	9,  // 37: service.DeviceService.DeleteBulkDevice:input_type -> service.DeleteBulkDeviceRequest
+	10, // 38: service.DeviceService.List:input_type -> service.ListDevicesRequest
+	19, // 39: service.DeviceService.CreateKeys:input_type -> service.CreateDeviceKeysRequest
+	20, // 40: service.DeviceService.GetKeys:input_type -> service.GetDeviceKeysRequest
+	13, // 41: service.DeviceService.UpdateKeys:input_type -> service.UpdateDeviceKeysRequest
+	22, // 42: service.DeviceService.DeleteKeys:input_type -> service.DeleteDeviceKeysRequest
+	14, // 43: service.DeviceService.FlushDevNonces:input_type -> service.FlushDevNoncesRequest
+	15, // 44: service.DeviceService.Activate:input_type -> service.ActivateDeviceRequest
+	16, // 45: service.DeviceService.Deactivate:input_type -> service.DeactivateDeviceRequest
+	17, // 46: service.DeviceService.GetActivation:input_type -> service.GetDeviceActivationRequest
+	24, // 47: service.DeviceService.Enqueue:input_type -> service.EnqueueDeviceQueueItemRequest
+	26, // 48: service.DeviceService.FlushQueue:input_type -> service.FlushDeviceQueueRequest
+	27, // 49: service.DeviceService.GetQueue:input_type -> service.GetDeviceQueueItemsRequest
+	39, // 50: service.DeviceService.Create:output_type -> google.protobuf.Empty
+	39, // 51: service.DeviceService.Upload:output_type -> google.protobuf.Empty
+	6,  // 52: service.DeviceService.Get:output_type -> service.GetDeviceResponse
+	39, // 53: service.DeviceService.Update:output_type -> google.protobuf.Empty
+	39, // 54: service.DeviceService.Delete:output_type -> google.protobuf.Empty
+	39, // 55: service.DeviceService.DeleteBulkDevice:output_type -> google.protobuf.Empty
+	11, // 56: service.DeviceService.List:output_type -> service.ListDevicesResponse
+	39, // 57: service.DeviceService.CreateKeys:output_type -> google.protobuf.Empty
+	21, // 58: service.DeviceService.GetKeys:output_type -> service.GetDeviceKeysResponse
+	39, // 59: service.DeviceService.UpdateKeys:output_type -> google.protobuf.Empty
+	39, // 60: service.DeviceService.DeleteKeys:output_type -> google.protobuf.Empty
+	39, // 61: service.DeviceService.FlushDevNonces:output_type -> google.protobuf.Empty
+	39, // 62: service.DeviceService.Activate:output_type -> google.protobuf.Empty
+	39, // 63: service.DeviceService.Deactivate:output_type -> google.protobuf.Empty
+	18, // 64: service.DeviceService.GetActivation:output_type -> service.GetDeviceActivationResponse
+	25, // 65: service.DeviceService.Enqueue:output_type -> service.EnqueueDeviceQueueItemResponse
+	39, // 66: service.DeviceService.FlushQueue:output_type -> google.protobuf.Empty
+	28, // 67: service.DeviceService.GetQueue:output_type -> service.GetDeviceQueueItemsResponse
+	50, // [50:68] is the sub-list for method output_type
+	32, // [32:50] is the sub-list for method input_type
+	32, // [32:32] is the sub-list for extension type_name
+	32, // [32:32] is the sub-list for extension extendee
+	0,  // [0:32] is the sub-list for field type_name
 }
 
 func init() { file_external_service_device_proto_init() }
@@ -2594,7 +2656,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*DeviceKeys); i {
+			switch v := v.(*UploadDeviceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2606,7 +2668,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[2].Exporter = func(v any, i int) any {
-			switch v := v.(*DeviceActivation); i {
+			switch v := v.(*DeviceKeys); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2618,7 +2680,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[3].Exporter = func(v any, i int) any {
-			switch v := v.(*Device); i {
+			switch v := v.(*DeviceActivation); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2630,7 +2692,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[4].Exporter = func(v any, i int) any {
-			switch v := v.(*GetDeviceRequest); i {
+			switch v := v.(*Device); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2642,7 +2704,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[5].Exporter = func(v any, i int) any {
-			switch v := v.(*GetDeviceResponse); i {
+			switch v := v.(*GetDeviceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2654,7 +2716,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[6].Exporter = func(v any, i int) any {
-			switch v := v.(*UpdateDeviceRequest); i {
+			switch v := v.(*GetDeviceResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2666,7 +2728,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[7].Exporter = func(v any, i int) any {
-			switch v := v.(*DeleteDeviceRequest); i {
+			switch v := v.(*UpdateDeviceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2678,7 +2740,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[8].Exporter = func(v any, i int) any {
-			switch v := v.(*DeleteBulkDeviceRequest); i {
+			switch v := v.(*DeleteDeviceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2690,7 +2752,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[9].Exporter = func(v any, i int) any {
-			switch v := v.(*ListDevicesRequest); i {
+			switch v := v.(*DeleteBulkDeviceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2702,7 +2764,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[10].Exporter = func(v any, i int) any {
-			switch v := v.(*ListDevicesResponse); i {
+			switch v := v.(*ListDevicesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2714,7 +2776,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[11].Exporter = func(v any, i int) any {
-			switch v := v.(*DeviceListItem); i {
+			switch v := v.(*ListDevicesResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2726,7 +2788,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[12].Exporter = func(v any, i int) any {
-			switch v := v.(*UpdateDeviceKeysRequest); i {
+			switch v := v.(*DeviceListItem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2738,7 +2800,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[13].Exporter = func(v any, i int) any {
-			switch v := v.(*FlushDevNoncesRequest); i {
+			switch v := v.(*UpdateDeviceKeysRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2750,7 +2812,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[14].Exporter = func(v any, i int) any {
-			switch v := v.(*ActivateDeviceRequest); i {
+			switch v := v.(*FlushDevNoncesRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2762,7 +2824,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[15].Exporter = func(v any, i int) any {
-			switch v := v.(*DeactivateDeviceRequest); i {
+			switch v := v.(*ActivateDeviceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2774,7 +2836,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[16].Exporter = func(v any, i int) any {
-			switch v := v.(*GetDeviceActivationRequest); i {
+			switch v := v.(*DeactivateDeviceRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2786,7 +2848,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[17].Exporter = func(v any, i int) any {
-			switch v := v.(*GetDeviceActivationResponse); i {
+			switch v := v.(*GetDeviceActivationRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2798,7 +2860,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[18].Exporter = func(v any, i int) any {
-			switch v := v.(*CreateDeviceKeysRequest); i {
+			switch v := v.(*GetDeviceActivationResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2810,7 +2872,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[19].Exporter = func(v any, i int) any {
-			switch v := v.(*GetDeviceKeysRequest); i {
+			switch v := v.(*CreateDeviceKeysRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2822,7 +2884,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[20].Exporter = func(v any, i int) any {
-			switch v := v.(*GetDeviceKeysResponse); i {
+			switch v := v.(*GetDeviceKeysRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2834,7 +2896,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[21].Exporter = func(v any, i int) any {
-			switch v := v.(*DeleteDeviceKeysRequest); i {
+			switch v := v.(*GetDeviceKeysResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2846,7 +2908,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[22].Exporter = func(v any, i int) any {
-			switch v := v.(*DeviceQueueItem); i {
+			switch v := v.(*DeleteDeviceKeysRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2858,7 +2920,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[23].Exporter = func(v any, i int) any {
-			switch v := v.(*EnqueueDeviceQueueItemRequest); i {
+			switch v := v.(*DeviceQueueItem); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2870,7 +2932,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[24].Exporter = func(v any, i int) any {
-			switch v := v.(*EnqueueDeviceQueueItemResponse); i {
+			switch v := v.(*EnqueueDeviceQueueItemRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2882,7 +2944,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[25].Exporter = func(v any, i int) any {
-			switch v := v.(*FlushDeviceQueueRequest); i {
+			switch v := v.(*EnqueueDeviceQueueItemResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2894,7 +2956,7 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[26].Exporter = func(v any, i int) any {
-			switch v := v.(*GetDeviceQueueItemsRequest); i {
+			switch v := v.(*FlushDeviceQueueRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -2906,6 +2968,18 @@ func file_external_service_device_proto_init() {
 			}
 		}
 		file_external_service_device_proto_msgTypes[27].Exporter = func(v any, i int) any {
+			switch v := v.(*GetDeviceQueueItemsRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_external_service_device_proto_msgTypes[28].Exporter = func(v any, i int) any {
 			switch v := v.(*GetDeviceQueueItemsResponse); i {
 			case 0:
 				return &v.state
@@ -2924,7 +2998,7 @@ func file_external_service_device_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_external_service_device_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   30,
+			NumMessages:   31,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -2952,6 +3026,8 @@ const _ = grpc.SupportPackageIsVersion6
 type DeviceServiceClient interface {
 	// Create the given device.
 	Create(ctx context.Context, in *CreateDeviceRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	// Bulk Upload the given devices list.
+	Upload(ctx context.Context, in *UploadDeviceRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	// Get returns the device for the given DevEUI.
 	Get(ctx context.Context, in *GetDeviceRequest, opts ...grpc.CallOption) (*GetDeviceResponse, error)
 	// Update the given device.
@@ -2999,6 +3075,15 @@ func NewDeviceServiceClient(cc grpc.ClientConnInterface) DeviceServiceClient {
 func (c *deviceServiceClient) Create(ctx context.Context, in *CreateDeviceRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	out := new(emptypb.Empty)
 	err := c.cc.Invoke(ctx, "/service.DeviceService/Create", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *deviceServiceClient) Upload(ctx context.Context, in *UploadDeviceRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, "/service.DeviceService/Upload", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -3153,6 +3238,8 @@ func (c *deviceServiceClient) GetQueue(ctx context.Context, in *GetDeviceQueueIt
 type DeviceServiceServer interface {
 	// Create the given device.
 	Create(context.Context, *CreateDeviceRequest) (*emptypb.Empty, error)
+	// Bulk Upload the given devices list.
+	Upload(context.Context, *UploadDeviceRequest) (*emptypb.Empty, error)
 	// Get returns the device for the given DevEUI.
 	Get(context.Context, *GetDeviceRequest) (*GetDeviceResponse, error)
 	// Update the given device.
@@ -3195,6 +3282,9 @@ type UnimplementedDeviceServiceServer struct {
 
 func (*UnimplementedDeviceServiceServer) Create(context.Context, *CreateDeviceRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+}
+func (*UnimplementedDeviceServiceServer) Upload(context.Context, *UploadDeviceRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Upload not implemented")
 }
 func (*UnimplementedDeviceServiceServer) Get(context.Context, *GetDeviceRequest) (*GetDeviceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
@@ -3263,6 +3353,24 @@ func _DeviceService_Create_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(DeviceServiceServer).Create(ctx, req.(*CreateDeviceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DeviceService_Upload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadDeviceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DeviceServiceServer).Upload(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.DeviceService/Upload",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DeviceServiceServer).Upload(ctx, req.(*UploadDeviceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3562,6 +3670,10 @@ var _DeviceService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Create",
 			Handler:    _DeviceService_Create_Handler,
+		},
+		{
+			MethodName: "Upload",
+			Handler:    _DeviceService_Upload_Handler,
 		},
 		{
 			MethodName: "Get",

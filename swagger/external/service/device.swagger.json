@@ -137,6 +137,39 @@
         ]
       }
     },
+    "/api/devices/upload": {
+      "post": {
+        "summary": "Bulk Upload the given devices list.",
+        "operationId": "DeviceService_Upload",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceUploadDeviceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/{devEui}": {
       "get": {
         "summary": "Get returns the device for the given DevEUI.",
@@ -1109,6 +1142,15 @@
       }
     },
     "serviceUpdateDeviceRequest": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "$ref": "#/definitions/serviceDevice",
+          "description": "Device object."
+        }
+      }
+    },
+    "serviceUploadDeviceRequest": {
       "type": "object",
       "properties": {
         "device": {

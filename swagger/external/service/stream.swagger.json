@@ -194,106 +194,86 @@
         }
       }
     },
-    "serviceFileMetadata": {
+    "serviceBulkUploadResponse": {
       "type": "object",
       "properties": {
-        "region": {
-          "$ref": "#/definitions/utilRegion",
-          "description": "Region."
-        },
-        "regionConfigId": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "serviceDevice": {
+      "type": "object",
+      "properties": {
+        "devEui": {
           "type": "string",
-          "description": "Region configuration ID."
+          "description": "DevEUI (EUI64)."
         },
-        "deviceClass": {
-          "$ref": "#/definitions/utilDeviceClass",
-          "description": "Device class."
-        },
-        "macVersion": {
-          "$ref": "#/definitions/utilMacVersion",
-          "description": "LoRaWAN mac-version."
-        },
-        "regParamsRevision": {
-          "$ref": "#/definitions/utilRegParamsRevision",
-          "description": "Regional parameters revision."
-        },
-        "adrAlgorithm": {
+        "name": {
           "type": "string",
-          "description": "ADR algorithm ID."
+          "description": "Name."
         },
-        "payloadCodecRuntime": {
-          "$ref": "#/definitions/utilCodecRuntime",
-          "description": "Payload codec runtime."
+        "description": {
+          "type": "string",
+          "description": "Description."
+        },
+        "applicationId": {
+          "type": "string",
+          "description": "Application ID (UUID)."
+        },
+        "joinEui": {
+          "type": "string",
+          "description": "JoinEUI (optional, EUI64).\nThis field will be automatically set / updated on OTAA. However, in some\ncases it must be pre-configured. For example to allow OTAA using a Relay.\nIn this case the Relay needs to know the JoinEUI + DevEUI combinations\nof the devices for which it needs to forward uplinks."
         },
         "deviceJoinMode": {
           "$ref": "#/definitions/utilJoinMode",
-          "title": "Join Mode"
+          "description": "Supports OTAA."
         },
-        "flushQueueOnActivate": {
-          "type": "boolean",
-          "title": "Additional parameters"
+        "keys": {
+          "$ref": "#/definitions/serviceDeviceKeys",
+          "title": "Device Keys for OTAA"
         },
-        "skipFcntCheck": {
-          "type": "boolean"
+        "activation": {
+          "$ref": "#/definitions/serviceDeviceActivation",
+          "description": "Device activation object."
+        }
+      }
+    },
+    "serviceDeviceActivation": {
+      "type": "object",
+      "properties": {
+        "devAddr": {
+          "type": "string",
+          "description": "Device address (HEX encoded)."
         },
-        "isDisabled": {
-          "type": "boolean"
+        "appSKey": {
+          "type": "string",
+          "description": "Application session key (HEX encoded)."
         },
-        "abpRx1Delay": {
-          "type": "integer",
-          "format": "int64"
+        "nwkSEncKey": {
+          "type": "string",
+          "title": "Network session encryption key (HEX encoded).\nNote: For ABP in LoRaWAN 1.0.x, use this, the serving and the forwarding\nnetwork session integrity key fields with the LoRaWAN 1.0.x 'NwkSKey`!"
         },
-        "classBTimeout": {
-          "type": "integer",
-          "format": "int64"
+        "sNwkSIntKey": {
+          "type": "string",
+          "description": "Serving network session integrity key (HEX encoded)."
         },
-        "classBPingSlotNbK": {
-          "type": "integer",
-          "format": "int64"
+        "fNwkSIntKey": {
+          "type": "string",
+          "description": "Forwarding network session integrity key (HEX encoded)."
+        }
+      }
+    },
+    "serviceDeviceKeys": {
+      "type": "object",
+      "properties": {
+        "nwkKey": {
+          "type": "string",
+          "title": "Network root key (128 bit).\nNote: For LoRaWAN 1.0.x, use this field for the LoRaWAN 1.0.x 'AppKey`!"
         },
-        "classBPingSlotDr": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "classBPingSlotFreq": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "classCTimeout": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "abpRx1DrOffset": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "abpRx2Dr": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "abpRx2Freq": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "uplinkInterval": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "deviceStatusReqInterval": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "fCntUp": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "nFCntDown": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "aFCntDown": {
-          "type": "integer",
-          "format": "int64"
+        "appKey": {
+          "type": "string",
+          "title": "Application root key (128 bit).\nNote: This field only needs to be set for LoRaWAN 1.1.x devices!"
         }
       }
     },
@@ -326,34 +306,6 @@
         }
       }
     },
-    "serviceUploadResponse": {
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      }
-    },
-    "utilCodecRuntime": {
-      "type": "string",
-      "enum": [
-        "NONE",
-        "CAYENNE_LPP",
-        "JS"
-      ],
-      "default": "NONE",
-      "description": " - NONE: None.\n - CAYENNE_LPP: Cayenne LPP.\n - JS: JavaScript."
-    },
-    "utilDeviceClass": {
-      "type": "string",
-      "enum": [
-        "CLASS_A",
-        "CLASS_B",
-        "CLASS_C"
-      ],
-      "default": "CLASS_A",
-      "description": " - CLASS_A: Class-A.\n - CLASS_B: Class-B.\n - CLASS_C: Class-C."
-    },
     "utilJoinMode": {
       "type": "string",
       "enum": [
@@ -362,52 +314,6 @@
       ],
       "default": "OTAA",
       "description": " - OTAA: OTAA.\n - ABP: ABP."
-    },
-    "utilMacVersion": {
-      "type": "string",
-      "enum": [
-        "LORAWAN_1_0_0",
-        "LORAWAN_1_0_1",
-        "LORAWAN_1_0_2",
-        "LORAWAN_1_0_3",
-        "LORAWAN_1_0_4",
-        "LORAWAN_1_1_0"
-      ],
-      "default": "LORAWAN_1_0_0"
-    },
-    "utilRegParamsRevision": {
-      "type": "string",
-      "enum": [
-        "A",
-        "B",
-        "RP002_1_0_0",
-        "RP002_1_0_1",
-        "RP002_1_0_2",
-        "RP002_1_0_3",
-        "RP002_1_0_4"
-      ],
-      "default": "A"
-    },
-    "utilRegion": {
-      "type": "string",
-      "enum": [
-        "EU868",
-        "US915",
-        "CN779",
-        "EU433",
-        "AU915",
-        "CN470",
-        "AS923",
-        "AS923_2",
-        "AS923_3",
-        "AS923_4",
-        "KR920",
-        "IN865",
-        "RU864",
-        "ISM2400"
-      ],
-      "default": "EU868",
-      "title": "- EU868: EU868\n - US915: US915\n - CN779: CN779\n - EU433: EU433\n - AU915: AU915\n - CN470: CN470\n - AS923: AS923\n - AS923_2: AS923 with -1.80 MHz frequency offset\n - AS923_3: AS923 with -6.60 MHz frequency offset\n - AS923_4: (AS923 with -5.90 MHz frequency offset).\n - KR920: KR920\n - IN865: IN865\n - RU864: RU864\n - ISM2400: ISM2400 (LoRaWAN 2.4 GHz)"
     }
   }
 }

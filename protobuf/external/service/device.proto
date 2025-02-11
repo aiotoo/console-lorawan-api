@@ -19,6 +19,14 @@ service DeviceService {
     };
   }
 
+  // Bulk Upload the given devices list.
+  rpc Upload(UploadDeviceRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/api/devices/upload"
+      body : "*"
+    };
+  }
+
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
     option (google.api.http) = {
@@ -151,6 +159,11 @@ service DeviceService {
 
 
 message CreateDeviceRequest {
+  // Device object.
+  Device device = 1;
+}
+
+message UploadDeviceRequest {
   // Device object.
   Device device = 1;
 }
