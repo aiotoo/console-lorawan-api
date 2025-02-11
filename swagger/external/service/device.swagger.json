@@ -137,43 +137,9 @@
         ]
       }
     },
-    "/api/devices/bulkupload": {
-      "post": {
-        "summary": "Bulk upload the given device.",
-        "operationId": "DeviceService_UploadDevices",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceDeviceUploadResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "description": " (streaming inputs)",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/serviceDeviceUploadRequest"
-            }
-          }
-        ],
-        "tags": [
-          "DeviceService"
-        ]
-      }
-    },
     "/api/devices/{devEui}": {
       "get": {
-        "summary": "Get returns the device for the given DevEUI.",
+        "summary": "rpc UploadDevices (stream DeviceUploadRequest) returns (DeviceUploadResponse){\n  option (google.api.http) = {\n    post : \"/api/devices/bulkupload\"\n    body : \"*\"\n  };\n}\nGet returns the device for the given DevEUI.",
         "operationId": "DeviceService_Get",
         "responses": {
           "200": {
@@ -1030,29 +996,6 @@
         }
       }
     },
-    "serviceDeviceUploadRequest": {
-      "type": "object",
-      "properties": {
-        "fileChunk": {
-          "type": "string",
-          "format": "byte"
-        },
-        "filename": {
-          "type": "string"
-        }
-      }
-    },
-    "serviceDeviceUploadResponse": {
-      "type": "object",
-      "properties": {
-        "success": {
-          "type": "boolean"
-        },
-        "message": {
-          "type": "string"
-        }
-      }
-    },
     "serviceEnqueueDeviceQueueItemRequest": {
       "type": "object",
       "properties": {
@@ -1171,6 +1114,17 @@
         "device": {
           "$ref": "#/definitions/serviceDevice",
           "description": "Device object."
+        }
+      }
+    },
+    "serviceUploadResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
         }
       }
     },
