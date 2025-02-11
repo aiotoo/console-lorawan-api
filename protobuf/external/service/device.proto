@@ -20,12 +20,8 @@ service DeviceService {
   }
 
   // Bulk upload the given device.
-  rpc UploadDevices(UploadDevicesRequest) returns (UploadDevicesResponse) {
-   option (google.api.http) = {
-     post : "/api/devices/bulkupload"
-     body: "*"
-   };
- }
+  rpc UploadDevices (stream DeviceUploadRequest) returns (DeviceUploadResponse);
+
 
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
@@ -163,12 +159,13 @@ message CreateDeviceRequest {
   Device device = 1;
 }
 
-message UploadDevicesRequest {
-  repeated Device devices = 1;
+message DeviceUploadRequest {
+  bytes file_chunk = 1;
+  string filename = 2;
 }
 
-message UploadDevicesResponse {
-  repeated string failed_dev_euis = 1;
+message DeviceUploadResponse {
+  bool success = 1;
   string message = 2;
 }
 

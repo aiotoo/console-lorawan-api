@@ -137,39 +137,6 @@
         ]
       }
     },
-    "/api/devices/bulkupload": {
-      "post": {
-        "summary": "Bulk upload the given device.",
-        "operationId": "DeviceService_UploadDevices",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceUploadDevicesResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/serviceUploadDevicesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "DeviceService"
-        ]
-      }
-    },
     "/api/devices/{devEui}": {
       "get": {
         "summary": "Get returns the device for the given DevEUI.",
@@ -1029,6 +996,17 @@
         }
       }
     },
+    "serviceDeviceUploadResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
     "serviceEnqueueDeviceQueueItemRequest": {
       "type": "object",
       "properties": {
@@ -1147,31 +1125,6 @@
         "device": {
           "$ref": "#/definitions/serviceDevice",
           "description": "Device object."
-        }
-      }
-    },
-    "serviceUploadDevicesRequest": {
-      "type": "object",
-      "properties": {
-        "devices": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/serviceDevice"
-          }
-        }
-      }
-    },
-    "serviceUploadDevicesResponse": {
-      "type": "object",
-      "properties": {
-        "failedDevEuis": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "message": {
-          "type": "string"
         }
       }
     },
