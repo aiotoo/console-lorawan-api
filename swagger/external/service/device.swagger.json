@@ -139,7 +139,7 @@
     },
     "/api/devices/{devEui}": {
       "get": {
-        "summary": "rpc UploadDevices (stream DeviceUploadRequest) returns (DeviceUploadResponse){\n  option (google.api.http) = {\n    post : \"/api/devices/bulkupload\"\n    body : \"*\"\n  };\n}\nGet returns the device for the given DevEUI.",
+        "summary": "Get returns the device for the given DevEUI.",
         "operationId": "DeviceService_Get",
         "responses": {
           "200": {
@@ -1099,6 +1099,17 @@
         }
       }
     },
+    "serviceProcessDevicesResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
     "serviceUpdateDeviceKeysRequest": {
       "type": "object",
       "properties": {
@@ -1117,7 +1128,7 @@
         }
       }
     },
-    "serviceUploadResponse": {
+    "serviceUploadCSVResponse": {
       "type": "object",
       "properties": {
         "success": {
