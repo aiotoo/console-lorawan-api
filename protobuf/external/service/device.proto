@@ -29,7 +29,11 @@ service DeviceService {
   // }
 
   // Upload the CSV File.
-  rpc UploadFile(stream FileChunk) returns (UploadResponse);
+  rpc UploadFile(stream FileChunk) returns (UploadResponse){
+    option (google.api.http) = {
+      post : "/api/devices/bulk-upload"
+    };
+  };
   
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {

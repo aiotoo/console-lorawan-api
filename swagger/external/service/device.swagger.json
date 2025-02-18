@@ -104,6 +104,29 @@
         ]
       }
     },
+    "/api/devices/bulk-upload": {
+      "post": {
+        "summary": "Upload the CSV File.",
+        "operationId": "DeviceService_UploadFile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceUploadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/bulkdelete": {
       "post": {
         "summary": "Delete the device with the given DevEUI.",
