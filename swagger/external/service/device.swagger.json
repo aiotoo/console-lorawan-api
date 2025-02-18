@@ -104,39 +104,6 @@
         ]
       }
     },
-    "/api/devices/bulk-upload": {
-      "post": {
-        "summary": "Bulk upload devices from CSV.",
-        "operationId": "DeviceService_UploadDevices",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceBulkUploadResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/serviceBulkUploadRequest"
-            }
-          }
-        ],
-        "tags": [
-          "DeviceService"
-        ]
-      }
-    },
     "/api/devices/bulkdelete": {
       "post": {
         "summary": "Delete the device with the given DevEUI.",
@@ -707,33 +674,6 @@
         }
       }
     },
-    "serviceBulkUploadRequest": {
-      "type": "object",
-      "properties": {
-        "device": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/serviceDevice"
-          },
-          "description": "Device object."
-        }
-      }
-    },
-    "serviceBulkUploadResponse": {
-      "type": "object",
-      "properties": {
-        "successCount": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "errors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "serviceCreateDeviceKeysRequest": {
       "type": "object",
       "properties": {
@@ -1174,6 +1114,21 @@
         "device": {
           "$ref": "#/definitions/serviceDevice",
           "description": "Device object."
+        }
+      }
+    },
+    "serviceUploadResponse": {
+      "type": "object",
+      "properties": {
+        "successCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },

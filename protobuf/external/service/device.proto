@@ -19,13 +19,10 @@ service DeviceService {
     };
   }
 
+
   // Bulk upload devices from CSV.
-  rpc UploadDevices(BulkUploadRequest) returns (BulkUploadResponse) {
-    option (google.api.http) = {
-      post: "/api/devices/bulk-upload"
-      body: "*"
-    };
-  }
+  rpc UploadDevices(UploadRequest) returns (UploadResponse);
+
   
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
@@ -163,13 +160,15 @@ message CreateDeviceRequest {
    Device device = 1;
 }
 
-message BulkUploadRequest {
+message UploadRequest {
   // Device object.
   repeated Device device = 1;
 }
 
-message BulkUploadResponse {
+message UploadResponse {
+  
   int32 success_count = 1;
+
   repeated string errors = 2;
 }
 
