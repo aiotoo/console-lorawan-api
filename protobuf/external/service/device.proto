@@ -20,7 +20,7 @@ service DeviceService {
   }
 
   // Bulk upload devices from CSV.
-  rpc BulkUploadDevices(BulkUploadRequest) returns (BulkUploadResponse) {
+  rpc UploadDevices(BulkUploadRequest) returns (BulkUploadResponse) {
     option (google.api.http) = {
       post: "/api/devices/bulk-upload"
       body: "*"

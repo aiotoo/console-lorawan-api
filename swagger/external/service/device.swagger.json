@@ -107,7 +107,7 @@
     "/api/devices/bulk-upload": {
       "post": {
         "summary": "Bulk upload devices from CSV.",
-        "operationId": "DeviceService_BulkUploadDevices",
+        "operationId": "DeviceService_UploadDevices",
         "responses": {
           "200": {
             "description": "A successful response.",
