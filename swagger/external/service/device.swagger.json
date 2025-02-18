@@ -1120,15 +1120,11 @@
     "serviceUploadResponse": {
       "type": "object",
       "properties": {
-        "successCount": {
-          "type": "integer",
-          "format": "int32"
+        "success": {
+          "type": "boolean"
         },
-        "errors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "message": {
+          "type": "string"
         }
       }
     },
