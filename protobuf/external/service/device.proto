@@ -19,21 +19,20 @@ service DeviceService {
     };
   }
 
-
-  // // Bulk upload devices from CSV.
-  // rpc UploadDevices(UploadRequest) returns (UploadResponse){
-  //   option (google.api.http) = {
-  //     post : "/api/devices/bulk-upload"
-  //     body : "*"
-  //   };
-  // }
-
-  // Upload the CSV File.
-  rpc UploadFile(stream FileChunk) returns (UploadResponse){
+  // Upload CSV file 
+  rpc BulkUpload(stream UploadRequest) returns (UploadResponse) {
     option (google.api.http) = {
-      post : "/api/devices/bulk-upload"
+      post: "/api/devices/bulkupload"
+      body: "*"
     };
-  };
+  }
+  
+  // Get processed CSV data
+  rpc UploadData(EmptyRequest) returns (BulkUploadResponse) {
+    option (google.api.http) = {
+      get: "/api/devices/bulk-upload-data"
+    };
+  }
   
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
@@ -171,31 +170,26 @@ message CreateDeviceRequest {
    Device device = 1;
 }
 
-message FileChunk {
+message UploadRequest {
+  // CSV file name
+  string filename = 1;
 
-  bytes content = 1;
-
-  string filename = 2;
+  // CSV file content
+  bytes content = 2;
 }
 
 message UploadResponse {
 
-  bool success = 1;
-  
-  string message = 2;
+  // Upload Message
+  string message = 1;
 }
 
-// message UploadRequest {
-//   // Device object.
-//   repeated Device device = 1;
-// }
+message EmptyRequest {}
 
-// message UploadResponse {
-  
-//   int32 success_count = 1;
-
-//   repeated string errors = 2;
-// }
+message BulkUploadResponse {
+  // Device object.
+  repeated Device devices = 1;
+}
 
 message DeviceKeys {
   // DevEUI (EUI64).

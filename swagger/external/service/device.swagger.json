@@ -104,15 +104,15 @@
         ]
       }
     },
-    "/api/devices/bulk-upload": {
-      "post": {
-        "summary": "Upload the CSV File.",
-        "operationId": "DeviceService_UploadFile",
+    "/api/devices/bulk-upload-data": {
+      "get": {
+        "summary": "Get processed CSV data",
+        "operationId": "DeviceService_UploadData",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceUploadResponse"
+              "$ref": "#/definitions/serviceBulkUploadResponse"
             }
           },
           "default": {
@@ -152,6 +152,40 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/serviceDeleteBulkDeviceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
+    "/api/devices/bulkupload": {
+      "post": {
+        "summary": "Upload CSV file",
+        "operationId": "DeviceService_BulkUpload",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceUploadResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " (streaming inputs)",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceUploadRequest"
             }
           }
         ],
@@ -697,6 +731,18 @@
         }
       }
     },
+    "serviceBulkUploadResponse": {
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceDevice"
+          },
+          "description": "Device object."
+        }
+      }
+    },
     "serviceCreateDeviceKeysRequest": {
       "type": "object",
       "properties": {
@@ -1140,14 +1186,26 @@
         }
       }
     },
+    "serviceUploadRequest": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "title": "CSV file name"
+        },
+        "content": {
+          "type": "string",
+          "format": "byte",
+          "title": "CSV file content"
+        }
+      }
+    },
     "serviceUploadResponse": {
       "type": "object",
       "properties": {
-        "success": {
-          "type": "boolean"
-        },
         "message": {
-          "type": "string"
+          "type": "string",
+          "title": "Upload Message"
         }
       }
     },
