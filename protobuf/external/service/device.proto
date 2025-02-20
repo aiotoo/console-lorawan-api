@@ -172,9 +172,9 @@ message CreateDeviceRequest {
 message UploadRequest {
   // CSV file name provided by the client
   string filename = 1;
-  
+
   // CSV file content chunk
-  bytes content = 2;
+  string content = 2;
 }
 
 message UploadResponse {
