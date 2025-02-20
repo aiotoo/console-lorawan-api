@@ -20,7 +20,7 @@ service DeviceService {
   }
 
   // Upload CSV file 
-  rpc BulkUpload(stream UploadRequest) returns (UploadResponse) {
+  rpc BulkUpload(UploadRequest) returns (UploadResponse) {
     option (google.api.http) = {
       post: "/api/devices/bulkupload"
       body: "*"
@@ -28,7 +28,7 @@ service DeviceService {
   }
   
   // Get processed CSV data
-  rpc UploadData(EmptyRequest) returns (BulkUploadResponse) {
+  rpc UploadData(UploadDataRequest) returns (UploadDataResponse) {
     option (google.api.http) = {
       get: "/api/devices/bulk-upload-data"
     };
@@ -171,22 +171,22 @@ message CreateDeviceRequest {
 }
 
 message UploadRequest {
-  // CSV file name
-  string filename = 1;
 
   // CSV file content
-  bytes content = 2;
+  bytes content = 1;
 }
 
 message UploadResponse {
+  // CSV file name
+  string filename = 1;
 
   // Upload Message
-  string message = 1;
+  string message = 2;
 }
 
-message EmptyRequest {}
+message UploadDataRequest {}
 
-message BulkUploadResponse {
+message UploadDataResponse {
   // Device object.
   repeated Device devices = 1;
 }

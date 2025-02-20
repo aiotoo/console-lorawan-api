@@ -112,7 +112,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceBulkUploadResponse"
+              "$ref": "#/definitions/serviceUploadDataResponse"
             }
           },
           "default": {
@@ -181,7 +181,6 @@
         "parameters": [
           {
             "name": "body",
-            "description": " (streaming inputs)",
             "in": "body",
             "required": true,
             "schema": {
@@ -731,18 +730,6 @@
         }
       }
     },
-    "serviceBulkUploadResponse": {
-      "type": "object",
-      "properties": {
-        "devices": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/serviceDevice"
-          },
-          "description": "Device object."
-        }
-      }
-    },
     "serviceCreateDeviceKeysRequest": {
       "type": "object",
       "properties": {
@@ -1186,13 +1173,21 @@
         }
       }
     },
+    "serviceUploadDataResponse": {
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceDevice"
+          },
+          "description": "Device object."
+        }
+      }
+    },
     "serviceUploadRequest": {
       "type": "object",
       "properties": {
-        "filename": {
-          "type": "string",
-          "title": "CSV file name"
-        },
         "content": {
           "type": "string",
           "format": "byte",
@@ -1203,6 +1198,10 @@
     "serviceUploadResponse": {
       "type": "object",
       "properties": {
+        "filename": {
+          "type": "string",
+          "title": "CSV file name"
+        },
         "message": {
           "type": "string",
           "title": "Upload Message"
