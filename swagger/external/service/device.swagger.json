@@ -106,7 +106,7 @@
     },
     "/api/devices/bulk-upload-data": {
       "get": {
-        "summary": "Get processed CSV data",
+        "summary": "Get processed CSV data for a specific file.",
         "operationId": "DeviceService_UploadData",
         "responses": {
           "200": {
@@ -122,6 +122,15 @@
             }
           }
         },
+        "parameters": [
+          {
+            "name": "filename",
+            "description": "File name to be processed.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "tags": [
           "DeviceService"
         ]
@@ -162,7 +171,7 @@
     },
     "/api/devices/bulkupload": {
       "post": {
-        "summary": "Upload CSV file",
+        "summary": "Upload CSV file using a client streaming RPC.",
         "operationId": "DeviceService_BulkUpload",
         "responses": {
           "200": {
@@ -181,6 +190,7 @@
         "parameters": [
           {
             "name": "body",
+            "description": " (streaming inputs)",
             "in": "body",
             "required": true,
             "schema": {
@@ -1181,17 +1191,21 @@
           "items": {
             "$ref": "#/definitions/serviceDevice"
           },
-          "description": "Device object."
+          "title": "List of devices parsed from the CSV file"
         }
       }
     },
     "serviceUploadRequest": {
       "type": "object",
       "properties": {
+        "filename": {
+          "type": "string",
+          "title": "CSV file name provided by the client"
+        },
         "content": {
           "type": "string",
           "format": "byte",
-          "title": "CSV file content"
+          "title": "CSV file content chunk"
         }
       }
     },
@@ -1200,11 +1214,11 @@
       "properties": {
         "filename": {
           "type": "string",
-          "title": "CSV file name"
+          "title": "CSV file name that was stored"
         },
         "message": {
           "type": "string",
-          "title": "Upload Message"
+          "title": "Upload status message"
         }
       }
     },

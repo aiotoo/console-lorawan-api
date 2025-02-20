@@ -19,21 +19,20 @@ service DeviceService {
     };
   }
 
-  // Upload CSV file 
-  rpc BulkUpload(UploadRequest) returns (UploadResponse) {
+  // Upload CSV file using a client streaming RPC.
+  rpc BulkUpload(stream UploadRequest) returns (UploadResponse) {
     option (google.api.http) = {
       post: "/api/devices/bulkupload"
       body: "*"
-    };
-  }
+   };
+ }
   
-  // Get processed CSV data
+  // Get processed CSV data for a specific file.
   rpc UploadData(UploadDataRequest) returns (UploadDataResponse) {
     option (google.api.http) = {
       get: "/api/devices/bulk-upload-data"
     };
   }
-  
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
     option (google.api.http) = {
@@ -171,23 +170,28 @@ message CreateDeviceRequest {
 }
 
 message UploadRequest {
-
-  // CSV file content
-  bytes content = 1;
+  // CSV file name provided by the client
+  string filename = 1;
+  
+  // CSV file content chunk
+  bytes content = 2;
 }
 
 message UploadResponse {
-  // CSV file name
+  // CSV file name that was stored
   string filename = 1;
 
-  // Upload Message
+  // Upload status message
   string message = 2;
 }
 
-message UploadDataRequest {}
+message UploadDataRequest {
+  // File name to be processed
+  string filename = 1;
+}
 
 message UploadDataResponse {
-  // Device object.
+  // List of devices parsed from the CSV file
   repeated Device devices = 1;
 }
 
