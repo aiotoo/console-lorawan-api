@@ -187,17 +187,6 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "body",
-            "description": " (streaming inputs)",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/serviceUploadRequest"
-            }
-          }
-        ],
         "tags": [
           "DeviceService"
         ]
@@ -1192,20 +1181,6 @@
             "$ref": "#/definitions/serviceDevice"
           },
           "title": "List of devices parsed from the CSV file"
-        }
-      }
-    },
-    "serviceUploadRequest": {
-      "type": "object",
-      "properties": {
-        "filename": {
-          "type": "string",
-          "title": "CSV file name provided by the client"
-        },
-        "content": {
-          "type": "string",
-          "format": "byte",
-          "title": "CSV file content chunk"
         }
       }
     },

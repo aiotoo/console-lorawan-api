@@ -23,7 +23,6 @@ service DeviceService {
   rpc BulkUpload(stream UploadRequest) returns (UploadResponse) {
     option (google.api.http) = {
       post: "/api/devices/bulkupload"
-      body: "*"
    };
  }
   
@@ -174,7 +173,7 @@ message UploadRequest {
   string filename = 1;
   
   // CSV file content chunk
-  bytes content = 2;
+  string content = 2;
 }
 
 message UploadResponse {
