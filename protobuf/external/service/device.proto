@@ -29,9 +29,10 @@ service DeviceService {
   // Get processed CSV data for a specific file.
   rpc UploadData(UploadDataRequest) returns (UploadDataResponse) {
     option (google.api.http) = {
-      get: "/api/devices/bulk-upload-data"
+      get: "/api/devices/bulkupload/{filename}"
     };
   }
+
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
     option (google.api.http) = {

@@ -111,19 +111,26 @@ func request_DeviceService_BulkUpload_0(ctx context.Context, marshaler runtime.M
 
 }
 
-var (
-	filter_DeviceService_UploadData_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
-)
-
 func request_DeviceService_UploadData_0(ctx context.Context, marshaler runtime.Marshaler, client DeviceServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UploadDataRequest
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["filename"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "filename")
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DeviceService_UploadData_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+
+	protoReq.Filename, err = runtime.String(val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "filename", err)
 	}
 
 	msg, err := client.UploadData(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -135,11 +142,22 @@ func local_request_DeviceService_UploadData_0(ctx context.Context, marshaler run
 	var protoReq UploadDataRequest
 	var metadata runtime.ServerMetadata
 
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	var (
+		val string
+		ok  bool
+		err error
+		_   = err
+	)
+
+	val, ok = pathParams["filename"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "filename")
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_DeviceService_UploadData_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+
+	protoReq.Filename, err = runtime.String(val)
+
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "filename", err)
 	}
 
 	msg, err := server.UploadData(ctx, &protoReq)
@@ -1927,7 +1945,7 @@ var (
 
 	pattern_DeviceService_BulkUpload_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "devices", "bulkupload"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_DeviceService_UploadData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "devices", "bulk-upload-data"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_DeviceService_UploadData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "devices", "bulkupload", "filename"}, "", runtime.AssumeColonVerbOpt(true)))
 
 	pattern_DeviceService_Get_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"api", "devices", "dev_eui"}, "", runtime.AssumeColonVerbOpt(true)))
 
