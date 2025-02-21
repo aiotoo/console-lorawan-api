@@ -33,6 +33,14 @@ service DeviceService {
     };
   }
 
+  // Bulk create devices
+  rpc BulkCreate(BulkCreateDevicesRequest) returns (BulkCreateDevicesResponse) {
+    option (google.api.http) = {
+      post : "/api/devices/bulkcreate"
+      body : "*"
+    };
+  }
+
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
     option (google.api.http) = {
@@ -193,6 +201,22 @@ message UploadDataRequest {
 message UploadDataResponse {
   // List of devices parsed from the CSV file
   repeated Device devices = 1;
+}
+
+message BulkCreateDevicesRequest {
+  // List of bulk-uploaded devices
+  repeated Device devices = 1;
+}
+
+message BulkCreateDevicesResponse {
+  // Number of successfully created devices
+  int32 success_count = 1;
+
+  // Number of failed device creations
+  int32 failure_count = 2;
+
+  // List of failed device identifiers
+  repeated string failed_devices = 3;
 }
 
 message DeviceKeys {

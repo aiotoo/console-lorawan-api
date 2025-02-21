@@ -26,7 +26,7 @@ service StreamService {
   // Stream events for the given Device EUI.
   rpc StreamDeviceEvents(StreamDeviceEventsRequest) returns (stream LogItem) {
      option (google.api.http) = {
-      get : "/api/stream/devices/{deDevicev_eui}/events"
+      get : "/api/stream/devices/{dev_eui}/events"
     };
   }
 

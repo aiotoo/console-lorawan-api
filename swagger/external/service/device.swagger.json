@@ -104,6 +104,39 @@
         ]
       }
     },
+    "/api/devices/bulkcreate": {
+      "post": {
+        "summary": "Bulk create devices",
+        "operationId": "DeviceService_BulkCreate",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceBulkCreateDevicesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceBulkCreateDevicesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/bulkdelete": {
       "post": {
         "summary": "Delete the device with the given DevEUI.",
@@ -726,6 +759,40 @@
         "deviceActivation": {
           "$ref": "#/definitions/serviceDeviceActivation",
           "description": "Device activation object."
+        }
+      }
+    },
+    "serviceBulkCreateDevicesRequest": {
+      "type": "object",
+      "properties": {
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceDevice"
+          },
+          "title": "List of bulk-uploaded devices"
+        }
+      }
+    },
+    "serviceBulkCreateDevicesResponse": {
+      "type": "object",
+      "properties": {
+        "successCount": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Number of successfully created devices"
+        },
+        "failureCount": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Number of failed device creations"
+        },
+        "failedDevices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "List of failed device identifiers"
         }
       }
     },
