@@ -183,6 +183,10 @@ message UploadRequest {
   
   // CSV file content chunk
   string content = 2;
+
+  // Device configuration
+  DeviceConfig device_config = 3;
+
 }
 
 message UploadResponse {
@@ -191,6 +195,9 @@ message UploadResponse {
 
   // Upload status message
   string message = 2;
+
+  // Number of devices processed
+  int32 devices_processed = 3;
 }
 
 message UploadDataRequest {
@@ -217,6 +224,99 @@ message BulkCreateDevicesResponse {
 
   // List of failed device identifiers
   repeated string failed_devices = 3;
+}
+
+message DeviceConfig {
+  // Region.
+  util.Region region = 1;
+
+  // Region configuration ID.
+  // If set, devices will only use the associated region. If let blank, then
+  // devices will use all regions matching the selected common-name. Note
+  // that multiple region configurations can exist for the same common-name,
+  // e.g. to provide an 8 channel and 16 channel configuration for the US915
+  // band.
+  string region_config_id = 2;
+
+  // Enabled device class.
+  util.DeviceClass device_class= 3;
+
+  // Supports OTAA.
+  util.JoinMode device_join_mode = 4;
+
+  // Skip frame-counter checks (this is insecure, but could be helpful for
+  // debugging).
+  bool skip_fcnt_check = 5;
+
+  // Device is disabled.
+  bool is_disabled = 6;
+
+  // Flush queue on device activation.
+  bool flush_queue_on_activate = 7;
+
+  // LoRaWAN mac-version.
+  util.MacVersion mac_version = 8;
+
+  // Regional parameters revision.
+  util.RegParamsRevision reg_params_revision = 9;
+
+  // ADR algorithm ID.
+  string adr_algorithm_id = 10;
+
+  // Payload codec runtime.
+  util.CodecRuntime payload_codec_runtime = 11;
+
+
+  // Class-B timeout (seconds).
+  // This is the maximum time ChirpStack will wait to receive an acknowledgement
+  // from the device (if requested).
+  uint32 class_b_timeout = 12;
+
+  // The actual number of ping-slots per beacon period equals to 2^k.
+  uint32 class_b_ping_slot_nb_k = 13;
+
+  // Class-B ping-slot DR.
+  uint32 class_b_ping_slot_dr = 14;
+
+  // Class-B ping-slot freq (Hz).
+  uint32 class_b_ping_slot_freq = 15;
+
+  // Class-C timeout (seconds).
+  // This is the maximum time ChirpStack will wait to receive an acknowledgement
+  // from the device (if requested).
+  uint32 class_c_timeout = 16;
+
+  // RX1 delay (for ABP).
+  uint32 abp_rx1_delay = 17;
+
+  // RX1 DR offset (for ABP).
+  uint32 abp_rx1_dr_offset = 18;
+
+  // RX2 DR (for ABP).
+  uint32 abp_rx2_dr = 19;
+
+  // RX2 frequency (for ABP, Hz).
+  uint32 abp_rx2_freq = 20;
+
+  // Uplink interval (seconds).
+  // This defines the expected uplink interval which the device uses for
+  // communication. If the uplink interval has expired and no uplink has
+  // been received, the device is considered inactive.
+  uint32 uplink_interval = 21;
+
+  // Device-status request interval (times / day).
+  // This defines the times per day that ChirpStack will request the
+  // device-status from the device.
+  uint32 device_status_req_interval = 22;
+
+  // Uplink frame-counter.
+  uint32 f_cnt_up = 23;
+
+  // Downlink network frame-counter.
+  uint32 n_f_cnt_down = 24;
+  
+  // Downlink application frame-counter.
+  uint32 a_f_cnt_down = 25;
 }
 
 message DeviceKeys {
