@@ -145,7 +145,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceBulkUploadResponse"
+              "$ref": "#/definitions/serviceUploadResponse"
             }
           },
           "default": {
@@ -697,31 +697,6 @@
         }
       }
     },
-    "serviceBulkUploadResponse": {
-      "type": "object",
-      "properties": {
-        "filename": {
-          "type": "string",
-          "title": "Uploaded file path"
-        },
-        "message": {
-          "type": "string",
-          "title": "Status message"
-        },
-        "devicesCreated": {
-          "type": "integer",
-          "format": "int64",
-          "title": "Number of devices created"
-        },
-        "devEuis": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "List of DevEUIs for created devices"
-        }
-      }
-    },
     "serviceCreateDeviceKeysRequest": {
       "type": "object",
       "properties": {
@@ -1162,6 +1137,31 @@
         "device": {
           "$ref": "#/definitions/serviceDevice",
           "description": "Device object."
+        }
+      }
+    },
+    "serviceUploadResponse": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "title": "Uploaded file path"
+        },
+        "message": {
+          "type": "string",
+          "title": "Status message"
+        },
+        "devicesCreated": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Number of devices created"
+        },
+        "devEuis": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "List of DevEUIs for created devices"
         }
       }
     },

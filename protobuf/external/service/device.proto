@@ -20,12 +20,12 @@ service DeviceService {
   }
 
   // Upload CSV file using a client streaming RPC.
-  rpc BulkUpload(BulkUploadRequest) returns (BulkUploadResponse) {
+  rpc BulkUpload(stream UploadRequest) returns (UploadResponse) {
     option (google.api.http) = {
       post: "/api/devices/bulkupload"
    };
  }
-  
+
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
     option (google.api.http) = {
@@ -162,18 +162,18 @@ message CreateDeviceRequest {
    Device device = 1;
 }
 
-message BulkUploadRequest {
-  // CSV file name
+message UploadRequest {
+  // CSV file name provided by the client
   string filename = 1;
   
-  // CSV file content as text
+  // CSV file content chunk
   string content = 2;
-  
+
   // Common device configuration for all devices in the CSV
   Device common_config = 3;
 }
 
-message BulkUploadResponse {
+message UploadResponse {
   // Uploaded file path
   string filename = 1;
   
