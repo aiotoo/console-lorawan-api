@@ -1020,125 +1020,6 @@
         }
       }
     },
-    "serviceDeviceConfig": {
-      "type": "object",
-      "properties": {
-        "region": {
-          "$ref": "#/definitions/utilRegion",
-          "description": "Region."
-        },
-        "regionConfigId": {
-          "type": "string",
-          "description": "Region configuration ID.\nIf set, devices will only use the associated region. If let blank, then\ndevices will use all regions matching the selected common-name. Note\nthat multiple region configurations can exist for the same common-name,\ne.g. to provide an 8 channel and 16 channel configuration for the US915\nband."
-        },
-        "deviceClass": {
-          "$ref": "#/definitions/utilDeviceClass",
-          "description": "Enabled device class."
-        },
-        "deviceJoinMode": {
-          "$ref": "#/definitions/utilJoinMode",
-          "description": "Supports OTAA."
-        },
-        "skipFcntCheck": {
-          "type": "boolean",
-          "description": "Skip frame-counter checks (this is insecure, but could be helpful for\ndebugging)."
-        },
-        "isDisabled": {
-          "type": "boolean",
-          "description": "Device is disabled."
-        },
-        "flushQueueOnActivate": {
-          "type": "boolean",
-          "description": "Flush queue on device activation."
-        },
-        "macVersion": {
-          "$ref": "#/definitions/utilMacVersion",
-          "description": "LoRaWAN mac-version."
-        },
-        "regParamsRevision": {
-          "$ref": "#/definitions/utilRegParamsRevision",
-          "description": "Regional parameters revision."
-        },
-        "adrAlgorithmId": {
-          "type": "string",
-          "description": "ADR algorithm ID."
-        },
-        "payloadCodecRuntime": {
-          "$ref": "#/definitions/utilCodecRuntime",
-          "description": "Payload codec runtime."
-        },
-        "classBTimeout": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Class-B timeout (seconds).\nThis is the maximum time ChirpStack will wait to receive an acknowledgement\nfrom the device (if requested)."
-        },
-        "classBPingSlotNbK": {
-          "type": "integer",
-          "format": "int64",
-          "description": "The actual number of ping-slots per beacon period equals to 2^k."
-        },
-        "classBPingSlotDr": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Class-B ping-slot DR."
-        },
-        "classBPingSlotFreq": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Class-B ping-slot freq (Hz)."
-        },
-        "classCTimeout": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Class-C timeout (seconds).\nThis is the maximum time ChirpStack will wait to receive an acknowledgement\nfrom the device (if requested)."
-        },
-        "abpRx1Delay": {
-          "type": "integer",
-          "format": "int64",
-          "description": "RX1 delay (for ABP)."
-        },
-        "abpRx1DrOffset": {
-          "type": "integer",
-          "format": "int64",
-          "description": "RX1 DR offset (for ABP)."
-        },
-        "abpRx2Dr": {
-          "type": "integer",
-          "format": "int64",
-          "description": "RX2 DR (for ABP)."
-        },
-        "abpRx2Freq": {
-          "type": "integer",
-          "format": "int64",
-          "description": "RX2 frequency (for ABP, Hz)."
-        },
-        "uplinkInterval": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Uplink interval (seconds).\nThis defines the expected uplink interval which the device uses for\ncommunication. If the uplink interval has expired and no uplink has\nbeen received, the device is considered inactive."
-        },
-        "deviceStatusReqInterval": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Device-status request interval (times / day).\nThis defines the times per day that ChirpStack will request the\ndevice-status from the device."
-        },
-        "fCntUp": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Uplink frame-counter."
-        },
-        "nFCntDown": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Downlink network frame-counter."
-        },
-        "aFCntDown": {
-          "type": "integer",
-          "format": "int64",
-          "description": "Downlink application frame-counter."
-        }
-      }
-    },
     "serviceDeviceKeys": {
       "type": "object",
       "properties": {
@@ -1380,11 +1261,6 @@
         "message": {
           "type": "string",
           "title": "Upload status message"
-        },
-        "devicesProcessed": {
-          "type": "integer",
-          "format": "int32",
-          "title": "Number of devices processed"
         }
       }
     },
