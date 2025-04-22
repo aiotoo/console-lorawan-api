@@ -33,14 +33,6 @@ service DeviceService {
     };
   }
 
-  // Bulk create devices
-  rpc BulkCreate(BulkCreateDevicesRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      post : "/api/devices/bulkcreate"
-      body : "*"
-    };
-  }
-
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
     option (google.api.http) = {
@@ -201,11 +193,6 @@ message UploadDataRequest {
 
 message UploadDataResponse {
   // List of devices parsed from the CSV file
-  repeated Device devices = 1;
-}
-
-message BulkCreateDevicesRequest {
-  // List of bulk-uploaded devices
   repeated Device devices = 1;
 }
 
