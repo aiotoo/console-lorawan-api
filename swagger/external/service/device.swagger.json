@@ -112,7 +112,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceBulkCreateDevicesResponse"
+              "properties": {}
             }
           },
           "default": {
@@ -771,28 +771,6 @@
             "$ref": "#/definitions/serviceDevice"
           },
           "title": "List of bulk-uploaded devices"
-        }
-      }
-    },
-    "serviceBulkCreateDevicesResponse": {
-      "type": "object",
-      "properties": {
-        "successCount": {
-          "type": "integer",
-          "format": "int32",
-          "title": "Number of successfully created devices"
-        },
-        "failureCount": {
-          "type": "integer",
-          "format": "int32",
-          "title": "Number of failed device creations"
-        },
-        "failedDevices": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "title": "List of failed device identifiers"
         }
       }
     },
