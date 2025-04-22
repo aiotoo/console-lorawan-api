@@ -145,7 +145,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceUploadResponse"
+              "$ref": "#/definitions/serviceBulkUploadResponse"
             }
           },
           "default": {
@@ -155,38 +155,6 @@
             }
           }
         },
-        "tags": [
-          "DeviceService"
-        ]
-      }
-    },
-    "/api/devices/bulkupload/{filename}": {
-      "get": {
-        "summary": "Get processed CSV data for a specific file.",
-        "operationId": "DeviceService_UploadData",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/serviceUploadDataResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "filename",
-            "description": "File name to be processed",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "tags": [
           "DeviceService"
         ]
@@ -729,6 +697,31 @@
         }
       }
     },
+    "serviceBulkUploadResponse": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "title": "Uploaded file path"
+        },
+        "message": {
+          "type": "string",
+          "title": "Status message"
+        },
+        "devicesCreated": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Number of devices created"
+        },
+        "devEuis": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "List of DevEUIs for created devices"
+        }
+      }
+    },
     "serviceCreateDeviceKeysRequest": {
       "type": "object",
       "properties": {
@@ -1169,31 +1162,6 @@
         "device": {
           "$ref": "#/definitions/serviceDevice",
           "description": "Device object."
-        }
-      }
-    },
-    "serviceUploadDataResponse": {
-      "type": "object",
-      "properties": {
-        "devices": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/serviceDevice"
-          },
-          "title": "List of devices parsed from the CSV file"
-        }
-      }
-    },
-    "serviceUploadResponse": {
-      "type": "object",
-      "properties": {
-        "filename": {
-          "type": "string",
-          "title": "CSV file name that was stored"
-        },
-        "message": {
-          "type": "string",
-          "title": "Upload status message"
         }
       }
     },
