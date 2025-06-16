@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/service";
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/struct.proto";
+
+service DeviceService {
+  // MQTT Auth.
+  rpc Auth(MqttAuthRequest) returns (MqttAuthResponse) {
+    option (google.api.http) = {
+      post : "/mqtt/auth"
+      body : "*"
+    };
+  }
+  // MQTT SuperUser.
+  rpc SuperUser(MqttSuperuserRequest) returns (MqttSuperuserResponse) {
+    option (google.api.http) = {
+      post : "/mqtt/superuser"
+      body : "*"
+    };
+  }
+  // MQTT Acl.
+  rpc Acl(MqttAclRequest) returns (MqttAclResponse) {
+    option (google.api.http) = {
+      post : "/mqtt/acl"
+      body : "*"
+    };
+  }
+ }
+
+message MqttAuthRequest{
+     //clientid
+    string clientid=1;
+
+    //Username
+    string username = 2;
+
+    //Password
+    string password = 3;
+}
+
+message MqttAuthResponse{
+ //Result "allow" | "deny" | "ignore"
+    string result = 1;
+}
+
+message MqttSuperuserRequest{
+     //clientid
+    string clientid=1;
+
+    //Username
+    string username = 2;
+
+    //Password
+    string password = 3;
+
+}
+
+message MqttSuperuserResponse{
+ //Result "allow" | "deny" | "ignore"
+    string result = 1;
+}
+
+message MqttAclRequest{
+
+    //clientid
+    string clientid=1;
+
+    //Username
+    string username = 2;
+
+    //Password
+    string password = 3;
+
+}
+
+message MqttAclResponse{
+    //Result "allow" | "deny" | "ignore"
+    string result = 1;
+}
