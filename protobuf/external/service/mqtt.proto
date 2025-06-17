@@ -9,7 +9,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/struct.proto";
 
-service DeviceService {
+service MqttAclService {
   // MQTT Auth.
   rpc Auth(MqttAuthRequest) returns (MqttAuthResponse) {
     option (google.api.http) = {

@@ -33,7 +33,7 @@ var _ = utilities.NewDoubleArray
 var _ = descriptor.ForMessage
 var _ = metadata.Join
 
-func request_DeviceService_Auth_0(ctx context.Context, marshaler runtime.Marshaler, client DeviceServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_MqttAclService_Auth_0(ctx context.Context, marshaler runtime.Marshaler, client MqttAclServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MqttAuthRequest
 	var metadata runtime.ServerMetadata
 
@@ -50,7 +50,7 @@ func request_DeviceService_Auth_0(ctx context.Context, marshaler runtime.Marshal
 
 }
 
-func local_request_DeviceService_Auth_0(ctx context.Context, marshaler runtime.Marshaler, server DeviceServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_MqttAclService_Auth_0(ctx context.Context, marshaler runtime.Marshaler, server MqttAclServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MqttAuthRequest
 	var metadata runtime.ServerMetadata
 
@@ -67,7 +67,7 @@ func local_request_DeviceService_Auth_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func request_DeviceService_SuperUser_0(ctx context.Context, marshaler runtime.Marshaler, client DeviceServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_MqttAclService_SuperUser_0(ctx context.Context, marshaler runtime.Marshaler, client MqttAclServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MqttSuperuserRequest
 	var metadata runtime.ServerMetadata
 
@@ -84,7 +84,7 @@ func request_DeviceService_SuperUser_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func local_request_DeviceService_SuperUser_0(ctx context.Context, marshaler runtime.Marshaler, server DeviceServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_MqttAclService_SuperUser_0(ctx context.Context, marshaler runtime.Marshaler, server MqttAclServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MqttSuperuserRequest
 	var metadata runtime.ServerMetadata
 
@@ -101,7 +101,7 @@ func local_request_DeviceService_SuperUser_0(ctx context.Context, marshaler runt
 
 }
 
-func request_DeviceService_Acl_0(ctx context.Context, marshaler runtime.Marshaler, client DeviceServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_MqttAclService_Acl_0(ctx context.Context, marshaler runtime.Marshaler, client MqttAclServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MqttAclRequest
 	var metadata runtime.ServerMetadata
 
@@ -118,7 +118,7 @@ func request_DeviceService_Acl_0(ctx context.Context, marshaler runtime.Marshale
 
 }
 
-func local_request_DeviceService_Acl_0(ctx context.Context, marshaler runtime.Marshaler, server DeviceServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_MqttAclService_Acl_0(ctx context.Context, marshaler runtime.Marshaler, server MqttAclServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq MqttAclRequest
 	var metadata runtime.ServerMetadata
 
@@ -135,13 +135,13 @@ func local_request_DeviceService_Acl_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-// RegisterDeviceServiceHandlerServer registers the http handlers for service DeviceService to "mux".
-// UnaryRPC     :call DeviceServiceServer directly.
+// RegisterMqttAclServiceHandlerServer registers the http handlers for service MqttAclService to "mux".
+// UnaryRPC     :call MqttAclServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterDeviceServiceHandlerFromEndpoint instead.
-func RegisterDeviceServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server DeviceServiceServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterMqttAclServiceHandlerFromEndpoint instead.
+func RegisterMqttAclServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server MqttAclServiceServer) error {
 
-	mux.Handle("POST", pattern_DeviceService_Auth_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MqttAclService_Auth_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -152,7 +152,7 @@ func RegisterDeviceServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DeviceService_Auth_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_MqttAclService_Auth_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -160,11 +160,11 @@ func RegisterDeviceServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_DeviceService_Auth_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MqttAclService_Auth_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_DeviceService_SuperUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MqttAclService_SuperUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -175,7 +175,7 @@ func RegisterDeviceServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DeviceService_SuperUser_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_MqttAclService_SuperUser_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -183,11 +183,11 @@ func RegisterDeviceServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_DeviceService_SuperUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MqttAclService_SuperUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_DeviceService_Acl_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MqttAclService_Acl_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -198,7 +198,7 @@ func RegisterDeviceServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_DeviceService_Acl_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_MqttAclService_Acl_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -206,16 +206,16 @@ func RegisterDeviceServiceHandlerServer(ctx context.Context, mux *runtime.ServeM
 			return
 		}
 
-		forward_DeviceService_Acl_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MqttAclService_Acl_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterDeviceServiceHandlerFromEndpoint is same as RegisterDeviceServiceHandler but
+// RegisterMqttAclServiceHandlerFromEndpoint is same as RegisterMqttAclServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDeviceServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterMqttAclServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -235,23 +235,23 @@ func RegisterDeviceServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.
 		}()
 	}()
 
-	return RegisterDeviceServiceHandler(ctx, mux, conn)
+	return RegisterMqttAclServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDeviceServiceHandler registers the http handlers for service DeviceService to "mux".
+// RegisterMqttAclServiceHandler registers the http handlers for service MqttAclService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDeviceServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDeviceServiceHandlerClient(ctx, mux, NewDeviceServiceClient(conn))
+func RegisterMqttAclServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterMqttAclServiceHandlerClient(ctx, mux, NewMqttAclServiceClient(conn))
 }
 
-// RegisterDeviceServiceHandlerClient registers the http handlers for service DeviceService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DeviceServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DeviceServiceClient"
+// RegisterMqttAclServiceHandlerClient registers the http handlers for service MqttAclService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "MqttAclServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "MqttAclServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DeviceServiceClient" to call the correct interceptors.
-func RegisterDeviceServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DeviceServiceClient) error {
+// "MqttAclServiceClient" to call the correct interceptors.
+func RegisterMqttAclServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client MqttAclServiceClient) error {
 
-	mux.Handle("POST", pattern_DeviceService_Auth_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MqttAclService_Auth_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -260,18 +260,18 @@ func RegisterDeviceServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DeviceService_Auth_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_MqttAclService_Auth_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_DeviceService_Auth_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MqttAclService_Auth_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_DeviceService_SuperUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MqttAclService_SuperUser_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -280,18 +280,18 @@ func RegisterDeviceServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DeviceService_SuperUser_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_MqttAclService_SuperUser_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_DeviceService_SuperUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MqttAclService_SuperUser_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_DeviceService_Acl_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_MqttAclService_Acl_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -300,14 +300,14 @@ func RegisterDeviceServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DeviceService_Acl_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_MqttAclService_Acl_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_DeviceService_Acl_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_MqttAclService_Acl_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -315,17 +315,17 @@ func RegisterDeviceServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 }
 
 var (
-	pattern_DeviceService_Auth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "auth"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_MqttAclService_Auth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "auth"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_DeviceService_SuperUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "superuser"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_MqttAclService_SuperUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "superuser"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_DeviceService_Acl_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "acl"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_MqttAclService_Acl_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "acl"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (
-	forward_DeviceService_Auth_0 = runtime.ForwardResponseMessage
+	forward_MqttAclService_Auth_0 = runtime.ForwardResponseMessage
 
-	forward_DeviceService_SuperUser_0 = runtime.ForwardResponseMessage
+	forward_MqttAclService_SuperUser_0 = runtime.ForwardResponseMessage
 
-	forward_DeviceService_Acl_0 = runtime.ForwardResponseMessage
+	forward_MqttAclService_Acl_0 = runtime.ForwardResponseMessage
 )

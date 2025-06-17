@@ -14,7 +14,7 @@
     "/mqtt/acl": {
       "post": {
         "summary": "MQTT Acl.",
-        "operationId": "DeviceService_Acl",
+        "operationId": "MqttAclService_Acl",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -40,14 +40,14 @@
           }
         ],
         "tags": [
-          "DeviceService"
+          "MqttAclService"
         ]
       }
     },
     "/mqtt/auth": {
       "post": {
         "summary": "MQTT Auth.",
-        "operationId": "DeviceService_Auth",
+        "operationId": "MqttAclService_Auth",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -73,14 +73,14 @@
           }
         ],
         "tags": [
-          "DeviceService"
+          "MqttAclService"
         ]
       }
     },
     "/mqtt/superuser": {
       "post": {
         "summary": "MQTT SuperUser.",
-        "operationId": "DeviceService_SuperUser",
+        "operationId": "MqttAclService_SuperUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -106,7 +106,7 @@
           }
         ],
         "tags": [
-          "DeviceService"
+          "MqttAclService"
         ]
       }
     }
