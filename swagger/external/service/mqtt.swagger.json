@@ -155,6 +155,18 @@
         "username": {
           "type": "string",
           "title": "Username"
+        },
+        "access": {
+          "type": "string",
+          "title": "Access"
+        },
+        "topic": {
+          "type": "string",
+          "title": "Topic"
+        },
+        "ipaddr": {
+          "type": "string",
+          "title": "ipaddr"
         }
       }
     },

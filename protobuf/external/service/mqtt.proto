@@ -5,9 +5,7 @@ package service;
 option go_package = "github.com/aiotoo/console-lorawan-api/go/v4/external/service";
 
 import "google/api/annotations.proto";
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/empty.proto";
-import "google/protobuf/struct.proto";
+
 
 service MqttAclService {
   // MQTT Auth.
@@ -73,6 +71,15 @@ message MqttAclRequest{
 
     //Username
     string username = 2;
+
+    //Access
+    string access=3;
+
+    //Topic
+    string topic =4;
+
+    //ipaddr
+    string ipaddr=5;
 
 }
 
