@@ -315,11 +315,11 @@ func RegisterMqttAclServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_MqttAclService_Auth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "auth"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_MqttAclService_Auth_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "mqtt", "auth"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_MqttAclService_SuperUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "superuser"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_MqttAclService_SuperUser_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "mqtt", "superuser"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_MqttAclService_Acl_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"mqtt", "acl"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_MqttAclService_Acl_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "mqtt", "acl"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (

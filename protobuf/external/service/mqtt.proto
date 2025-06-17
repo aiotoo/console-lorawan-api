@@ -13,21 +13,21 @@ service MqttAclService {
   // MQTT Auth.
   rpc Auth(MqttAuthRequest) returns (MqttAuthResponse) {
     option (google.api.http) = {
-      post : "/mqtt/auth"
+      post : "/api/mqtt/auth"
       body : "*"
     };
   }
   // MQTT SuperUser.
   rpc SuperUser(MqttSuperuserRequest) returns (MqttSuperuserResponse) {
     option (google.api.http) = {
-      post : "/mqtt/superuser"
+      post : "/api/mqtt/superuser"
       body : "*"
     };
   }
   // MQTT Acl.
   rpc Acl(MqttAclRequest) returns (MqttAclResponse) {
     option (google.api.http) = {
-      post : "/mqtt/acl"
+      post : "/api/mqtt/acl"
       body : "*"
     };
   }

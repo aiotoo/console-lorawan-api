@@ -11,7 +11,7 @@
     "application/json"
   ],
   "paths": {
-    "/mqtt/acl": {
+    "/api/mqtt/acl": {
       "post": {
         "summary": "MQTT Acl.",
         "operationId": "MqttAclService_Acl",
@@ -44,7 +44,7 @@
         ]
       }
     },
-    "/mqtt/auth": {
+    "/api/mqtt/auth": {
       "post": {
         "summary": "MQTT Auth.",
         "operationId": "MqttAclService_Auth",
@@ -77,7 +77,7 @@
         ]
       }
     },
-    "/mqtt/superuser": {
+    "/api/mqtt/superuser": {
       "post": {
         "summary": "MQTT SuperUser.",
         "operationId": "MqttAclService_SuperUser",
