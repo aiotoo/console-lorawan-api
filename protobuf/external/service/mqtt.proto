@@ -74,9 +74,6 @@ message MqttAclRequest{
     //Username
     string username = 2;
 
-    //Password
-    string password = 3;
-
 }
 
 message MqttAclResponse{
