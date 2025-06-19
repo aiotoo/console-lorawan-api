@@ -158,6 +158,7 @@
         },
         "access": {
           "type": "string",
+          "format": "int64",
           "title": "Access"
         },
         "topic": {

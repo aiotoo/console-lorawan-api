@@ -73,7 +73,7 @@ message MqttAclRequest{
     string username = 2;
 
     //Access
-    string access=3;
+    int64 access=3;
 
     //Topic
     string topic =4;
