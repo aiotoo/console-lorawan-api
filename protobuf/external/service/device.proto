@@ -26,6 +26,13 @@ service DeviceService {
    };
  }
 
+  // RPC to download a report file as a stream.
+  rpc BulkUploadReport(DownloadReportRequest) returns (stream DownloadReportResponse) {
+    option (google.api.http) = {
+      get: "/api/devices/bulk-upload/report/{filename}"
+   };
+ }
+
   // Get returns the device for the given DevEUI.
   rpc Get(GetDeviceRequest) returns (GetDeviceResponse) {
     option (google.api.http) = {
@@ -173,6 +180,20 @@ message UploadRequest {
   Device common_config = 3;
 }
 
+message UploadReportItem {
+  // The List of DevEUIs device identifier (DevEUI)
+  string dev_eui = 1;
+
+  // The List of Device Name
+  string name = 2;
+  
+  // The status of the upload (e.g., "success", "failure")
+  string status = 3;
+
+  // The error message if the upload failed; empty if successful
+  string error_message = 4;
+}
+
 message UploadResponse {
   // Uploaded file path
   string filename = 1;
@@ -185,6 +206,22 @@ message UploadResponse {
   
   // List of DevEUIs for created devices
   repeated string dev_euis = 4;
+  
+  // Detailed report of each device upload attempt
+  repeated UploadReportItem report = 5;
+  
+  // Report file path (will be populated after processing completes)
+  string report_filename = 6;
+}
+
+message DownloadReportRequest {
+  // The name of the file to be downloaded
+  string filename = 1;
+}
+
+message DownloadReportResponse {
+  // A chunk of the file data in bytes
+  bytes chunk = 1;
 }
 
 message DeviceKeys {

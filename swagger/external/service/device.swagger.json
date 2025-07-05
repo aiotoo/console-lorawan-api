@@ -104,6 +104,47 @@
         ]
       }
     },
+    "/api/devices/bulk-upload/report/{filename}": {
+      "get": {
+        "summary": "RPC to download a report file as a stream.",
+        "operationId": "DeviceService_BulkUploadReport",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "$ref": "#/definitions/serviceDownloadReportResponse"
+                },
+                "error": {
+                  "$ref": "#/definitions/runtimeStreamError"
+                }
+              },
+              "title": "Stream result of serviceDownloadReportResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filename",
+            "description": "The name of the file to be downloaded",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/bulkdelete": {
       "post": {
         "summary": "Delete the device with the given DevEUI.",
@@ -688,6 +729,31 @@
         }
       }
     },
+    "runtimeStreamError": {
+      "type": "object",
+      "properties": {
+        "grpcCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "httpCode": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "httpStatus": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
     "serviceActivateDeviceRequest": {
       "type": "object",
       "properties": {
@@ -1019,6 +1085,16 @@
         }
       }
     },
+    "serviceDownloadReportResponse": {
+      "type": "object",
+      "properties": {
+        "chunk": {
+          "type": "string",
+          "format": "byte",
+          "title": "A chunk of the file data in bytes"
+        }
+      }
+    },
     "serviceEnqueueDeviceQueueItemRequest": {
       "type": "object",
       "properties": {
@@ -1140,6 +1216,27 @@
         }
       }
     },
+    "serviceUploadReportItem": {
+      "type": "object",
+      "properties": {
+        "devEui": {
+          "type": "string",
+          "title": "The List of DevEUIs device identifier (DevEUI)"
+        },
+        "name": {
+          "type": "string",
+          "title": "The List of Device Name"
+        },
+        "status": {
+          "type": "string",
+          "title": "The status of the upload (e.g., \"success\", \"failure\")"
+        },
+        "errorMessage": {
+          "type": "string",
+          "title": "The error message if the upload failed; empty if successful"
+        }
+      }
+    },
     "serviceUploadResponse": {
       "type": "object",
       "properties": {
@@ -1162,6 +1259,17 @@
             "type": "string"
           },
           "title": "List of DevEUIs for created devices"
+        },
+        "report": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceUploadReportItem"
+          },
+          "title": "Detailed report of each device upload attempt"
+        },
+        "reportFilename": {
+          "type": "string",
+          "title": "Report file path (will be populated after processing completes)"
         }
       }
     },
