@@ -259,8 +259,8 @@ message DownloadReportRequest {
 }
 
 message DownloadReportResponse {
-  // A chunk of the file data in bytes
-  bytes chunk = 1;
+  // CSV file content
+  string content = 1;
 }
 
 message DeviceKeys {

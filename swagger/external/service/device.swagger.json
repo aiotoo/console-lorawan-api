@@ -1129,10 +1129,9 @@
     "serviceDownloadReportResponse": {
       "type": "object",
       "properties": {
-        "chunk": {
+        "content": {
           "type": "string",
-          "format": "byte",
-          "title": "A chunk of the file data in bytes"
+          "title": "CSV file content"
         }
       }
     },
