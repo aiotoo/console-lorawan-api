@@ -26,6 +26,13 @@ service DeviceService {
    };
  }
 
+   // List report files from bulk uploads
+  rpc ListReportFiles(ListReportFilesRequest) returns (ListReportFilesResponse) {
+    option (google.api.http) = {
+      get: "/api/devices/bulkupload/reports"
+    };
+  }
+
   // RPC to download a report file as a stream.
   rpc BulkUploadReport(DownloadReportRequest) returns (stream DownloadReportResponse) {
     option (google.api.http) = {
@@ -212,6 +219,38 @@ message UploadResponse {
   
   // Report file path (will be populated after processing completes)
   string report_filename = 6;
+}
+
+message ListReportFilesRequest {
+  // Start date for filtering reports
+  google.protobuf.Timestamp start_date = 1;
+
+  // End date for filtering reports
+  google.protobuf.Timestamp end_date = 2;
+}
+
+// Response message containing a list of report files
+message ListReportFilesResponse {
+  // List of report files matching the filter criteria
+  repeated ReportFile reports = 1;
+}
+
+// Message representing details of a single report file
+message ReportFile {
+  // Name of the report file
+  string filename = 1;
+
+  // File path of the report
+  string path = 2;
+
+  // Timestamp when the report was created
+  google.protobuf.Timestamp created_at = 3;
+
+  // Number of successful records in the report
+  uint32 success_count = 4;
+
+  // Number of failed records in the report
+  uint32 failure_count = 5;
 }
 
 message DownloadReportRequest {

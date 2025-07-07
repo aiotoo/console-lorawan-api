@@ -201,6 +201,47 @@
         ]
       }
     },
+    "/api/devices/bulkupload/reports": {
+      "get": {
+        "summary": "List report files from bulk uploads",
+        "operationId": "DeviceService_ListReportFiles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/serviceListReportFilesResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "startDate",
+            "description": "Start date for filtering reports.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "description": "End date for filtering reports.",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "tags": [
+          "DeviceService"
+        ]
+      }
+    },
     "/api/devices/{devEui}": {
       "get": {
         "summary": "Get returns the device for the given DevEUI.",
@@ -1197,6 +1238,48 @@
           "description": "Result-set."
         }
       }
+    },
+    "serviceListReportFilesResponse": {
+      "type": "object",
+      "properties": {
+        "reports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceReportFile"
+          },
+          "title": "List of report files matching the filter criteria"
+        }
+      },
+      "title": "Response message containing a list of report files"
+    },
+    "serviceReportFile": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "title": "Name of the report file"
+        },
+        "path": {
+          "type": "string",
+          "title": "File path of the report"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Timestamp when the report was created"
+        },
+        "successCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Number of successful records in the report"
+        },
+        "failureCount": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Number of failed records in the report"
+        }
+      },
+      "title": "Message representing details of a single report file"
     },
     "serviceUpdateDeviceKeysRequest": {
       "type": "object",
