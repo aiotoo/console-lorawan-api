@@ -1335,6 +1335,11 @@
           "format": "int64",
           "title": "Number of devices created"
         },
+        "devicesFailed": {
+          "type": "integer",
+          "format": "int64",
+          "title": "Number of devices Failed"
+        },
         "devEuis": {
           "type": "array",
           "items": {
