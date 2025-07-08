@@ -225,17 +225,28 @@ message UploadResponse {
 }
 
 message ListReportFilesRequest {
+  // Max number of devices to return in the result-set.
+  uint32 limit = 1;
+
+  // Offset in the result-set (for pagination).
+  uint32 offset = 2;
+
+  // If set, the given string will be used to search on name (optional).
+  string search = 3;
+
   // Start date for filtering reports
-  google.protobuf.Timestamp start_date = 1;
+  google.protobuf.Timestamp start_date = 4;
 
   // End date for filtering reports
-  google.protobuf.Timestamp end_date = 2;
+  google.protobuf.Timestamp end_date = 5;
 }
 
-// Response message containing a list of report files
 message ListReportFilesResponse {
+  // Total number of reports.
+  uint32 total_count = 1;
+
   // List of report files matching the filter criteria
-  repeated ReportFile reports = 1;
+  repeated ReportFile reports = 2;
 }
 
 // Message representing details of a single report file
