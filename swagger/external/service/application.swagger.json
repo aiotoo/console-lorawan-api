@@ -54,7 +54,7 @@
             "type": "string"
           },
           {
-            "name": "organisationId",
+            "name": "tenantId",
             "description": "Tenant ID to list the applications for.",
             "in": "query",
             "required": false,
@@ -1713,9 +1713,9 @@
           "type": "string",
           "description": "Application description."
         },
-        "organisationId": {
+        "tenantId": {
           "type": "string",
-          "description": "Organisation ID (UUID)."
+          "description": "Tenant ID (UUID)."
         },
         "tags": {
           "type": "object",

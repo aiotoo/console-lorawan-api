@@ -380,15 +380,15 @@ func request_GatewayService_GetRelayGateway_0(ctx context.Context, marshaler run
 		_   = err
 	)
 
-	val, ok = pathParams["organisation_id"]
+	val, ok = pathParams["tenant_id"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "organisation_id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "tenant_id")
 	}
 
-	protoReq.OrganisationId, err = runtime.String(val)
+	protoReq.TenantId, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "organisation_id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "tenant_id", err)
 	}
 
 	val, ok = pathParams["relay_id"]
@@ -418,15 +418,15 @@ func local_request_GatewayService_GetRelayGateway_0(ctx context.Context, marshal
 		_   = err
 	)
 
-	val, ok = pathParams["organisation_id"]
+	val, ok = pathParams["tenant_id"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "organisation_id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "tenant_id")
 	}
 
-	protoReq.OrganisationId, err = runtime.String(val)
+	protoReq.TenantId, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "organisation_id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "tenant_id", err)
 	}
 
 	val, ok = pathParams["relay_id"]
@@ -500,15 +500,15 @@ func request_GatewayService_UpdateRelayGateway_0(ctx context.Context, marshaler 
 		_   = err
 	)
 
-	val, ok = pathParams["relay_gateway.organisation_id"]
+	val, ok = pathParams["relay_gateway.tenant_id"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "relay_gateway.organisation_id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "relay_gateway.tenant_id")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "relay_gateway.organisation_id", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "relay_gateway.tenant_id", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "relay_gateway.organisation_id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "relay_gateway.tenant_id", err)
 	}
 
 	val, ok = pathParams["relay_gateway.relay_id"]
@@ -546,15 +546,15 @@ func local_request_GatewayService_UpdateRelayGateway_0(ctx context.Context, mars
 		_   = err
 	)
 
-	val, ok = pathParams["relay_gateway.organisation_id"]
+	val, ok = pathParams["relay_gateway.tenant_id"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "relay_gateway.organisation_id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "relay_gateway.tenant_id")
 	}
 
-	err = runtime.PopulateFieldFromPath(&protoReq, "relay_gateway.organisation_id", val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "relay_gateway.tenant_id", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "relay_gateway.organisation_id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "relay_gateway.tenant_id", err)
 	}
 
 	val, ok = pathParams["relay_gateway.relay_id"]
@@ -584,15 +584,15 @@ func request_GatewayService_DeleteRelayGateway_0(ctx context.Context, marshaler 
 		_   = err
 	)
 
-	val, ok = pathParams["organisation_id"]
+	val, ok = pathParams["tenant_id"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "organisation_id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "tenant_id")
 	}
 
-	protoReq.OrganisationId, err = runtime.String(val)
+	protoReq.TenantId, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "organisation_id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "tenant_id", err)
 	}
 
 	val, ok = pathParams["relay_id"]
@@ -622,15 +622,15 @@ func local_request_GatewayService_DeleteRelayGateway_0(ctx context.Context, mars
 		_   = err
 	)
 
-	val, ok = pathParams["organisation_id"]
+	val, ok = pathParams["tenant_id"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "organisation_id")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "tenant_id")
 	}
 
-	protoReq.OrganisationId, err = runtime.String(val)
+	protoReq.TenantId, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "organisation_id", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "tenant_id", err)
 	}
 
 	val, ok = pathParams["relay_id"]
@@ -1187,13 +1187,13 @@ var (
 
 	pattern_GatewayService_GenerateClientCertificate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2, 2, 3}, []string{"api", "gateways", "gateway_id", "generate-certificate"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_GatewayService_GetRelayGateway_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "gateways", "relay-gateways", "organisation_id", "relay_id"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_GatewayService_GetRelayGateway_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "gateways", "relay-gateways", "tenant_id", "relay_id"}, "", runtime.AssumeColonVerbOpt(true)))
 
 	pattern_GatewayService_ListRelayGateways_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "gateways", "relay-gateways"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_GatewayService_UpdateRelayGateway_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "gateways", "relay-gateways", "relay_gateway.organisation_id", "relay_gateway.relay_id"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_GatewayService_UpdateRelayGateway_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "gateways", "relay-gateways", "relay_gateway.tenant_id", "relay_gateway.relay_id"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_GatewayService_DeleteRelayGateway_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "gateways", "relay-gateways", "organisation_id", "relay_id"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_GatewayService_DeleteRelayGateway_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"api", "gateways", "relay-gateways", "tenant_id", "relay_id"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (

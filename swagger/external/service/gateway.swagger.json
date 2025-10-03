@@ -54,8 +54,8 @@
             "type": "string"
           },
           {
-            "name": "organisationId",
-            "description": "organisation ID (UUID) to filter gateways on.\nTo list all gateways as a global admin user, this field can be left blank.",
+            "name": "tenantId",
+            "description": "tenant ID (UUID) to filter gateways on.\nTo list all gateways as a global admin user, this field can be left blank.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -173,8 +173,8 @@
             "format": "int64"
           },
           {
-            "name": "organisationId",
-            "description": "organisation ID (UUID) to filter relay-gateways on.\nTo list all relay-gateways as a global admin user, this field can be left blank.",
+            "name": "tenantId",
+            "description": "tenant ID (UUID) to filter relay-gateways on.\nTo list all relay-gateways as a global admin user, this field can be left blank.",
             "in": "query",
             "required": false,
             "type": "string"
@@ -185,7 +185,54 @@
         ]
       }
     },
-    "/api/gateways/relay-gateways/{organisationId}/{relayId}": {
+    "/api/gateways/relay-gateways/{relayGateway.tenantId}/{relayGateway.relayId}": {
+      "put": {
+        "summary": "Update the given Relay Gateway.",
+        "operationId": "GatewayService_UpdateRelayGateway",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "properties": {}
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/runtimeError"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "relayGateway.tenantId",
+            "description": "tenant ID.",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "relayGateway.relayId",
+            "description": "Relay ID (4 byte HEX).",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/serviceUpdateRelayGatewayRequest"
+            }
+          }
+        ],
+        "tags": [
+          "GatewayService"
+        ]
+      }
+    },
+    "/api/gateways/relay-gateways/{tenantId}/{relayId}": {
       "get": {
         "summary": "Get the given Relay Gateway.",
         "operationId": "GatewayService_GetRelayGateway",
@@ -205,8 +252,8 @@
         },
         "parameters": [
           {
-            "name": "organisationId",
-            "description": "organisation ID (UUID).",
+            "name": "tenantId",
+            "description": "tenant ID (UUID).",
             "in": "path",
             "required": true,
             "type": "string"
@@ -242,8 +289,8 @@
         },
         "parameters": [
           {
-            "name": "organisationId",
-            "description": "organisation ID.",
+            "name": "tenantId",
+            "description": "tenant ID.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -254,53 +301,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          }
-        ],
-        "tags": [
-          "GatewayService"
-        ]
-      }
-    },
-    "/api/gateways/relay-gateways/{relayGateway.organisationId}/{relayGateway.relayId}": {
-      "put": {
-        "summary": "Update the given Relay Gateway.",
-        "operationId": "GatewayService_UpdateRelayGateway",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "properties": {}
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/runtimeError"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "relayGateway.organisationId",
-            "description": "organisation ID.",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "relayGateway.relayId",
-            "description": "Relay ID (4 byte HEX).",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/serviceUpdateRelayGatewayRequest"
-            }
           }
         ],
         "tags": [
@@ -517,9 +517,9 @@
           "$ref": "#/definitions/utilLocation",
           "description": "Gateway location."
         },
-        "organisationId": {
+        "tenantId": {
           "type": "string",
-          "description": "organisation ID (UUID)."
+          "description": "tenant ID (UUID)."
         },
         "tags": {
           "type": "object",
@@ -545,9 +545,9 @@
     "serviceGatewayListItem": {
       "type": "object",
       "properties": {
-        "organisationId": {
+        "tenantId": {
           "type": "string",
-          "description": "organisation ID."
+          "description": "tenant ID."
         },
         "gatewayId": {
           "type": "string",
@@ -710,9 +710,9 @@
     "serviceRelayGateway": {
       "type": "object",
       "properties": {
-        "organisationId": {
+        "tenantId": {
           "type": "string",
-          "description": "organisation ID."
+          "description": "tenant ID."
         },
         "relayId": {
           "type": "string",
@@ -740,9 +740,9 @@
     "serviceRelayGatewayListItem": {
       "type": "object",
       "properties": {
-        "organisationId": {
+        "tenantId": {
           "type": "string",
-          "description": "organisation ID."
+          "description": "tenant ID."
         },
         "relayId": {
           "type": "string",

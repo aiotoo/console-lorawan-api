@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "external/service/organisation.proto",
+    "title": "external/service/tenant.proto",
     "version": "version not set"
   },
   "consumes": [
@@ -11,15 +11,15 @@
     "application/json"
   ],
   "paths": {
-    "/api/organisation": {
+    "/api/tenant": {
       "post": {
-        "summary": "Create a new Organisation.",
-        "operationId": "OrganisationService_Create",
+        "summary": "Create a new Tenant.",
+        "operationId": "TenantService_Create",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceCreateOrganisationResponse"
+              "$ref": "#/definitions/serviceCreateTenantResponse"
             }
           },
           "default": {
@@ -35,24 +35,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/serviceCreateOrganisationRequest"
+              "$ref": "#/definitions/serviceCreateTenantRequest"
             }
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       }
     },
-    "/api/organisation/{id}": {
+    "/api/tenant/{id}": {
       "get": {
-        "summary": "Get the Organisation for the given ID.",
-        "operationId": "OrganisationService_Get",
+        "summary": "Get the Tenant for the given ID.",
+        "operationId": "TenantService_Get",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceGetOrganisationResponse"
+              "$ref": "#/definitions/serviceGetTenantResponse"
             }
           },
           "default": {
@@ -65,19 +65,19 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Organisation ID.",
+            "description": "Tenant ID.",
             "in": "path",
             "required": true,
             "type": "string"
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       },
       "delete": {
-        "summary": "Delete the Organisation with the given ID.",
-        "operationId": "OrganisationService_Delete",
+        "summary": "Delete the Tenant with the given ID.",
+        "operationId": "TenantService_Delete",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -95,21 +95,21 @@
         "parameters": [
           {
             "name": "id",
-            "description": "Organisation ID.",
+            "description": "Tenant ID.",
             "in": "path",
             "required": true,
             "type": "string"
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       }
     },
-    "/api/organisation/{organisation.id}": {
+    "/api/tenant/{tenant.id}": {
       "put": {
-        "summary": "Update the given Organisation.",
-        "operationId": "OrganisationService_Update",
+        "summary": "Update the given Tenant.",
+        "operationId": "TenantService_Update",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -126,8 +126,8 @@
         },
         "parameters": [
           {
-            "name": "organisation.id",
-            "description": "Organisation ID (UUID).\nNote: this value will be automatically generated on create.",
+            "name": "tenant.id",
+            "description": "Tenant ID (UUID).\nNote: this value will be automatically generated on create.",
             "in": "path",
             "required": true,
             "type": "string"
@@ -137,24 +137,24 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/serviceUpdateOrganisationRequest"
+              "$ref": "#/definitions/serviceUpdateTenantRequest"
             }
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       }
     },
-    "/api/organisations": {
+    "/api/tenants": {
       "get": {
-        "summary": "Get the list of Organisations.",
-        "operationId": "OrganisationService_List",
+        "summary": "Get the list of Tenants.",
+        "operationId": "TenantService_List",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceListOrganisationsResponse"
+              "$ref": "#/definitions/serviceListTenantsResponse"
             }
           },
           "default": {
@@ -167,7 +167,7 @@
         "parameters": [
           {
             "name": "limit",
-            "description": "Max number of Organisations to return in the result-set.",
+            "description": "Max number of Tenants to return in the result-set.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -190,26 +190,26 @@
           },
           {
             "name": "userId",
-            "description": "If set, filters the result set to the Organisations of the user.\nOnly global API keys are able to filter by this field.",
+            "description": "If set, filters the result set to the Tenants of the user.\nOnly global API keys are able to filter by this field.",
             "in": "query",
             "required": false,
             "type": "string"
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       }
     },
-    "/api/organisations/{organisationId}/users": {
+    "/api/tenants/{tenantId}/users": {
       "get": {
-        "summary": "Get the list of Organisation users.",
-        "operationId": "OrganisationService_ListUsers",
+        "summary": "Get the list of Tenant users.",
+        "operationId": "TenantService_ListUsers",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceListOrganisationUsersResponse"
+              "$ref": "#/definitions/serviceListTenantUsersResponse"
             }
           },
           "default": {
@@ -221,15 +221,15 @@
         },
         "parameters": [
           {
-            "name": "organisationId",
-            "description": "organisation ID (UUID).",
+            "name": "tenantId",
+            "description": "tenant ID (UUID).",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
             "name": "limit",
-            "description": "Max number of organisations to return in the result-set.",
+            "description": "Max number of tenants to return in the result-set.",
             "in": "query",
             "required": false,
             "type": "integer",
@@ -245,19 +245,19 @@
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       }
     },
-    "/api/organisations/{organisationId}/users/{userId}": {
+    "/api/tenants/{tenantId}/users/{userId}": {
       "get": {
-        "summary": "Get the the Organisation user for the given Organisation and user IDs.",
-        "operationId": "OrganisationService_GetUser",
+        "summary": "Get the the Tenant user for the given Tenant and user IDs.",
+        "operationId": "TenantService_GetUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/serviceGetOrganisationUserResponse"
+              "$ref": "#/definitions/serviceGetTenantUserResponse"
             }
           },
           "default": {
@@ -269,8 +269,8 @@
         },
         "parameters": [
           {
-            "name": "organisationId",
-            "description": "organisation ID (UUID).",
+            "name": "tenantId",
+            "description": "tenant ID (UUID).",
             "in": "path",
             "required": true,
             "type": "string"
@@ -284,12 +284,12 @@
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       },
       "delete": {
-        "summary": "Delete the given Organisation user.",
-        "operationId": "OrganisationService_DeleteUser",
+        "summary": "Delete the given Tenant user.",
+        "operationId": "TenantService_DeleteUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -306,8 +306,8 @@
         },
         "parameters": [
           {
-            "name": "organisationId",
-            "description": "organisation ID (UUID).",
+            "name": "tenantId",
+            "description": "tenant ID (UUID).",
             "in": "path",
             "required": true,
             "type": "string"
@@ -321,14 +321,14 @@
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       }
     },
-    "/api/organisations/{organisationUser.organisationId}/users": {
+    "/api/tenants/{tenantUser.tenantId}/users": {
       "post": {
-        "summary": "Add an user to the Organisation.\nNote: the user must already exist.",
-        "operationId": "OrganisationService_AddUser",
+        "summary": "Add an user to the Tenant.\nNote: the user must already exist.",
+        "operationId": "TenantService_AddUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -345,8 +345,8 @@
         },
         "parameters": [
           {
-            "name": "organisationUser.organisationId",
-            "description": "Organisation ID (UUID).",
+            "name": "tenantUser.tenantId",
+            "description": "Tenant ID (UUID).",
             "in": "path",
             "required": true,
             "type": "string"
@@ -356,19 +356,19 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/serviceAddOrganisationUserRequest"
+              "$ref": "#/definitions/serviceAddTenantUserRequest"
             }
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       }
     },
-    "/api/organisations/{organisationUser.organisationId}/users/{organisationUser.userId}": {
+    "/api/tenants/{tenantUser.tenantId}/users/{tenantUser.userId}": {
       "put": {
-        "summary": "Update the given Organisation user.",
-        "operationId": "OrganisationService_UpdateUser",
+        "summary": "Update the given Tenant user.",
+        "operationId": "TenantService_UpdateUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -385,14 +385,14 @@
         },
         "parameters": [
           {
-            "name": "organisationUser.organisationId",
-            "description": "Organisation ID (UUID).",
+            "name": "tenantUser.tenantId",
+            "description": "Tenant ID (UUID).",
             "in": "path",
             "required": true,
             "type": "string"
           },
           {
-            "name": "organisationUser.userId",
+            "name": "tenantUser.userId",
             "description": "User ID (UUID).",
             "in": "path",
             "required": true,
@@ -403,12 +403,12 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/serviceUpdateOrganisationUserRequest"
+              "$ref": "#/definitions/serviceUpdateTenantUserRequest"
             }
           }
         ],
         "tags": [
-          "OrganisationService"
+          "TenantService"
         ]
       }
     }
@@ -447,39 +447,39 @@
         }
       }
     },
-    "serviceAddOrganisationUserRequest": {
+    "serviceAddTenantUserRequest": {
       "type": "object",
       "properties": {
-        "organisationUser": {
-          "$ref": "#/definitions/serviceOrganisationUser",
-          "description": "organisation user object."
+        "tenantUser": {
+          "$ref": "#/definitions/serviceTenantUser",
+          "description": "tenant user object."
         }
       }
     },
-    "serviceCreateOrganisationRequest": {
+    "serviceCreateTenantRequest": {
       "type": "object",
       "properties": {
-        "organisation": {
-          "$ref": "#/definitions/serviceOrganisation",
-          "description": "Organisation object to create."
+        "tenant": {
+          "$ref": "#/definitions/serviceTenant",
+          "description": "Tenant object to create."
         }
       }
     },
-    "serviceCreateOrganisationResponse": {
+    "serviceCreateTenantResponse": {
       "type": "object",
       "properties": {
         "id": {
           "type": "string",
-          "description": "Organisation ID."
+          "description": "Tenant ID."
         }
       }
     },
-    "serviceGetOrganisationResponse": {
+    "serviceGetTenantResponse": {
       "type": "object",
       "properties": {
-        "organisation": {
-          "$ref": "#/definitions/serviceOrganisation",
-          "description": "Organisation object."
+        "tenant": {
+          "$ref": "#/definitions/serviceTenant",
+          "description": "Tenant object."
         },
         "createdAt": {
           "type": "string",
@@ -493,12 +493,12 @@
         }
       }
     },
-    "serviceGetOrganisationUserResponse": {
+    "serviceGetTenantUserResponse": {
       "type": "object",
       "properties": {
-        "organisationUser": {
-          "$ref": "#/definitions/serviceOrganisationUser",
-          "description": "organisation user object."
+        "tenantUser": {
+          "$ref": "#/definitions/serviceTenantUser",
+          "description": "tenant user object."
         },
         "createdAt": {
           "type": "string",
@@ -512,92 +512,92 @@
         }
       }
     },
-    "serviceListOrganisationUsersResponse": {
+    "serviceListTenantUsersResponse": {
       "type": "object",
       "properties": {
         "totalCount": {
           "type": "integer",
           "format": "int64",
-          "description": "Total number of organisations."
+          "description": "Total number of tenants."
         },
         "result": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/serviceOrganisationUserListItem"
+            "$ref": "#/definitions/serviceTenantUserListItem"
           },
           "description": "Result-set."
         }
       }
     },
-    "serviceListOrganisationsResponse": {
+    "serviceListTenantsResponse": {
       "type": "object",
       "properties": {
         "totalCount": {
           "type": "integer",
           "format": "int64",
-          "description": "Total number of Organisations."
+          "description": "Total number of Tenants."
         },
         "result": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/serviceOrganisationListItem"
+            "$ref": "#/definitions/serviceTenantListItem"
           },
           "description": "Result-set."
         }
       }
     },
-    "serviceOrganisation": {
+    "serviceTenant": {
       "type": "object",
       "properties": {
         "id": {
           "type": "string",
-          "description": "Organisation ID (UUID).\nNote: this value will be automatically generated on create."
+          "description": "Tenant ID (UUID).\nNote: this value will be automatically generated on create."
         },
         "name": {
           "type": "string",
-          "title": "Organisation name,"
+          "title": "Tenant name,"
         },
         "description": {
           "type": "string",
-          "description": "Organisation description."
+          "description": "Tenant description."
         },
         "canHaveGateways": {
           "type": "boolean",
-          "title": "Can the Organisation create and \"own\" Gateways?"
+          "title": "Can the Tenant create and \"own\" Gateways?"
         },
         "maxGatewayCount": {
           "type": "integer",
           "format": "int64",
-          "description": "Max. gateway count for Organisation.\nWhen set to 0, the Organisation can have unlimited gateways."
+          "description": "Max. gateway count for Tenant.\nWhen set to 0, the Tenant can have unlimited gateways."
         },
         "maxDeviceCount": {
           "type": "integer",
           "format": "int64",
-          "description": "Max. device count for Organisation.\nWhen set to 0, the Organisation can have unlimited devices."
+          "description": "Max. device count for Tenant.\nWhen set to 0, the Tenant can have unlimited devices."
         },
         "privateGatewaysUp": {
           "type": "boolean",
-          "description": "Private gateways (uplink).\nIf enabled, then uplink messages will not be shared with other Organisations."
+          "description": "Private gateways (uplink).\nIf enabled, then uplink messages will not be shared with other Tenants."
         },
         "privateGatewaysDown": {
           "type": "boolean",
-          "description": "Private gateways (downlink).\nIf enabled, then other Organisations will not be able to schedule downlink\nmessages through the gateways of this Organisation. For example, in case you\ndo want to share uplinks with other Organisations (private_gateways_up=false),\nbut you want to prevent other Organisations from using gateway airtime."
+          "description": "Private gateways (downlink).\nIf enabled, then other Tenants will not be able to schedule downlink\nmessages through the gateways of this Tenant. For example, in case you\ndo want to share uplinks with other Tenants (private_gateways_up=false),\nbut you want to prevent other Tenants from using gateway airtime."
         },
         "tags": {
           "type": "object",
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Tags (user defined).\nThese tags can be used to add additional information to the Organisation. These\ntags are NOT exposed in the integration events."
+          "description": "Tags (user defined).\nThese tags can be used to add additional information to the Tenant. These\ntags are NOT exposed in the integration events."
         }
       }
     },
-    "serviceOrganisationListItem": {
+    "serviceTenantListItem": {
       "type": "object",
       "properties": {
         "id": {
           "type": "string",
-          "description": "Organisation ID (UUID)."
+          "description": "Tenant ID (UUID)."
         },
         "createdAt": {
           "type": "string",
@@ -611,11 +611,11 @@
         },
         "name": {
           "type": "string",
-          "description": "Organisation name."
+          "description": "Tenant name."
         },
         "canHaveGateways": {
           "type": "boolean",
-          "title": "Can the Organisation create and \"own\" Gateways?"
+          "title": "Can the Tenant create and \"own\" Gateways?"
         },
         "privateGatewaysUp": {
           "type": "boolean",
@@ -637,12 +637,12 @@
         }
       }
     },
-    "serviceOrganisationUser": {
+    "serviceTenantUser": {
       "type": "object",
       "properties": {
-        "organisationId": {
+        "tenantId": {
           "type": "string",
-          "description": "Organisation ID (UUID)."
+          "description": "Tenant ID (UUID)."
         },
         "userId": {
           "type": "string",
@@ -650,7 +650,7 @@
         },
         "isAdmin": {
           "type": "boolean",
-          "description": "User is admin within the context of the organisation.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
+          "description": "User is admin within the context of the tenant.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
         },
         "isDeviceAdmin": {
           "type": "boolean",
@@ -662,16 +662,16 @@
         },
         "email": {
           "type": "string",
-          "description": "Email (only used on get and when adding a user to a organisation)."
+          "description": "Email (only used on get and when adding a user to a tenant)."
         }
       }
     },
-    "serviceOrganisationUserListItem": {
+    "serviceTenantUserListItem": {
       "type": "object",
       "properties": {
-        "organisationId": {
+        "tenantId": {
           "type": "string",
-          "description": "organisation ID (UUID)."
+          "description": "tenant ID (UUID)."
         },
         "userId": {
           "type": "string",
@@ -693,7 +693,7 @@
         },
         "isAdmin": {
           "type": "boolean",
-          "description": "User is admin within the context of the organisation.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
+          "description": "User is admin within the context of the tenant.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
         },
         "isDeviceAdmin": {
           "type": "boolean",
@@ -705,21 +705,21 @@
         }
       }
     },
-    "serviceUpdateOrganisationRequest": {
+    "serviceUpdateTenantRequest": {
       "type": "object",
       "properties": {
-        "organisation": {
-          "$ref": "#/definitions/serviceOrganisation",
-          "description": "Organisation object."
+        "tenant": {
+          "$ref": "#/definitions/serviceTenant",
+          "description": "Tenant object."
         }
       }
     },
-    "serviceUpdateOrganisationUserRequest": {
+    "serviceUpdateTenantUserRequest": {
       "type": "object",
       "properties": {
-        "organisationUser": {
-          "$ref": "#/definitions/serviceOrganisationUser",
-          "description": "organisation user object."
+        "tenantUser": {
+          "$ref": "#/definitions/serviceTenantUser",
+          "description": "tenant user object."
         }
       }
     }
