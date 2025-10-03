@@ -54,7 +54,7 @@
             "type": "boolean"
           },
           {
-            "name": "organizationID",
+            "name": "tenantId",
             "description": "Filter on tenant ID.",
             "in": "query",
             "required": false,
@@ -345,7 +345,7 @@
           "type": "boolean",
           "description": "Is global admin key."
         },
-        "organizationID": {
+        "tenantId": {
           "type": "string",
           "description": "Tenant ID.\nIn case the API key is intended to manage resources under a single tenant."
         }
@@ -409,13 +409,13 @@
           "format": "float",
           "description": "Search score."
         },
-        "organizationID": {
+        "tenantId": {
           "type": "string",
-          "description": "Organization id."
+          "description": "Tenant id."
         },
-        "organizationName": {
+        "tenantName": {
           "type": "string",
-          "description": "Organization name."
+          "description": "Tenant name."
         },
         "applicationID": {
           "type": "string",
@@ -511,20 +511,49 @@
         }
       }
     },
-    "serviceOrganizationLink": {
+    "serviceProfileResponse": {
       "type": "object",
       "properties": {
-        "organizationID": {
-          "type": "string",
-          "description": "Organization ID."
+        "user": {
+          "$ref": "#/definitions/serviceUser",
+          "description": "User object."
         },
-        "organizationName": {
+        "tenants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/serviceTenantLink"
+          },
+          "description": "Tenants to which the user is associated."
+        }
+      }
+    },
+    "serviceSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "branding": {
+          "$ref": "#/definitions/serviceBranding",
+          "description": "Branding settings."
+        },
+        "openidConnect": {
+          "$ref": "#/definitions/serviceOpenIDConnect",
+          "description": "OpenID Connect settings."
+        }
+      }
+    },
+    "serviceTenantLink": {
+      "type": "object",
+      "properties": {
+        "tenantId": {
           "type": "string",
-          "description": "Organization name."
+          "description": "Tenant ID."
+        },
+        "tenantName": {
+          "type": "string",
+          "description": "Tenant name."
         },
         "isAdmin": {
           "type": "boolean",
-          "description": "User is admin within the context of this organization.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
+          "description": "User is admin within the context of this tenant.\nThere is no need to set the is_device_admin and is_gateway_admin flags."
         },
         "isEditor": {
           "type": "boolean",
@@ -545,36 +574,7 @@
           "description": "Last update timestamp."
         }
       },
-      "description": "Defines an organization to which an user is associated."
-    },
-    "serviceProfileResponse": {
-      "type": "object",
-      "properties": {
-        "user": {
-          "$ref": "#/definitions/serviceUser",
-          "description": "User object."
-        },
-        "organizations": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/serviceOrganizationLink"
-          },
-          "description": "Organizations to which the user is associated."
-        }
-      }
-    },
-    "serviceSettingsResponse": {
-      "type": "object",
-      "properties": {
-        "branding": {
-          "$ref": "#/definitions/serviceBranding",
-          "description": "Branding settings."
-        },
-        "openidConnect": {
-          "$ref": "#/definitions/serviceOpenIDConnect",
-          "description": "OpenID Connect settings."
-        }
-      }
+      "description": "Defines an tenant to which an user is associated."
     },
     "serviceUser": {
       "type": "object",

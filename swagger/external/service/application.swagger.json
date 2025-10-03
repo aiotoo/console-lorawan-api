@@ -2174,9 +2174,9 @@
           "type": "string",
           "title": "Token. (InfluxDb v2)"
         },
-        "organization": {
+        "tenant": {
           "type": "string",
-          "title": "Organization. (InfluxDb v2)"
+          "title": "Tenant. (InfluxDb v2)"
         },
         "bucket": {
           "type": "string",

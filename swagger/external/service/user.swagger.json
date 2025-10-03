@@ -271,10 +271,10 @@
           "type": "string",
           "description": "Password to set for the user."
         },
-        "organizations": {
+        "tenants": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/serviceUserOrganization"
+            "$ref": "#/definitions/serviceUserTenant"
           },
           "description": "Add the user to the following tenants."
         }
@@ -403,10 +403,10 @@
         }
       }
     },
-    "serviceUserOrganization": {
+    "serviceUserTenant": {
       "type": "object",
       "properties": {
-        "organizationID": {
+        "tenantId": {
           "type": "string",
           "description": "Tenant ID."
         },

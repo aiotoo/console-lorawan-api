@@ -645,8 +645,8 @@ message InfluxDbIntegration {
   // Token. (InfluxDb v2)
   string token = 9;
 
-  // Organization. (InfluxDb v2)
-  string organization = 10;
+  // Tenant. (InfluxDb v2)
+  string tenant = 10;
 
   // Bucket. (InfluxDb v2)
   string bucket = 11;

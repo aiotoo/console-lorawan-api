@@ -180,7 +180,7 @@ message GetGatewayDutyCycleMetricsResponse {
 
 message GetDevicesSummaryRequest {
   // Tenant ID (UUID).
-  string organization_id = 1 [json_name = "organizationID"];
+  string tenant_id = 1;
 }
 
 message GetDevicesSummaryResponse {
@@ -200,7 +200,7 @@ message GetDevicesSummaryResponse {
 
 message GetGatewaysSummaryRequest {
   // Tenant ID (UUID).
-  string organization_id = 1 [json_name = "organizationID"];
+  string tenant_id = 1;
 }
 
 message GetGatewaysSummaryResponse {
